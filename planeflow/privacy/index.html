@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en-US" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PlaneFlow — Privacy Policy</title>
+<meta name="color-scheme" content="dark light"><meta name="robots" content="noindex">
+<link rel="icon" href="/planeflow/img/icon.webp">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0a7f9c;--cyan-hi:#0a7f9c;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--teal)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--teal);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--teal-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+
+.doc{max-width:46rem;margin:0 auto;padding:2.5rem 1.25rem 3.5rem}
+.doc h1{font:600 clamp(1.4rem,3.4vw,1.9rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:0 0 1.4rem}
+.doc h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:2.2rem 0 .7rem}
+.doc h3{font:600 15px Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.doc p{margin:0 0 1rem}.doc strong{font-weight:600}
+.doc ul{list-style:none;padding:0;margin:0 0 1rem}.doc li{position:relative;padding-inline-start:1.3rem;margin:.55rem 0}
+.doc li::before{content:"";position:absolute;inset-inline-start:0;top:.75em;width:.45rem;height:1px;background:var(--cyan)}
+.doc .upd{color:var(--soft);font-size:13px;margin-top:2.4rem}
+.doc [id]{scroll-margin-top:76px}
+.doc .muted{color:var(--soft);font-size:14px}
+.doc code{font:13.5px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+</style></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="All apps" aria-label="Maumiu Works — All apps">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><span class="app"><img src="/planeflow/img/icon.webp" alt="" width="26" height="26"><span>PlaneFlow</span></span><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Privacy policy</span></nav><div class="tools"></div></header>
+<main class="doc"><article><!--doc-->
+<!-- Generated from privacy.html in the game's repository: edit it there and republish (app-studio publish-privacy.py --html); edits made here are overwritten. -->
+<h1>Privacy Policy — PlaneFlow</h1>
+  <p class="muted">Last updated: 5 November 2026</p>
+  <p class="muted">Some of what this policy describes is not running yet. It is written down here
+  first, on purpose, so that nothing starts being sent before it is described.
+  The sign-in check in <a href="#verification">Checking that a result is really yours</a> runs only once we switch it on at our server; until then no sign-in code is sent.
+  The Play Integrity check in <a href="#verification">Checking that a result is really yours</a> starts <strong>with a later Android release</strong>.
+  Everything else on this page describes the app as it is today.</p>
+
+  <p>PlaneFlow (“the game”, “we”) is a casual air-traffic-control game. This policy
+  explains what data the game handles and how. We keep it minimal on purpose: the game
+  asks for no personal information and there is no sign-up, no password and no account you
+  have to create. On Android, the game optionally lets you sign in with
+  <strong>Google Play Games</strong> to use achievements and leaderboards — that part is
+  described below and is entirely optional. If you post a score to our own
+  <a href="#leaderboard">Survival leaderboard</a> in the Android app, a random player id — and, if
+  you are signed in, your Play Games display name — are stored on our server so the board can show
+  your result; you can delete those at any time, right in the game. Because that board is public, the Android app
+  also asks Google to confirm that a result really comes from the player it is signed with and from a
+  genuine copy of the game — what that adds is described in
+  <a href="#verification">Checking that a result is really yours</a>. The game also lets you
+  <a href="#feedback">write us a message</a>
+  about a level or about the game — that is voluntary, and what you type goes to our own server and
+  to the developer. The only personal data we ever <em>ask</em> for is an email address you enter
+  yourself <em>if</em> you choose to join our optional notification list (see
+  <a href="#email">Email notifications</a> below).</p>
+
+  <h2>What we store</h2>
+  <p>The game stores the following <strong>locally on your device</strong> (in the
+  browser/app storage), so your progress and preferences persist between sessions:</p>
+  <ul>
+    <li><strong>Game progress &amp; settings</strong> — unlocked levels, stars, best
+      results, chosen language, sound/vibration and visual-theme preferences.</li>
+    <li><strong>Anonymous gameplay analytics</strong> — a randomly generated identifier
+      (not linked to you or any account), session timing, and in-game events such as
+      level start/finish, tutorial steps, settings changes, and error/crash details.
+      Alongside each event we store basic technical context: app version, interface
+      language, platform, and screen size. On the web this stays on your device; in the
+      Android app, once you consent, it is also sent to Firebase (see below).</li>
+  </ul>
+
+  <h2 id="playgames">Google Play Games (Android, optional)</h2>
+  <p>The Android version of PlaneFlow offers an optional sign-in with
+  <strong>Google Play Games</strong> so you can earn achievements and post Survival scores
+  to leaderboards. This feature is provided by Google. It is off until you choose to sign in,
+  and you can play the entire game without it. The web version does not use Google Play Games
+  at all.</p>
+  <p>When you sign in, Google provides the game with your <strong>Play Games player ID</strong>
+  and your <strong>Play Games display name (gamer tag) and avatar</strong>, and the game sends
+  your <strong>achievement progress and leaderboard scores</strong> to Google Play Games
+  Services. Your gamer tag and scores are stored on Google’s servers and can be visible to
+  other players on the leaderboards you take part in. Your gamer tag is also what signs your entry
+  on <a href="#leaderboard">our own Survival leaderboard</a> described below, so it is sent to our
+  server too, and our server asks Google to confirm the sign-in behind it — see
+  <a href="#verification">Checking that a result is really yours</a>. We use this data only to run
+  achievements, leaderboards and the statistics described below — we do not use it for advertising
+  and we do not sell it.</p>
+  <p id="playgames-stats"><strong>Play Games statistics.</strong> While you are signed in, the game
+  also sends Google Play Games a few running totals of your play:
+  planes landed, planes sent off, services done, coins earned, stars, your best streak, medals
+  unlocked and how far you are through the campaign. Google shows them as game statistics in your
+  Play Games profile. They are the game’s own lifetime totals, sent as they stand, so the first
+  time they go out they include everything you have played so far. Google keeps the highest value it
+  has received: deleting your statistics or resetting your progress in the game does not lower the
+  totals your profile already shows (only the campaign progress follows the game back down). What is
+  in your Play Games profile is managed through your Google account, as described below. The
+  statistics are counts only — nothing else about you, and nothing about your device.</p>
+  <p><strong>Saved games (cloud progress).</strong> While you are signed in, the game also keeps a
+  copy of your saved game in your Play Games account, using Google’s <strong>Saved Games</strong>
+  service, so that your progress follows you to another device. That copy is the whole save file —
+  unlocked levels, stars, best results, medals, your settings and language — and it is stored by
+  <strong>Google</strong>, not by us: we never receive it. (Earlier versions of the game also put
+  the random key described in the leaderboard section into that copy; it no longer goes there, and
+  the next save from an updated game removes it.) Your device keeps the original; the cloud copy is
+  a mirror. It is removed when you delete the game’s data from your Play Games account, and
+  resetting your progress in the game’s settings erases the cloud copy too. If you never sign in, nothing is copied anywhere.</p>
+  <p>This Play Games data is collected and processed by Google under
+  <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>, and you control
+  it through your Google account and your
+  <a href="https://support.google.com/googleplay/answer/6315381">Play Games settings</a>
+  (including your gamer-tag visibility and deleting your Play Games data). If you never sign in,
+  no Play Games data leaves your device.</p>
+
+  <h2 id="leaderboard">Survival leaderboard — our own server (Android app)</h2>
+  <p>The Android app has a global <strong>Survival leaderboard</strong> that we run ourselves, on our
+  own server, separate from Google Play Games. When your Survival run ends and the result is posted
+  to that board, the game sends the following to our server at
+  <code>api.planeflow.jevgenia.com</code>:</p>
+  <ul>
+    <li><strong>Your Play Games display name (gamer tag)</strong>, if you are signed in and accepted the
+      <a href="#community">community rules</a> — the game
+      has no separate nickname field, so your board entry is signed with the same public alias you
+      already use in Google Play Games. It is shown publicly next to your score. If you are not
+      signed in or have not accepted them, no name is sent at all and the board simply labels your entry automatically
+      (“Player-” plus four characters). You change this alias in Play Games itself, not in the
+      game; you can delete our copy of it (see below).</li>
+    <li><strong>A random player id</strong> — a string the game generates on your device the
+      first time it needs one. It is generated by the game itself, not taken from your Google
+      account, not your email, and not derived from your device’s hardware; it exists so the board
+      can tell that two results belong to the same player (your personal best, your position, and so
+      that nobody can post scores under your name). It travels with a random key the game generates
+      once and keeps on your device, which is what proves to our server that the id is yours — it
+      identifies nothing else and is never shown to anyone. When a device presents the wrong key for
+      its id (or none), our server refuses it and adds to a daily count: how many refusals, and how
+      many different ids were refused that day. Only those two numbers are kept. To tell ids apart
+      during the day, the server holds a one-way scrambled form of each refused id, in memory only,
+      and discards it when the day ends; the id itself, and anything else about the device, is not
+      recorded.</li>
+    <li><strong>Proof that the entry is really yours</strong> — if you are signed in, a one-time
+      code from Google that lets our server confirm which
+      Play Games player is behind the entry, and, whether or not you are signed in, a statement from
+      Google Play (from a later Android release) about the app and the device. Both are described in full in
+      <a href="#verification">Checking that a result is really yours</a> below.</li>
+    <li><strong>Your score and how long the run lasted</strong>, and the time it was recorded.</li>
+  </ul>
+  <p>That is the whole list — no contacts, no location, and no hardware or advertising identifiers
+  (the two random strings above are generated by the game itself and identify nothing outside it).
+  The one identifier that does come from your Google account — your Play Games player ID — reaches
+  our server only to confirm that an entry is yours, is never shown to anyone and is used for
+  nothing else; that is the section below. We use all of it only to build the leaderboard and to
+  keep it honest. It is <strong>not shared with third parties</strong>, not used for advertising,
+  and never sold. The web version of the game does not send scores to this leaderboard.</p>
+  <p><strong>Where it is stored.</strong> On a virtual server we rent and administer ourselves from
+  <strong>Contabo</strong>, located in a data centre in <strong>France</strong> — so this data is
+  stored in the <strong>European Union</strong>. It is not handed to a third-party analytics or
+  game-backend service: it sits in a single database file on that server, and travels there over
+  HTTPS. A daily <strong>backup</strong> of that file is copied to the developer’s private
+  <strong>Google Drive</strong>, which is not limited to the EU; nobody else has access to it and it
+  is used only to restore the server after a failure. The other two exceptions are the checks
+  described below: to perform the
+  sign-in check, our server passes the one-time code back to <strong>Google</strong>; to perform
+  the Play Integrity check, it passes the encrypted verdict token to Google’s own decoding service.
+  Both answer from Google’s infrastructure under
+  <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>. Nothing else on the
+  list goes anywhere but that database file and its backups, and besides those backups Google gets
+  nothing from us except that code and that token.</p>
+  <p><strong>How long it is kept.</strong> Your display name, your player id and the record that
+  links it to your Play Games sign-in are kept until you delete them — whether or not you
+  are still on the board, and whether or not you ever posted a score at all. Individual run records
+  are deleted automatically after about 90 days; weekly, monthly
+  and seasonal placings drop off automatically once the period is well past. Your all-time best stays
+  until it is deleted.</p>
+  <p id="deleting"><strong>Deleting it.</strong> In the Android app, open
+  <strong>Settings → GDPR → Delete my data from the server</strong>. That erases at once everything
+  our server holds about you — display name, player id, what we keep of your Play Games sign-in,
+  every recorded run, season standing, reports and any <a href="#feedback">messages you sent us</a> — which
+  also removes you from the leaderboard. The game then makes itself a new random player id, so nothing
+  new is linked to the old one, and any result still waiting to be sent is dropped. A leftover copy of a save file that could not be read is removed from the device. Your progress on the device stays;
+  to erase that too, use “Reset progress” or clear the app’s data. If you keep playing afterwards and
+  post a new score, a new entry is created in the same way as the first time.</p>
+  <p><strong>Without the app.</strong> If you no longer have the game, or the button reports an error,
+  write to <a href="mailto:planeflow@jevgenia.com">planeflow@jevgenia.com</a> with the name your
+  entry shows on the board (your Play Games name, or “Player-” plus four characters) or the code the
+  button shows, and we will erase the same data by hand. A “Player-” label is not unique, so we may
+  ask which score is yours.</p>
+  <p><strong>What stays for a while.</strong> Backups are not edited one by one, they expire: copies of
+  the database taken daily are removed after about a week and then sit in Google Drive’s trash for up to
+  30 more days, and the ones taken before a server update are replaced after ten further updates. The copy of a message that was
+  <a href="#feedback">forwarded to the developer on Telegram</a> carries no name or player id, so the
+  button cannot find it; quote the text in an email if you want it removed too. Data held by
+  <a href="#playgames">Google Play Games</a> and <a href="#analytics">Firebase</a> is not on our
+  server: Play Games data is deleted through your Google account, and Firebase analytics, which are not
+  linked to your name or player id, expire on Google’s side.</p>
+
+  <h2 id="community">Community rules for the leaderboard</h2>
+  <p>Your name appears on the board only after you accept these rules in the game; until then your entry
+  shows “Player-” plus four characters. The name is your Play Games name, and it must not contain insults,
+  hate, sexual content, threats or impersonation of someone else.</p>
+  <p>Any player can tap an entry to <strong>report</strong> a name or <strong>block</strong> a player. A
+  report sends our server your player id, the entry you reported and the time, and notifies the developer
+  on Telegram with that name. Reports are kept for up to a year and are erased when you
+  <a href="#deleting">delete your data</a>, whichever side of the report you are on. A block stays on your
+  device and shows that entry as a “Player-” label to you only. We also hide names containing words from a
+  stop list. A name that breaks the rules is hidden, and players who keep breaking them are removed from
+  the boards. Write to <a href="mailto:planeflow@jevgenia.com">planeflow@jevgenia.com</a> if you think we
+  got it wrong.</p>
+
+  <h2 id="verification">Checking that a result is really yours (Android app)</h2>
+  <p>A shared leaderboard is only worth anything if the results on it are real. Two checks make that
+  possible, and each one means our server receives something extra, so both are described here in
+  full. <strong>The sign-in check runs only once we switch it on at our server</strong>; until then no sign-in code is sent anywhere.
+  <strong>The Play Integrity check starts with a later Android release</strong>; until it starts, no Play Integrity verdict is sent anywhere.
+  They happen only in the Android app, and
+  never on more than the requests that put something of yours on our server at
+  <code>api.planeflow.jevgenia.com</code> — posting a Survival result, or sending us a message.
+  Requests that carry nothing of yours never get them: reading the leaderboard, and the
+  <a href="#analytics">anonymous tally of consent answers</a> described below, stay exactly as they
+  are. Whether every such request is checked or only some of them is a question of how much checking
+  Google lets us do; either way it is never more than what this section describes. The web version
+  does none of this.</p>
+
+  <ul>
+    <li><strong>Confirming who posted it.</strong> If you are signed in with Play Games, the game
+      asks Google for a <strong>one-time sign-in code</strong> and sends it to our server. Our server
+      hands that code back to Google in exchange for permission to read exactly one thing — your
+      <strong>Play Games player ID</strong> — and then drops that permission. Google’s answer is what
+      tells us that the display name and the results on the board really belong to the Play Games
+      player they are signed with, so that the board can tell your real results from ones that only borrow your name. What
+      we keep afterwards is <strong>only what that check needs</strong>: a record that this player id
+      belongs to that Play Games player. It is stored next to your player record, it is
+      <strong>never shown to anyone</strong>, it is used for nothing else, and it is the only trace
+      of your Google account on our server. We do not receive, ask for or store your Google email
+      address, your real name, or anything else from your Google account.</li>
+    <li><strong>Confirming what posted it.</strong> The game asks Google Play for a
+      <strong>Play Integrity</strong> verdict and sends it to our server. It is a signed statement
+      from Google Play about <em>the app and the device</em>, not about you: whether this is a
+      genuine, unmodified copy of PlaneFlow, whether it was obtained from Google Play with your
+      account, and whether the device passes Google’s standard integrity checks. Nothing in it
+      identifies you — no name, no account name or address, no email, no advertising identifier, no
+      location — and it tells us nothing about what else is on your device. We use it to keep
+      whatever it travels with — a leaderboard result, or a message you send us below — from being
+      faked or spammed by a modified build or an automated client, which is also the only thing it
+      can be used for.</li>
+  </ul>
+  <p><strong>How long they are kept.</strong> What we keep of your Play Games sign-in sits next to
+  your player record and lives exactly as long as that record does. The Play Integrity verdict
+  is <strong>checked at the moment of the request and not stored</strong>: all that remains is
+  whether the last check passed, and when.</p>
+  <p><strong>Deleting them.</strong> The verdict itself was never stored, so there is nothing of it
+  to delete. What the sign-in check keeps, and the note that the last check passed, sit in the same
+  record as everything else our server holds about you, so a
+  <a href="#deleting">deletion</a> erases them together with your display name, your player
+  id, your results and your messages.</p>
+  <p>If you never sign in with Play Games there is no sign-in code and no player ID for us to check,
+  and your entry is simply signed automatically as before. The integrity verdict is about the app
+  rather than about you, so it is sent whenever a result or a message is, signed in or not. As with
+  everything else in this section, both checks are performed by Google under
+  <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>; what reaches us is the
+  answer, not the workings.</p>
+
+  <h2 id="feedback">Feedback you write (Android app)</h2>
+  <p>The game has two places where you can <strong>type a message to us</strong> in your own words,
+  and both are entirely voluntary — they start empty and nothing is sent unless you write something
+  and press send:</p>
+  <ul>
+    <li><strong>“Something else” on the results screen</strong> — a short note about the level you
+      just played, up to 300 characters.</li>
+    <li><strong>The envelope button in Settings</strong> — a message about the game as a whole, up
+      to 1000 characters.</li>
+  </ul>
+  <p>What you write is sent to <strong>our own server</strong> at
+  <code>api.planeflow.jevgenia.com</code> — the same server in France described above — where it is
+  stored, and it is also forwarded to the developer as a <strong>Telegram message</strong> so that
+  someone actually reads it. Alongside the text we send the tag you picked, the level and mode it
+  was about (for the results-screen note), and the app version, interface language and platform, so
+  we can tell which build a problem came from. The note from the results screen is <em>also</em>
+  counted in the anonymous analytics described below, if you consented to those; the message from
+  Settings is not.</p>
+  <p><strong>Please note that this is a free-text field</strong>: whatever you type is what we
+  receive. Before it is stored, the game and the server both strip anything that looks like an
+  <strong>email address</strong> and any long random-looking string (such as an id or a token) and
+  replace it with <code>[redacted]</code> — so please don’t rely on that and don’t put personal
+  details, your own or anyone else’s, into the message. We only want to know what you think about
+  the game.</p>
+  <p>Your message is sent together with the same <strong>random player id</strong> described in the
+  leaderboard section, so it is <strong>pseudonymous rather than anonymous</strong>: messages from
+  one device are linked to each other, and to your leaderboard entry if you have one. Sending a
+  message opens the same connection to our server that the leaderboard uses, so <strong>if you are
+  signed in and accepted the <a href="#community">community rules</a>, your Play Games display name is
+  stored on our server at that point too</strong> — even
+  if you never post a score, and the same connection carries the two checks described in
+  <a href="#verification">Checking that a result is really yours</a>. Messages are kept for up to a
+  year; your display name and player id stay until you delete them, whether or not you are on the
+  leaderboard. All of it is erased together with everything else our server holds about you when you
+  <a href="#deleting">delete your data</a>; the copy in Telegram is covered there too. We do not use them for advertising and we never
+  sell them.</p>
+
+  <h2>App updates (Android app)</h2>
+  <p>The Android app can update the game itself without going through the store. To do that it
+  periodically asks our server at <code>capgo.jevgenia.com</code> whether a newer version exists.
+  This is part of how the app works, so it happens whatever you choose on the analytics consent
+  screen — but it is not analytics, and it carries nothing about how you play.</p>
+  <p>The check sends the app and content version it currently has, the app’s package name, your
+  Android version, whether the build is a release build, and a <strong>random identifier generated
+  by the update component</strong> (again: not your account, not a hardware or advertising id, and
+  reset if you reinstall the app). This is the same server in France described above; it reads only
+  the version in order to decide whether to offer an update, does not store the rest, and our
+  web-server logs are configured not to record visitors’ IP addresses.</p>
+
+  <h2 id="analytics">Analytics &amp; diagnostics — Firebase (Android app, with your consent)</h2>
+  <p>The Android app uses Google’s <strong>Firebase</strong> for anonymous analytics
+  (<em>Google Analytics for Firebase</em>), crash reporting (<em>Crashlytics</em>) and
+  performance monitoring (<em>Performance Monitoring</em>). This collection is <strong>off by
+  default</strong> and starts only <strong>after you agree</strong> on the consent screen; if you
+  decline, nothing is sent. The web version does not use Firebase.</p>
+  <p>When enabled, Firebase collects the anonymous gameplay events and technical context described
+  above, crash and performance diagnostics, a Firebase installation identifier, and — for analytics
+  attribution — your device’s <strong>advertising ID</strong>. This data is not linked to your
+  identity, is used only to understand aggregate usage and fix problems, is <strong>not shared with
+  third parties</strong> for their own purposes, and is <strong>never sold</strong>. It is processed
+  by Google under <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>. You can
+  stop it at any time with the <strong>“Share gameplay data” switch in Settings → GDPR</strong>, or by
+  clearing the app’s data. No ads are shown in the game.</p>
+  <p>Separately, when you answer the consent screen — <em>either way</em> — or flip that switch, the
+  app sends our own server one <strong>anonymous tally entry</strong>: whether the answer was yes or
+  no, whether it came from the consent screen or from Settings, the platform, and the build number.
+  It carries <strong>no identifier of any kind</strong> — no account, no device or advertising id, no
+  cookie — and the server stores only a daily count, never a row about you. We do this because a
+  refusal produces no analytics at all, so without counting the answers we cannot tell how much of
+  our audience our numbers are missing. It is not linked to anything else we hold, and the count
+  cannot be traced back to a person.</p>
+
+  <h2 id="email">Email notifications — waitlist</h2>
+  <p>On our <a href="https://planeflow.jevgenia.com/join">sign-up page</a> you can <strong>voluntarily</strong> give us your
+  email address so we can let you know when PlaneFlow’s open test and full launch go live. This
+  is entirely separate from the game itself: you never need an email address to play, and the
+  game does not ask for one.</p>
+  <ul>
+    <li><strong>Who runs the list</strong> — the notification list is operated by the
+      PlaneFlow project (the game’s developer), reachable at
+      <a href="mailto:planeflow@jevgenia.com">planeflow@jevgenia.com</a>.</li>
+    <li><strong>What we collect</strong> — only your <strong>email address</strong>, the time
+      you signed up, which version of the consent text you agreed to, and — if present in the
+      sign-up link — a <strong>utm</strong> campaign tag showing where you came from. We do not
+      ask for your name or anything else. Alongside this, the form keeps a short-lived
+      anti-spam counter (kept for about an hour, then deleted) tied to the
+      <strong>IP address</strong> the request came from, so that one sender cannot flood the
+      list; it is never used to identify you or linked to your address.</li>
+    <li><strong>Double opt-in</strong> — after you submit the form we email you a confirmation
+      link; your address is only added to the active notification list once you click it. This
+      keeps the list accurate and confirms it was really you.</li>
+    <li><strong>Why</strong> — solely to send you notifications about PlaneFlow’s testing
+      phases and its launch. We do not use your address for any other purpose, and we never
+      sell it or share it for anyone else’s marketing.</li>
+    <li><strong>How it is processed</strong> — the sign-up form runs on
+      <strong>Cloudflare Workers</strong> (serverless code we wrote), with your entry stored in a
+      <strong>Cloudflare D1</strong> database restricted to Cloudflare’s <strong>EU
+      jurisdiction</strong>, so this data is kept on servers in the EU. The confirmation and
+      notification emails themselves are sent on our behalf by <strong>Brevo</strong>
+      (Sendinblue SAS) purely as a transactional email relay (it does not host the waitlist),
+      under its own <a href="https://www.brevo.com/legal/privacypolicy/">privacy policy</a>. The
+      form is also protected by <strong>Cloudflare Turnstile</strong>, a cookieless bot check
+      that briefly sees your IP address to confirm you’re not a bot — it does not track you.</li>
+    <li><strong>Removing your address</strong> — you can unsubscribe at any time by writing to
+      <a href="mailto:planeflow@jevgenia.com">planeflow@jevgenia.com</a>; we will delete your address from
+      the list on request.</li>
+    <li><strong>Retention</strong> — we keep your address only until you withdraw consent
+      (unsubscribe or ask us to remove it) or until the PlaneFlow notification programme ends,
+      whichever comes first — after which it is deleted. Sign-ups that never confirm are
+      deleted automatically after a few days.</li>
+  </ul>
+
+  <h2>What we do NOT collect</h2>
+  <ul>
+    <li>Inside the game: we never <em>ask</em> for your real name, email, phone number, or any
+      data that identifies you personally, and there is no field for them (your Play Games gamer
+      tag is a public alias you choose in Google Play Games — it is the same alias that signs your
+      leaderboard entry, because the game has no nickname field of its own, and
+      we also keep a record of which Play Games player an entry belongs to, as the
+      <a href="#verification">sign-in check</a> describes; neither is your real name, and we never
+      receive one). The one place where you can type free text is the
+      <a href="#feedback">feedback</a> field, and what ends up there is your choice — we strip
+      email addresses out of it and ask you not to put personal details in. The only personal data
+      we ever ask for is the email address you give us <em>if</em> you join the optional
+      notification list described above.</li>
+    <li>No precise location, contacts, photos, microphone or camera access.</li>
+    <li>No ads are shown in the game, and we never sell your data to anyone.</li>
+  </ul>
+
+  <h2>Where the data goes</h2>
+  <p>Your game progress and settings <strong>stay on your device</strong>, and the saved game itself
+  is <strong>never uploaded to us</strong> — the only copy that leaves the device is the
+  <a href="#playgames">Play Games saved game</a> described above, which goes to Google and only
+  while you are signed in. Data that leaves your device is limited to: (1) the Google Play Games
+  information above, including that saved game, only if you sign in; (2) in the Android app, a
+  random player id, your Survival results, the two
+  <a href="#verification">checks that the result is really yours</a>
+  and — if you are signed in — your Play Games display name, sent to
+  <strong>our own server</strong>; (3) in the Android app,
+  <a href="#feedback">a message you choose to write us</a>,
+  sent to that same server and forwarded to the developer;
+  (4) in the Android app, the version check our update server needs; (5) in the Android app,
+  the Firebase analytics and diagnostics described above, only after you consent; and (6) the email
+  address you submit to our notification list, only if you sign up (processed by Cloudflare and
+  Brevo, as described above). On the web, analytics stay on your device. We use analytics
+  <strong>only to improve the game</strong> and to understand aggregate, anonymous usage (for
+  example, how many players complete the tutorial). We never sell your data.</p>
+  <p><strong>Everything we store ourselves is stored in the European Union, apart from the exceptions below.</strong> That means both
+  places where we — rather than a big platform — keep data: our own server in France (the Survival
+  leaderboard), and the waitlist database, which runs on Cloudflare D1 restricted to Cloudflare’s EU
+  jurisdiction.</p>
+  <p>Five things are <em>not</em> covered by that sentence, and we would rather say so plainly than
+  imply otherwise: data you send to <strong>Google</strong> — Play Games sign-in data if you use it,
+  and Firebase analytics if you consent to it — is handled by Google on its own infrastructure under
+  <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>, which is not limited to
+  the EU; the <a href="#verification">sign-in check</a> is a request <em>we</em> make to Google, so
+  it leaves the EU the same way; the daily <a href="#leaderboard">backup of our server’s database</a>
+  is copied to the developer’s private Google Drive; a <a href="#feedback">message you write us</a> is
+  also forwarded to the developer on <strong>Telegram</strong>, whose servers are not limited to the
+  EU; and confirmation emails are delivered through Brevo, as described above.</p>
+
+  <h2>Children</h2>
+  <p>PlaneFlow is suitable for a general audience and is not directed at children under
+  13. We do not knowingly collect personal information from children.</p>
+
+  <h2>Data retention &amp; your control</h2>
+  <p>Because the on-device data is stored on your device, you can erase all of it at any time
+  by clearing the app’s data/storage or uninstalling the game. If you signed in with Google
+  Play Games, your achievements, leaderboard scores, <a href="#playgames-stats">statistics</a> and
+  <a href="#playgames">saved game</a> live in Google Play Games — clearing the app’s data does not
+  remove that copy; you manage or delete it through your
+  <a href="https://support.google.com/googleplay/answer/6315381">Play Games settings</a>.
+  Resetting your progress inside the game erases the cloud copy as well, but does not lower the
+  statistics already in your profile.
+  There is still no PlaneFlow account with a password to close — but if you have posted to our
+  <a href="#leaderboard">Survival leaderboard</a>, we do hold your display name, random player id,
+  results and what the <a href="#verification">sign-in check</a> keeps on our server, and you can
+  delete all of it from <strong>Settings → GDPR</strong> in the game, or by writing to
+  <a href="mailto:planeflow@jevgenia.com">planeflow@jevgenia.com</a> (see <a href="#deleting">Deleting it</a>). If you joined the email
+  notification list, you can remove your address at any time — see
+  <a href="#email">Email notifications</a> above.</p>
+
+  <h2>Security</h2>
+  <p>The game is served over HTTPS. Any data transmitted off your device — Google Play Games
+  sign-in data, your leaderboard entry and version checks on our own servers, and the Firebase
+  analytics/diagnostics above — is sent over encrypted connections. Scores are accepted only with a
+  key the game holds for your own player id; results are additionally checked with Google — that a
+  result signed with a Play Games name really comes from that player (once we switch that check on),
+  and that the app they came from is one Google recognises (from a later Android release) — so
+  that results posted under someone else’s name can be told apart from real ones. Those are the checks described in
+  <a href="#verification">Checking that a result is really yours</a>. Playing
+  without signing in stays possible: there is no sign-in to confirm, and such an entry is labelled
+  automatically. What those checks leave on our server is kept only for the checks themselves: never
+  published, never used for anything else, and gone when the rest of your data is.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, we will update the “Last updated” date above and, where
+  required, the Google Play listing.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:planeflow@jevgenia.com">planeflow@jevgenia.com</a></p>
+<!--/doc-->
+</article></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/">All apps</a><a href="mailto:hello@maumiuworks.com">Contact</a></nav></div></div></footer>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

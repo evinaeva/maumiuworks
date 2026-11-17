@@ -2,6 +2,5 @@
  "name": "PlaneFlow",
  "short": "Airport traffic control game: draw routes to land, service and launch planes.",
  "kind": "game",
- "play": "https://play.google.com/store/apps/details?id=com.planeflow.game",
- "privacy_url": "https://planeflow.jevgenia.com/privacy"
+ "play": "https://play.google.com/store/apps/details?id=com.planeflow.game"
 }
