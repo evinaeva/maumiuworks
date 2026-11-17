@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ja-JP" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ligona: トーナメント表作成</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/tournament-bracket/img/icon.webp">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="広告なしのトーナメント表・対戦表作成アプリ。リーグ作成、予選リーグ、スイス式も。オフライン対応">
+<link rel="canonical" href="https://maumiuworks.com/tournament-bracket/ja-JP/">
+<link rel="alternate" hreflang="ar" href="https://maumiuworks.com/tournament-bracket/ar/">
+<link rel="alternate" hreflang="cs-CZ" href="https://maumiuworks.com/tournament-bracket/cs-CZ/">
+<link rel="alternate" hreflang="de-DE" href="https://maumiuworks.com/tournament-bracket/de-DE/">
+<link rel="alternate" hreflang="en-GB" href="https://maumiuworks.com/tournament-bracket/en-GB/">
+<link rel="alternate" hreflang="en-US" href="https://maumiuworks.com/tournament-bracket/">
+<link rel="alternate" hreflang="es-419" href="https://maumiuworks.com/tournament-bracket/es-419/">
+<link rel="alternate" hreflang="es-ES" href="https://maumiuworks.com/tournament-bracket/es-ES/">
+<link rel="alternate" hreflang="fr-FR" href="https://maumiuworks.com/tournament-bracket/fr-FR/">
+<link rel="alternate" hreflang="id" href="https://maumiuworks.com/tournament-bracket/id/">
+<link rel="alternate" hreflang="it-IT" href="https://maumiuworks.com/tournament-bracket/it-IT/">
+<link rel="alternate" hreflang="ja-JP" href="https://maumiuworks.com/tournament-bracket/ja-JP/">
+<link rel="alternate" hreflang="ko-KR" href="https://maumiuworks.com/tournament-bracket/ko-KR/">
+<link rel="alternate" hreflang="ms" href="https://maumiuworks.com/tournament-bracket/ms/">
+<link rel="alternate" hreflang="nl-NL" href="https://maumiuworks.com/tournament-bracket/nl-NL/">
+<link rel="alternate" hreflang="pl-PL" href="https://maumiuworks.com/tournament-bracket/pl-PL/">
+<link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/tournament-bracket/pt-BR/">
+<link rel="alternate" hreflang="pt-PT" href="https://maumiuworks.com/tournament-bracket/pt-PT/">
+<link rel="alternate" hreflang="ro" href="https://maumiuworks.com/tournament-bracket/ro/">
+<link rel="alternate" hreflang="ru-RU" href="https://maumiuworks.com/tournament-bracket/ru-RU/">
+<link rel="alternate" hreflang="tr-TR" href="https://maumiuworks.com/tournament-bracket/tr-TR/">
+<link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/tournament-bracket/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://maumiuworks.com/tournament-bracket/ja-JP/"><meta property="og:title" content="Ligona: トーナメント表作成">
+<meta property="og:description" content="広告なしのトーナメント表・対戦表作成アプリ。リーグ作成、予選リーグ、スイス式も。オフライン対応"><meta property="og:image" content="https://maumiuworks.com/tournament-bracket/img/og-ja-JP.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Ligona: トーナメント表作成", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "description": "広告なしのトーナメント表・対戦表作成アプリ。リーグ作成、予選リーグ、スイス式も。オフライン対応", "url": "https://maumiuworks.com/tournament-bracket/ja-JP/", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "downloadUrl": "https://play.google.com/store/apps/details?id=com.jevgenia.tournament", "inLanguage": "ja-JP"}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0a7f9c;--cyan-hi:#0a7f9c;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--teal)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--teal);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--teal-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+
+.hero{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 1.25rem 5.5rem;color:#fff;
+background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url(/tournament-bracket/img/none) center/cover no-repeat,#2a2a2a}
+.hero-in{max-width:46rem}
+.hero img.logo{width:96px;height:96px;border-radius:22%;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.word{font:300 clamp(1.4rem,4vw,2.1rem)/1.25 "Open Sans",sans-serif;letter-spacing:.38em;text-transform:uppercase;margin:1.6rem 0 .3rem;padding-inline-start:.38em;color:#fff}
+.sub{font-size:13px;color:#c9ced5;margin:0}
+.tag{font-size:18.4px;line-height:1.65;color:#d9dde3;margin:1.4rem auto 2rem;max-width:40rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.facts{display:block;font-size:13px;color:#c9ced5;margin-top:1.3rem}
+section.band{max-width:62rem;margin:0 auto;padding:3rem 1.25rem}
+.shots{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.75rem;scroll-snap-type:x mandatory}
+.shots img{height:460px;width:auto;border-radius:10px;border:1px solid var(--line);scroll-snap-align:start;flex:none;background:var(--bar)}
+.desc{max-width:46rem}.desc p{margin:0 0 1rem}
+.desc h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:2rem 0 .6rem}
+.desc ul{list-style:none;padding:0;margin:0 0 1rem}.desc li{position:relative;padding-inline-start:1.3rem;margin:.45rem 0}
+.desc li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:.45rem;height:1px;background:var(--cyan)}
+@media (max-width:40rem){.hero{min-height:0;padding:3rem 1rem}.shots img{height:380px}}
+.hero.g{min-height:0;background:#2a2a2a;padding:2.5rem 1.25rem 3.5rem}.hero.g .hero-in{max-width:64rem}
+.hero.g img.banner{display:block;width:100%;max-width:1024px;height:auto;margin:0 auto;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.hero.g .word{margin-top:1.8rem}
+</style></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="すべてのアプリ" aria-label="Maumiu Works — すべてのアプリ">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app" href="/tournament-bracket/ja-JP/" aria-current="page"><img src="/tournament-bracket/img/icon.webp" alt="" width="26" height="26"><span>Ligona</span></a></nav><nav class="nav mont" aria-label="Ligona: トーナメント表作成"><a href="#features">機能</a><a href="#screens">スクリーンショット</a></nav><div class="tools"><details class="langs"><summary aria-label="言語: 日本語" title="日本語"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"></summary><ul><li><a href="/tournament-bracket/ar/" hreflang="ar" lang="ar"><img class="flag" src="/flags/sa.svg" alt="" width="24" height="16"><span>العربية</span></a></li><li><a href="/tournament-bracket/cs-CZ/" hreflang="cs-CZ" lang="cs-CZ"><img class="flag" src="/flags/cs.svg" alt="" width="24" height="16"><span>cs-CZ</span></a></li><li><a href="/tournament-bracket/de-DE/" hreflang="de-DE" lang="de-DE"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/tournament-bracket/en-GB/" hreflang="en-GB" lang="en-GB"><img class="flag" src="/flags/gb.svg" alt="" width="24" height="16"><span>English (UK)</span></a></li><li><a href="/tournament-bracket/" hreflang="en-US" lang="en-US"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/tournament-bracket/es-419/" hreflang="es-419" lang="es-419"><img class="flag" src="/flags/mx.svg" alt="" width="24" height="16"><span>Español (Latinoamérica)</span></a></li><li><a href="/tournament-bracket/es-ES/" hreflang="es-ES" lang="es-ES"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español (España)</span></a></li><li><a href="/tournament-bracket/fr-FR/" hreflang="fr-FR" lang="fr-FR"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/tournament-bracket/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/tournament-bracket/it-IT/" hreflang="it-IT" lang="it-IT"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/tournament-bracket/ja-JP/" hreflang="ja-JP" lang="ja-JP" aria-current="true"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/tournament-bracket/ko-KR/" hreflang="ko-KR" lang="ko-KR"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/tournament-bracket/ms/" hreflang="ms" lang="ms"><img class="flag" src="/flags/ms.svg" alt="" width="24" height="16"><span>ms</span></a></li><li><a href="/tournament-bracket/nl-NL/" hreflang="nl-NL" lang="nl-NL"><img class="flag" src="/flags/nl.svg" alt="" width="24" height="16"><span>Nederlands</span></a></li><li><a href="/tournament-bracket/pl-PL/" hreflang="pl-PL" lang="pl-PL"><img class="flag" src="/flags/pl.svg" alt="" width="24" height="16"><span>Polski</span></a></li><li><a href="/tournament-bracket/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/tournament-bracket/pt-PT/" hreflang="pt-PT" lang="pt-PT"><img class="flag" src="/flags/pt.svg" alt="" width="24" height="16"><span>pt-PT</span></a></li><li><a href="/tournament-bracket/ro/" hreflang="ro" lang="ro"><img class="flag" src="/flags/ro.svg" alt="" width="24" height="16"><span>ro</span></a></li><li><a href="/tournament-bracket/ru-RU/" hreflang="ru-RU" lang="ru-RU"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/tournament-bracket/tr-TR/" hreflang="tr-TR" lang="tr-TR"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play</a></div></header>
+<section class="hero g"><div class="hero-in">
+<img class="banner" src="/tournament-bracket/img/banner-ja-JP.webp" width="1024" height="500" alt="Ligona: トーナメント表作成">
+<h1 class="word">Ligona</h1><p class="sub">Ligona: トーナメント表作成</p>
+<p class="tag">広告なしのトーナメント表・対戦表作成アプリ。リーグ作成、予選リーグ、スイス式も。オフライン対応</p>
+<div class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play で手に入れよう <span class="arrow" aria-hidden="true"></span></a>
+<a class="btn btn-ghost" href="#features">機能</a></div><span class="facts">オフラインで動作・アカウント不要</span>
+</div></section>
+<section class="band" id="screens"><h2 class="label">スクリーンショット</h2><div class="shots"><img src="/tournament-bracket/img/en-US/1.webp" width="420" height="840" alt="Ligona: トーナメント表作成 — 1" loading="lazy"><img src="/tournament-bracket/img/en-US/2.webp" width="420" height="840" alt="Ligona: トーナメント表作成 — 2" loading="lazy"><img src="/tournament-bracket/img/en-US/3.webp" width="420" height="840" alt="Ligona: トーナメント表作成 — 3" loading="lazy"><img src="/tournament-bracket/img/en-US/4.webp" width="420" height="840" alt="Ligona: トーナメント表作成 — 4" loading="lazy"><img src="/tournament-bracket/img/en-US/5.webp" width="420" height="840" alt="Ligona: トーナメント表作成 — 5" loading="lazy"></div></section>
+<section class="band" id="features"><h2 class="label">機能</h2><div class="desc"><p>紙やスプレッドシートのトーナメント表は、1試合の結果が変わるだけで崩れてしまいます。Ligonaは、勝ち抜きのトーナメント表、順位表つきのリーグ戦、予選リーグ＋決勝トーナメント、スイス式を作り、スコアを入れるたびに自動で更新します。1分で作成でき、登録不要、人数や大会数の制限もなく、広告は表示されず、インターネットなしで使えます。</p>
+<h2>LIGONAが選ばれる理由</h2>
+<ul><li>5つの形式すべてに対応：トーナメント（シングルエリミネーション）、ダブルイリミネーション、リーグ戦（総当たり1回、またはホーム＆アウェイの2回）、予選リーグ＋決勝トーナメント、スイス式。</li><li>制限なし：8、16、32、64、100チーム以上もOK。大会はいくつでも作れます。</li><li>インターネット不要。会場や体育館など、電波がない場所でも使えます。</li><li>アカウント登録なし。開いてすぐ使え、データはスマホの中に残ります。</li></ul>
+<p>3ステップで準備完了<br>1. 形式を選びます。<br>2. チームや選手を追加します。手入力、メモやチャットからリストを貼り付け、または「チーム1〜16」をワンタップで。並び順がシード順になり、ランダム抽選で組み合わせをシャッフルできます。<br>3. 大会名、競技、オプションを決めて作成します。紙に線を引いて手作業で作る必要はもうありません。</p>
+<p>スコアを入れるだけ、あとは自動</p>
+<ul><li>大きな＋／−ボタンか数字入力でスコアを記録。勝者だけ決めたいときはワンタップ。</li><li>勝ち抜き戦で同点のときは、勝ち上がる側を選択（PK戦、延長、タイブレーク）。</li><li>勝者は自動で次の回戦へ。不戦勝は上位シードに自動で割り当てられ、順位表もすぐ更新されます。</li><li>「次の試合」で、次に行う対戦がいつでもわかります。</li><li>前の結果もあとから修正できます。勝ち上がる側が変わる場合は事前に警告し、影響する結果だけをクリア。間違えたら元に戻すこともできます。</li></ul>
+<p>見やすいトーナメント表</p>
+<ul><li>回戦、シード、つながる線で一目でわかる表示。ピンチや＋／−ボタンで拡大・縮小できます。</li><li>ダブルイリミネーションは勝者側・敗者側のブラケットに対応。グランドファイナル再戦も選べます。</li><li>3位決定戦、準々決勝、準決勝、決勝の名前も自動で表示。大会当日の進行表としてそのまま使えます。</li></ul>
+<p>リーグ戦・予選リーグ・スイス式</p>
+<ul><li>総当たり戦の対戦表は回戦ごとに自動で作成。組み合わせを手書きで考える必要はありません。</li><li>順位表：試合数、勝ち、引き分け、負け、得失点差、勝ち点。</li><li>勝ち・引き分け・負けの勝ち点と、同率時の順位の決め方（得失点差優先か直接対決優先か）を設定できます。ルールは各順位表の下に表示されます。</li><li>予選リーグ＋決勝トーナメント：スネーク方式でグループ分けし、勝ち上がる人数を選択。各組の1位同士は決勝トーナメント1回戦で当たりません。</li><li>スイス式：同じ成績の人同士が対戦、再戦なし、公平な不戦勝、ブッフホルツによる順位決定。次の回戦の組み合わせも自動です。</li></ul>
+<p>主催者向けの便利な機能</p>
+<ul><li>クイックマッチ：大会を作らずに1試合だけ使える大きなスコアボード。テニス・パデルのカウント（15-30-40、ゲームとセット）にも対応。結果はあとから大会に記録できます。</li><li>クリケット：ラン、ウィケット、オーバーを記録。雨で中止なら「ノーリザルト」、順位表にはネットランレートを表示。</li><li>テンプレートから始められます（フットサル大会、職場の卓球リーグ、バーでダーツナイトなど）。まずサンプルを見ることもできます。</li><li>3・5・7戦制のシリーズをラウンドごとに設定。欠場はワンタップで。</li><li>試合ごとの日時と会場、保存した選手リスト、同じチームで「もう一度」。</li><li>チームカラーと写真、またはイニシャルの丸。</li><li>表彰台つきの優勝の瞬間を、そのまま画像で共有。</li><li>削除した大会は30日間ゴミ箱に残ります。</li></ul>
+<p>みんなに共有</p>
+<h2>トーナメント表や対戦表、順位表は画像で、結果はテキストで、表計算用はCSVで。メッセージアプリやメールで送れます。グループチャットに画像を貼れば、参加者全員がその場で結果を確認できます。</h2>
+<p>結果は安全に保存<br>変更はすべてスマホに即保存され、ひとつ前のバージョンの予備コピーも残ります。バックアップファイルを保存すれば、新しいスマホにも大会を移せます。</p>
+<p>どんな競技・ゲームにも<br>サッカー、フットサル、バスケットボール、バレーボール、テニス、卓球、バドミントン、パデル、アイスホッケー、野球、クリケット、eスポーツやビデオゲーム、チェス、将棋などのボードゲーム、カードゲーム、ダーツ、ビリヤード、ボウリングなど、勝ち負けがつくものなら何でも。</p>
+<p>学校の球技大会やクラス対抗の総当たり戦、体育の授業、社内の卓球大会、草サッカー、ダーツバーやビリヤードのリーグ戦、チェス・ボードゲームのサークル、友だちとのeスポーツ大会、家族のゲーム大会に。手軽なトーナメントメーカーとして、トーナメント表作成を誰でもすぐに始められます。</p>
+<p>ライトテーマとダークテーマを選べます。</p></div></section>
+<footer><div class="foot"><h2 class="label">その他のアプリ</h2><div class="net"><div><a href="/electric-toolkit/ja-JP/">Wirekit</a><p>分電盤の回路一覧表、配線練習、電線サイズと電圧降下の電気計算、電線管の曲げ。</p></div><div><a href="/morse-trainer/ja-JP/">Morsenta</a><p>広告なし。モールス信号と和文モールスを耳で覚える。コッホ法のCW練習、翻訳、電鍵。オフライン</p></div><div><a href="/portfolio-app/">Pecuo</a><p>No ads. Herd management for cattle, goats &amp; sheep: track every dose and birth</p></div><div><a href="/tactic-board/ja-JP/">Tacticana</a><p>広告なしのサッカー作戦ボード：スタメン、戦術アニメ、動画。オフライン対応</p></div></div><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/tournament-bracket/privacy/ja-JP.html">プライバシーポリシー</a><a href="/">すべてのアプリ</a><a href="mailto:hello@maumiuworks.com">お問い合わせ</a><a href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&hl=ja-JP" rel="noopener">Google Play</a></nav></div></div></footer>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

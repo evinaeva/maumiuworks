@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru-RU" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wirekit — Политика конфиденциальности</title>
+<meta name="color-scheme" content="dark light"><meta name="robots" content="noindex">
+<link rel="icon" href="/electric-toolkit/img/icon.webp">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0a7f9c;--cyan-hi:#0a7f9c;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--teal)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--teal);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--teal-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+
+.doc{max-width:46rem;margin:0 auto;padding:2.5rem 1.25rem 3.5rem}
+.doc h1{font:600 clamp(1.4rem,3.4vw,1.9rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:0 0 1.4rem}
+.doc h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:2.2rem 0 .7rem}
+.doc h3{font:600 15px Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.doc p{margin:0 0 1rem}.doc strong{font-weight:600}
+.doc ul{list-style:none;padding:0;margin:0 0 1rem}.doc li{position:relative;padding-inline-start:1.3rem;margin:.55rem 0}
+.doc li::before{content:"";position:absolute;inset-inline-start:0;top:.75em;width:.45rem;height:1px;background:var(--cyan)}
+.doc .upd{color:var(--soft);font-size:13px;margin-top:2.4rem}
+</style></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="Все приложения" aria-label="Maumiu Works — Все приложения">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app" href="/electric-toolkit/ru-RU/"><img src="/electric-toolkit/img/icon.webp" alt="" width="26" height="26"><span>Wirekit</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Политика конфиденциальности</span></nav><div class="tools"><details class="langs"><summary aria-label="Язык: Русский" title="Русский"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"></summary><ul><li><a href="/electric-toolkit/privacy/ar.html" hreflang="ar" lang="ar"><img class="flag" src="/flags/sa.svg" alt="" width="24" height="16"><span>العربية</span></a></li><li><a href="/electric-toolkit/privacy/cs-CZ.html" hreflang="cs-CZ" lang="cs-CZ"><img class="flag" src="/flags/cs.svg" alt="" width="24" height="16"><span>cs-CZ</span></a></li><li><a href="/electric-toolkit/privacy/de-DE.html" hreflang="de-DE" lang="de-DE"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/electric-toolkit/privacy/" hreflang="en-US" lang="en-US"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/electric-toolkit/privacy/es-419.html" hreflang="es-419" lang="es-419"><img class="flag" src="/flags/mx.svg" alt="" width="24" height="16"><span>Español (Latinoamérica)</span></a></li><li><a href="/electric-toolkit/privacy/fr-FR.html" hreflang="fr-FR" lang="fr-FR"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/electric-toolkit/privacy/hi-IN.html" hreflang="hi-IN" lang="hi-IN"><img class="flag" src="/flags/in.svg" alt="" width="24" height="16"><span>हिन्दी</span></a></li><li><a href="/electric-toolkit/privacy/id.html" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/electric-toolkit/privacy/it-IT.html" hreflang="it-IT" lang="it-IT"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/electric-toolkit/privacy/ja-JP.html" hreflang="ja-JP" lang="ja-JP"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/electric-toolkit/privacy/pt-BR.html" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/electric-toolkit/privacy/ru-RU.html" hreflang="ru-RU" lang="ru-RU" aria-current="true"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/electric-toolkit/privacy/tr-TR.html" hreflang="tr-TR" lang="tr-TR"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li><li><a href="/electric-toolkit/privacy/uk.html" hreflang="uk" lang="uk"><img class="flag" src="/flags/ua.svg" alt="" width="24" height="16"><span>Українська</span></a></li><li><a href="/electric-toolkit/privacy/vi.html" hreflang="vi" lang="vi"><img class="flag" src="/flags/vn.svg" alt="" width="24" height="16"><span>Tiếng Việt</span></a></li></ul></details></div></header>
+<main class="doc"><article><!--doc-->
+<h1>Wirekit — Политика конфиденциальности</h1>
+<p><strong>Wirekit не собирает, не передаёт и не продаёт персональные данные.</strong> Отправляются только анонимные счётчики использования (см. ниже), и их можно выключить.</p>
+<ul><li><strong>Работает офлайн.</strong> Всё работает без интернета. Приложение отправляет только анонимную статистику, описанную ниже, и её можно выключить. Ещё оно может скачивать обновлённые тексты и таблицы (см. «Обновления данных»).</li><li><strong>Без аккаунта и рекламы.</strong> Нет входа, рекламных SDK, сторонних SDK аналитики и отчётов о сбоях, рекламного идентификатора.</li><li><strong>Анонимная статистика использования.</strong> Чтобы понимать, какие части приложения полезны, приложение считает на вашем телефоне по дням: какие экраны открываются, на каком экране вы вышли из приложения, какие главные кнопки нажимались и какие функции (например, экспорт) использовались. Раз в сутки оно отправляет эти счётчики на наш собственный сервер (stats.jevgenia.com) вместе с версией приложения, языком приложения и датой. Не отправляются идентификатор устройства или рекламный идентификатор, идентификатор сессии, точное время, местоположение и ничего из того, что вы вводите. Сервер только прибавляет счётчики к суточным суммам по версии и не хранит сам запрос. Как любой запрос в интернете, он видит ваш IP-адрес; использует его только в памяти, чтобы принять запрос и ограничить злоупотребления, и никогда не сохраняет и не пишет в журналы. Суммы хранятся не дольше 25 месяцев и никому не передаются. Выключить можно в любой момент в настройках («Отправлять анонимную статистику»); ещё не отправленные счётчики при этом удаляются. Правовое основание: наш законный интерес в улучшении приложения (ст. 6(1)(f) GDPR); данные анонимны.</li><li><strong>Обновления данных.</strong> Приложение может скачивать обновлённые тексты и справочные таблицы с нашего сервера (capgo.jevgenia.com). В запросе нет идентификаторов, связанных с вами или вашим устройством; как любой запрос в интернете, он сообщает серверу ваш IP-адрес, который используется только для передачи файла и не сохраняется.</li><li><strong>Ваши данные остаются на телефоне.</strong> Ваши щитки (названия групп и подписи автоматов), прогресс в тренажёре и настройки хранятся только в личном хранилище приложения на вашем устройстве. Они удаляются, когда вы удаляете приложение или очищаете его данные.</li><li><strong>Резервные копии и экспорт — ваши.</strong> Если вы сохраняете файл копии или делитесь схемой щитка в PDF, файл попадает только туда, куда вы выберете: в приложение из меню «Поделиться» или в выбранную папку. Приложение никуда больше эти файлы не отправляет.</li><li><strong>Системная резервная копия Android.</strong> Если вы включили резервное копирование самого Android, Android может добавить данные приложения в личную резервную копию устройства в вашем аккаунте Google. Это настраиваете вы в настройках телефона, а не приложение.</li><li><strong>Google Play.</strong> Приложение распространяется через Google Play. Google может предложить оценить приложение или обновить его в собственных системных окнах; их обрабатывает Google Play по политике конфиденциальности Google.</li><li><strong>Дети.</strong> Приложение не предназначено для детей и сознательно ни у кого не собирает персональные данные.</li></ul>
+<p>Изменения этой политики публикуются на этой странице с новой датой. Вопросы: hello@maumiuworks.com.</p>
+<!--/doc-->
+<p class="upd">2026-11-12</p></article></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/electric-toolkit/ru-RU/">Wirekit</a><a href="/">Все приложения</a><a href="mailto:hello@maumiuworks.com">Связаться</a></nav></div></div></footer>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

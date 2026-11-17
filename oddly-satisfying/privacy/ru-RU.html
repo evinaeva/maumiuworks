@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru-RU" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Oddly Satisfying Restoration — политика конфиденциальности</title>
+<meta name="color-scheme" content="dark light"><meta name="robots" content="noindex">
+<link rel="icon" href="/oddly-satisfying/img/icon.webp">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0a7f9c;--cyan-hi:#0a7f9c;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--teal)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--teal);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--teal-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+
+.doc{max-width:46rem;margin:0 auto;padding:2.5rem 1.25rem 3.5rem}
+.doc h1{font:600 clamp(1.4rem,3.4vw,1.9rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:0 0 1.4rem}
+.doc h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:2.2rem 0 .7rem}
+.doc h3{font:600 15px Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.doc p{margin:0 0 1rem}.doc strong{font-weight:600}
+.doc ul{list-style:none;padding:0;margin:0 0 1rem}.doc li{position:relative;padding-inline-start:1.3rem;margin:.55rem 0}
+.doc li::before{content:"";position:absolute;inset-inline-start:0;top:.75em;width:.45rem;height:1px;background:var(--cyan)}
+.doc .upd{color:var(--soft);font-size:13px;margin-top:2.4rem}
+</style></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="Все приложения" aria-label="Maumiu Works — Все приложения">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app" href="/oddly-satisfying/ru-RU/"><img src="/oddly-satisfying/img/icon.webp" alt="" width="26" height="26"><span>Oddly Satisfying Restoration</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Политика конфиденциальности</span></nav><div class="tools"><details class="langs"><summary aria-label="Язык: Русский" title="Русский"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"></summary><ul><li><a href="/oddly-satisfying/privacy/de-DE.html" hreflang="de-DE" lang="de-DE"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/oddly-satisfying/privacy/" hreflang="en-US" lang="en-US"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/oddly-satisfying/privacy/es-ES.html" hreflang="es-ES" lang="es-ES"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español (España)</span></a></li><li><a href="/oddly-satisfying/privacy/fr-FR.html" hreflang="fr-FR" lang="fr-FR"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/oddly-satisfying/privacy/pt-BR.html" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/oddly-satisfying/privacy/ru-RU.html" hreflang="ru-RU" lang="ru-RU" aria-current="true"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/oddly-satisfying/privacy/tr-TR.html" hreflang="tr-TR" lang="tr-TR"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main class="doc"><article><!--doc-->
+<h1>Oddly Satisfying Restoration — политика конфиденциальности</h1>
+<p><strong>Без аккаунта, рекламы, рекламного ID и покупок. Игра отправляет нам анонимную статистику игры — её можно выключить в настройках.</strong></p>
+<ul><li><strong>Прогресс хранится на телефоне.</strong> Очищенные вещи, ход истории и настройки лежат в закрытом хранилище игры на устройстве и удаляются вместе с игрой или при очистке её данных.</li><li><strong>Облачное сохранение Google Play Игры.</strong> Если вы вошли в Google Play Игры, игра сохраняет тот же прогресс в ваш аккаунт Play Игр, чтобы он пережил смену телефона. Его хранит Google по своим правилам; мы его не видим.</li><li><strong>Анонимная статистика игры.</strong> Чтобы понять, что в игре нравится и где игроки останавливаются, игра отправляет на наш сервер короткие события: какой режим вы открыли (история или свободная чистка), в какую сцену вошли и вышли и сколько в ней пробыли, до какого шага чистки дошли, досмотрели ли ролик или пропустили (и на какой секунде), когда началась игра и когда её свернули, а также версию игры, её язык и версию Android.</li><li><strong>Случайный номер, а не вы.</strong> События помечены случайным номером установки, который игра создаёт при первом запуске. Это не рекламный ID и не номер устройства, он не связан с вашим именем, аккаунтом Google или почтой. IP-адреса мы не храним. Сторонних сервисов аналитики нет, данные не продаются и не передаются. События удаляются через 13 месяцев.</li><li><strong>Как выключить.</strong> Откройте настройки (шестерёнка) и нажмите «Статистика: вкл». Игра перестанет отправлять события и удалит с телефона номер установки и неотправленные события. Уже отправленное мы не можем связать с вами; оно удалится через 13 месяцев.</li><li><strong>Обновления игры.</strong> Игра может скачивать небольшие обновления (картинки, звуки, сцены) с нашего сервера capgo.jevgenia.com. В запросе только версия игры; сервер не записывает IP-адреса.</li><li><strong>Google Play.</strong> Игра распространяется через Google Play. Google может собирать данные об установках и стабильности по своей политике конфиденциальности.</li><li><strong>Дети.</strong> Игра сознательно не собирает личные данные ни у кого, включая детей до 13 лет. В статистике выше личных данных нет.</li></ul>
+<p>Изменения политики публикуются на этой странице с новой датой. Вопросы: hello@maumiuworks.com.</p>
+<!--/doc-->
+<p class="upd">2026-11-11</p></article></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/oddly-satisfying/ru-RU/">Oddly Satisfying Restoration</a><a href="/">Все приложения</a><a href="mailto:hello@maumiuworks.com">Связаться</a></nav></div></div></footer>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

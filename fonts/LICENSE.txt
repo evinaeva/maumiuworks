@@ -1,0 +1,2 @@
+Open Sans and Montserrat are licensed under the SIL Open Font License 1.1 (https://openfontlicense.org).
+Downloaded from Google Fonts 2026-11-11 for self-hosting on jevgenia.com (publish-landing.py copies this folder to /fonts/).

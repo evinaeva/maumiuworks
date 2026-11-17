@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko-KR" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tacticana: 축구 라인업·포메이션 만들기</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/tactic-board/img/icon.webp">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="광고 없는 축구 라인업 만들기·포메이션 전술판: 전술 애니메이션, 동영상, 오프라인">
+<link rel="canonical" href="https://maumiuworks.com/tactic-board/ko-KR/">
+<link rel="alternate" hreflang="ar" href="https://maumiuworks.com/tactic-board/ar/">
+<link rel="alternate" hreflang="de-DE" href="https://maumiuworks.com/tactic-board/de-DE/">
+<link rel="alternate" hreflang="en-GB" href="https://maumiuworks.com/tactic-board/en-GB/">
+<link rel="alternate" hreflang="en-US" href="https://maumiuworks.com/tactic-board/">
+<link rel="alternate" hreflang="es-419" href="https://maumiuworks.com/tactic-board/es-419/">
+<link rel="alternate" hreflang="es-ES" href="https://maumiuworks.com/tactic-board/es-ES/">
+<link rel="alternate" hreflang="fr-FR" href="https://maumiuworks.com/tactic-board/fr-FR/">
+<link rel="alternate" hreflang="id" href="https://maumiuworks.com/tactic-board/id/">
+<link rel="alternate" hreflang="it-IT" href="https://maumiuworks.com/tactic-board/it-IT/">
+<link rel="alternate" hreflang="ja-JP" href="https://maumiuworks.com/tactic-board/ja-JP/">
+<link rel="alternate" hreflang="ko-KR" href="https://maumiuworks.com/tactic-board/ko-KR/">
+<link rel="alternate" hreflang="pl-PL" href="https://maumiuworks.com/tactic-board/pl-PL/">
+<link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/tactic-board/pt-BR/">
+<link rel="alternate" hreflang="ru-RU" href="https://maumiuworks.com/tactic-board/ru-RU/">
+<link rel="alternate" hreflang="tr-TR" href="https://maumiuworks.com/tactic-board/tr-TR/">
+<link rel="alternate" hreflang="vi" href="https://maumiuworks.com/tactic-board/vi/">
+<link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/tactic-board/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://maumiuworks.com/tactic-board/ko-KR/"><meta property="og:title" content="Tacticana: 축구 라인업·포메이션 만들기">
+<meta property="og:description" content="광고 없는 축구 라인업 만들기·포메이션 전술판: 전술 애니메이션, 동영상, 오프라인"><meta property="og:image" content="https://maumiuworks.com/tactic-board/img/og-ko-KR.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Tacticana: 축구 라인업·포메이션 만들기", "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "description": "광고 없는 축구 라인업 만들기·포메이션 전술판: 전술 애니메이션, 동영상, 오프라인", "url": "https://maumiuworks.com/tactic-board/ko-KR/", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "downloadUrl": "https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard", "inLanguage": "ko-KR"}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0a7f9c;--cyan-hi:#0a7f9c;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--teal)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--teal);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--teal-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+
+.hero{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 1.25rem 5.5rem;color:#fff;
+background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url(/tactic-board/img/bg.svg) center/cover no-repeat,#2a2a2a}
+.hero-in{max-width:46rem}
+.hero img.logo{width:96px;height:96px;border-radius:22%;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.word{font:300 clamp(1.4rem,4vw,2.1rem)/1.25 "Open Sans",sans-serif;letter-spacing:.38em;text-transform:uppercase;margin:1.6rem 0 .3rem;padding-inline-start:.38em;color:#fff}
+.sub{font-size:13px;color:#c9ced5;margin:0}
+.tag{font-size:18.4px;line-height:1.65;color:#d9dde3;margin:1.4rem auto 2rem;max-width:40rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.facts{display:block;font-size:13px;color:#c9ced5;margin-top:1.3rem}
+section.band{max-width:62rem;margin:0 auto;padding:3rem 1.25rem}
+.shots{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.75rem;scroll-snap-type:x mandatory}
+.shots img{height:460px;width:auto;border-radius:10px;border:1px solid var(--line);scroll-snap-align:start;flex:none;background:var(--bar)}
+.desc{max-width:46rem}.desc p{margin:0 0 1rem}
+.desc h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:2rem 0 .6rem}
+.desc ul{list-style:none;padding:0;margin:0 0 1rem}.desc li{position:relative;padding-inline-start:1.3rem;margin:.45rem 0}
+.desc li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:.45rem;height:1px;background:var(--cyan)}
+@media (max-width:40rem){.hero{min-height:0;padding:3rem 1rem}.shots img{height:380px}}
+.hero.g{min-height:0;background:#2a2a2a;padding:2.5rem 1.25rem 3.5rem}.hero.g .hero-in{max-width:64rem}
+.hero.g img.banner{display:block;width:100%;max-width:1024px;height:auto;margin:0 auto;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.hero.g .word{margin-top:1.8rem}
+</style></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="모든 앱" aria-label="Maumiu Works — 모든 앱">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app" href="/tactic-board/ko-KR/" aria-current="page"><img src="/tactic-board/img/icon.webp" alt="" width="26" height="26"><span>Tacticana</span></a></nav><nav class="nav mont" aria-label="Tacticana: 축구 라인업·포메이션 만들기"><a href="#features">기능</a><a href="#screens">스크린샷</a></nav><div class="tools"><details class="langs"><summary aria-label="언어: 한국어" title="한국어"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"></summary><ul><li><a href="/tactic-board/ar/" hreflang="ar" lang="ar"><img class="flag" src="/flags/sa.svg" alt="" width="24" height="16"><span>العربية</span></a></li><li><a href="/tactic-board/de-DE/" hreflang="de-DE" lang="de-DE"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/tactic-board/en-GB/" hreflang="en-GB" lang="en-GB"><img class="flag" src="/flags/gb.svg" alt="" width="24" height="16"><span>English (UK)</span></a></li><li><a href="/tactic-board/" hreflang="en-US" lang="en-US"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/tactic-board/es-419/" hreflang="es-419" lang="es-419"><img class="flag" src="/flags/mx.svg" alt="" width="24" height="16"><span>Español (Latinoamérica)</span></a></li><li><a href="/tactic-board/es-ES/" hreflang="es-ES" lang="es-ES"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español (España)</span></a></li><li><a href="/tactic-board/fr-FR/" hreflang="fr-FR" lang="fr-FR"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/tactic-board/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/tactic-board/it-IT/" hreflang="it-IT" lang="it-IT"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/tactic-board/ja-JP/" hreflang="ja-JP" lang="ja-JP"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/tactic-board/ko-KR/" hreflang="ko-KR" lang="ko-KR" aria-current="true"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/tactic-board/pl-PL/" hreflang="pl-PL" lang="pl-PL"><img class="flag" src="/flags/pl.svg" alt="" width="24" height="16"><span>Polski</span></a></li><li><a href="/tactic-board/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/tactic-board/ru-RU/" hreflang="ru-RU" lang="ru-RU"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/tactic-board/tr-TR/" hreflang="tr-TR" lang="tr-TR"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li><li><a href="/tactic-board/vi/" hreflang="vi" lang="vi"><img class="flag" src="/flags/vn.svg" alt="" width="24" height="16"><span>Tiếng Việt</span></a></li></ul></details><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard&amp;hl=ko-KR" rel="noopener">Google Play</a></div></header>
+<section class="hero"><div class="hero-in">
+<img class="logo" src="/tactic-board/img/icon.webp" alt="" width="96" height="96">
+<h1 class="word">Tacticana</h1><p class="sub">Tacticana: 축구 라인업·포메이션 만들기</p>
+<p class="tag">광고 없는 축구 라인업 만들기·포메이션 전술판: 전술 애니메이션, 동영상, 오프라인</p>
+<div class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard&amp;hl=ko-KR" rel="noopener">Google Play에서 다운로드 <span class="arrow" aria-hidden="true"></span></a>
+<a class="btn btn-ghost" href="#features">기능</a></div><span class="facts">오프라인 작동 · 계정 불필요</span>
+</div></section>
+<section class="band" id="screens"><h2 class="label">스크린샷</h2><div class="shots"><img src="/tactic-board/img/en-US/1.webp" width="420" height="747" alt="Tacticana: 축구 라인업·포메이션 만들기 — 1" loading="lazy"><img src="/tactic-board/img/en-US/2.webp" width="420" height="747" alt="Tacticana: 축구 라인업·포메이션 만들기 — 2" loading="lazy"><img src="/tactic-board/img/en-US/3.webp" width="420" height="747" alt="Tacticana: 축구 라인업·포메이션 만들기 — 3" loading="lazy"><img src="/tactic-board/img/en-US/4.webp" width="420" height="747" alt="Tacticana: 축구 라인업·포메이션 만들기 — 4" loading="lazy"><img src="/tactic-board/img/en-US/5.webp" width="420" height="747" alt="Tacticana: 축구 라인업·포메이션 만들기 — 5" loading="lazy"></div></section>
+<section class="band" id="features"><h2 class="label">기능</h2><div class="desc"><p>축구 감독과 코치를 위한 전술판입니다. 축구 라인업 만들기, 축구 포메이션 설정, 전술 그리기를 한곳에서 하고 선수들의 움직임을 단계별 애니메이션으로 보여 주세요. 벤치에서도, 라커룸에서도, 집에서 훈련을 준비할 때도 인터넷 없이 쓸 수 있습니다. 광고 없음, 회원가입과 계정도 필요 없고, 전술판은 휴대폰에만 저장됩니다.</p>
+<p>모든 경기 방식에 맞는 경기장</p>
+<ul><li>11인제, 9인제, 8인제, 7인제, 6인제, 5인제, 4인제, 3인제, 풋살, 하프 코트</li><li>가로·세로 방향, 다양한 경기장 스타일</li><li>태블릿과 가로 화면에서도 편리하게</li></ul>
+<p>선수와 훈련 도구</p>
+<ul><li>등번호와 이름이 있는 두 팀, 골키퍼는 따로 표시</li><li>공, 콘, 마커, 폴, 사다리, 미니 골대로 훈련 메뉴 구성</li><li>손가락으로 끌어서 자유롭게 이동</li></ul>
+<p>전술 그리기</p>
+<ul><li>패스(점선), 침투, 드리블(물결선) 화살표, 직선이나 곡선으로</li><li>선, 구역, 텍스트</li><li>자유 그리기</li><li>실행 취소·다시 실행</li></ul>
+<p>움직이는 전술</p>
+<ul><li>화살표를 그리고 ‘+ 단계’를 누르면 선수와 공이 화살표를 따라 움직입니다</li><li>패스는 공이 받는 선수 발밑까지, 침투는 선수가, 드리블은 선수가 공을 몰고 이동</li><li>곡선 화살표도 그대로 따라가서 실제 경기처럼 보입니다</li><li>애니메이션으로 재생하고 속도 조절, 세트피스와 오프 더 볼 움직임 설명에 딱</li><li>바로 쓸 수 있는 예시 전술: 후방 빌드업, 측면 오버래핑, 코너킥, 론도 4대2</li></ul>
+<p>포메이션과 라인업</p>
+<ul><li>기본 포메이션: 4-4-2, 4-3-3, 4-2-3-1, 3-5-2, 3-4-3, 5-3-2 외 다수</li><li>7인제, 5인제, 풋살용 템플릿</li><li>전술판마다 라인업 목록: 번호와 이름을 빠르게 입력하면 이름이 선수 아래에 표시되고 함께 움직입니다</li><li>팀의 번호와 이름을 스쿼드로 저장(예: U12)하고 어느 전술판에서든 불러오기: 등번호대로, 나머지는 순서대로</li></ul>
+<p>저장과 공유</p>
+<ul><li>무제한 저장, 폴더, 검색</li><li>전술판을 복제해서 다른 전술 시도</li><li>전술 전체는 MP4 동영상이나 움직이는 GIF로, 한 단계는 PNG 이미지로 내보내 팀 단톡방에 공유</li><li>동영상이나 이미지를 휴대폰 갤러리에 바로 저장</li><li>인쇄하거나 PDF로 보내기: 한 페이지에 한 단계, 선수들에게 남기는 메모까지</li><li>전술판 파일을 다른 코치에게 보내 그쪽 앱에서 열기</li><li>모든 전술판과 스쿼드를 파일 하나로 백업하고 새 휴대폰에서 복원</li></ul>
+<p>모든 데이터는 기기에만 저장됩니다. 익명 통계는 설정에서 끌 수 있습니다. 라이트·다크 테마. 접근성: 색각 이상용 모드, 고대비, 큰 버튼, 글자 크기 조절.</p>
+<p>유소년 축구 지도자, 조기축구회, 아마추어 팀, 체육 선생님, 선수, 그리고 축구 전술 이야기를 좋아하는 모든 분께 추천합니다.</p></div></section>
+<footer><div class="foot"><h2 class="label">다른 앱</h2><div class="net"><div><a href="/electric-toolkit/">Wirekit</a><p>Electrical calculator: wire size, voltage drop, breaker panel. No ads. Offline.</p></div><div><a href="/morse-trainer/ko-KR/">Morsenta</a><p>광고 없음. 귀로 배우는 모스 부호: 코흐 방식 CW 연습, 한글 모스 번역, 전건. 오프라인</p></div><div><a href="/portfolio-app/">Pecuo</a><p>No ads. Herd management for cattle, goats &amp; sheep: track every dose and birth</p></div><div><a href="/tournament-bracket/ko-KR/">Ligona</a><p>광고 없음: 토너먼트 대진표 만들기, 리그, 조별 리그, 스위스 방식. 오프라인</p></div></div><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/tactic-board/privacy/ko-KR.html">개인정보처리방침</a><a href="/">모든 앱</a><a href="mailto:hello@maumiuworks.com">문의</a><a href="https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard&hl=ko-KR" rel="noopener">Google Play</a></nav></div></div></footer>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>
