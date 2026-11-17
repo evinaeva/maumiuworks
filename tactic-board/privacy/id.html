@@ -71,6 +71,11 @@ footer{background:var(--bar);border-top:1px solid var(--bar-line)}
 <p>Perubahan kebijakan ini dipublikasikan di halaman ini dengan tanggal baru. Pertanyaan: hello@maumiuworks.com.</p>
 <!--/doc-->
 <p class="upd">2026-11-11</p></article></main>
-<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/tactic-board/id/">Tacticana</a><a href="/">Semua aplikasi</a><a href="mailto:hello@maumiuworks.com">Kontak</a></nav></div></div></footer>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/tactic-board/id/">Tacticana</a><a href="/">Semua aplikasi</a><a href="mailto:hello@maumiuworks.com">Kontak</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
 <script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
 </body></html>
