@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>대회 경기 수는 몇 경기일까? 계산 공식과 표 — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="토너먼트: N-1경기. 더블 엘리미네이션: 2N-2 또는 2N-1경기. 풀리그: N(N-1)/2경기. 스위스 방식: 라운드 수 × N/2경기. 4~32팀 경기 수 표 포함.">
+<link rel="canonical" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/ko/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/guides/how-many-games-in-a-tournament/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="대회 경기 수는 몇 경기일까? 계산 공식과 표"><meta property="og:description" content="토너먼트: N-1경기. 더블 엘리미네이션: 2N-2 또는 2N-1경기. 풀리그: N(N-1)/2경기. 스위스 방식: 라운드 수 × N/2경기. 4~32팀 경기 수 표 포함."><meta property="og:url" content="https://maumiuworks.com/guides/how-many-games-in-a-tournament/ko/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "대회 경기 수는 몇 경기일까?", "description": "토너먼트: N-1경기. 더블 엘리미네이션: 2N-2 또는 2N-1경기. 풀리그: N(N-1)/2경기. 스위스 방식: 라운드 수 × N/2경기. 4~32팀 경기 수 표 포함.", "inLanguage": "ko", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "mainEntityOfPage": "https://maumiuworks.com/guides/how-many-games-in-a-tournament/ko/", "about": {"@type": "SoftwareApplication", "name": "Ligona", "operatingSystem": "Android", "url": "https://maumiuworks.com/tournament-bracket/ko-KR/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "가이드", "item": "https://maumiuworks.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "대회 경기 수는 몇 경기일까?", "item": "https://maumiuworks.com/guides/how-many-games-in-a-tournament/ko/"}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="모든 앱" aria-label="Maumiu Works — 모든 앱">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/guides/" aria-label="가이드"><span>가이드</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">대회 경기 수는 몇 경기일까?</span></nav><div class="tools"><details class="langs"><summary aria-label="언어: 한국어" title="한국어"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"></summary><ul><li><a href="/guides/how-many-games-in-a-tournament/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/guides/how-many-games-in-a-tournament/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/guides/how-many-games-in-a-tournament/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/guides/how-many-games-in-a-tournament/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/guides/how-many-games-in-a-tournament/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/guides/how-many-games-in-a-tournament/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/guides/how-many-games-in-a-tournament/ja/" hreflang="ja" lang="ja"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/guides/how-many-games-in-a-tournament/ko/" hreflang="ko" lang="ko" aria-current="true"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/guides/how-many-games-in-a-tournament/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/guides/how-many-games-in-a-tournament/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/guides/how-many-games-in-a-tournament/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap"><article class="art"><h1>대회 경기 수는 몇 경기일까?</h1><p class="byline">Maumiu Works · 업데이트 <time datetime="2026-11-26">2026년 11월 26일</time></p><nav class="toc" aria-label="이 페이지의 내용"><p>이 페이지의 내용</p><ol><li><a href="#4-32">4팀부터 32팀까지 경기 수는 몇 경기일까?</a></li><li><a href="#n-1">토너먼트는 왜 N-1경기일까?</a></li><li><a href="#2n-2-2n-1">더블 엘리미네이션은 왜 2N-2경기 또는 2N-1경기일까?</a></li><li><a href="#s">풀리그는 몇 경기일까?</a></li><li><a href="#s">조별리그 후 토너먼트를 치르면 몇 경기일까?</a></li><li><a href="#s">스위스 방식은 몇 경기일까?</a></li><li><a href="#s">팀당 몇 경기를 치를까?</a></li><li><a href="#s">코트가 여러 개일 때 대회 시간은 얼마나 걸릴까?</a></li><li><a href="#s">주어진 시간에 맞는 방식은?</a></li><li><a href="#s">자주 묻는 질문</a></li><li><a href="#s">참고 자료</a></li></ol></nav><p>경기 수는 대회 방식에 따라 달라집니다. 참가 팀이 N팀이면 <strong>토너먼트는 N-1경기</strong>, <strong>더블 엘리미네이션은 2N-2경기</strong>(그랜드 파이널 리셋이 나오면 2N-1경기), <strong>풀리그는 N(N-1)/2경기</strong>(홈 앤 어웨이는 그 두 배), <strong>스위스 방식은 라운드 수 × N/2경기</strong>입니다. N이 홀수면 N/2는 소수점 이하를 버립니다. 16팀이라면 각각 15경기, 30경기 또는 31경기, 120경기, 32경기(스위스 방식 4라운드)입니다.</p>
+<p>직접 계산해 보세요. <a href="/tools/tournament-games-calculator/">대회 경기 수 계산기</a>에 팀 수와 코트 수를 넣으면 바로 계산해 줍니다.</p>
+<h2 id="4-32">4팀부터 32팀까지 경기 수는 몇 경기일까?</h2>
+<div class="tbl"><table><thead><tr><th>팀 수</th><th>토너먼트</th><th>더블 엘리미네이션</th><th>더블 엘리미네이션(리셋 포함)</th><th>풀리그</th><th>풀리그(홈 앤 어웨이)</th><th>스위스 방식(라운드 × 경기)</th></tr></thead><tbody><tr><td>4</td><td>3</td><td>6</td><td>7</td><td>6</td><td>12</td><td>2 × 2 = 4</td></tr><tr><td>6</td><td>5</td><td>10</td><td>11</td><td>15</td><td>30</td><td>3 × 3 = 9</td></tr><tr><td>8</td><td>7</td><td>14</td><td>15</td><td>28</td><td>56</td><td>3 × 4 = 12</td></tr><tr><td>10</td><td>9</td><td>18</td><td>19</td><td>45</td><td>90</td><td>4 × 5 = 20</td></tr><tr><td>12</td><td>11</td><td>22</td><td>23</td><td>66</td><td>132</td><td>4 × 6 = 24</td></tr><tr><td>16</td><td>15</td><td>30</td><td>31</td><td>120</td><td>240</td><td>4 × 8 = 32</td></tr><tr><td>24</td><td>23</td><td>46</td><td>47</td><td>276</td><td>552</td><td>5 × 12 = 60</td></tr><tr><td>32</td><td>31</td><td>62</td><td>63</td><td>496</td><td>992</td><td>5 × 16 = 80</td></tr></tbody></table></div>
+<p>스위스 방식 열은 흔히 쓰는 최소 라운드 수, 즉 log2 N을 올림한 값을 기준으로 했습니다. 실제 스위스 방식 대회는 한두 라운드를 더 치르는 경우가 많은데, 라운드가 하나 늘 때마다 N/2경기가 추가됩니다. 표의 숫자에는 3·4위전이 빠져 있으니, 3·4위전을 치른다면 1경기를 더하세요.</p>
+<h2 id="n-1">토너먼트는 왜 N-1경기일까?</h2>
+<p>한 경기를 치를 때마다 정확히 한 팀이 탈락하고, 우승 팀을 뺀 모든 팀이 탈락해야 대회가 끝납니다. 그래서 16팀이면 15경기, 100팀이면 99경기가 필요합니다. 부전승이 있어도 달라지지 않습니다. 12팀이 16칸짜리 대진표에 들어가면 부전승 4개는 경기가 아니므로 전체 경기 수는 그대로 11경기입니다.</p>
+<p>라운드 수는 log2 N을 올림한 값입니다. 9~16팀은 4라운드, 17~32팀은 5라운드입니다.</p>
+<h2 id="2n-2-2n-1">더블 엘리미네이션은 왜 2N-2경기 또는 2N-1경기일까?</h2>
+<p>한 경기를 치를 때마다 정확히 한 팀이 1패를 안게 됩니다. 우승 팀을 뺀 모든 팀이 2패를 하면 탈락하므로 2(N-1) = 2N-2경기가 됩니다. 그랜드 파이널에서 패자조 1위가 무패의 승자조 1위를 이기면 두 팀 모두 1패가 되어 결승을 한 번 더 치르는데, 이때는 2N-1경기입니다. 8팀 대회를 처음부터 끝까지 따라가 보고 싶다면 <a href="/guides/double-elimination-bracket-explained/ko/">더블 엘리미네이션 쉽게 이해하기</a>를 참고하세요.</p>
+<h2 id="s">풀리그는 몇 경기일까?</h2>
+<p>모든 팀이 서로 한 번씩 맞붙고, 대진 조합은 N(N-1)/2가지입니다. 팀당 경기 수는 N-1경기입니다. 일정은 N이 짝수면 N-1라운드, 홀수면 N라운드가 필요합니다(홀수일 때는 라운드마다 한 팀이 쉽니다). 홈 앤 어웨이(더블 라운드 로빈)로 치르면 둘 다 두 배가 됩니다. 10팀이면 18라운드에 걸쳐 90경기를 치르고, 팀당 18경기입니다. 세계 각국 프로축구 리그 대부분이 이 방식입니다.</p>
+<h2 id="s">조별리그 후 토너먼트를 치르면 몇 경기일까?</h2>
+<p>조별리그 경기 수와 토너먼트 경기 수를 더하면 됩니다.</p>
+<ul><li>조별리그 경기 수 = 조 개수 × s(s-1)/2 (s는 한 조의 팀 수)</li><li>토너먼트 경기 수 = 진출 팀 수 - 1</li><li>3·4위전을 치르면 1을 더합니다.</li></ul>
+<div class="tbl"><table><thead><tr><th>팀 수</th><th>조 편성</th><th>진출</th><th>조별리그 경기 수</th><th>토너먼트 경기 수</th><th>합계</th></tr></thead><tbody><tr><td>8</td><td>4팀씩 2개 조</td><td>조 2위까지 (4팀)</td><td>12</td><td>3</td><td>15</td></tr><tr><td>12</td><td>3팀씩 4개 조</td><td>조 2위까지 (8팀)</td><td>12</td><td>7</td><td>19</td></tr><tr><td>16</td><td>4팀씩 4개 조</td><td>조 2위까지 (8팀)</td><td>24</td><td>7</td><td>31</td></tr><tr><td>24</td><td>4팀씩 6개 조</td><td>조 2위까지 + 성적이 좋은 3위 4팀 (16팀)</td><td>36</td><td>15</td><td>51</td></tr><tr><td>32</td><td>4팀씩 8개 조</td><td>조 2위까지 (16팀)</td><td>48</td><td>15</td><td>63</td></tr></tbody></table></div>
+<p>실제 대회로 공식을 확인해 볼 수 있습니다. 32팀이 참가한 2022 FIFA 월드컵은 조별리그 48경기, 토너먼트 15경기, 3·4위전 1경기로 모두 64경기였습니다. 48팀이 참가하는 2026 월드컵은 4팀씩 12개 조(72경기), 32강 토너먼트(31경기), 3·4위전으로 104경기입니다. 표의 24팀 행은 2016년부터 2024년까지 UEFA 유럽선수권대회(유로)의 51경기와 같습니다.</p>
+<h2 id="s">스위스 방식은 몇 경기일까?</h2>
+<p>매 라운드 모든 선수가 대진을 받으므로 한 라운드는 N/2경기입니다(N이 홀수면 소수점 이하를 버리고, 한 선수가 부전승을 받습니다). 전체 경기 수 = 라운드 수 × N/2입니다. 라운드 수는 보통 log2 N을 올림한 값 이상으로 정하는데, 그래야 전승한 선수 한 명을 나머지와 가려낼 수 있습니다. 32명이면 5라운드, 128명이면 7라운드입니다. 대진 짜는 방법은 <a href="/guides/swiss-system-tournament-explained/ko/">스위스 방식 쉽게 이해하기</a>에서 확인하세요.</p>
+<h2 id="s">팀당 몇 경기를 치를까?</h2>
+<p>전체 경기 수만으로는 반쪽짜리 정보입니다. 선수들은 자기가 몇 경기를 뛰는지가 더 궁금하니까요.</p>
+<div class="tbl"><table><thead><tr><th>방식</th><th>팀당 경기 수</th></tr></thead><tbody><tr><td>토너먼트</td><td>1라운드 탈락 팀은 1경기, 결승 진출 팀은 log2 N경기(부전승이 있었다면 더 적음)</td></tr><tr><td>더블 엘리미네이션</td><td>최소 2경기, 패자조 1위 팀은 최대 약 2 × log2 N + 1경기</td></tr><tr><td>풀리그</td><td>모든 팀이 N-1경기 (홈 앤 어웨이는 2(N-1)경기)</td></tr><tr><td>조별리그 + 토너먼트</td><td>한 조의 팀 수 - 1경기에 토너먼트 경기 추가</td></tr><tr><td>스위스 방식</td><td>모든 팀이 라운드 수만큼 (부전승은 경기 없이 한 라운드로 셈)</td></tr></tbody></table></div>
+<p>8팀 기준으로는 토너먼트가 팀당 1~3경기, 더블 엘리미네이션이 2~7경기, 풀리그가 팀당 7경기, 스위스 방식이 팀당 3경기입니다.</p>
+<h2 id="s">코트가 여러 개일 때 대회 시간은 얼마나 걸릴까?</h2>
+<p>경기는 코트가 비는 만큼, 그리고 라운드 순서가 허락하는 만큼만 진행할 수 있습니다. 먼저 필요한 시간대(타임 슬롯) 수를 구한 다음, 한 슬롯의 길이(경기 시간 + 교체 시간)를 곱하세요.</p>
+<ul><li>라운드별 슬롯 수 = 그 라운드의 경기 수 ÷ 코트 수 (올림)</li><li>모든 라운드의 슬롯 수를 더합니다.</li></ul>
+<p>예시 1: 16팀 토너먼트, 코트 4개, 슬롯당 30분. 1라운드 8경기(2슬롯), 8강 4경기(1슬롯), 준결승 2경기(1슬롯), 결승 1경기(1슬롯)로 모두 5슬롯, 2시간 30분입니다.</p>
+<p>예시 2: 8팀 풀리그, 코트 2개, 슬롯당 20분. 4경기씩 7라운드, 라운드당 2슬롯이므로 14슬롯, 4시간 40분입니다. 코트가 4개면 7슬롯, 2시간 20분입니다.</p>
+<p>예시 3: 8팀 더블 엘리미네이션, 코트 2개. 승자조 1라운드가 2슬롯, 승자조 준결승과 패자조 1라운드가 다음 2슬롯을 나눠 쓰고, 이어서 패자조 2라운드(1슬롯), 승자조 결승과 패자조 3라운드(1슬롯), 패자조 결승(1슬롯), 그랜드 파이널(1슬롯)로 모두 8슬롯, 리셋이 나오면 9슬롯입니다. 이는 승자조와 패자조 라운드를 겹쳐 진행한다고 가정한 것입니다. 한 라운드씩 차례대로만 진행하면 9슬롯, 리셋 포함 10슬롯이며, 계산기에는 이 값이 나옵니다.</p>
+<p>어떤 토너먼트든 후반 라운드에는 코트를 한두 개만 쓰므로, 코트를 늘리면 주로 초반 라운드가 빨라집니다. 풀리그는 매 라운드 모든 코트를 쓰기 때문에 코트 수에 거의 정확히 비례해 시간이 줄어듭니다. 휴식 시간도 고려하세요. 체력 소모가 큰 종목이라면 한 팀이 두 슬롯을 연달아 뛰지 않게 하는 것이 좋습니다.</p>
+<h2 id="s">주어진 시간에 맞는 방식은?</h2>
+<ul><li><strong>시간은 짧고 팀은 많을 때:</strong> 토너먼트(N-1경기). 다만 참가 팀의 절반은 한 경기만 치르게 됩니다.</li><li><strong>시간이 조금 더 있고, 모든 팀이 최소 두 경기는 뛰어야 할 때:</strong> 더블 엘리미네이션(약 2N경기) 또는 조별리그 + 토너먼트.</li><li><strong>팀 수가 적고, 모두가 서로 한 번씩 붙어야 할 때:</strong> 풀리그. 4~10팀이 적당합니다.</li><li><strong>참가자가 많고 라운드 수를 정해 두고 싶을 때:</strong> 스위스 방식. 모든 참가자가 매 라운드 경기를 합니다.</li></ul>
+<p>휴대폰으로 대회를 운영한다면 <a href="/tournament-bracket/ko-KR/">Ligona</a>(Android)로 이 다섯 가지 방식을 모두 만들 수 있습니다. 점수를 입력할 때마다 대진표, 일정, 순위표가 자동으로 갱신되고, 경기마다 날짜, 시간, 장소를 넣을 수 있습니다. 계정 없이 오프라인에서도 작동하고 광고도 없습니다. <a href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ko-KR" rel="noopener">Google Play</a>에서 받을 수 있습니다.</p>
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Android용 Ligona</strong><span>토너먼트 대진표 만들기: 리그 대진표, 풀리그, 조별 리그, 스위스 방식, 순위표 자동 계산</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ko-KR" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/ko-KR/">Ligona 자세히 보기</a></div></aside><h2 id="s">자주 묻는 질문</h2>
+<h3 id="16">16팀 토너먼트는 몇 경기일까?</h3>
+<p>4라운드에 걸쳐 8, 4, 2, 1경기로 모두 15경기입니다. 3·4위전을 치르면 1경기를 더하세요.</p>
+<h3 id="10">10팀 풀리그는 몇 경기일까?</h3>
+<p>10 × 9 ÷ 2로 45경기입니다. 팀당 9라운드에 걸쳐 9경기를 치릅니다. 홈 앤 어웨이로 치르면 90경기입니다.</p>
+<h3 id="32">32팀 더블 엘리미네이션 대진표는 몇 경기일까?</h3>
+<p>2 × 32 - 2 = 62경기이고, 그랜드 파이널 리셋이 나오면 63경기입니다.</p>
+<h3 id="s">부전승도 경기 수에 들어갈까?</h3>
+<p>아닙니다. 부전승은 빈칸이므로 어떤 공식에도 영향을 주지 않습니다. 12팀 토너먼트 대진표는 16칸으로 그리지만 경기는 11경기입니다.</p>
+<h3 id="12">12팀 대회는 몇 경기일까?</h3>
+<p>방식에 따라 다릅니다. 토너먼트는 11경기, 더블 엘리미네이션은 22경기 또는 23경기, 풀리그는 66경기, 3팀씩 4개 조 후 8팀 토너먼트는 19경기, 4라운드 스위스 방식은 24경기입니다.</p>
+<h2 id="s">참고 자료</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Single-elimination_tournament" rel="noopener">Single-elimination tournament</a>, Wikipedia: 경기 수와 라운드 수.</li><li><a href="https://en.wikipedia.org/wiki/Round-robin_tournament" rel="noopener">Round-robin tournament</a>, Wikipedia: N(N-1)/2와 일정 편성.</li><li><a href="https://en.wikipedia.org/wiki/2026_FIFA_World_Cup" rel="noopener">2026 FIFA World Cup</a>, Wikipedia: 48팀, 104경기.</li></ul></article><section class="related"><h2>관련 글</h2><div class="list"><a class="item" href="/tools/tournament-games-calculator/"><strong>Tournament games and rounds calculator</strong><span>How many games and rounds for knockout, double elimination, round robin, groups and Swiss with N teams, plus how long it takes on your courts.</span></a><a class="item" href="/tools/tournament-bracket-generator/"><strong>Tournament bracket generator</strong><span>Make a single or double elimination bracket with proper seeding and byes for top seeds. Tap names to advance winners, then print or share it.</span></a><a class="item" href="/tools/round-robin-generator/"><strong>Round robin schedule generator</strong><span>Make a round robin schedule from a list of names: every team plays every other once or home and away, byes for odd numbers. Copy, CSV or print.</span></a><a class="item" href="/guides/double-elimination-bracket-explained/ko/"><strong>더블 엘리미네이션 대진표 알아보기</strong><span>더블 엘리미네이션에서는 두 번 지면 탈락합니다. N팀이면 2N-2경기, 그랜드 파이널 리셋이 있으면 2N-1경기를 치릅니다. 패자조가 돌아가는 방식을 설명합니다.</span></a><a class="item" href="/guides/how-to-organize-a-round-robin-tournament/ko/"><strong>풀리그 대회 운영하는 방법</strong><span>N개 팀 풀리그는 모든 팀이 서로 한 번씩 맞붙어 N(N-1)/2경기를 N-1라운드(홀수면 N라운드)에 치릅니다. 일정 짜기, 부전승 처리, 동점 시 순위 결정 방법을 정리했습니다.</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/ko/"><strong>토너먼트 대진표 시드 배정하는 법</strong><span>팀 순위를 정한 뒤 1 vs 16, 8 vs 9, 4 vs 13 순으로 짝지으면 상위 시드끼리는 마지막에 만납니다. 부전승 수는 다음 2의 거듭제곱에서 팀 수를 뺀 값이며 상위 시드에게 줍니다.</span></a><a class="item" href="/guides/swiss-system-tournament-explained/ko/"><strong>스위스 방식 대회 알아보기</strong><span>스위스 방식 대회에서는 매 라운드 점수가 같은 선수끼리 맞붙고, 같은 상대와 두 번 만나지 않으며 탈락도 없습니다. 라운드는 약 log2 N, 동점은 Buchholz로 가립니다.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">가이드</a><a href="/tools/">도구</a><a href="/">모든 앱</a><a href="mailto:hello@maumiuworks.com">문의</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

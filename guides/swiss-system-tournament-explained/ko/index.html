@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>스위스 방식 대회란? 대진 편성, 라운드 수, Buchholz 정리 — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="스위스 방식 대회에서는 매 라운드 점수가 같은 선수끼리 맞붙고, 같은 상대와 두 번 만나지 않으며 탈락도 없습니다. 라운드는 약 log2 N, 동점은 Buchholz로 가립니다.">
+<link rel="canonical" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/ko/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="스위스 방식 대회란? 대진 편성, 라운드 수, Buchholz 정리"><meta property="og:description" content="스위스 방식 대회에서는 매 라운드 점수가 같은 선수끼리 맞붙고, 같은 상대와 두 번 만나지 않으며 탈락도 없습니다. 라운드는 약 log2 N, 동점은 Buchholz로 가립니다."><meta property="og:url" content="https://maumiuworks.com/guides/swiss-system-tournament-explained/ko/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "스위스 방식 대회 알아보기", "description": "스위스 방식 대회에서는 매 라운드 점수가 같은 선수끼리 맞붙고, 같은 상대와 두 번 만나지 않으며 탈락도 없습니다. 라운드는 약 log2 N, 동점은 Buchholz로 가립니다.", "inLanguage": "ko", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "mainEntityOfPage": "https://maumiuworks.com/guides/swiss-system-tournament-explained/ko/", "about": {"@type": "SoftwareApplication", "name": "Ligona", "operatingSystem": "Android", "url": "https://maumiuworks.com/tournament-bracket/ko-KR/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "가이드", "item": "https://maumiuworks.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "스위스 방식 대회 알아보기", "item": "https://maumiuworks.com/guides/swiss-system-tournament-explained/ko/"}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="모든 앱" aria-label="Maumiu Works — 모든 앱">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/guides/" aria-label="가이드"><span>가이드</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">스위스 방식 대회 알아보기</span></nav><div class="tools"><details class="langs"><summary aria-label="언어: 한국어" title="한국어"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"></summary><ul><li><a href="/guides/swiss-system-tournament-explained/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/guides/swiss-system-tournament-explained/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/guides/swiss-system-tournament-explained/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/guides/swiss-system-tournament-explained/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/guides/swiss-system-tournament-explained/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/guides/swiss-system-tournament-explained/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/guides/swiss-system-tournament-explained/ja/" hreflang="ja" lang="ja"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/guides/swiss-system-tournament-explained/ko/" hreflang="ko" lang="ko" aria-current="true"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/guides/swiss-system-tournament-explained/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/guides/swiss-system-tournament-explained/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/guides/swiss-system-tournament-explained/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap"><article class="art"><h1>스위스 방식 대회 알아보기</h1><p class="byline">Maumiu Works · 업데이트 <time datetime="2026-11-26">2026년 11월 26일</time></p><nav class="toc" aria-label="이 페이지의 내용"><p>이 페이지의 내용</p><ol><li><a href="#s">스위스 방식 대진은 어떻게 짜나요?</a></li><li><a href="#s">스위스 방식 대회는 라운드별로 어떻게 진행되나요?</a></li><li><a href="#s">스위스 방식 대회는 몇 라운드로 해야 하나요?</a></li><li><a href="#s">스위스 방식 대회에서 부전승은 어떻게 처리하나요?</a></li><li><a href="#buchholz">Buchholz 타이브레이크란 무엇인가요?</a></li><li><a href="#s">스위스 방식에는 어떤 타이브레이크가 더 있나요?</a></li><li><a href="#s">풀리그보다 스위스 방식이 나은 경우는 언제인가요?</a></li><li><a href="#s">스위스 방식의 단점은 무엇인가요?</a></li><li><a href="#s">자주 묻는 질문</a></li><li><a href="#s">참고 자료</a></li></ol></nav><p>스위스 방식 대회는 정해진 수의 라운드를 치르면서, 매 라운드 <strong>점수가 같거나 비슷하고</strong> <strong>아직 만나지 않은</strong> 상대끼리 대진을 짜는 방식입니다. 탈락하는 사람이 없고 모두가 매 라운드 경기를 하며, 마지막에 점수가 가장 높은 선수가 우승합니다. 단독 선두 한 명을 가리려면 최소 <strong>log2 N 라운드</strong>(소수점 올림)가 필요합니다. 32명이면 5라운드, 128명이면 7라운드로, 풀리그라면 필요한 31라운드나 127라운드보다 훨씬 적습니다.</p>
+<p>직접 계산해 보세요: <a href="/tools/tournament-games-calculator/">대회 경기 수 계산기</a>에서 스위스 방식의 라운드 수와 경기 수를 다른 방식과 나란히 비교할 수 있습니다.</p>
+<h2 id="s">스위스 방식 대진은 어떻게 짜나요?</h2>
+<p>대부분의 주최자가 따르는 규칙은 체스에서 나왔습니다. 국제체스연맹(FIDE)이 스위스 방식의 기본 규칙을 공개하고 있습니다.</p>
+<ul><li><strong>같은 두 선수는 두 번 만나지 않습니다.</strong> 대회 전체에서 재대결은 없습니다.</li><li><strong>점수가 같은 선수끼리 대진을 짭니다.</strong> 승점이 같은 선수들이 하나의 점수 그룹이 되고, 가능한 한 그 그룹 안에서 상대를 정합니다.</li><li><strong>점수 그룹 인원이 홀수이면</strong> 한 명이 바로 아래 그룹으로 "내려가서(플로트)" 점수가 조금 낮은 선수와 경기합니다.</li><li><strong>백·흑(또는 홈 앤 어웨이)은 균형을 맞춥니다.</strong> 체스에서는 같은 색을 세 번 연속 배정받지 않도록 하고, 백과 흑으로 둔 경기 수가 크게 차이 나지 않게 합니다.</li><li><strong>다음 라운드 대진은 현재 라운드가 모두 끝난 뒤에 짭니다.</strong> 결과에 따라 대진이 달라지기 때문입니다.</li></ul>
+<p>점수 그룹 안에서 많이 쓰는 방법(레이팅이 걸린 체스 대회 대부분이 사용하는 더치 시스템의 기본)은 그룹을 레이팅이나 시드 순으로 정렬한 뒤 위쪽 절반과 아래쪽 절반을 맞붙이는 것입니다. 8명 그룹이라면 1번 시드는 5번, 2번은 6번, 3번은 7번, 4번은 8번과 경기합니다. 1라운드는 전체 참가자를 대상으로 같은 방식으로 짭니다.</p>
+<h2 id="s">스위스 방식 대회는 라운드별로 어떻게 진행되나요?</h2>
+<p>1번부터 8번까지 시드를 받은 8명이 3라운드를 치르고, 라운드마다 4경기가 열립니다. 이해하기 쉽도록 항상 시드가 높은 선수가 이기고 무승부는 없다고 가정합니다.</p>
+<div class="tbl"><table><thead><tr><th>라운드</th><th>점수 그룹</th><th>대진</th><th>이유</th></tr></thead><tbody><tr><td>1</td><td>전원 (0)</td><td>1-5, 2-6, 3-7, 4-8</td><td>위쪽 절반 대 아래쪽 절반</td></tr><tr><td>2</td><td>1점: 1, 2, 3, 4</td><td>1-3, 2-4</td><td>승자끼리 대결</td></tr><tr><td>2</td><td>0점: 5, 6, 7, 8</td><td>5-7, 6-8</td><td>패자끼리 대결</td></tr><tr><td>3</td><td>2점: 1, 2</td><td>1-2</td><td>무패인 두 선수가 대결</td></tr><tr><td>3</td><td>1점: 3, 4, 5, 6</td><td>3-5, 4-6</td><td>이 그룹 안에서 재대결 없음</td></tr><tr><td>3</td><td>0점: 7, 8</td><td>7-8</td><td>첫 대결</td></tr></tbody></table></div>
+<p>3라운드가 끝나면 1번이 3점, 2·3·4번이 2점, 5·6·7번이 1점, 8번이 0점입니다. 전승한 선수가 정확히 한 명 나오는데, log2 8 = 3 라운드가 바로 이 결과를 내도록 정해진 수입니다. 12경기에서 나온 점수의 합도 당연히 12점입니다.</p>
+<h2 id="s">스위스 방식 대회는 몇 라운드로 해야 하나요?</h2>
+<div class="tbl"><table><thead><tr><th>참가자 수</th><th>최소 라운드 수 (log2 N 올림)</th><th>라운드당 경기 수</th><th>풀리그라면</th></tr></thead><tbody><tr><td>8</td><td>3</td><td>4</td><td>7라운드</td></tr><tr><td>16</td><td>4</td><td>8</td><td>15라운드</td></tr><tr><td>32</td><td>5</td><td>16</td><td>31라운드</td></tr><tr><td>64</td><td>6</td><td>32</td><td>63라운드</td></tr><tr><td>128</td><td>7</td><td>64</td><td>127라운드</td></tr></tbody></table></div>
+<p>최소 라운드 수는 상위 선수들이 계속 이긴다는 전제에서 확실한 선두 한 명을 가리기에 충분한 수입니다. 실제로는 무승부와 이변 때문에 점수가 흩어지므로, 우승자 아래 순위까지 더 정확히 가리기 위해 최소보다 한두 라운드 더 치르는 대회가 많습니다. 수백 명이 참가하는 대규모 체스 오픈은 9라운드를 치르는 경우가 많고, 체스 올림피아드는 11라운드를 치릅니다. 라운드 수를 N-1보다 많이 잡으면 재대결 없는 대진이 불가능해지므로 그 이상은 잡지 마세요.</p>
+<p>전체 경기 수는 라운드 수 × N/2이며, N이 홀수이면 소수점을 버립니다.</p>
+<h2 id="s">스위스 방식 대회에서 부전승은 어떻게 처리하나요?</h2>
+<p>참가자가 홀수이면 매 라운드 한 명은 경기 없이 쉬고 "대진상 부전승"을 받습니다. FIDE 스위스 방식 기본 규칙에 따르면 다음과 같습니다.</p>
+<ul><li>대회 규정에서 따로 정하지 않는 한 부전승은 승리와 같은 점수이고, 대회 안의 모든 부전승은 같은 점수로 계산합니다.</li><li>한 선수가 부전승을 두 번 이상 받을 수 없습니다(경기 없이 승리 한 번 분량을 넘는 점수를 받을 수도 없습니다).</li></ul>
+<p>실제 대진 편성 방식에서는 아직 부전승을 받지 않은 하위권 선수에게 부전승을 주므로, 선두권 선수가 경기 없이 점수를 얻는 일은 생기지 않습니다.</p>
+<p>부전승에 0.5점만 주는 클럽도 있습니다. 어느 쪽이든 괜찮으니 1라운드 전에 공지하세요. 선수가 미리 요청한 휴식(예를 들어 한 라운드를 빠지는 경우)은 별개이며, 보통 0점이나 0.5점으로 처리합니다.</p>
+<h2 id="buchholz">Buchholz 타이브레이크란 무엇인가요?</h2>
+<p>라운드 수가 적어 모두를 가려낼 수 없기 때문에 스위스 방식에서는 동점이 아주 흔합니다. <strong>Buchholz</strong>(부흐홀츠)는 가장 널리 쓰이는 타이브레이크로, 내가 만난 모든 상대의 최종 점수를 합한 값입니다. 상대가 얼마나 강했는지를 나타내는 지표로, 점수가 같은 두 선수 중 더 강한 상대에게서 점수를 따낸 쪽이 위 순위가 됩니다.</p>
+<p>위 예시에서 2·3·4번은 모두 2점으로 마쳤습니다.</p>
+<div class="tbl"><table><thead><tr><th>선수</th><th>상대 (상대의 최종 점수)</th><th>Buchholz</th></tr></thead><tbody><tr><td>2</td><td>6 (1), 4 (2), 1 (3)</td><td>6</td></tr><tr><td>3</td><td>7 (1), 1 (3), 5 (1)</td><td>5</td></tr><tr><td>4</td><td>8 (0), 2 (2), 6 (1)</td><td>3</td></tr></tbody></table></div>
+<p>따라서 순위는 2, 3, 4번 순입니다. 2번은 우승자에게만 졌고 2점 선수를 이겼지만, 4번은 꼴찌 선수에게서 1점을 얻었습니다.</p>
+<h2 id="s">스위스 방식에는 어떤 타이브레이크가 더 있나요?</h2>
+<ul><li><strong>Buchholz Cut 1:</strong> 점수가 가장 낮은 상대 한 명을 뺀 Buchholz입니다. 아주 약한 상대 한 명의 영향을 줄여 줍니다.</li><li><strong>미디언 Buchholz:</strong> 점수가 가장 높은 상대와 가장 낮은 상대를 모두 뺀 Buchholz입니다.</li><li><strong>Sonneborn-Berger:</strong> 이긴 상대들의 점수 합에 비긴 상대들 점수의 절반을 더한 값입니다. 강한 상대를 이긴 선수가 유리합니다.</li><li><strong>승자승:</strong> 동점인 선수끼리 맞붙은 적이 있다면 그 경기 결과로 가립니다.</li><li><strong>다승:</strong> 무승부보다 승패가 갈린 결과를 높이 칩니다.</li><li><strong>누적 점수(프로그레시브 점수):</strong> 매 라운드가 끝날 때의 점수를 모두 더합니다. 초반에 이겨서 이후 더 강한 상대를 만난 선수가 위 순위가 됩니다.</li><li><strong>상대 평균 레이팅:</strong> 레이팅이 걸린 체스 대회에서 많이 씁니다.</li><li><strong>상대 매치 승률:</strong> Magic: The Gathering 대회의 주요 타이브레이크이며, 각 상대의 승률은 최소 33%로 계산합니다.</li></ul>
+<p>FIDE 타이브레이크 규정에는 선수가 치르지 않은 라운드에 대한 특별 규칙도 있어, 부전승이나 기권 때문에 누군가의 Buchholz가 부당하게 오르거나 내려가지 않도록 합니다. 어떤 기준을 쓰든 대회 전에 순서를 정해 공지하세요.</p>
+<h2 id="s">풀리그보다 스위스 방식이 나은 경우는 언제인가요?</h2>
+<p>다음과 같은 경우 스위스 방식이 더 좋습니다.</p>
+<ul><li>참가자 수에 비해 치를 수 있는 라운드가 적을 때. 30명이 저녁 시간에 5라운드만 할 수 있다면 풀리그(29라운드)는 불가능합니다.</li><li>아무도 탈락시키고 싶지 않을 때. 토너먼트 대진표와 달리 모두가 매 라운드 경기합니다.</li><li>참가자의 실력 차이가 클 때. 한두 라운드가 지나면 강자는 강자끼리, 초보자는 초보자끼리 비슷한 경기를 하게 되어 모두에게 더 재미있습니다.</li></ul>
+<p>인원이 적거나(약 10명 이하), 모든 선수가 서로 한 번씩 맞붙어야 하거나(클럽 선수권, 예선 조), 모든 순위를 이견 없이 가려야 한다면 풀리그가 낫습니다. 스위스 방식은 상위권 순위는 잘 가려내지만 순위표 중간은 타이브레이크에 더 많이 좌우됩니다.</p>
+<h2 id="s">스위스 방식의 단점은 무엇인가요?</h2>
+<ul><li><strong>손으로 대진을 짜면 실수하기 쉽습니다.</strong> 점수 그룹, 플로트, 백·흑, 재대결 금지 규칙이 서로 얽히고, 특히 마지막 라운드에서 복잡해집니다. 프로그램을 쓰세요.</li><li><strong>전체 일정을 미리 공개할 수 없습니다.</strong> 각 라운드 대진은 이전 라운드 결과를 보고 짭니다.</li><li><strong>동점이 흔해서</strong> 많은 순위가 타이브레이크로 결정됩니다.</li><li><strong>대회 후반에는 우승자가 이미 정해졌는데</strong> 다른 선수들은 순위를 두고 계속 경기하는 경우가 있습니다.</li></ul>
+<p>클럽 모임, 보드게임 모임, e스포츠 대회를 휴대폰으로 운영한다면 <a href="/tournament-bracket/ko-KR/">Ligona</a>(Android)에서 스위스 방식을 쓸 수 있습니다. log2 N 라운드를 제안하고(라운드 수는 바꿀 수 있습니다), 점수가 같은 선수끼리 대진을 짜고, 재대결을 피하고, 아직 부전승을 받지 않은 최하위 선수에게 부전승을 주며(승리로 계산), 동점은 Buchholz와 다승 순으로 가리고, 현재 라운드가 끝나면 다음 라운드 대진을 자동으로 짭니다. 오프라인으로 작동하고 계정도 광고도 없습니다. <a href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ko-KR" rel="noopener">Google Play</a>에서 받을 수 있습니다. FIDE 레이팅이 걸린 체스 대회라면 소속 연맹이 인정하는 대진 프로그램을 사용하세요.</p>
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Android용 Ligona</strong><span>토너먼트 대진표 만들기: 리그 대진표, 풀리그, 조별 리그, 스위스 방식, 순위표 자동 계산</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ko-KR" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/ko-KR/">Ligona 자세히 보기</a></div></aside><h2 id="s">자주 묻는 질문</h2>
+<h3 id="16">16명이 참가하는 스위스 방식 대회는 몇 라운드인가요?</h3>
+<p>2의 4제곱이 16이므로 최소 4라운드입니다. 우승자 아래 순위를 더 잘 가리기 위해 5라운드를 치르는 주최자도 많습니다. 라운드마다 8경기가 열립니다.</p>
+<h3 id="s">스위스 방식 대회에서 같은 상대와 두 번 만날 수 있나요?</h3>
+<p>아니요. 같은 대회에서 두 선수가 두 번 이상 만나지 않는다는 것이 스위스 방식의 핵심 규칙입니다.</p>
+<h3 id="buchholz">체스에서 Buchholz는 무슨 뜻인가요?</h3>
+<p>Buchholz는 타이브레이크의 하나로, 선수가 만난 모든 상대의 최종 점수를 합한 값입니다. 점수가 같은 선수 중 Buchholz가 높은 선수가 더 강한 상대를 만났다는 뜻이며 순위가 더 높습니다.</p>
+<h3 id="s">스위스 방식 대회에서 부전승은 승리로 치나요?</h3>
+<p>FIDE 기본 규칙에서는 대회 규정에 따로 정하지 않는 한 대진상 부전승은 승리와 같은 점수이며, 한 선수당 한 번만 받을 수 있습니다. 0.5점으로 계산하는 클럽도 있습니다.</p>
+<h3 id="s">스위스 방식과 풀리그는 무엇이 다른가요?</h3>
+<p>풀리그는 모두가 모두와 경기하므로 N-1 라운드가 걸립니다. 스위스 방식은 점수가 비슷한 상대와 약 log2 N 라운드만 치르므로, 참가자가 많아도 훨씬 짧은 시간에 끝낼 수 있습니다.</p>
+<h2 id="s">참고 자료</h2>
+<ul><li><a href="https://handbook.fide.com/chapter/C0401202507" rel="noopener">Basic rules for Swiss systems (C.04.1)</a>, FIDE 핸드북: 재대결 금지, 점수 그룹, 부전승, 백·흑 배정.</li><li><a href="https://en.wikipedia.org/wiki/Swiss-system_tournament" rel="noopener">Swiss-system tournament</a>, 위키백과: 역사, 대진 편성, 라운드 수.</li><li><a href="https://en.wikipedia.org/wiki/Tie-breaking_in_Swiss-system_tournaments" rel="noopener">Tie-breaking in Swiss-system tournaments</a>, 위키백과: Buchholz, 미디언, Sonneborn-Berger, 누적 점수.</li></ul></article><section class="related"><h2>관련 글</h2><div class="list"><a class="item" href="/tools/tournament-games-calculator/"><strong>Tournament games and rounds calculator</strong><span>How many games and rounds for knockout, double elimination, round robin, groups and Swiss with N teams, plus how long it takes on your courts.</span></a><a class="item" href="/guides/double-elimination-bracket-explained/ko/"><strong>더블 엘리미네이션 대진표 알아보기</strong><span>더블 엘리미네이션에서는 두 번 지면 탈락합니다. N팀이면 2N-2경기, 그랜드 파이널 리셋이 있으면 2N-1경기를 치릅니다. 패자조가 돌아가는 방식을 설명합니다.</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/ko/"><strong>대회 경기 수는 몇 경기일까?</strong><span>토너먼트: N-1경기. 더블 엘리미네이션: 2N-2 또는 2N-1경기. 풀리그: N(N-1)/2경기. 스위스 방식: 라운드 수 × N/2경기. 4~32팀 경기 수 표 포함.</span></a><a class="item" href="/guides/how-to-organize-a-round-robin-tournament/ko/"><strong>풀리그 대회 운영하는 방법</strong><span>N개 팀 풀리그는 모든 팀이 서로 한 번씩 맞붙어 N(N-1)/2경기를 N-1라운드(홀수면 N라운드)에 치릅니다. 일정 짜기, 부전승 처리, 동점 시 순위 결정 방법을 정리했습니다.</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/ko/"><strong>토너먼트 대진표 시드 배정하는 법</strong><span>팀 순위를 정한 뒤 1 vs 16, 8 vs 9, 4 vs 13 순으로 짝지으면 상위 시드끼리는 마지막에 만납니다. 부전승 수는 다음 2의 거듭제곱에서 팀 수를 뺀 값이며 상위 시드에게 줍니다.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">가이드</a><a href="/tools/">도구</a><a href="/">모든 앱</a><a href="mailto:hello@maumiuworks.com">문의</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

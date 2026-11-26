@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ja" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>総当たり戦（リーグ戦）の組み方：試合数・日程表・休みの扱い — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="N チームの総当たり戦では全チームが互いに対戦し、試合数は N(N-1)/2、ラウンド数は N-1（奇数なら N）。日程表の作り方、休みのチームの扱い、同率時の順位の決め方を解説します。">
+<link rel="canonical" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/ja/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="総当たり戦（リーグ戦）の組み方：試合数・日程表・休みの扱い"><meta property="og:description" content="N チームの総当たり戦では全チームが互いに対戦し、試合数は N(N-1)/2、ラウンド数は N-1（奇数なら N）。日程表の作り方、休みのチームの扱い、同率時の順位の決め方を解説します。"><meta property="og:url" content="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/ja/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "総当たり戦（リーグ戦）の組み方", "description": "N チームの総当たり戦では全チームが互いに対戦し、試合数は N(N-1)/2、ラウンド数は N-1（奇数なら N）。日程表の作り方、休みのチームの扱い、同率時の順位の決め方を解説します。", "inLanguage": "ja", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "mainEntityOfPage": "https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/ja/", "about": {"@type": "SoftwareApplication", "name": "Ligona", "operatingSystem": "Android", "url": "https://maumiuworks.com/tournament-bracket/ja-JP/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "ガイド", "item": "https://maumiuworks.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "総当たり戦（リーグ戦）の組み方", "item": "https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/ja/"}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="すべてのアプリ" aria-label="Maumiu Works — すべてのアプリ">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/guides/" aria-label="ガイド"><span>ガイド</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">総当たり戦（リーグ戦）の組み方</span></nav><div class="tools"><details class="langs"><summary aria-label="言語: 日本語" title="日本語"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"></summary><ul><li><a href="/guides/how-to-organize-a-round-robin-tournament/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/guides/how-to-organize-a-round-robin-tournament/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/guides/how-to-organize-a-round-robin-tournament/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/guides/how-to-organize-a-round-robin-tournament/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/guides/how-to-organize-a-round-robin-tournament/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/guides/how-to-organize-a-round-robin-tournament/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/guides/how-to-organize-a-round-robin-tournament/ja/" hreflang="ja" lang="ja" aria-current="true"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/guides/how-to-organize-a-round-robin-tournament/ko/" hreflang="ko" lang="ko"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/guides/how-to-organize-a-round-robin-tournament/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/guides/how-to-organize-a-round-robin-tournament/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/guides/how-to-organize-a-round-robin-tournament/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap"><article class="art"><h1>総当たり戦（リーグ戦）の組み方</h1><p class="byline">Maumiu Works · 更新日 <time datetime="2026-11-26">2026年11月26日</time></p><nav class="toc" aria-label="このページの内容"><p>このページの内容</p><ol><li><a href="#s">総当たり戦の試合数とラウンド数は？</a></li><li><a href="#s">サークル方式で総当たり戦の日程表を作るには？</a></li><li><a href="#6">6チームの総当たり戦の日程表は？</a></li><li><a href="#s">チーム数が奇数のときはどうする？</a></li><li><a href="#2">2回総当たり（ホーム＆アウェー）とは？</a></li><li><a href="#s">複数のコートで総当たり戦を回すには？</a></li><li><a href="#s">総当たり戦の勝ち点はどう決める？</a></li><li><a href="#s">総当たり戦で同率になったときの順位の決め方は？</a></li><li><a href="#s">総当たり戦の運営でよくある失敗は？</a></li><li><a href="#s">よくある質問</a></li><li><a href="#s">出典</a></li></ol></nav><p>総当たり戦（リーグ戦）では各チームがほかの全チームと1回ずつ対戦するので、N チームなら <strong>N(N-1)/2 試合</strong>になります。6チームで15試合、8チームで28試合、10チームで45試合です。チーム数が偶数なら日程は <strong>N-1 ラウンド</strong>、奇数なら <strong>N ラウンド</strong>で、各ラウンドに1チームが試合のない「休み」（不戦勝の枠）になります。日程表の作り方として定番なのがサークル方式で、以下で6チームの例を使って最後まで説明します。</p>
+<p>試してみる：<a href="/tools/round-robin-generator/">総当たり戦の対戦表ジェネレーター</a>で、何チームでも全日程を作れます。</p>
+<h2 id="s">総当たり戦の試合数とラウンド数は？</h2>
+<p>N チームのそれぞれが N-1 チームと対戦し、1試合には2チームが関わるので、合計は N(N-1)/2 試合です。2回総当たり（ホーム＆アウェー）にすると、すべてが2倍になります。</p>
+<div class="tbl"><table><thead><tr><th>チーム数</th><th>試合数（1回総当たり）</th><th>ラウンド数（1回総当たり）</th><th>1ラウンドの試合数</th><th>試合数（ホーム＆アウェー）</th><th>ラウンド数（ホーム＆アウェー）</th></tr></thead><tbody><tr><td>4</td><td>6</td><td>3</td><td>2</td><td>12</td><td>6</td></tr><tr><td>5</td><td>10</td><td>5</td><td>2</td><td>20</td><td>10</td></tr><tr><td>6</td><td>15</td><td>5</td><td>3</td><td>30</td><td>10</td></tr><tr><td>8</td><td>28</td><td>7</td><td>4</td><td>56</td><td>14</td></tr><tr><td>10</td><td>45</td><td>9</td><td>5</td><td>90</td><td>18</td></tr><tr><td>12</td><td>66</td><td>11</td><td>6</td><td>132</td><td>22</td></tr><tr><td>16</td><td>120</td><td>15</td><td>8</td><td>240</td><td>30</td></tr></tbody></table></div>
+<p>試合数はチーム数のおよそ2乗に比例して増えます。そのため総当たり戦は4〜10チーム程度のグループに向いていて、参加チームが多い大会では先にグループ分けをします。<a href="/tools/tournament-games-calculator/">試合数計算ツール</a>では、トーナメントやスイス式と試合数を比べられます。</p>
+<h2 id="s">サークル方式で総当たり戦の日程表を作るには？</h2>
+<p>サークル方式（その一種が FIDE のベルガー表 = Berger tables として公表されています）を使うと、全チームがほかの全チームとちょうど1回ずつ対戦し、各チームが1ラウンドに1試合ずつ戦う日程になります。</p>
+<ol><li>チームに1から N までの番号を付けます。N が奇数なら「休み」というダミーのチームを1つ加えます。</li><li>番号の前半を上段に、後半を逆順にして下段に並べます。上下に並んだチーム同士が1ラウンド目の対戦です。</li><li>チーム1は固定します。ほかのチームは全員、時計回りに1つずつ動かします。上段は右へ進み、端まで来たら下段へ下り、下段は左へ進み、また上段に戻ります。</li><li>新しい組み合わせを読み取って次のラウンドにします。これを N-1 ラウンド分（「休み」も1チームとして数える）繰り返します。</li></ol>
+<h2 id="6">6チームの総当たり戦の日程表は？</h2>
+<p>6チームの場合、最初の並びは上段が1、2、3、下段が6、5、4です。チーム1以外を回転させていくと、次の日程になります。</p>
+<div class="tbl"><table><thead><tr><th>ラウンド</th><th>試合A</th><th>試合B</th><th>試合C</th></tr></thead><tbody><tr><td>1</td><td>1 vs 6</td><td>2 vs 5</td><td>3 vs 4</td></tr><tr><td>2</td><td>1 vs 5</td><td>6 vs 4</td><td>2 vs 3</td></tr><tr><td>3</td><td>1 vs 4</td><td>5 vs 3</td><td>6 vs 2</td></tr><tr><td>4</td><td>1 vs 3</td><td>4 vs 2</td><td>5 vs 6</td></tr><tr><td>5</td><td>1 vs 2</td><td>3 vs 6</td><td>4 vs 5</td></tr></tbody></table></div>
+<p>運営者として確認しておきたい点は次のとおりです。5ラウンド、1ラウンド3試合、合計15試合。各ラウンドに全チームがちょうど1回ずつ登場し、ありうる15通りの組み合わせがすべて1回ずつ出てくること。</p>
+<h2 id="s">チーム数が奇数のときはどうする？</h2>
+<p>「休み」を1チームとして加え、N+1 チームの日程を作ります。「休み」と当たったチームは、そのラウンドは試合がありません。5チームなら1ラウンド2試合を5ラウンド、合計10試合で、各チームはちょうど1回ずつ休みになります。上の表のチーム6を「休み」にすると、次のようになります。</p>
+<ul><li>ラウンド1：チーム1が休み。2 vs 5、3 vs 4。</li><li>ラウンド2：チーム4が休み。1 vs 5、2 vs 3。</li><li>ラウンド3：チーム2が休み。1 vs 4、5 vs 3。</li><li>ラウンド4：チーム5が休み。1 vs 3、4 vs 2。</li><li>ラウンド5：チーム3が休み。1 vs 2、4 vs 5。</li></ul>
+<p>総当たり戦では、休み（不戦勝の枠）には通常勝ち点を与えません。全チームが同じく1回ずつ休むので、合計を公平に比べられるからです。休みのラウンドに勝ち点が付くと誤解されないよう、最初の試合の前に伝えておきましょう。大会の途中でチームが棄権した場合、残りの試合は対戦相手にとって追加の休みになります。それまでの結果を順位表に残すのか、すべての対戦相手の成績から取り消すのかを、あらかじめ決めておきましょう。</p>
+<h2 id="2">2回総当たり（ホーム＆アウェー）とは？</h2>
+<p>2回総当たり（ホーム＆アウェー）では、どの組み合わせも2回対戦します。通常はそれぞれのチームの本拠地で1回ずつ、あるいはそれぞれが1回ずつ「ホーム」側（先サーブ、白番、ホームのユニフォームなど）になります。試合数もラウンド数も2倍になり、8チームなら14ラウンドで56試合です。一般的な作り方は、1回総当たりの日程を一巡したあと、ホームとアウェーを入れ替えてもう一巡するものです。各国のサッカーのプロリーグの多くがこの方式を採用しています。</p>
+<p>チーム数が偶数の1回総当たりでは、各チームの試合数が奇数（N-1）になるため、全チームのホーム試合数をそろえることはできません。差を1試合に抑えるのが限度で、良い日程ではホームやアウェーが長く続かないように配慮します。</p>
+<h2 id="s">複数のコートで総当たり戦を回すには？</h2>
+<p>1ラウンドの試合数は N/2（奇数なら (N-1)/2）です。その数以上のコートや台があれば、1ラウンドを1つの時間枠で消化できます。足りない場合は、1ラウンドに複数の時間枠が必要です。</p>
+<ul><li>1ラウンドの時間枠数 = 1ラウンドの試合数 ÷ コート数（切り上げ）。</li><li>全体の所要時間 = 1ラウンドの時間枠数 × ラウンド数 × 1枠の長さ（試合時間＋入れ替え時間）。</li></ul>
+<p>例：8チーム、1ラウンド4試合、入れ替えを含めて1試合20分の場合。</p>
+<div class="tbl"><table><thead><tr><th>コート数</th><th>1ラウンドの時間枠数</th><th>時間枠の合計</th><th>全体の所要時間</th></tr></thead><tbody><tr><td>1</td><td>4</td><td>28</td><td>9時間20分</td></tr><tr><td>2</td><td>2</td><td>14</td><td>4時間40分</td></tr><tr><td>4</td><td>1</td><td>7</td><td>2時間20分</td></tr></tbody></table></div>
+<p>実際の運営のコツを2つ挙げます。1つ目は、コートが早く空いてもラウンドの順番を守ることです。ラウンド2が終わる前にラウンド3を始めると、連戦になるチームが出る一方で、1時間待たされるチームも出てきます。2つ目は、1ラウンドに複数の時間枠がある場合、先に行う試合をラウンドごとに入れ替えて、同じチームがいつも遅い枠にならないようにすることです。</p>
+<h2 id="s">総当たり戦の勝ち点はどう決める？</h2>
+<p>勝ち点の方式は大会前に決めて、書面にしておきましょう。よく使われるのは次のとおりです。</p>
+<ul><li><strong>3-1-0</strong>：勝ち3点、引き分け1点、負け0点。サッカーの標準で、勝ちにいく姿勢が報われるため、多くのアマチュアリーグでも使われています。</li><li><strong>2-1-0</strong>：勝ち2点、引き分け1点。引き分けを0.5勝と数えるのと同じ順位になります。</li><li><strong>1-½-0</strong>：チェス式で、勝ちは1点、引き分けは0.5点。</li><li><strong>勝利数のみ</strong>：引き分けのない競技（バレーボール、テニス、バスケットボールなど）では、勝利数や勝率で順位を決めます。</li></ul>
+<h2 id="s">総当たり戦で同率になったときの順位の決め方は？</h2>
+<p>少人数の総当たり戦では勝ち点が並ぶことがよくあるので、順位決定方法（タイブレーク）の順番を事前に発表しておきましょう。よく使われる基準は次のとおりで、順番は大会によって異なります。</p>
+<ol><li><strong>当該チーム間の対戦成績</strong>：同率のチーム同士の試合結果。3チーム以上が並んだ場合は、それらのチーム同士の試合だけで小さな順位表を作ります。</li><li><strong>得失点差</strong>：全試合の得点（ゴール、ポイント、セット）から失点を引いた数。</li><li><strong>総得点</strong>：ゴールやポイントの合計。</li><li><strong>勝利数</strong></li><li><strong>ソンネボーン・ベルガー</strong>（チェス）：勝った相手の勝ち点の合計に、引き分けた相手の勝ち点の半分を足したもの。</li><li>順位決定戦、または最終手段としてコイントスや抽選。</li></ol>
+<p>唯一の正しい順番というものはありません。全試合の得失点差を最優先にするリーグも多い一方、UEFA欧州選手権や2026年FIFAワールドカップのグループステージのように当該チーム間の対戦成績を最優先にする大会もあります。どちらかに決めて順位表の下に書いておき、大会中は変えないことです。</p>
+<h2 id="s">総当たり戦の運営でよくある失敗は？</h2>
+<ul><li><strong>1つのグループのチーム数が多すぎる。</strong> 12チームだと66試合になります。6チームずつ2グループに分け（30試合）、短い決勝トーナメントを付けるほうが現実的です。</li><li><strong>組み合わせを手作業で考える。</strong> 手作りの日程表では、組み合わせが抜けたり、1ラウンドに2試合あるチームが出たりしがちです。サークル方式やジェネレーターを使い、各組み合わせが1回ずつ出ているか確認しましょう。</li><li><strong>順位決定方法を発表していない。</strong> 同率になってから決め方を決めると、必ず誰かにとって不公平に見えます。</li><li><strong>休息を考えていない。</strong> 1ラウンドに複数の時間枠がある場合、あるラウンドの最後の枠と次のラウンドの最初の枠に同じチームを入れないようにしましょう。</li><li><strong>順位表を手で計算し直す。</strong> スコアを1つ訂正するだけで、順位表の何行もが変わります。結果を入力するたびに自動で再計算する表計算ソフトやアプリを使えば、ミスを防げます。</li></ul>
+<p>グラウンドや体育館でスマートフォンを使って運営するなら、<a href="/tournament-bracket/ja-JP/">Ligona</a>（Android）がリーグ戦（総当たり）の日程をラウンドごとに作成します。1回総当たりにもホーム＆アウェーにも対応し、スコアを入力するたびに順位表を更新します。オフラインで動作し、アカウント登録も広告もありません。勝ちの勝ち点・引き分けの勝ち点・負けの勝ち点を設定でき、得失点差と当該チーム間の対戦成績のどちらを優先するかも選べます。順位決定方法は順位表の下に表示されます。<a href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play</a> で入手できます。</p>
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Android 版 Ligona</strong><span>トーナメント表作成・対戦表作成アプリ。総当たりリーグ作成、予選リーグ、順位表、スイス式</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/ja-JP/">Ligona について</a></div></aside><h2 id="s">よくある質問</h2>
+<h3 id="8">8チームの総当たり戦は何試合？</h3>
+<p>28試合です（8 × 7 ÷ 2）。1ラウンド4試合を7ラウンドで消化でき、各チームは7試合ずつ戦います。ホーム＆アウェーにすると、14ラウンドで56試合になります。</p>
+<h3 id="5">5チームの総当たり戦は何ラウンド必要？</h3>
+<p>5ラウンドです。チーム数が奇数なので「休み」を加え、各ラウンドは2試合で1チームが休みになります。合計は10試合のままで、各チームはちょうど1回ずつ休みます。</p>
+<h3 id="s">総当たり戦の休み（不戦勝）は勝ちに数える？</h3>
+<p>通常は数えません。全チームの休みの回数が同じなので、多くの運営者は休みのラウンドを勝ち点0としています。どちらにするにしても、大会前に発表しておきましょう。</p>
+<h3 id="s">総当たり戦とリーグ戦の違いは？</h3>
+<p>シーズン制のリーグ戦は、たいてい2回総当たりで、各チームがほかの全チームとホーム＆アウェーで2回対戦します。大会形式の総当たり戦は1回総当たりで、各組み合わせが1回ずつ対戦することが多いです。</p>
+<h3 id="s">総当たり戦の順位決定方法で一番良いのは？</h3>
+<p>どこでも通用する唯一の方法はありません。当該チーム間の対戦成績を優先すると直接のライバルに勝つことが評価され、得失点差を優先すると全チーム相手に安定した結果を出すことが評価されます。どちらも広く使われているので、大事なのは順番を事前に発表しておくことです。</p>
+<h2 id="s">出典</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Round-robin_tournament" rel="noopener">Round-robin tournament</a>、Wikipedia：試合数とサークル方式について。</li><li><a href="https://handbook.fide.com/chapter/C05Annex1" rel="noopener">Berger tables</a>、FIDE Handbook：チェスで使われる公式の総当たり組み合わせ表。</li></ul></article><section class="related"><h2>関連</h2><div class="list"><a class="item" href="/tools/round-robin-generator/"><strong>Round robin schedule generator</strong><span>Make a round robin schedule from a list of names: every team plays every other once or home and away, byes for odd numbers. Copy, CSV or print.</span></a><a class="item" href="/tools/tournament-games-calculator/"><strong>Tournament games and rounds calculator</strong><span>How many games and rounds for knockout, double elimination, round robin, groups and Swiss with N teams, plus how long it takes on your courts.</span></a><a class="item" href="/guides/double-elimination-bracket-explained/ja/"><strong>ダブルイリミネーションのトーナメント表をわかりやすく解説</strong><span>ダブルイリミネーションでは2敗した時点で敗退です。Nチームの試合数は2N-2、グランドファイナル再戦があれば2N-1。敗者側の進み方も解説します。</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/ja/"><strong>大会の試合数は何試合になる？</strong><span>トーナメントはN-1試合、ダブルイリミネーションは2N-2または2N-1試合、総当たりのリーグ戦はN(N-1)/2試合、スイス式はラウンド数 × N/2試合。4〜32チームの早見表付き。</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/ja/"><strong>トーナメント表のシードの決め方</strong><span>チームに順位を付け、1対16、8対9、4対13…と組めば上位シード同士は終盤まで当たりません。不戦勝の数はチーム数以上で最小の2の累乗からチーム数を引いた数で、上位シードに割り当てます。</span></a><a class="item" href="/guides/swiss-system-tournament-explained/ja/"><strong>スイス式トーナメントのしくみ</strong><span>スイス式トーナメントでは、毎ラウンド同じ得点の人どうしが対戦し、同じ相手とは二度当たらず、途中で敗退する人もいません。ラウンド数はおよそlog2 N、同点はBuchholzで順位を決めます。</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">ガイド</a><a href="/tools/">ツール</a><a href="/">すべてのアプリ</a><a href="mailto:hello@maumiuworks.com">お問い合わせ</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

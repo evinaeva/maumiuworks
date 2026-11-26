@@ -6,7 +6,8 @@
   "description": "Android ATC games come in three kinds: arcade route drawing, radar approach sims and airport tycoons. Here is how they differ and which games exist.",
   "app": "planeflow",
   "updated": "2026-11-26",
-  "tools": []
+  "tools": [],
+  "langs": {}
  },
  {
   "slug": "double-elimination-bracket-explained",
@@ -18,7 +19,59 @@
   "tools": [
    "tournament-bracket-generator",
    "tournament-games-calculator"
-  ]
+  ],
+  "langs": {
+   "de": {
+    "title": "Doppel-K.-o.-System erklärt (mit Beispiel für 8 Teams)",
+    "h1": "Doppel-K.-o.-System erklärt",
+    "description": "Im Doppel-K.-o. scheidet ein Team erst nach zwei Niederlagen aus. N Teams spielen 2N-2 Spiele, mit zweitem Finale 2N-1. So läuft die Verliererseite."
+   },
+   "es": {
+    "title": "\"Doble eliminación: cómo funciona (ejemplo con 8 equipos)\"",
+    "h1": "Cómo funciona la doble eliminación",
+    "description": "En doble eliminación se queda fuera con dos derrotas. N equipos juegan 2N-2 partidos, o 2N-1 si hay segunda final. Así funciona la llave de perdedores."
+   },
+   "fr": {
+    "title": "Double élimination expliquée (exemple avec 8 équipes)",
+    "h1": "La double élimination expliquée",
+    "description": "En double élimination, une équipe est éliminée après deux défaites. N équipes jouent 2N-2 matchs, 2N-1 avec seconde finale. Rôle du tableau des perdants."
+   },
+   "id": {
+    "title": "Bagan Gugur Ganda: Penjelasan dan Contoh 8 Tim",
+    "h1": "Penjelasan bagan gugur ganda",
+    "description": "Di sistem gugur ganda, tim tersingkir setelah dua kali kalah. N tim memainkan 2N-2 laga, atau 2N-1 jika ada final ulang. Cara kerja bagan peserta kalah."
+   },
+   "it": {
+    "title": "Doppia eliminazione: come funziona (esempio con 8 squadre)",
+    "h1": "Tabellone a doppia eliminazione: come funziona",
+    "description": "Nella doppia eliminazione si esce dopo due sconfitte. N squadre giocano 2N-2 partite, o 2N-1 se la finale si ripete. Come funziona il tabellone perdenti."
+   },
+   "ja": {
+    "title": "ダブルイリミネーションの仕組み（8チームの例つき）",
+    "h1": "ダブルイリミネーションのトーナメント表をわかりやすく解説",
+    "description": "ダブルイリミネーションでは2敗した時点で敗退です。Nチームの試合数は2N-2、グランドファイナル再戦があれば2N-1。敗者側の進み方も解説します。"
+   },
+   "ko": {
+    "title": "더블 엘리미네이션 대진표 설명 (8팀 예시 포함)",
+    "h1": "더블 엘리미네이션 대진표 알아보기",
+    "description": "더블 엘리미네이션에서는 두 번 지면 탈락합니다. N팀이면 2N-2경기, 그랜드 파이널 리셋이 있으면 2N-1경기를 치릅니다. 패자조가 돌아가는 방식을 설명합니다."
+   },
+   "pt-BR": {
+    "title": "\"Dupla eliminação: como funciona (com exemplo de 8 times)\"",
+    "h1": "Como funciona o chaveamento de dupla eliminação",
+    "description": "\"Na dupla eliminação, o time sai após duas derrotas. N times jogam 2N-2 partidas, ou 2N-1 com segunda grande final. Como funciona a chave dos perdedores.\""
+   },
+   "ru": {
+    "title": "Двойное выбывание: как устроена сетка (пример на 8 команд)",
+    "h1": "Как устроена сетка с двойным выбыванием",
+    "description": "При двойном выбывании команда вылетает после двух поражений. N команд играют 2N-2 матча, или 2N-1 при втором гранд-финале. Как устроена нижняя сетка."
+   },
+   "tr": {
+    "title": "Çift Eleme Sistemi Nedir? 8 Takımlı Örnekle Anlatım",
+    "h1": "Çift eleme sistemi nasıl işler",
+    "description": "Çift elemede bir takım iki yenilgide elenir. N takım 2N-2 maç oynar, büyük final tekrarlanırsa 2N-1. Kaybedenler tablosu nasıl işler?"
+   }
+  }
  },
  {
   "slug": "how-many-games-in-a-tournament",
@@ -31,7 +84,59 @@
    "tournament-games-calculator",
    "tournament-bracket-generator",
    "round-robin-generator"
-  ]
+  ],
+  "langs": {
+   "de": {
+    "title": "Wie viele Spiele hat ein Turnier? Formeln und Tabelle",
+    "h1": "Wie viele Spiele hat ein Turnier?",
+    "description": "K.-o.-System: N-1 Spiele. Doppel-K.-o.: 2N-2 oder 2N-1. Jeder gegen jeden: N(N-1)/2. Schweizer System: Runden × N/2. Tabelle für 4 bis 32 Teams."
+   },
+   "es": {
+    "title": "¿Cuántos partidos tiene un torneo? Fórmulas y tabla",
+    "h1": "¿Cuántos partidos tiene un torneo?",
+    "description": "Eliminación directa: N-1 partidos. Doble eliminación: 2N-2 o 2N-1. Todos contra todos: N(N-1)/2. Suizo: rondas × N/2. Tabla de 4 a 32 equipos."
+   },
+   "fr": {
+    "title": "Combien de matchs dans un tournoi ? Formules et tableau",
+    "h1": "Combien de matchs dans un tournoi ?",
+    "description": "Élimination directe : N-1 matchs. Double élimination : 2N-2 ou 2N-1. Championnat : N(N-1)/2. Système suisse : rondes × N/2. Chiffres de 4 à 32 équipes."
+   },
+   "id": {
+    "title": "Berapa Jumlah Pertandingan dalam Turnamen? Rumus dan Tabel",
+    "h1": "Berapa jumlah pertandingan dalam sebuah turnamen?",
+    "description": "Sistem gugur: N-1 laga. Gugur ganda: 2N-2 atau 2N-1. Round robin: N(N-1)/2. Sistem Swiss: babak × N/2. Tabel untuk 4 hingga 32 tim."
+   },
+   "it": {
+    "title": "Quante partite ci sono in un torneo? Formule e tabella",
+    "h1": "Quante partite ci sono in un torneo?",
+    "description": "Eliminazione diretta: N-1 partite. Doppia eliminazione: 2N-2 o 2N-1. Girone all'italiana: N(N-1)/2. Svizzero: turni × N/2. Tabella da 4 a 32 squadre."
+   },
+   "ja": {
+    "title": "大会の試合数は何試合？形式別の計算式と早見表",
+    "h1": "大会の試合数は何試合になる？",
+    "description": "トーナメントはN-1試合、ダブルイリミネーションは2N-2または2N-1試合、総当たりのリーグ戦はN(N-1)/2試合、スイス式はラウンド数 × N/2試合。4〜32チームの早見表付き。"
+   },
+   "ko": {
+    "title": "대회 경기 수는 몇 경기일까? 계산 공식과 표",
+    "h1": "대회 경기 수는 몇 경기일까?",
+    "description": "토너먼트: N-1경기. 더블 엘리미네이션: 2N-2 또는 2N-1경기. 풀리그: N(N-1)/2경기. 스위스 방식: 라운드 수 × N/2경기. 4~32팀 경기 수 표 포함."
+   },
+   "pt-BR": {
+    "title": "Quantos jogos tem um torneio? Fórmulas e tabela",
+    "h1": "Quantos jogos tem um torneio?",
+    "description": "Mata-mata: N-1 jogos. Dupla eliminação: 2N-2 ou 2N-1. Pontos corridos: N(N-1)/2. Suíço: rodadas × N/2. Tabela de 4 a 32 times."
+   },
+   "ru": {
+    "title": "Сколько игр в турнире? Формулы и таблица",
+    "h1": "Сколько игр в турнире?",
+    "description": "Олимпийская система: N-1 игр. Двойное выбывание: 2N-2 или 2N-1. Круговая: N(N-1)/2. Швейцарская: туры × N/2. Таблица: от 4 до 32 команд."
+   },
+   "tr": {
+    "title": "Bir Turnuvada Kaç Maç Oynanır? Formüller ve Tablo",
+    "h1": "Bir turnuvada kaç maç oynanır?",
+    "description": "Tek eleme: N-1 maç. Çift eleme: 2N-2 veya 2N-1. Lig usulü: N(N-1)/2. İsviçre sistemi: tur × N/2. 4 ila 32 takım için tablo."
+   }
+  }
  },
  {
   "slug": "how-to-keep-livestock-health-records",
@@ -40,7 +145,8 @@
   "description": "Log each animal's ID and every treatment: product, batch, dose, date, who gave it and withdrawal end date. UK and EU rules: keep 5 years or more.",
   "app": "portfolio-app",
   "updated": "2026-11-26",
-  "tools": []
+  "tools": [],
+  "langs": {}
  },
  {
   "slug": "how-to-learn-morse-code-by-ear",
@@ -49,7 +155,8 @@
   "description": "Learn Morse by sound, not a chart: hear characters at 15 to 20 WPM, start with two (Koch method), add one at 90% accuracy, practice daily.",
   "app": "morse-trainer",
   "updated": "2026-11-26",
-  "tools": []
+  "tools": [],
+  "langs": {}
  },
  {
   "slug": "how-to-organize-a-round-robin-tournament",
@@ -61,7 +168,59 @@
   "tools": [
    "round-robin-generator",
    "tournament-games-calculator"
-  ]
+  ],
+  "langs": {
+   "de": {
+    "title": "Turnier jeder gegen jeden organisieren: Spielplan, Freilose",
+    "h1": "Wie man ein Turnier jeder gegen jeden organisiert",
+    "description": "Jeder gegen jeden mit N Teams: N(N-1)/2 Spiele in N-1 Runden (bei ungerader Zahl N Runden). Dazu: Spielplan, Freilose, Wertung bei Punktgleichheit."
+   },
+   "es": {
+    "title": "Cómo organizar un todos contra todos (calendario y descansos)",
+    "h1": "Cómo organizar un torneo todos contra todos",
+    "description": "En un todos contra todos de N equipos: N(N-1)/2 partidos en N-1 rondas (N si es impar). Cómo organizar el calendario, los descansos y los desempates."
+   },
+   "fr": {
+    "title": "Organiser un tournoi toutes rondes (calendrier, exempts)",
+    "h1": "Comment organiser un tournoi toutes rondes",
+    "description": "Dans un tournoi toutes rondes à N équipes, chacun affronte tous les autres : N(N-1)/2 matchs en N-1 tours (N si impair). Calendrier, exempts, départage."
+   },
+   "id": {
+    "title": "Cara Menyelenggarakan Turnamen Round Robin (Jadwal, Bye)",
+    "h1": "Cara menyelenggarakan turnamen round robin",
+    "description": "Dalam round robin N tim, semua saling bertemu: N(N-1)/2 laga dalam N-1 babak (N jika ganjil). Cara menyusun jadwal, mengatur bye, dan tiebreak."
+   },
+   "it": {
+    "title": "Come organizzare un girone all'italiana (calendario, bye)",
+    "h1": "Come organizzare un torneo con girone all'italiana",
+    "description": "In un girone all'italiana a N squadre tutti affrontano tutti: N(N-1)/2 partite in N-1 turni (N se dispari). Calendario, bye e criteri di spareggio."
+   },
+   "ja": {
+    "title": "総当たり戦（リーグ戦）の組み方：試合数・日程表・休みの扱い",
+    "h1": "総当たり戦（リーグ戦）の組み方",
+    "description": "N チームの総当たり戦では全チームが互いに対戦し、試合数は N(N-1)/2、ラウンド数は N-1（奇数なら N）。日程表の作り方、休みのチームの扱い、同率時の順位の決め方を解説します。"
+   },
+   "ko": {
+    "title": "풀리그 대회 운영하는 방법 (경기 일정, 부전승)",
+    "h1": "풀리그 대회 운영하는 방법",
+    "description": "N개 팀 풀리그는 모든 팀이 서로 한 번씩 맞붙어 N(N-1)/2경기를 N-1라운드(홀수면 N라운드)에 치릅니다. 일정 짜기, 부전승 처리, 동점 시 순위 결정 방법을 정리했습니다."
+   },
+   "pt-BR": {
+    "title": "Como organizar um torneio de pontos corridos (tabela, folgas)",
+    "h1": "Como organizar um torneio de pontos corridos",
+    "description": "Em pontos corridos com N times, todos jogam contra todos: N(N-1)/2 jogos em N-1 rodadas (N se for ímpar). Como montar a tabela, folgas e desempates."
+   },
+   "ru": {
+    "title": "Турнир по круговой системе: расписание, свободные туры",
+    "h1": "Как провести турнир по круговой системе",
+    "description": "В круговом турнире N команд каждая играет с каждой: N(N-1)/2 игр за N-1 туров (N при нечётном числе). Расписание, свободные туры, тай-брейки."
+   },
+   "tr": {
+    "title": "Lig Usulü Turnuva Nasıl Düzenlenir (Fikstür, Bay)",
+    "h1": "Lig usulü turnuva nasıl düzenlenir",
+    "description": "N takımlı lig usulünde herkes herkesle oynar: N-1 turda (tek sayıda N turda) N(N-1)/2 maç. Fikstür hazırlama, bay ve eşitlik bozma kuralları."
+   }
+  }
  },
  {
   "slug": "how-to-seed-a-tournament-bracket",
@@ -72,7 +231,59 @@
   "updated": "2026-11-26",
   "tools": [
    "tournament-bracket-generator"
-  ]
+  ],
+  "langs": {
+   "de": {
+    "title": "Setzliste im Turnierbaum: Reihenfolge, Freilose, Beispiele",
+    "h1": "So setzt man die Teams in einem Turnierbaum",
+    "description": "Teams nach Stärke ordnen, 1 gegen 16, 8 gegen 9, 4 gegen 13 usw. ansetzen. Freilose = nächste Zweierpotenz minus Teams, für die Topgesetzten."
+   },
+   "es": {
+    "title": "Cabezas de serie en un cuadro: orden, pases directos y ejemplos",
+    "h1": "Cómo ordenar los cabezas de serie en un cuadro de torneo",
+    "description": "Ordena los equipos: 1 vs 16, 8 vs 9, 4 vs 13…; los mejores se ven al final. Pases directos: siguiente potencia de dos menos equipos, para los primeros."
+   },
+   "fr": {
+    "title": "Têtes de série dans un tableau : ordre, exempts, exemples",
+    "h1": "Comment placer les têtes de série dans un tableau",
+    "description": "Classez les équipes et opposez 1 à 16, 8 à 9, 4 à 13… Exempts : puissance de deux suivante moins le nombre d'équipes, aux premières têtes de série."
+   },
+   "id": {
+    "title": "Cara Menentukan Unggulan di Bagan Turnamen (Urutan, Bye, Contoh)",
+    "h1": "Cara menentukan unggulan di bagan turnamen",
+    "description": "Urutkan tim, pasangkan 1 vs 16, 8 vs 9, 4 vs 13 dst. agar unggulan atas bertemu terakhir. Bye = pangkat dua berikutnya minus jumlah tim, ke unggulan atas."
+   },
+   "it": {
+    "title": "Come assegnare le teste di serie nel tabellone (ordine, bye)",
+    "h1": "Come assegnare le teste di serie in un tabellone",
+    "description": "Ordina le squadre, poi 1 contro 16, 8 contro 9, 4 contro 13 e così via. Bye = potenza di due successiva meno squadre, alle prime teste di serie."
+   },
+   "ja": {
+    "title": "トーナメント表のシードの決め方（配置順・不戦勝・例）",
+    "h1": "トーナメント表のシードの決め方",
+    "description": "チームに順位を付け、1対16、8対9、4対13…と組めば上位シード同士は終盤まで当たりません。不戦勝の数はチーム数以上で最小の2の累乗からチーム数を引いた数で、上位シードに割り当てます。"
+   },
+   "ko": {
+    "title": "토너먼트 대진표 시드 배정 방법 (순서, 부전승, 예시)",
+    "h1": "토너먼트 대진표 시드 배정하는 법",
+    "description": "팀 순위를 정한 뒤 1 vs 16, 8 vs 9, 4 vs 13 순으로 짝지으면 상위 시드끼리는 마지막에 만납니다. 부전승 수는 다음 2의 거듭제곱에서 팀 수를 뺀 값이며 상위 시드에게 줍니다."
+   },
+   "pt-BR": {
+    "title": "Como definir cabeças de chave (ordem, folgas, exemplos)",
+    "h1": "Como definir os cabeças de chave de um chaveamento",
+    "description": "Ordene as equipes e monte 1 x 16, 8 x 9, 4 x 13 etc., para os favoritos se cruzarem no fim. Folgas = próxima potência de dois menos equipes."
+   },
+   "ru": {
+    "title": "Посев в турнирной сетке: порядок, проходы без игры, примеры",
+    "h1": "Как сделать посев в турнирной сетке",
+    "description": "Ранжируйте команды и сводите 1–16, 8–9, 4–13…, чтобы сильнейшие встретились в конце. Проходы без игры (степень двойки минус число команд) — первым сеяным."
+   },
+   "tr": {
+    "title": "Turnuvada Seri Başı Nasıl Belirlenir: Sıralama, BAY, Örnekler",
+    "h1": "Eleme ağacında seri başları nasıl belirlenir",
+    "description": "Takımları sıralayın, 1-16, 8-9, 4-13 diye eşleştirin; güçlüler en son karşılaşır. BAY = sonraki ikinin kuvveti eksi takım sayısı, üst sıralara."
+   }
+  }
  },
  {
   "slug": "satisfying-cleaning-games-without-timers",
@@ -81,7 +292,8 @@
   "description": "Calm cleaning and restoration games have no timers, lives or energy. What makes them satisfying, how to spot pressure, and games to try on Android.",
   "app": "oddly-satisfying",
   "updated": "2026-11-26",
-  "tools": []
+  "tools": [],
+  "langs": {}
  },
  {
   "slug": "soccer-tactics-board-how-to-explain-plays",
@@ -90,7 +302,8 @@
   "description": "Show one idea per board, move it step by step, keep the same arrows, then practice it on the field. Formations, pressing, set pieces, a sample plan.",
   "app": "tactic-board",
   "updated": "2026-11-26",
-  "tools": []
+  "tools": [],
+  "langs": {}
  },
  {
   "slug": "swiss-system-tournament-explained",
@@ -101,7 +314,59 @@
   "updated": "2026-11-26",
   "tools": [
    "tournament-games-calculator"
-  ]
+  ],
+  "langs": {
+   "de": {
+    "title": "Schweizer System erklärt: Paarungen, Runden, Buchholz",
+    "h1": "Das Schweizer System einfach erklärt",
+    "description": "Im Schweizer System spielen Punktgleiche gegeneinander, keine Paarung doppelt, niemand scheidet aus. Etwa log2 N Runden, Buchholz als Feinwertung."
+   },
+   "es": {
+    "title": "Sistema suizo en torneos: emparejamientos, rondas y Buchholz",
+    "h1": "El sistema suizo en torneos, explicado",
+    "description": "En el sistema suizo, cada ronda se enfrentan jugadores con igual puntaje; nadie repite rival ni queda eliminado. Unas log2 N rondas; Buchholz desempata."
+   },
+   "fr": {
+    "title": "Système suisse : appariements, rondes et Buchholz expliqués",
+    "h1": "Le tournoi au système suisse expliqué",
+    "description": "Au système suisse, les joueurs à score égal se rencontrent à chaque ronde, sans revanche ni élimination. Environ log2 N rondes, le Buchholz départage."
+   },
+   "id": {
+    "title": "Turnamen Sistem Swiss: Cara Pairing, Babak, dan Buchholz",
+    "h1": "Penjelasan turnamen sistem Swiss",
+    "description": "Dalam sistem Swiss, pemain dengan skor sama bertemu tiap babak, tak ada yang bertemu dua kali atau gugur. Sekitar log2 N babak; Buchholz jadi tiebreak."
+   },
+   "it": {
+    "title": "Sistema svizzero nei tornei (abbinamenti, turni, Buchholz)",
+    "h1": "Come funziona un torneo a sistema svizzero",
+    "description": "Nel sistema svizzero si gioca contro chi ha gli stessi punti, mai due volte e senza eliminazioni. Circa log2 N turni, spareggi con il Buchholz."
+   },
+   "ja": {
+    "title": "スイス式トーナメントとは（組み合わせ・ラウンド数・Buchholz）",
+    "h1": "スイス式トーナメントのしくみ",
+    "description": "スイス式トーナメントでは、毎ラウンド同じ得点の人どうしが対戦し、同じ相手とは二度当たらず、途中で敗退する人もいません。ラウンド数はおよそlog2 N、同点はBuchholzで順位を決めます。"
+   },
+   "ko": {
+    "title": "스위스 방식 대회란? 대진 편성, 라운드 수, Buchholz 정리",
+    "h1": "스위스 방식 대회 알아보기",
+    "description": "스위스 방식 대회에서는 매 라운드 점수가 같은 선수끼리 맞붙고, 같은 상대와 두 번 만나지 않으며 탈락도 없습니다. 라운드는 약 log2 N, 동점은 Buchholz로 가립니다."
+   },
+   "pt-BR": {
+    "title": "Sistema suíço em torneios: emparceiramento, rodadas e Buchholz",
+    "h1": "Torneio no sistema suíço: como funciona",
+    "description": "No suíço, jogadores com os mesmos pontos se enfrentam a cada rodada, sem repetir adversário e sem eliminação. Cerca de log2 N rodadas; Buchholz desempata."
+   },
+   "ru": {
+    "title": "Швейцарская система турнира: жеребьёвка, туры, Бухгольц",
+    "h1": "Швейцарская система турнира: как она устроена",
+    "description": "В швейцарской системе в каждом туре встречаются игроки с равными очками, без повторных встреч и выбывания. Около log2 N туров, при равенстве — Бухгольц."
+   },
+   "tr": {
+    "title": "İsviçre Sistemi Nasıl İşler? Eşleştirme, Turlar, Buchholz",
+    "h1": "İsviçre sistemi turnuva nasıl işler",
+    "description": "İsviçre sisteminde her turda eşit puanlılar eşleşir, kimse aynı rakiple iki kez oynamaz ve elenmez. Yaklaşık log2 N tur oynanır, eşitliği Buchholz bozar."
+   }
+  }
  },
  {
   "slug": "voltage-drop-calculation-explained",
@@ -110,6 +375,7 @@
   "description": "Single-phase VD = 2 × K × I × L ÷ CM; three-phase uses 1.732. K is 12.9 for copper, 21.2 for aluminum. Worked examples in AWG and mm².",
   "app": "electric-toolkit",
   "updated": "2026-11-26",
-  "tools": []
+  "tools": [],
+  "langs": {}
  }
 ]

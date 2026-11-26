@@ -4,12 +4,83 @@
  * so the web page and the app give the same bracket and the same schedule for the same list of names.
  * Pure functions only in MW.engine; DOM helpers in MW.ui are used by the tool pages.
  * Loads as a classic script (defer) in the browser -> window.MW; in Node -> module.exports.
+ * No user-visible text in the code: it comes from i18n/<lang>.json through MW.i18n (see the i18n block).
  */
 (function (root) {
   'use strict';
 
   var BYE = 'bye';
   var PENDING = 'pending';
+
+  // ------------------------------------------------------------------ i18n
+  /*
+   * Every user-visible string lives in i18n/<lang>.json (flat keys, placeholders {name}), never in the scripts.
+   * In the browser the page inlines the merged dictionary BEFORE this script (no fetch, no flash of English):
+   *   window.MW_I18N = {...shared en, ...tool en, ...shared <lang>, ...tool <lang>}; window.MW_LANG = '<lang>';
+   * In Node (tests) the shared English file is read from disk.
+   * Plurals: key_<Intl.PluralRules(lang).select(n)>, then key_other, then the key itself.
+   */
+  var NODE_EN = null;
+  if (typeof module === 'object' && module.exports && typeof require === 'function') {
+    try { NODE_EN = require('./i18n/en.json'); } catch (e) { NODE_EN = null; }
+  }
+  var hasOwn = Object.prototype.hasOwnProperty, missing = {}, cache = {};
+  var G = typeof window !== 'undefined' ? window : typeof globalThis !== 'undefined' ? globalThis : root;
+  function lang() {
+    var l = G && G.MW_LANG;
+    if (!l && typeof document !== 'undefined' && document.documentElement) l = document.documentElement.lang;
+    return l || 'en';
+  }
+  function dict() { return (G && G.MW_I18N) || NODE_EN || {}; }
+  function lookup(key) { var d = dict(); return hasOwn.call(d, key) ? d[key] : null; }
+  function miss(key) {
+    if (!missing[key]) { missing[key] = 1; if (typeof console !== 'undefined') console.warn('MW i18n: no text for "' + key + '"'); }
+    return key;
+  }
+  function fill(s, params) {
+    return String(s).replace(/\{(\w+)\}/g, function (m, k) { return params && hasOwn.call(params, k) ? String(params[k]) : m; });
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
+  }
+  function intl(kind, l, make) {
+    var k = kind + ':' + l;
+    if (!(k in cache)) { try { cache[k] = make(l); } catch (e) { cache[k] = null; } }
+    return cache[k];
+  }
+  /** A number for prose in the page language (1,024 / 1 024 / 1.024). Tables, brackets and CSV keep plain digits. */
+  function num(n) {
+    var f = typeof Intl === 'object' && intl('num', lang(), function (l) { return new Intl.NumberFormat(l); });
+    return f ? f.format(n) : String(n);
+  }
+  function pluralKey(key, n) {
+    var r = typeof Intl === 'object' && Intl.PluralRules && intl('plural', lang(), function (l) { return new Intl.PluralRules(l); });
+    var cat = r ? r.select(n) : (n === 1 ? 'one' : 'other');
+    if (lookup(key + '_' + cat) != null) return key + '_' + cat;
+    if (lookup(key + '_other') != null) return key + '_other';
+    return key;
+  }
+  function withN(n, params) {
+    var p = { n: num(n) };
+    if (params) for (var k in params) if (hasOwn.call(params, k)) p[k] = params[k];
+    return p;
+  }
+  /** Plain text: t('saved', {file: 'x.csv'}). */
+  function t(key, params) { var s = lookup(key); return fill(s == null ? miss(key) : s, params); }
+  /** Plain text with a count: tn('names_found', 6) -> "6 names found." ({n} = the count in prose digits unless given). */
+  function tn(key, n, params) { return t(pluralKey(key, n), withN(n, params)); }
+  /** HTML: the dictionary text is escaped, the params go in as they are (the caller escapes names). */
+  function th(key, params) { var s = lookup(key); return fill(esc(s == null ? miss(key) : s), params); }
+  function thn(key, n, params) { return th(pluralKey(key, n), withN(n, params)); }
+  /** "A, B, C" and "A and B" in the page language; asHtml: the items are HTML and the result goes into innerHTML. */
+  function list(items, asHtml) { return items.join(asHtml ? th('list_sep') : t('list_sep')); }
+  function andList(items, asHtml) {
+    return items.length ? items.reduce(function (a, b) { return (asHtml ? th : t)('list_and', { a: a, b: b }); }) : '';
+  }
+  /** Sentences of one paragraph: joined by a space in most languages, by nothing in Chinese or Japanese. */
+  function sentences(items) { return items.filter(function (x) { return x; }).join(t('sentence_sep')); }
+  var i18n = { t: t, tn: tn, th: th, thn: thn, num: num, list: list, andList: andList, sentences: sentences, lang: lang,
+    has: function (key) { return lookup(key) != null; } };
 
   // ------------------------------------------------------------------ basics
   function nextPow2(n) { var p = 1; while (p < n) p *= 2; return p; }
@@ -416,20 +487,20 @@
   }
   function knockoutRoundLabel(round, rounds) {
     var left = rounds - round;
-    if (left === 1) return 'Final';
-    if (left === 2) return 'Semi-finals';
-    if (left === 3) return 'Quarter-finals';
-    return 'Round of ' + Math.pow(2, left);
+    if (left === 1) return t('round_final');
+    if (left === 2) return t('round_semis');
+    if (left === 3) return t('round_quarters');
+    return t('round_of', { n: Math.pow(2, left) });
   }
-  function roundLabel(t, section, round) {
-    var rs = sectionRounds(t, section);
+  function roundLabel(tour, section, round) {
+    var rs = sectionRounds(tour, section);
     switch (section) {
       case 'main': return knockoutRoundLabel(round, rs);
-      case 'winners': return round === rs - 1 ? 'Winners final' : 'Winners round ' + (round + 1);
-      case 'losers': return round === rs - 1 ? 'Losers final' : 'Losers round ' + (round + 1);
-      case 'final': return round === 0 ? 'Grand final' : 'Grand final reset';
-      case 'third': return 'Third place';
-      default: return 'Round ' + (round + 1);
+      case 'winners': return round === rs - 1 ? t('round_winners_final') : t('round_winners_n', { n: round + 1 });
+      case 'losers': return round === rs - 1 ? t('round_losers_final') : t('round_losers_n', { n: round + 1 });
+      case 'final': return round === 0 ? t('round_grand_final') : t('round_grand_final_reset');
+      case 'third': return t('round_third');
+      default: return t('round_n', { n: round + 1 });
     }
   }
   var SECTION_ORDER = { group: 0, main: 1, winners: 1, losers: 2, third: 3, final: 4 };
@@ -563,11 +634,12 @@
     return a;
   }
 
+  /** "2 h 15 min" in the page language; '' for 0 (callers decide what an empty time looks like). */
   function formatMinutes(min) {
     if (!(min > 0)) return '';
     var h = Math.floor(min / 60), m = min % 60;
-    if (!h) return m + ' min';
-    return h + ' h' + (m ? ' ' + m + ' min' : '');
+    if (!h) return t('dur_min', { m: num(m) });
+    return m ? t('dur_h_min', { h: num(h), m: num(m) }) : t('dur_h', { h: num(h) });
   }
 
   var engine = {
@@ -585,9 +657,7 @@
   var ui = {
     $: function (sel, ctx) { return (ctx || document).querySelector(sel); },
     $$: function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); },
-    esc: function (s) {
-      return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
-    },
+    esc: esc,
     /** Short status line near a button (aria-live region inside the tool). */
     say: function (el, text) {
       if (!el) return;
@@ -595,14 +665,14 @@
       setTimeout(function () { el.textContent = text; }, 30);
     },
     copy: function (text, statusEl) {
-      function done() { ui.say(statusEl, 'Copied to the clipboard.'); }
+      function done() { ui.say(statusEl, t('copied')); }
       function fallback() {
         var ta = document.createElement('textarea');
         ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
         document.body.appendChild(ta); ta.select();
         var ok = false; try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
         document.body.removeChild(ta);
-        ui.say(statusEl, ok ? 'Copied to the clipboard.' : 'Copy did not work in this browser: select the text and copy it by hand.');
+        ui.say(statusEl, ok ? t('copied') : t('copy_failed'));
       }
       if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
       else fallback();
@@ -614,7 +684,7 @@
       a.href = url; a.download = filename; a.rel = 'noopener';
       document.body.appendChild(a); a.click(); document.body.removeChild(a);
       setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
-      ui.say(statusEl, 'Saved ' + filename + '.');
+      ui.say(statusEl, t('saved', { file: filename }));
     },
     /**
      * Print only [getEl()] (the schedule or bracket): before printing, every sibling along the path from it up to
@@ -636,10 +706,11 @@
     ready: function (fn) {
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn); else fn();
     },
-    plural: function (n, one, many) { return n + ' ' + (n === 1 ? one : (many || one + 's')); }
+    /** Time for the page: "2 h 15 min", and "0 min" for nothing. */
+    duration: function (min) { return formatMinutes(min) || t('dur_min', { m: num(0) }); }
   };
 
-  var api = { engine: engine, ui: ui };
+  var api = { engine: engine, ui: ui, i18n: i18n };
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.MW = api;
 })(this);

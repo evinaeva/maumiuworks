@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>スイス式トーナメントとは（組み合わせ・ラウンド数・Buchholz） — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="スイス式トーナメントでは、毎ラウンド同じ得点の人どうしが対戦し、同じ相手とは二度当たらず、途中で敗退する人もいません。ラウンド数はおよそlog2 N、同点はBuchholzで順位を決めます。">
+<link rel="canonical" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/ja/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/guides/swiss-system-tournament-explained/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="スイス式トーナメントとは（組み合わせ・ラウンド数・Buchholz）"><meta property="og:description" content="スイス式トーナメントでは、毎ラウンド同じ得点の人どうしが対戦し、同じ相手とは二度当たらず、途中で敗退する人もいません。ラウンド数はおよそlog2 N、同点はBuchholzで順位を決めます。"><meta property="og:url" content="https://maumiuworks.com/guides/swiss-system-tournament-explained/ja/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "スイス式トーナメントのしくみ", "description": "スイス式トーナメントでは、毎ラウンド同じ得点の人どうしが対戦し、同じ相手とは二度当たらず、途中で敗退する人もいません。ラウンド数はおよそlog2 N、同点はBuchholzで順位を決めます。", "inLanguage": "ja", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "mainEntityOfPage": "https://maumiuworks.com/guides/swiss-system-tournament-explained/ja/", "about": {"@type": "SoftwareApplication", "name": "Ligona", "operatingSystem": "Android", "url": "https://maumiuworks.com/tournament-bracket/ja-JP/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "ガイド", "item": "https://maumiuworks.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "スイス式トーナメントのしくみ", "item": "https://maumiuworks.com/guides/swiss-system-tournament-explained/ja/"}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="すべてのアプリ" aria-label="Maumiu Works — すべてのアプリ">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/guides/" aria-label="ガイド"><span>ガイド</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">スイス式トーナメントのしくみ</span></nav><div class="tools"><details class="langs"><summary aria-label="言語: 日本語" title="日本語"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"></summary><ul><li><a href="/guides/swiss-system-tournament-explained/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/guides/swiss-system-tournament-explained/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/guides/swiss-system-tournament-explained/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/guides/swiss-system-tournament-explained/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/guides/swiss-system-tournament-explained/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/guides/swiss-system-tournament-explained/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/guides/swiss-system-tournament-explained/ja/" hreflang="ja" lang="ja" aria-current="true"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/guides/swiss-system-tournament-explained/ko/" hreflang="ko" lang="ko"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/guides/swiss-system-tournament-explained/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/guides/swiss-system-tournament-explained/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/guides/swiss-system-tournament-explained/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap"><article class="art"><h1>スイス式トーナメントのしくみ</h1><p class="byline">Maumiu Works · 更新日 <time datetime="2026-11-26">2026年11月26日</time></p><nav class="toc" aria-label="このページの内容"><p>このページの内容</p><ol><li><a href="#s">スイス式の組み合わせはどう決める？</a></li><li><a href="#s">スイス式はラウンドごとにどう進む？</a></li><li><a href="#s">スイス式は何ラウンドにすればいい？</a></li><li><a href="#s">スイス式で不戦勝はどう扱う？</a></li><li><a href="#buchholz">Buchholz（ブッフホルツ）とは？</a></li><li><a href="#s">スイス式にはほかにどんなタイブレークがある？</a></li><li><a href="#s">総当たりよりスイス式が向いているのはどんなとき？</a></li><li><a href="#s">スイス式の弱点は？</a></li><li><a href="#s">よくある質問</a></li><li><a href="#s">出典</a></li></ol></nav><p>スイス式トーナメント（スイスドロー）は、あらかじめ決めた数のラウンドを行い、各ラウンドで<strong>同じか近い得点</strong>で、<strong>まだ対戦していない</strong>相手と組み合わせる方式です。途中で敗退する人はおらず、全員が毎ラウンド対戦し、最後に得点がいちばん多い人が優勝です。単独首位を1人に絞るには、最低でも<strong>log2 N ラウンド（切り上げ）</strong>が必要です。32人なら5ラウンド、128人なら7ラウンドで済み、総当たりの31ラウンドや127ラウンドと比べると大幅に短くなります。</p>
+<p>試してみる：<a href="/tools/tournament-games-calculator/">試合数計算ツール</a>で、スイス式のラウンド数と試合数をほかの方式と並べて確認できます。</p>
+<h2 id="s">スイス式の組み合わせはどう決める？</h2>
+<p>多くの主催者が従っているルールはチェスに由来します。チェスでは FIDE（国際チェス連盟）がスイス式の基本ルールを定めています。</p>
+<ul><li><strong>同じ2人が二度対戦することはありません。</strong> 大会全体を通して再戦はなしです。</li><li><strong>同じ得点の人どうしで組みます。</strong> 得点が同じ人たちで同点グループをつくり、できるかぎりそのグループの中で組み合わせます。</li><li><strong>同点グループの人数が奇数のときは、</strong> 1人がひとつ下のグループに「フロート」し、少し得点の低い相手と対戦します。</li><li><strong>先後（またはホーム＆アウェー）を偏らせません。</strong> チェスでは同じ色が3回続かないようにし、白番と黒番の回数もほぼ同じに保ちます。</li><li><strong>次のラウンドの組み合わせは、今のラウンドがすべて終わってから決めます。</strong> 結果によって変わるためです。</li></ul>
+<p>同点グループ内のよく使われる組み方（レーティング戦の多くで使われるオランダ式＝ダッチシステムの基本）は、グループをレーティングやシード順に並べ、上位半分と下位半分を当てる方法です。8人のグループなら、シード1対5、2対6、3対7、4対8となります。第1ラウンドも参加者全員を対象に同じやり方で組みます。</p>
+<h2 id="s">スイス式はラウンドごとにどう進む？</h2>
+<p>8人（シード1〜8）、3ラウンド、1ラウンド4局の例です。わかりやすくするため、常に上位シードが勝ち、引き分けはないものとします。</p>
+<div class="tbl"><table><thead><tr><th>ラウンド</th><th>同点グループ</th><th>組み合わせ</th><th>理由</th></tr></thead><tbody><tr><td>1</td><td>全員（0）</td><td>1-5, 2-6, 3-7, 4-8</td><td>上位半分 対 下位半分</td></tr><tr><td>2</td><td>1点：1, 2, 3, 4</td><td>1-3, 2-4</td><td>勝った人どうし</td></tr><tr><td>2</td><td>0点：5, 6, 7, 8</td><td>5-7, 6-8</td><td>負けた人どうし</td></tr><tr><td>3</td><td>2点：1, 2</td><td>1-2</td><td>全勝の2人が対戦</td></tr><tr><td>3</td><td>1点：3, 4, 5, 6</td><td>3-5, 4-6</td><td>このグループ内で再戦なし</td></tr><tr><td>3</td><td>0点：7, 8</td><td>7-8</td><td>初対戦</td></tr></tbody></table></div>
+<p>3ラウンド後の得点は、選手1が3点、選手2・3・4が2点、選手5・6・7が1点、選手8が0点です。全勝はちょうど1人で、log2 8 = 3 ラウンドはまさにこの結果を生むための数です。12局で合計12点が配られており、計算も合っています。</p>
+<h2 id="s">スイス式は何ラウンドにすればいい？</h2>
+<div class="tbl"><table><thead><tr><th>人数</th><th>最少ラウンド数（log2 N を切り上げ）</th><th>1ラウンドの対局数</th><th>総当たりなら</th></tr></thead><tbody><tr><td>8</td><td>3</td><td>4</td><td>7ラウンド</td></tr><tr><td>16</td><td>4</td><td>8</td><td>15ラウンド</td></tr><tr><td>32</td><td>5</td><td>16</td><td>31ラウンド</td></tr><tr><td>64</td><td>6</td><td>32</td><td>63ラウンド</td></tr><tr><td>128</td><td>7</td><td>64</td><td>127ラウンド</td></tr></tbody></table></div>
+<p>上位の選手が勝ち続けるなら、最少ラウンド数で首位を1人に絞れます。実際には引き分けや番狂わせで得点がばらけるため、優勝者以外の順位もより確実に決められるよう、最少より1〜2ラウンド多く行う大会がたくさんあります。数百人規模の大きなチェスのオープン戦では9ラウンドが多く、Chess Olympiad（チェス・オリンピアード）は11ラウンドです。ただし N-1 を超えるラウンド数は組まないでください。再戦なしの組み合わせが作れなくなります。</p>
+<p>対局の総数は ラウンド数 × N/2 で、N が奇数のときは切り捨てます。</p>
+<h2 id="s">スイス式で不戦勝はどう扱う？</h2>
+<p>参加者が奇数だと、毎ラウンド1人が対局なしになり、「組み合わせ上の不戦勝」となります。FIDE のスイス式基本ルールでは次のとおりです。</p>
+<ul><li>不戦勝には、大会規定で別の値を決めていないかぎり勝ちと同じ点を与え、大会内のすべての不戦勝を同じ点数にします。</li><li>不戦勝は1人1回まで（対局せずに得る点も勝ち1回分まで）です。</li></ul>
+<p>実際の組み合わせシステムでは、まだ不戦勝になっていない順位表の下位の選手に不戦勝を割り当てます。上位の選手が対局なしで1点を得ることを避けるためです。</p>
+<p>クラブによっては、不戦勝を0.5点にしているところもあります。どちらでも構いませんが、第1ラウンドの前に告知しておきましょう。選手が事前に申し出て休むラウンド（あるラウンドを欠場したい場合など）はこれとは別扱いで、通常は0点か0.5点です。</p>
+<h2 id="buchholz">Buchholz（ブッフホルツ）とは？</h2>
+<p>スイス式では、ラウンド数が少ないため同点がとてもよく出ます。最も広く使われているタイブレークが <strong>Buchholz</strong> で、対戦したすべての相手の最終得点を合計したものです。対戦相手がどれだけ強かったかを表します。同じ得点の2人なら、より強い相手から点を取ったほうが上位になります。</p>
+<p>上の例では、選手2・3・4がいずれも2点で終えています。</p>
+<div class="tbl"><table><thead><tr><th>選手</th><th>対戦相手（最終得点）</th><th>Buchholz</th></tr></thead><tbody><tr><td>2</td><td>6 (1), 4 (2), 1 (3)</td><td>6</td></tr><tr><td>3</td><td>7 (1), 1 (3), 5 (1)</td><td>5</td></tr><tr><td>4</td><td>8 (0), 2 (2), 6 (1)</td><td>3</td></tr></tbody></table></div>
+<p>したがって順位は2、3、4の順です。選手2は優勝者にだけ負け、2点の選手に勝っています。選手4は最下位の選手から1点を取っています。</p>
+<h2 id="s">スイス式にはほかにどんなタイブレークがある？</h2>
+<ul><li><strong>Buchholz Cut 1：</strong> 得点が最も低い対戦相手を除いた Buchholz。極端に弱い相手1人の影響を小さくします。</li><li><strong>Median Buchholz：</strong> 得点が最も高い相手と最も低い相手の両方を除いた Buchholz。</li><li><strong>Sonneborn-Berger：</strong> 勝った相手の得点の合計に、引き分けた相手の得点の半分を足したもの。強い相手に勝つほど有利になります。</li><li><strong>直接対決：</strong> 同点の選手どうしが対戦していれば、その対局の結果。</li><li><strong>勝利数：</strong> 引き分けより勝ち負けのはっきりした結果を重視します。</li><li><strong>累積得点（プログレッシブ）：</strong> 各ラウンド終了時点の得点を足し合わせたもの。早い段階で勝ち、その後強い相手と当たった選手が上位になります。</li><li><strong>対戦相手の平均レーティング：</strong> チェスのレーティング戦でよく使われます。</li><li><strong>対戦相手のマッチ勝率：</strong> Magic: The Gathering の大会での主要なタイブレークで、各対戦相手の勝率は最低33%として計算します。</li></ul>
+<p>FIDE のタイブレーク規定には、選手が対局しなかったラウンドについての特別なルールもあり、不戦勝や不戦敗によって誰かの Buchholz が不当に上下しないようになっています。どれを使うにしても、大会前に採用するタイブレークの順番を決めて公表しておきましょう。</p>
+<h2 id="s">総当たりよりスイス式が向いているのはどんなとき？</h2>
+<p>スイス式が向いているのは次のような場合です。</p>
+<ul><li>参加人数に対して、ラウンド数を多く取れないとき。30人で一晩5ラウンドしかできないなら、総当たり（29ラウンド）は無理です。</li><li>誰も敗退させたくないとき。トーナメント（勝ち抜き戦）と違い、全員が毎ラウンド対戦できます。</li><li>参加者の実力に差があるとき。1〜2ラウンドで強い人は強い人と、初心者は同じくらいの相手と当たるようになり、誰にとっても楽しい対局になります。</li></ul>
+<p>総当たりのほうが向いているのは、人数が少ない（10人程度まで）とき、全員が全員と対戦する必要がある（クラブ選手権、予選リーグなど）とき、すべての順位を文句なしに決めたいときです。スイス式は上位の順位はしっかり決まりますが、中位の順位はタイブレークに左右されやすくなります。</p>
+<h2 id="s">スイス式の弱点は？</h2>
+<ul><li><strong>手作業の組み合わせはミスが起きやすい。</strong> 同点グループ、フロート、先後、再戦なしのルールが絡み合い、特に終盤のラウンドで難しくなります。ソフトウェアを使いましょう。</li><li><strong>全日程を事前に発表できない。</strong> 各ラウンドは前のラウンドの結果をもとに組みます。</li><li><strong>同点が多い。</strong> そのため多くの順位がタイブレークで決まります。</li><li><strong>終盤には優勝がすでに決まっていることがある。</strong> その間もほかの選手は順位をかけて対局を続けます。</li></ul>
+<p>クラブの例会、ボードゲーム会、eスポーツの大会をスマホで運営するなら、<a href="/tournament-bracket/ja-JP/">Ligona</a>（Android）でスイス式が使えます。log2 N ラウンドを提案し（ラウンド数は変更可能）、同じ得点の人どうしを組み、再戦を避け、まだ不戦勝になっていない最下位の選手に不戦勝（勝ち扱い）を割り当て、同点は Buchholz、次に勝利数で順位をつけ、今のラウンドが終わると次のラウンドを自動で組みます。オフラインで動作し、アカウント登録も広告もありません。<a href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play</a> から入手できます。FIDE のレーティング対象となるチェスの大会では、所属する連盟が認めた組み合わせソフトを使ってください。</p>
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Android 版 Ligona</strong><span>トーナメント表作成・対戦表作成アプリ。総当たりリーグ作成、予選リーグ、順位表、スイス式</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/ja-JP/">Ligona について</a></div></aside><h2 id="s">よくある質問</h2>
+<h3 id="16">16人のスイス式トーナメントは何ラウンド？</h3>
+<p>最低4ラウンドです。2の4乗が16だからです。優勝者以外の順位もより正確に決めるため、5ラウンド行う主催者も多くいます。1ラウンドは8局です。</p>
+<h3 id="s">スイス式で同じ相手と二度対戦することはある？</h3>
+<p>ありません。同じ大会で2人が二度以上対戦しないことが、スイス式のいちばん基本的なルールです。</p>
+<h3 id="buchholz">チェスの Buchholz とは？</h3>
+<p>Buchholz はタイブレークの一種で、その選手が対戦したすべての相手の最終得点の合計です。同じ得点の選手のうち、Buchholz が高いほうがより強い相手と戦ったことになり、上位になります。</p>
+<h3 id="s">スイス式の不戦勝は勝ち扱い？</h3>
+<p>FIDE の基本ルールでは、大会規定で別に定めないかぎり、組み合わせ上の不戦勝は勝ちと同じ点になり、1人1回までです。0.5点としているクラブもあります。</p>
+<h3 id="s">スイス式と総当たりの違いは？</h3>
+<p>総当たりは全員が全員と対戦するので N-1 ラウンドかかります。スイス式は得点の近い相手とおよそ log2 N ラウンドだけ対戦するので、参加者が多くてもずっと短い時間で終えられます。</p>
+<h2 id="s">出典</h2>
+<ul><li><a href="https://handbook.fide.com/chapter/C0401202507" rel="noopener">Basic rules for Swiss systems (C.04.1)</a>、FIDE Handbook：再戦なし、同点グループ、不戦勝、先後について。</li><li><a href="https://en.wikipedia.org/wiki/Swiss-system_tournament" rel="noopener">Swiss-system tournament</a>、Wikipedia：歴史、組み合わせ、ラウンド数について。</li><li><a href="https://en.wikipedia.org/wiki/Tie-breaking_in_Swiss-system_tournaments" rel="noopener">Tie-breaking in Swiss-system tournaments</a>, Wikipedia：Buchholz、Median、Sonneborn-Berger、累積得点について。</li></ul></article><section class="related"><h2>関連</h2><div class="list"><a class="item" href="/tools/tournament-games-calculator/"><strong>Tournament games and rounds calculator</strong><span>How many games and rounds for knockout, double elimination, round robin, groups and Swiss with N teams, plus how long it takes on your courts.</span></a><a class="item" href="/guides/double-elimination-bracket-explained/ja/"><strong>ダブルイリミネーションのトーナメント表をわかりやすく解説</strong><span>ダブルイリミネーションでは2敗した時点で敗退です。Nチームの試合数は2N-2、グランドファイナル再戦があれば2N-1。敗者側の進み方も解説します。</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/ja/"><strong>大会の試合数は何試合になる？</strong><span>トーナメントはN-1試合、ダブルイリミネーションは2N-2または2N-1試合、総当たりのリーグ戦はN(N-1)/2試合、スイス式はラウンド数 × N/2試合。4〜32チームの早見表付き。</span></a><a class="item" href="/guides/how-to-organize-a-round-robin-tournament/ja/"><strong>総当たり戦（リーグ戦）の組み方</strong><span>N チームの総当たり戦では全チームが互いに対戦し、試合数は N(N-1)/2、ラウンド数は N-1（奇数なら N）。日程表の作り方、休みのチームの扱い、同率時の順位の決め方を解説します。</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/ja/"><strong>トーナメント表のシードの決め方</strong><span>チームに順位を付け、1対16、8対9、4対13…と組めば上位シード同士は終盤まで当たりません。不戦勝の数はチーム数以上で最小の2の累乗からチーム数を引いた数で、上位シードに割り当てます。</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">ガイド</a><a href="/tools/">ツール</a><a href="/">すべてのアプリ</a><a href="mailto:hello@maumiuworks.com">お問い合わせ</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

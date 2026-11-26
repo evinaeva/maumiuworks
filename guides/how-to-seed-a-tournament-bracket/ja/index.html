@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>トーナメント表のシードの決め方（配置順・不戦勝・例） — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="チームに順位を付け、1対16、8対9、4対13…と組めば上位シード同士は終盤まで当たりません。不戦勝の数はチーム数以上で最小の2の累乗からチーム数を引いた数で、上位シードに割り当てます。">
+<link rel="canonical" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/ja/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="トーナメント表のシードの決め方（配置順・不戦勝・例）"><meta property="og:description" content="チームに順位を付け、1対16、8対9、4対13…と組めば上位シード同士は終盤まで当たりません。不戦勝の数はチーム数以上で最小の2の累乗からチーム数を引いた数で、上位シードに割り当てます。"><meta property="og:url" content="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/ja/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "トーナメント表のシードの決め方", "description": "チームに順位を付け、1対16、8対9、4対13…と組めば上位シード同士は終盤まで当たりません。不戦勝の数はチーム数以上で最小の2の累乗からチーム数を引いた数で、上位シードに割り当てます。", "inLanguage": "ja", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "mainEntityOfPage": "https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/ja/", "about": {"@type": "SoftwareApplication", "name": "Ligona", "operatingSystem": "Android", "url": "https://maumiuworks.com/tournament-bracket/ja-JP/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "ガイド", "item": "https://maumiuworks.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "トーナメント表のシードの決め方", "item": "https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/ja/"}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="すべてのアプリ" aria-label="Maumiu Works — すべてのアプリ">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/guides/" aria-label="ガイド"><span>ガイド</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">トーナメント表のシードの決め方</span></nav><div class="tools"><details class="langs"><summary aria-label="言語: 日本語" title="日本語"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"></summary><ul><li><a href="/guides/how-to-seed-a-tournament-bracket/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/guides/how-to-seed-a-tournament-bracket/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/guides/how-to-seed-a-tournament-bracket/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/guides/how-to-seed-a-tournament-bracket/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/guides/how-to-seed-a-tournament-bracket/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/guides/how-to-seed-a-tournament-bracket/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/guides/how-to-seed-a-tournament-bracket/ja/" hreflang="ja" lang="ja" aria-current="true"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/guides/how-to-seed-a-tournament-bracket/ko/" hreflang="ko" lang="ko"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/guides/how-to-seed-a-tournament-bracket/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/guides/how-to-seed-a-tournament-bracket/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/guides/how-to-seed-a-tournament-bracket/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap"><article class="art"><h1>トーナメント表のシードの決め方</h1><p class="byline">Maumiu Works · 更新日 <time datetime="2026-11-26">2026年11月26日</time></p><nav class="toc" aria-label="このページの内容"><p>このページの内容</p><ol><li><a href="#s">トーナメントの「シード」とは何ですか？</a></li><li><a href="#s">シード順はどう決めればよいですか？</a></li><li><a href="#s">標準的なシード順とは？なぜうまくいくのですか？</a></li><li><a href="#s">不戦勝はいくつ必要ですか？</a></li><li><a href="#12">例：12チームのシードはどう組みますか？</a></li><li><a href="#6">例：6チームのシードはどう組みますか？</a></li><li><a href="#s">抽選とシード、どちらを使うべきですか？</a></li><li><a href="#s">上位シードを守り、同じ所属のチームを離すには？</a></li><li><a href="#s">予選リーグ＋決勝トーナメントのグループ分けはどうシードしますか？</a></li><li><a href="#s">よくある質問</a></li><li><a href="#s">参考資料</a></li></ol></nav><p>トーナメント表にシードを付けるには、まずチームを強いチーム（第1シード）から弱いチームの順に並べます。次に、1回戦のどの試合でも2チームのシード番号の合計が「トーナメント表の枠数＋1」になるように配置します。16チームなら <strong>1対16、8対9、4対13、5対12、2対15、7対10、3対14、6対11</strong> で、第1シードと第2シードは表の反対側の山に入れます。チーム数が2の累乗でない場合、不戦勝の数は <strong>チーム数以上で最小の2の累乗からチーム数を引いた数</strong> になり、不戦勝は上位シードに割り当てます。12チームなら不戦勝は4つで、第1〜第4シードに与えます。</p>
+<p>試してみましょう：<a href="/tools/tournament-bracket-generator/">トーナメント表ジェネレーター</a>は、チーム数に関係なくこの方法でシードと不戦勝を配置します。</p>
+<h2 id="s">トーナメントの「シード」とは何ですか？</h2>
+<p>シードとは、組み合わせ抽選の前にチームに順位を付け、その順位をもとにトーナメント表へ配置することです。強いチーム同士が早い段階でつぶし合わないようにするのが目的で、これにより後半のラウンドほど白熱し、順当にいけば決勝は上位2チームの対戦になります。また、これまでの成績に報いる意味もあり、高い順位を得たチームは勝ち上がりやすい組み合わせになります。</p>
+<h2 id="s">シード順はどう決めればよいですか？</h2>
+<p>手元にあるなかで最も客観的な順位を使います。おおよそ次の優先順位です。</p>
+<ol><li>公式の順位やレーティング（リーグの順位、競技団体のランキング、チェスのレーティングやElo）。</li><li>同じ大会の前段階の結果（予選リーグの順位など）。</li><li>前シーズンや前回大会の成績。</li><li>主催者の判断（抽選前に発表する）。</li><li>どのチームが強いか誰もわからない場合は抽選。</li></ol>
+<p>トーナメント表を公開する前に、決め方を発表しておきましょう。主催者の判断によるシードは、チームから最も異論が出やすい部分です。</p>
+<h2 id="s">標準的なシード順とは？なぜうまくいくのですか？</h2>
+<p>標準的なシード順は、優勝候補同士ができるだけ遅く当たるように作られています。各ラウンドで常に上位シードが勝つとすると、各試合のシード番号の合計は一定の数になります。</p>
+<div class="tbl"><table><thead><tr><th>ラウンド（16チーム）</th><th>シード番号の合計</th><th>上位シードが勝ち進んだ場合の対戦</th></tr></thead><tbody><tr><td>1回戦（ベスト16）</td><td>17</td><td>1-16, 8-9, 4-13, 5-12, 2-15, 7-10, 3-14, 6-11</td></tr><tr><td>準々決勝</td><td>9</td><td>1-8, 4-5, 2-7, 3-6</td></tr><tr><td>準決勝</td><td>5</td><td>1-4, 2-3</td></tr><tr><td>決勝</td><td>3</td><td>1-2</td></tr></tbody></table></div>
+<p>トーナメント表を上から読むと、上半分の山には第1、16、8、9、4、13、5、12シード、下半分の山には第2、15、7、10、3、14、6、11シードが入ります。これにより次のことが保証されます。</p>
+<ul><li>第1シードと第2シードが当たるのは決勝だけ。</li><li>第1〜第4シード同士が当たるのは準決勝以降。</li><li>第1〜第8シード同士が当たるのは準々決勝以降。</li></ul>
+<p>2の累乗であれば、何チームでも「倍にする」方法でシード順を作れます。まず1対2から始めます。表を倍の大きさにするときは、各シード s を「s 対（新しい枠数 + 1 - s）」の組に置き換えます。4チームなら1-4、2-3、8チームなら1-8、4-5、2-7、3-6、以下同様です。大会によっては（たとえばNCAAバスケットボール）同じ1回戦の組み合わせを別の並び順で表示していますが、組み合わせと山の分け方の考え方は同じです。</p>
+<h2 id="s">不戦勝はいくつ必要ですか？</h2>
+<p>トーナメントでは、どのラウンドもチーム数が2の累乗（2、4、8、16、32、64）である必要があります。N チームの場合、トーナメント表の枠数をN以上で最小の2の累乗に切り上げ、空いた枠が不戦勝になります。</p>
+<div class="tbl"><table><thead><tr><th>チーム数</th><th>トーナメント表の枠数</th><th>不戦勝</th><th>1回戦の試合数</th></tr></thead><tbody><tr><td>5</td><td>8</td><td>3</td><td>1</td></tr><tr><td>6</td><td>8</td><td>2</td><td>2</td></tr><tr><td>10</td><td>16</td><td>6</td><td>2</td></tr><tr><td>12</td><td>16</td><td>4</td><td>4</td></tr><tr><td>20</td><td>32</td><td>12</td><td>4</td></tr><tr><td>24</td><td>32</td><td>8</td><td>8</td></tr></tbody></table></div>
+<p>不戦勝のチームは、そのまま2回戦に進みます。不戦勝の枠は最下位シードが入るはずの位置（16枠なら第16シード、次に15、14…）に置き、第1シード、第2シード…の順に空き枠と組ませます。こうすれば不戦勝は上位シードへの見返りになり、不戦勝同士がぶつかって試合のない枠ができることもありません。1回戦が終わると、残りのチーム数はちょうど2の累乗になります。</p>
+<h2 id="12">例：12チームのシードはどう組みますか？</h2>
+<p>12チームなら枠数は16、不戦勝は4つで第1〜第4シードに割り当てます。16チームのシード順を使い、第13〜第16シードを抜きます。</p>
+<div class="tbl"><table><thead><tr><th>1回戦</th><th>2回戦</th></tr></thead><tbody><tr><td>1（不戦勝）</td><td>1 対 8-9の勝者</td></tr><tr><td>8 対 9</td><td></td></tr><tr><td>4（不戦勝）</td><td>4 対 5-12の勝者</td></tr><tr><td>5 対 12</td><td></td></tr><tr><td>2（不戦勝）</td><td>2 対 7-10の勝者</td></tr><tr><td>7 対 10</td><td></td></tr><tr><td>3（不戦勝）</td><td>3 対 6-11の勝者</td></tr><tr><td>6 対 11</td><td></td></tr></tbody></table></div>
+<p>1回戦は4試合で、2回戦は通常の8チームによる準々決勝になります。上位シードが勝ち続ければ、準決勝は1対4と2対3です。大会全体の試合数は11試合です。</p>
+<h2 id="6">例：6チームのシードはどう組みますか？</h2>
+<p>6チームなら枠数は8、不戦勝は2つで第1・第2シードに割り当てます。</p>
+<ul><li>1回戦：4対5と3対6。第1・第2シードは不戦勝。</li><li>準決勝：1対4-5の勝者、2対3-6の勝者。</li><li>決勝：準決勝の勝者同士。</li></ul>
+<p>3ラウンドで計5試合です。1回戦が2試合だけでは物足りない場合は、3チームずつ2グループの予選リーグ（各グループ3試合）を行い、各グループ1位同士で決勝をする方法もあります。これなら全チームが最低2試合できます。</p>
+<h2 id="s">抽選とシード、どちらを使うべきですか？</h2>
+<div class="tbl"><table><thead><tr><th></th><th>シードあり</th><th>抽選</th></tr></thead><tbody><tr><td>上位チームが早く当たる</td><td>なし</td><td>ありうる</td></tr><tr><td>過去の成績が反映される</td><td>される</td><td>されない</td></tr><tr><td>順位付けが必要</td><td>必要</td><td>不要</td></tr><tr><td>初参加チームから見た公平感</td><td>低め</td><td>高め</td></tr><tr><td>向いている大会</td><td>リーグ、クラブ、ランキングのある選手</td><td>気軽な大会、実力のわからないチーム、抽選自体を楽しみたいとき</td></tr></tbody></table></div>
+<p>よく使われる中間案が部分シードです。上位2、4、8チームだけにシードを付け、残りのチームは空いている枠に抽選で入れます。たとえばテニスのグランドスラムでは、シングルス128人のうち32人にシードが付きます。第3・第4シードを残り2つの4分の1ブロックに抽選で入れ（第5〜第8シードは残りの8分の1ブロックに入れ）れば、上位シードを守りつつ、毎年違う組み合わせにできます。</p>
+<h2 id="s">上位シードを守り、同じ所属のチームを離すには？</h2>
+<ul><li><strong>上位2チームを離す。</strong> 第1シードは表の一番上、第2シードは一番下に置きます。</li><li><strong>同じクラブ・学校・グループのチームを離す。</strong> 別の山や別のブロックに入れ、1回戦で当たらないようにします。予選リーグ＋決勝トーナメントの場合は、グループ1位と別グループの2位を組ませます。</li><li><strong>不戦勝は上位へ。</strong> 不戦勝を抽選で決めてはいけません。弱いチームが運よく不戦勝を得ることは、トーナメント表で最も目につく不公平です。</li><li><strong>黙って組み直さない。</strong> ラウンドごとにシードを組み直す大会もあります（残っている最上位シードが最下位シードと対戦）。それ自体は正当なルールですが、最初の試合の前に発表しておく必要があります。</li></ul>
+<h2 id="s">予選リーグ＋決勝トーナメントのグループ分けはどうシードしますか？</h2>
+<p>スネーク方式（サーペンタイン方式）を使います。4グループの場合、第1、2、3、4シードをA、B、C、Dグループに、第5、6、7、8シードをD、C、B、Aに、第9〜第12シードを再びA、B、C、Dに入れ、以下同様に続けます。するとAグループは第1、8、9、16シード、Bグループは第2、7、10、15シードになり、各グループの戦力の合計がほぼそろいます。</p>
+<p>スマートフォンでシードを組むなら、<a href="/tournament-bracket/ja-JP/">Ligona</a>（Android）が便利です。チームリストの順番をそのままシード順として使い、トーナメント表を次の2の累乗まで埋め、不戦勝を上位シードに自動で割り当てます。12チームなら16枠の表で不戦勝は4つです。シードなしの大会にしたいときは「抽選」でリストをシャッフルでき、「予選リーグ＋決勝トーナメント」ではスネーク方式でグループ分けし、決勝トーナメント1回戦でグループ1位同士が当たらないようにします。オフラインで使え、アカウント登録も広告もありません。<a href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play</a>から入手できます。</p>
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Android 版 Ligona</strong><span>トーナメント表作成・対戦表作成アプリ。総当たりリーグ作成、予選リーグ、順位表、スイス式</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/ja-JP/">Ligona について</a></div></aside><h2 id="s">よくある質問</h2>
+<h3 id="1-1">第1シードは1回戦でどこと対戦しますか？</h3>
+<p>最下位シードです。16チームなら第16シード、8チームなら第8シードです。不戦勝がある場合は第1シードに最初の不戦勝が割り当てられ、2回戦で8対9の勝者（16枠の場合）と対戦します。</p>
+<h3 id="12">12チームのトーナメントで不戦勝はいくつですか？</h3>
+<p>4つです。12以上で最小の2の累乗は16で、16 - 12 = 4 です。第1、2、3、4シードに割り当てます。</p>
+<h3 id="10">10チームのトーナメントで不戦勝はいくつですか？</h3>
+<p>6つです。16 - 10 = 6 です。第1〜第6シードはそのまま準々決勝に進み、第7〜第10シードが1回戦の2試合（7対10と8対9）を戦います。</p>
+<h3 id="8-9-1-16">なぜトーナメント表で8対9は1対16の隣にあるのですか？</h3>
+<p>その勝者が2回戦で第1シードと対戦するからです。8対9は1回戦で最も実力の近い対戦で、その勝者が第1シードの準々決勝の相手と想定されます。第2シードは7-10の勝者、第3シードは6-11の勝者、第4シードは5-12の勝者と当たります。</p>
+<h3 id="s">抽選によるシードは公平ですか？</h3>
+<p>抽選前の時点では全員に同じチャンスがあるという意味では公平ですが、最も強い2チームが1回戦で当たる可能性もあります。信頼できる順位がないときに使うか、上位数チームだけにシードを付けて残りを抽選にしましょう。</p>
+<h2 id="s">参考資料</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Seed_%28sports%29" rel="noopener">Seed (sports)</a>、Wikipedia：シードの決め方、不戦勝、部分シード。</li><li><a href="https://en.wikipedia.org/wiki/Single-elimination_tournament" rel="noopener">Single-elimination tournament</a>、Wikipedia：トーナメント表の構造と不戦勝。</li></ul></article><section class="related"><h2>関連</h2><div class="list"><a class="item" href="/tools/tournament-bracket-generator/"><strong>Tournament bracket generator</strong><span>Make a single or double elimination bracket with proper seeding and byes for top seeds. Tap names to advance winners, then print or share it.</span></a><a class="item" href="/guides/double-elimination-bracket-explained/ja/"><strong>ダブルイリミネーションのトーナメント表をわかりやすく解説</strong><span>ダブルイリミネーションでは2敗した時点で敗退です。Nチームの試合数は2N-2、グランドファイナル再戦があれば2N-1。敗者側の進み方も解説します。</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/ja/"><strong>大会の試合数は何試合になる？</strong><span>トーナメントはN-1試合、ダブルイリミネーションは2N-2または2N-1試合、総当たりのリーグ戦はN(N-1)/2試合、スイス式はラウンド数 × N/2試合。4〜32チームの早見表付き。</span></a><a class="item" href="/guides/how-to-organize-a-round-robin-tournament/ja/"><strong>総当たり戦（リーグ戦）の組み方</strong><span>N チームの総当たり戦では全チームが互いに対戦し、試合数は N(N-1)/2、ラウンド数は N-1（奇数なら N）。日程表の作り方、休みのチームの扱い、同率時の順位の決め方を解説します。</span></a><a class="item" href="/guides/swiss-system-tournament-explained/ja/"><strong>スイス式トーナメントのしくみ</strong><span>スイス式トーナメントでは、毎ラウンド同じ得点の人どうしが対戦し、同じ相手とは二度当たらず、途中で敗退する人もいません。ラウンド数はおよそlog2 N、同点はBuchholzで順位を決めます。</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">ガイド</a><a href="/tools/">ツール</a><a href="/">すべてのアプリ</a><a href="mailto:hello@maumiuworks.com">お問い合わせ</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

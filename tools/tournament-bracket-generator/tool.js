@@ -1,4 +1,6 @@
-/* Single and double elimination bracket generator. Needs ../_shared/tools.js (window.MW) loaded first. */
+/* Single and double elimination bracket generator. Needs ../_shared/tools.js (window.MW) loaded first.
+ * Text: i18n/en.json (+ the shared one), merged into window.MW_I18N by the page and read through MW.i18n
+ * (I.t / I.tn / I.th here, because t is the tournament). */
 (function () {
   'use strict';
   var MAX = 128;
@@ -9,7 +11,7 @@
   function start() {
     var root = document.getElementById('tl-br');
     if (!root || !window.MW) return;
-    var E = window.MW.engine, U = window.MW.ui, $ = function (id) { return document.getElementById(id); };
+    var E = window.MW.engine, U = window.MW.ui, I = window.MW.i18n, $ = function (id) { return document.getElementById(id); };
     var form = $('br-form'), namesEl = $('br-names'), err = $('br-error'), count = $('br-count');
     var result = $('br-result'), statusEl = $('br-status'), sectionsEl = $('br-sections');
     var t = null, names = [], undo = [], sb = null, nums = null, byId = null, visRounds = {};
@@ -23,7 +25,8 @@
     }
     function updateCount() {
       var list = E.parseNames(namesEl.value), dup = E.duplicates(list);
-      count.textContent = list.length ? U.plural(list.length, 'name') + ' found.' + (dup.length ? ' Listed twice: ' + dup.join(', ') + '.' : '') : '';
+      count.textContent = list.length ?
+        I.sentences([I.tn('names_found', list.length), dup.length ? I.t('listed_twice', { names: I.list(dup) }) : '']) : '';
     }
 
     // ------------------------------------------------------------ build
@@ -55,8 +58,8 @@
       var list = E.parseNames(namesEl.value), fmt = format();
       setError('');
       var min = fmt === 'double' ? 3 : 2;
-      if (list.length < min) { setError('Add at least ' + min + ' names, one per line' + (fmt === 'double' ? ' (double elimination needs 3 or more).' : '.')); namesEl.focus(); return; }
-      if (list.length > MAX) { setError('This page makes brackets for up to ' + MAX + ' names. You have ' + list.length + '.'); namesEl.focus(); return; }
+      if (list.length < min) { setError(I.t(fmt === 'double' ? 'err_too_few_double' : 'err_too_few', { min: I.num(min) })); namesEl.focus(); return; }
+      if (list.length > MAX) { setError(I.t('err_too_many', { max: I.num(MAX), n: I.num(list.length) })); namesEl.focus(); return; }
       // Same names and format, only an option changed (third place, reset): keep the results already entered.
       var keep = t && t.format === fmt && names.join('\n') === list.join('\n') ? resultsCode() : '';
       build(list, fmt, fmt === 'double' ? { reset: $('br-reset').checked } : { thirdPlace: $('br-third').checked }, keep);
@@ -103,14 +106,16 @@
     function srcAlwaysBye(s) {
       return s.k === 'bye' || (s.k === 'seed' && s.i >= t.n) || (s.k === 'w' && sb[s.m] === 2) || (s.k === 'l' && sb[s.m] >= 1);
     }
+    /** Match number as shown: "M3". */
+    function mNo(id) { return I.t('match_no', { n: nums[id] }); }
     /** "Winner of M3" for a slot not known yet; a hidden bye match is looked through. */
     function placeholder(s) {
       if (s.k === 'w' || s.k === 'l') {
         var m = byId[s.m];
-        if (sb[m.id] === 0) return (s.k === 'w' ? 'Winner of M' : 'Loser of M') + nums[m.id];
+        if (sb[m.id] === 0) return I.t(s.k === 'w' ? 'winner_of' : 'loser_of', { m: mNo(m.id) });
         if (s.k === 'w') return placeholder(srcAlwaysBye(m.home) ? m.away : m.home);
       }
-      return 'To be decided';
+      return I.t('tbd');
     }
     /**
      * Round name. Winners and losers rounds are counted over the rounds that have a real match: with byes a whole
@@ -120,15 +125,15 @@
       if (section === 'winners' || section === 'losers') {
         var rs = visRounds[section] || [], i = rs.indexOf(round);
         if (i >= 0) {
-          var w = section === 'winners' ? 'Winners' : 'Losers';
-          return i === rs.length - 1 ? w + ' final' : w + ' round ' + (i + 1);
+          var w = section === 'winners' ? 'round_winners' : 'round_losers';
+          return i === rs.length - 1 ? I.t(w + '_final') : I.t(w + '_n', { n: i + 1 });
         }
       }
       return E.roundLabel(t, section, round);
     }
     function label(m) { return roundName(m.section, m.round); }
     function nameOf(p) { return names[p]; }
-    function who(p) { return names[p] + ' (' + (p + 1) + ')'; }
+    function who(p) { return I.t('who', { name: names[p], seed: p + 1 }); }
     function visible(m) { return sb[m.id] === 0; }
 
     /** Visible matches that feed side s of m in the same section, looking through hidden bye matches. */
@@ -202,24 +207,25 @@
         '<span class="br-mark" aria-hidden="true">' + (win ? '✓' : '') + '</span>';
       var cls = 'br-slot' + (win ? ' is-win' : '') + (lose ? ' is-lose' : '');
       if (!playable) return '<div class="' + cls + ' is-wait" title="' + U.esc(nameOf(pid)) + '">' + inner + '</div>';
-      var aria = nameOf(pid) + ', seed ' + (pid + 1) + (win ? ', winner' : lose ? ', lost' : '');
+      var aria = I.t(win ? 'slot_aria_win' : lose ? 'slot_aria_lost' : 'slot_aria', { name: nameOf(pid), seed: pid + 1 });
       return '<button type="button" class="' + cls + '" data-m="' + m.id + '" data-s="' + (side === 'home' ? 'h' : 'a') + '" aria-pressed="' + win +
         '" aria-label="' + U.esc(aria) + '" title="' + U.esc(nameOf(pid)) + '">' + inner + '</button>';
     }
 
     function matchHtml(m, o, p) {
-      var num = nums[m.id];
-      var groupLabel = 'M' + num + ', ' + label(m) + ': ' +
-        (typeof o.home === 'number' ? nameOf(o.home) : placeholder(m.home)) + ' v ' +
-        (typeof o.away === 'number' ? nameOf(o.away) : placeholder(m.away)) +
-        (o.state === 'done' ? '. Winner ' + nameOf(o.winner) : o.state === 'ready' ? '. To play' : '');
+      var no = mNo(m.id);
+      var parts = { m: no, round: label(m),
+        home: typeof o.home === 'number' ? nameOf(o.home) : placeholder(m.home),
+        away: typeof o.away === 'number' ? nameOf(o.away) : placeholder(m.away),
+        winner: o.state === 'done' ? nameOf(o.winner) : '' };
+      var groupLabel = I.t(o.state === 'done' ? 'match_aria_done' : o.state === 'ready' ? 'match_aria_ready' : 'match_aria', parts);
       var style = 'left:' + xOf(p) + 'rem;top:' + (boxTop(p) - NUM_H) + 'rem';
       if (o.state === 'skipped') {
-        return '<div class="br-match is-skipped" style="' + style + '" role="group" aria-label="M' + num + ', ' + U.esc(label(m)) + ': not needed">' +
-          '<div class="br-num">M' + num + '</div><div class="br-box br-note">Not needed: the winners-bracket champion won the grand final.</div></div>';
+        return '<div class="br-match is-skipped" style="' + style + '" role="group" aria-label="' + U.esc(I.t('match_aria_skipped', parts)) + '">' +
+          '<div class="br-num">' + U.esc(no) + '</div><div class="br-box br-note">' + I.th('reset_not_needed') + '</div></div>';
       }
       return '<div class="br-match' + (o.state === 'ready' ? ' is-ready' : '') + '" style="' + style + '" role="group" aria-label="' + U.esc(groupLabel) + '">' +
-        '<div class="br-num" aria-hidden="true">M' + num + (m.conditional ? ' · only if needed' : '') + '</div>' +
+        '<div class="br-num" aria-hidden="true">' + U.esc(m.conditional ? I.t('match_no_conditional', { m: no }) : no) + '</div>' +
         '<div class="br-box">' + slotHtml(m, 'home', o) + slotHtml(m, 'away', o) + '</div></div>';
     }
 
@@ -244,7 +250,7 @@
       var svg = '<svg class="br-lines" aria-hidden="true" focusable="false" viewBox="0 0 ' + w + ' ' + h + '" style="width:' + w + 'rem;height:' + h + 'rem" preserveAspectRatio="none">' + paths + '</svg>';
       L.matches.forEach(function (m) { parts.push(matchHtml(m, r.outcome(m.id), L.pos[m.id])); });
       return '<section class="br-section" aria-label="' + U.esc(title) + '"><h3>' + U.esc(title) + '</h3>' +
-        '<div class="br-scroll" tabindex="0" role="region" aria-label="' + U.esc(title) + ', scrolls sideways">' +
+        '<div class="br-scroll" tabindex="0" role="region" aria-label="' + U.esc(I.t('scrolls_sideways', { title: title })) + '">' +
         '<div class="br-canvas" style="width:' + w + 'rem;height:' + h + 'rem">' + svg + parts.join('') + '</div></div></section>';
     }
 
@@ -260,30 +266,34 @@
 
     function seedRange(list) {
       if (!list.length) return '';
-      if (list.length === 1) return 'seed ' + (list[0] + 1);
-      if (list.length === 2) return 'seeds ' + (list[0] + 1) + ' and ' + (list[1] + 1);
+      if (list.length === 1) return I.t('seeds_single', { a: list[0] + 1 });
+      if (list.length === 2) return I.t('seeds_two', { a: list[0] + 1, b: list[1] + 1 });
       var contiguous = list[list.length - 1] - list[0] === list.length - 1;
-      return contiguous ? 'seeds ' + (list[0] + 1) + '–' + (list[list.length - 1] + 1) : 'seeds ' + list.map(function (x) { return x + 1; }).join(', ');
+      return contiguous ? I.t('seeds_range', { a: list[0] + 1, b: list[list.length - 1] + 1 }) :
+        I.t('seeds_list', { list: I.list(list.map(function (x) { return x + 1; })) });
     }
 
     function render(focusKey) {
       var r = E.resolver(t), n = t.n, real = E.realMatches(t).length;
       var byes = byeSeeds();
       var size = E.nextPow2(Math.max(2, n));
-      var s = U.plural(n, 'team') + ', ' + (t.format === 'double' ? 'double' : 'single') + ' elimination in ' + (/^8/.test(String(size)) ? 'an ' : 'a ') + size + '-place bracket: ';
+      var body;
       if (t.format === 'double') {
-        s += (t.opts.reset ? (real - 1) + ' games, or ' + real + ' if the grand final reset is needed' : U.plural(real, 'game')) + '.';
+        body = t.opts.reset ? I.tn('sum_body_reset', real - 1, { b: I.num(real) }) : I.tn('sum_body_games', real);
       } else {
-        s += U.plural(real, 'game') + ' in ' + U.plural(E.log2ceil(size), 'round') + '.';
+        body = I.t('sum_body_single', { games: I.tn('sum_games', real), in_rounds: I.tn('sum_in_rounds', E.log2ceil(size)) });
       }
-      s += byes.length ? ' ' + U.plural(byes.length, 'bye') + ': ' + seedRange(byes) + ' go straight to ' + (t.format === 'double' ? 'winners round 2' : 'round 2') + '.' : ' No byes.';
-      $('br-summary').textContent = s;
+      // English needs "an 8-place" but "a 16-place": the _an key is used for sizes starting with 8 (8, 8192...).
+      var head = 'sum_' + t.format + (/^8/.test(String(size)) ? '_an' : '');
+      $('br-summary').textContent = I.sentences([
+        I.t(head, { teams: I.tn('sum_teams', n), size: I.num(size), body: body }),
+        byes.length ? I.tn(t.format === 'double' ? 'sum_byes_double' : 'sum_byes', byes.length, { seeds: seedRange(byes) }) : I.t('sum_no_byes')]);
 
       var html = '';
       if (t.format === 'double') {
-        html += sectionHtml('winners', 'Winners bracket', r) + sectionHtml('losers', 'Losers bracket', r) + sectionHtml('final', 'Grand final', r);
+        html += sectionHtml('winners', I.t('sec_winners'), r) + sectionHtml('losers', I.t('sec_losers'), r) + sectionHtml('final', I.t('sec_final'), r);
       } else {
-        html += sectionHtml('main', 'Bracket', r) + sectionHtml('third', 'Third-place match', r);
+        html += sectionHtml('main', I.t('sec_main'), r) + sectionHtml('third', I.t('sec_third'), r);
       }
       sectionsEl.innerHTML = html;
       $('br-undo').disabled = !undo.length;
@@ -295,12 +305,13 @@
       }
     }
 
+    var PLACES = ['place_1', 'place_2', 'place_3'];
     function renderPodium() {
       var p = E.podium(t), box = $('br-podium');
       if (!p.length) { box.innerHTML = ''; return; }
-      var place = ['Champion', 'Second', 'Third'];
-      box.innerHTML = '<div class="tl-card br-podium-card"><h3>Final places</h3><ol>' + p.map(function (ids, i) {
-        return '<li><span class="br-place">' + place[i] + '</span> ' + ids.map(function (x) { return '<strong>' + U.esc(nameOf(x)) + '</strong>'; }).join(' and ') + '</li>';
+      box.innerHTML = '<div class="tl-card br-podium-card"><h3>' + I.th('final_places') + '</h3><ol>' + p.map(function (ids, i) {
+        return '<li><span class="br-place">' + I.th(PLACES[i]) + '</span> ' +
+          I.andList(ids.map(function (x) { return '<strong>' + U.esc(nameOf(x)) + '</strong>'; }), true) + '</li>';
       }).join('') + '</ol></div>';
     }
 
@@ -318,27 +329,27 @@
       var pid = side === 'h' ? o.home : o.away;
       undo.push(snapshot());
       if (undo.length > 200) undo.shift();
-      var res, msg;
+      var res, msg = [];
       if (o.state === 'done' && o.winner === pid) {
         res = E.clearResult(t, matchId);
-        msg = 'Result of M' + nums[matchId] + ' cleared.';
+        msg.push(I.t('msg_cleared', { m: mNo(matchId) }));
       } else {
         res = E.setWinner(t, matchId, side);
-        msg = nameOf(pid) + ' wins M' + nums[matchId] + '.';
+        msg.push(I.t('msg_wins', { name: nameOf(pid), m: mNo(matchId) }));
         var nx = nextOf(matchId).filter(function (x) { return x.section === m.section || x.section === 'final'; })[0];
         if (m.section === 'final' && !m.conditional) {
           var r2 = E.resolver(t), reset = t.matches.filter(function (x) { return x.conditional; })[0];
-          if (reset && r2.outcome(reset.id).state === 'ready') msg += ' Both teams now have one loss: the grand final reset decides.';
-        } else if (nx) msg += ' Next: ' + label(nx) + '.';
+          if (reset && r2.outcome(reset.id).state === 'ready') msg.push(I.t('msg_reset_decides'));
+        } else if (nx) msg.push(I.t('msg_next', { round: label(nx) }));
       }
       if (res.cleared.length) {
-        msg += ' Cleared ' + U.plural(res.cleared.length, 'later result') + ' (' + res.cleared.map(function (id) { return 'M' + nums[id]; }).join(', ') + ') because a different team goes through. Undo brings ' + (res.cleared.length === 1 ? 'it' : 'them') + ' back.';
+        msg.push(I.tn('msg_cleared_later', res.cleared.length, { list: I.list(res.cleared.map(mNo)) }));
       }
       var p = E.podium(t);
-      if (p.length) msg += ' ' + nameOf(p[0][0]) + ' is the champion.';
+      if (p.length) msg.push(I.t('msg_champion', { name: nameOf(p[0][0]) }));
       render([matchId, side]);
       writeHash();
-      U.say(statusEl, msg);
+      U.say(statusEl, I.sentences(msg));
     }
 
     sectionsEl.addEventListener('click', function (e) {
@@ -357,34 +368,33 @@
     }
     function asText() {
       var r = E.resolver(t), out = [], last = '';
-      out.push((t.format === 'double' ? 'Double' : 'Single') + ' elimination bracket, ' + U.plural(t.n, 'team'));
-      out.push('Seeds: ' + names.map(function (nm, i) { return (i + 1) + ' ' + nm; }).join(', '));
+      out.push(I.t(t.format === 'double' ? 'text_head_double' : 'text_head_single', { teams: I.tn('sum_teams', t.n) }));
+      out.push(I.t('text_seeds', { list: I.list(names.map(function (nm, i) { return I.t('text_seed_item', { seed: i + 1, name: nm }); })) }));
       var byes = byeSeeds();
-      if (byes.length) out.push('Byes (straight to round 2): ' + byes.map(who).join(', '));
+      if (byes.length) out.push(I.t('text_byes', { list: I.list(byes.map(who)) }));
       ordered().forEach(function (m) {
         var o = r.outcome(m.id), head = label(m);
         if (head !== last) { out.push('', head); last = head; }
-        var line = '  M' + nums[m.id] + '  ' + slotText(m, 'home', o) + ' v ' + slotText(m, 'away', o);
-        if (o.state === 'done') line += '  -> ' + nameOf(o.winner) + ' won';
-        else if (o.state === 'skipped') line += '  (not needed)';
-        else if (m.conditional) line += '  (only if needed)';
-        out.push(line);
+        var key = o.state === 'done' ? 'text_line_won' : o.state === 'skipped' ? 'text_line_skipped' : m.conditional ? 'text_line_cond' : 'text_line';
+        out.push('  ' + I.t(key, { m: mNo(m.id), home: slotText(m, 'home', o), away: slotText(m, 'away', o),
+          winner: o.state === 'done' ? nameOf(o.winner) : '' }));
       });
       var p = E.podium(t);
       if (p.length) {
         out.push('');
-        ['Champion', 'Second', 'Third'].forEach(function (pl, i) { if (p[i]) out.push(pl + ': ' + p[i].map(nameOf).join(' and ')); });
+        PLACES.forEach(function (pl, i) { if (p[i]) out.push(I.t('text_place', { place: I.t(pl), names: I.andList(p[i].map(nameOf)) })); });
       }
       return out.join('\n') + '\n';
     }
+    var STAGE = { main: 'sec_main', third: 'round_third', winners: 'sec_winners', losers: 'sec_losers', final: 'sec_final' };
     function asCsv() {
-      var r = E.resolver(t), rows = [['Match', 'Stage', 'Round', 'Home seed', 'Home', 'Away seed', 'Away', 'Winner']];
+      var r = E.resolver(t), rows = [['csv_match', 'csv_stage', 'csv_round', 'csv_home_seed', 'csv_home', 'csv_away_seed', 'csv_away', 'csv_winner'].map(function (k) { return I.t(k); })];
       ordered().forEach(function (m) {
         var o = r.outcome(m.id);
-        var stage = { main: 'Bracket', third: 'Third place', winners: 'Winners bracket', losers: 'Losers bracket', final: 'Grand final' }[m.section];
         function cell(side) { var p = side === 'home' ? o.home : o.away; return typeof p === 'number' ? [p + 1, nameOf(p)] : ['', placeholder(m[side])]; }
         var h = cell('home'), a = cell('away');
-        rows.push(['M' + nums[m.id], stage, label(m), h[0], h[1], a[0], a[1], o.state === 'done' ? nameOf(o.winner) : o.state === 'skipped' ? 'Not needed' : '']);
+        rows.push([mNo(m.id), I.t(STAGE[m.section]), label(m), h[0], h[1], a[0], a[1],
+          o.state === 'done' ? nameOf(o.winner) : o.state === 'skipped' ? I.t('csv_not_needed') : '']);
       });
       return E.toCsv(rows);
     }
@@ -407,19 +417,19 @@
     namesEl.addEventListener('input', updateCount);
     $('br-shuffle').addEventListener('click', function () {
       var list = E.parseNames(namesEl.value);
-      if (list.length < 2) { setError('Add at least 2 names first.'); return; }
+      if (list.length < 2) { setError(I.t('err_too_few_first', { min: I.num(2) })); return; }
       namesEl.value = E.shuffle(list).join('\n');
       updateCount();
       if (t) make(false);
-      U.say(count, 'Random draw done: the order is the new seeding. ' + U.plural(list.length, 'name') + '.');
+      U.say(count, I.tn('drawn', list.length));
     });
     var fillN = $('br-fill-n');
     function fillValue() { var v = Math.round(+fillN.value); return v >= 2 && v <= MAX ? v : null; }
     fillN.addEventListener('input', function () { $('br-fill-label').textContent = fillValue() || '…'; });
     $('br-fill').addEventListener('click', function () {
       var v = fillValue();
-      if (!v) { setError('Choose a number from 2 to ' + MAX + '.'); fillN.focus(); return; }
-      var list = []; for (var i = 1; i <= v; i++) list.push('Team ' + i);
+      if (!v) { setError(I.t('err_fill_range', { min: I.num(2), max: I.num(MAX) })); fillN.focus(); return; }
+      var list = []; for (var i = 1; i <= v; i++) list.push(I.t('team_n', { n: i }));
       namesEl.value = list.join('\n');
       updateCount();
       make(true);
@@ -429,17 +439,17 @@
       t.results = JSON.parse(undo.pop());
       E.normalize(t);
       render(); writeHash();
-      U.say(statusEl, 'Last change undone.');
+      U.say(statusEl, I.t('msg_undone'));
     });
     $('br-clear').addEventListener('click', function () {
       if (!Object.keys(t.results).length) return;
       undo.push(snapshot());
       t.results = {};
       render(); writeHash();
-      U.say(statusEl, 'All results cleared. Undo brings them back.');
+      U.say(statusEl, I.t('msg_all_cleared'));
     });
     $('br-copy').addEventListener('click', function () { U.copy(asText(), statusEl); });
-    $('br-csv').addEventListener('click', function () { U.download('tournament-bracket.csv', asCsv(), 'text/csv;charset=utf-8', statusEl); });
+    $('br-csv').addEventListener('click', function () { U.download(I.t('csv_file'), asCsv(), 'text/csv;charset=utf-8', statusEl); });
     $('br-link').addEventListener('click', function () { writeHash(); U.copy(location.href, statusEl); });
     $('br-print').addEventListener('click', function () { window.print(); });
 

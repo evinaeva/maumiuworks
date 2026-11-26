@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ja" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ダブルイリミネーションの仕組み（8チームの例つき） — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="ダブルイリミネーションでは2敗した時点で敗退です。Nチームの試合数は2N-2、グランドファイナル再戦があれば2N-1。敗者側の進み方も解説します。">
+<link rel="canonical" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/ja/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="ダブルイリミネーションの仕組み（8チームの例つき）"><meta property="og:description" content="ダブルイリミネーションでは2敗した時点で敗退です。Nチームの試合数は2N-2、グランドファイナル再戦があれば2N-1。敗者側の進み方も解説します。"><meta property="og:url" content="https://maumiuworks.com/guides/double-elimination-bracket-explained/ja/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ダブルイリミネーションのトーナメント表をわかりやすく解説", "description": "ダブルイリミネーションでは2敗した時点で敗退です。Nチームの試合数は2N-2、グランドファイナル再戦があれば2N-1。敗者側の進み方も解説します。", "inLanguage": "ja", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "mainEntityOfPage": "https://maumiuworks.com/guides/double-elimination-bracket-explained/ja/", "about": {"@type": "SoftwareApplication", "name": "Ligona", "operatingSystem": "Android", "url": "https://maumiuworks.com/tournament-bracket/ja-JP/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "ガイド", "item": "https://maumiuworks.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "ダブルイリミネーションのトーナメント表をわかりやすく解説", "item": "https://maumiuworks.com/guides/double-elimination-bracket-explained/ja/"}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="すべてのアプリ" aria-label="Maumiu Works — すべてのアプリ">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/guides/" aria-label="ガイド"><span>ガイド</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">ダブルイリミネーションのトーナメント表をわかりやすく解説</span></nav><div class="tools"><details class="langs"><summary aria-label="言語: 日本語" title="日本語"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"></summary><ul><li><a href="/guides/double-elimination-bracket-explained/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/guides/double-elimination-bracket-explained/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/guides/double-elimination-bracket-explained/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/guides/double-elimination-bracket-explained/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/guides/double-elimination-bracket-explained/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/guides/double-elimination-bracket-explained/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/guides/double-elimination-bracket-explained/ja/" hreflang="ja" lang="ja" aria-current="true"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/guides/double-elimination-bracket-explained/ko/" hreflang="ko" lang="ko"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/guides/double-elimination-bracket-explained/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/guides/double-elimination-bracket-explained/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/guides/double-elimination-bracket-explained/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap"><article class="art"><h1>ダブルイリミネーションのトーナメント表をわかりやすく解説</h1><p class="byline">Maumiu Works · 更新日 <time datetime="2026-11-26">2026年11月26日</time></p><nav class="toc" aria-label="このページの内容"><p>このページの内容</p><ol><li><a href="#s">ダブルイリミネーションはどのように進むのか</a></li><li><a href="#2n-2-2n-1">なぜ試合数は2N-2または2N-1になるのか</a></li><li><a href="#s">グランドファイナル再戦（リセット）とは</a></li><li><a href="#8">8チームのダブルイリミネーションはどう進むのか</a></li><li><a href="#s">ダブルイリミネーションのラウンド数は</a></li><li><a href="#s">ダブルイリミネーションでの不戦勝の扱い</a></li><li><a href="#s">ダブルイリミネーションとトーナメントのメリット・デメリット</a></li><li><a href="#s">ダブルイリミネーションが向いているのは</a></li><li><a href="#s">ダブルイリミネーションを迷わず運営するには</a></li><li><a href="#s">よくある質問</a></li><li><a href="#s">出典</a></li></ol></nav><p>ダブルイリミネーションのトーナメント表では、チームは<strong>2敗目</strong>を喫した時点で敗退します。全チームが勝者側からスタートし、1敗すると敗者側に回り、敗者側で負けるとそこで大会終了です。勝者側の優勝チームと敗者側の優勝チームがグランドファイナルで対戦します。大会全体の試合数はNチームで<strong>2N-2試合</strong>、2試合目の決勝（グランドファイナル再戦）が必要になった場合は<strong>2N-1試合</strong>です。8チームなら14試合か15試合、16チームなら30試合か31試合になります。</p>
+<p>実際に試せます。<a href="/tools/tournament-bracket-generator/">トーナメント表ジェネレーター</a>では、何チームでもシングル・ダブルイリミネーションのトーナメント表を作成できます。</p>
+<h2 id="s">ダブルイリミネーションはどのように進むのか</h2>
+<p>2つのトーナメント表が並行して進みます。</p>
+<ul><li><strong>勝者側（アッパーブラケット）。</strong> 通常のトーナメント表です。全チームがここからスタートします。勝ったチームは次に進み、負けたチームは敗退せず敗者側に回ります。</li><li><strong>敗者側（ローワーブラケット）。</strong> 1敗しているチームが集まります。ここでの負けは2敗目なので、そのチームは敗退です。</li><li><strong>グランドファイナル。</strong> 勝者側を無敗で勝ち抜いたチームと、敗者側を最後まで勝ち残ったチームが対戦します。</li></ul>
+<p>敗者側では2種類のラウンドが交互に行われます。敗者側の勝ち残り同士が対戦するラウンドと、勝者側で負けたばかりのチームが合流してくる「合流ラウンド」です。そのため、敗者側のラウンド数は勝者側のおよそ2倍になります。</p>
+<h2 id="2n-2-2n-1">なぜ試合数は2N-2または2N-1になるのか</h2>
+<p>試合数ではなく「負けの数」を数えると分かりやすくなります。1試合ごとに、負けはちょうど1つ生まれるからです。</p>
+<ul><li>優勝チームを1つに決めるには、残りのN-1チームがそれぞれ2回負ける必要があります。2(N-1) = <strong>2N-2敗</strong>、つまり2N-2試合です。</li><li>グランドファイナルの1試合目で敗者側の優勝チームが勝つと、勝者側の優勝チームにも初めての1敗がつきます。両チームとも1敗になるので、2試合目の決勝を行います。この1試合が加わって<strong>2N-1</strong>になります。</li></ul>
+<p>不戦勝（Nが2のべき乗でない場合）は試合に数えないので、この式は変わりません。</p>
+<div class="tbl"><table><thead><tr><th>チーム数</th><th>トーナメント</th><th>ダブルイリミネーション</th><th>ダブルイリミネーション（再戦あり）</th></tr></thead><tbody><tr><td>4</td><td>3</td><td>6</td><td>7</td></tr><tr><td>6</td><td>5</td><td>10</td><td>11</td></tr><tr><td>8</td><td>7</td><td>14</td><td>15</td></tr><tr><td>12</td><td>11</td><td>22</td><td>23</td></tr><tr><td>16</td><td>15</td><td>30</td><td>31</td></tr><tr><td>32</td><td>31</td><td>62</td><td>63</td></tr></tbody></table></div>
+<h2 id="s">グランドファイナル再戦（リセット）とは</h2>
+<p>勝者側の優勝チームは無敗でグランドファイナルに進み、敗者側の優勝チームは1敗しています。無敗のチームが勝てば大会はそこで終了です。敗者側の優勝チームが勝つと両チームとも1敗となり、本来のダブルイリミネーションでは1敗で敗退するチームがあってはなりません。そこでトーナメント表を「リセット」し、2試合目の決勝で優勝を決めます。</p>
+<p>時間を節約するために再戦を行わず、グランドファイナルを1試合だけにする主催者もいます。それでも構いませんが、事前に告知しておきましょう。再戦がないと勝者側の優勝チームが1敗で敗退する可能性があり、勝者側を無敗で勝ち抜いた最大のメリットがなくなってしまいます。eスポーツの大会の中には、BO形式（先取制）のシリーズで勝者側の優勝チームに1勝のアドバンテージを与えてから始めるなど、中間的な方法をとるものもあります。</p>
+<h2 id="8">8チームのダブルイリミネーションはどう進むのか</h2>
+<p>第1〜第8シード、標準的なシード配置の場合です。</p>
+<p><strong>勝者側（7試合）</strong></p>
+<ol><li>1回戦：1対8、4対5、2対7、3対6。勝った4チームが残り、負けた4チームは敗者側へ回ります。</li><li>準決勝：1/8の勝者対4/5の勝者、2/7の勝者対3/6の勝者。負けた2チームが敗者側へ回ります。</li><li>勝者側決勝：負けたチームは敗者側へ回り、勝ったチームは無敗でグランドファイナルに進みます。</li></ol>
+<p><strong>敗者側（6試合）</strong></p>
+<ol><li>敗者側1回戦：勝者側1回戦で負けた4チーム同士が対戦します（2試合）。2チームが敗退します。</li><li>敗者側2回戦（合流）：勝ち残った2チームが、勝者側準決勝で負けた2チームと対戦します（2試合）。直前に負けた相手とすぐ再戦しないよう、組み合わせを交差させます。</li><li>敗者側3回戦：勝ち残った2チーム同士が対戦します（1試合）。</li><li>敗者側決勝（合流）：勝ち残ったチームが勝者側決勝で負けたチームと対戦します（1試合）。</li></ol>
+<p><strong>グランドファイナル（1試合または2試合）</strong></p>
+<p>勝者側の優勝チームと敗者側の優勝チームが対戦します。敗者側の優勝チームが勝った場合は再戦を行います。</p>
+<p>合計：7 + 6 + 1 = 14試合、再戦を行う場合はさらに1試合。検算：2 × 8 - 2 = 14。初戦で負けてから最終的に優勝したチームは7試合を戦います。勝者側で1試合、敗者側で4試合、グランドファイナルで2試合です。</p>
+<h2 id="s">ダブルイリミネーションのラウンド数は</h2>
+<p>トーナメント表の枠数が2^k（8 = 2^3、16 = 2^4）の場合：</p>
+<ul><li>勝者側：kラウンド（8チームで3、16チームで4）。</li><li>敗者側：2(k-1)ラウンド（8チームで4、16チームで6）。</li><li>グランドファイナル：1ラウンド、再戦ありなら2ラウンド。</li></ul>
+<p>日程上のネックになるのは敗者側です。8チームの大会では勝者側は3ラウンドで終わりますが、グランドファイナルを始めるには敗者側の決勝まで終わっている必要があります。</p>
+<h2 id="s">ダブルイリミネーションでの不戦勝の扱い</h2>
+<p>チーム数が2のべき乗でない場合は、勝者側の枠を次の2のべき乗まで不戦勝で埋め、不戦勝は上位シードに与えます。6チームなら8枠のトーナメント表で第1・第2シードに2つの不戦勝、12チームなら16枠で4つの不戦勝です。不戦勝は負けではないので、そのチームが1回戦で敗者側に回ることはなく、敗者側の序盤の試合の一部も不戦勝になります。2N-2の式は変わりません。</p>
+<h2 id="s">ダブルイリミネーションとトーナメントのメリット・デメリット</h2>
+<div class="tbl"><table><thead><tr><th></th><th>トーナメント</th><th>ダブルイリミネーション</th></tr></thead><tbody><tr><td>Nチームの試合数</td><td>N-1</td><td>2N-2 または 2N-1</td></tr><tr><td>敗退の条件</td><td>1敗</td><td>2敗</td></tr><tr><td>1チームの最少試合数</td><td>1</td><td>2</td></tr><tr><td>1試合の不調や組み合わせの不運</td><td>その時点で大会終了</td><td>挽回できる</td></tr><tr><td>優勝以外の順位</td><td>2位は決勝でしか決まらない</td><td>敗者側で2位・3位も決まる</td></tr><tr><td>日程</td><td>短くシンプル</td><td>約2倍の長さで、追いにくい</td></tr></tbody></table></div>
+<p>ダブルイリミネーションのメリット：</p>
+<ul><li>どのチームも最低2試合はできるので、遠くから参加するチームにとって大きな意味があります。</li><li>実力のあるチームが1試合だけ不調だったり、早い段階で第1シードと当たったりしても、優勝への道が残ります。</li><li>敗者側で優勝チーム以下の順位が決まるため、2位・3位の重みが増します。</li></ul>
+<p>デメリット：</p>
+<ul><li>試合数がおよそ2倍になり、コートや会場の使用時間もおよそ2倍になります。</li><li>グランドファイナルが2試合目までもつれるかどうか分からないため、終了時刻が読みにくくなります。</li><li>敗者側のチームは終盤に連戦が続くため、勝者側の優勝チームより休憩が少なくなります。</li><li>紙のトーナメント表だと、選手や観客にとって読み取りにくくなります。</li></ul>
+<h2 id="s">ダブルイリミネーションが向いているのは</h2>
+<p>ダブルイリミネーションが向いているのは、4〜32チーム程度で、1チームあたり2試合ほどできる時間があり、1試合の勝敗が僅差で決まりやすい競技です。たとえば格闘ゲームなどのeスポーツ、ダーツ、ビリヤード、卓球、コーンホール、ソフトボール、野球などです。実際、NCAA Men's College World Seriesでは、4チームのダブルイリミネーションを2つ行い、その後に3試合制（2勝先取）の決勝シリーズを行います。</p>
+<p>時間が限られている場合や参加チームが多い場合はトーナメントを選びましょう。少人数で全員が全員と対戦したいならリーグ戦（総当たり）、参加者が多くラウンド数が少ないならスイス式が向いています。</p>
+<h2 id="s">ダブルイリミネーションを迷わず運営するには</h2>
+<p>紙のトーナメント表で混乱しやすいのが敗者側です。勝者側で負けたチームがどの合流枠に入るのか、次は誰と対戦するのか、分からなくなりがちです。次のルールが役立ちます。</p>
+<ul><li>すべての試合に番号を振り、勝者側の各試合の横に「第5試合の敗者は第11試合へ」のように書いておく。</li><li>合流の組み合わせを交差させ、直前に負けた相手とすぐに再戦しないようにする。</li><li>グランドファイナル再戦を行うかどうかを、大会前に決めておく。</li></ul>
+<p>会場でスマートフォンを使って運営したい場合は、<a href="/tournament-bracket/ja-JP/">Ligona</a>（Android）が勝者側・敗者側を含むダブルイリミネーションのトーナメント表を作成し、スコアを入力するたびにチームを正しい枠へ移動させます。上位シードへの不戦勝も自動で割り当て、グランドファイナル再戦のオン・オフも切り替えられます。オフラインで動作し、アカウント登録も広告もありません。<a href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play</a>から入手できます。</p>
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Android 版 Ligona</strong><span>トーナメント表作成・対戦表作成アプリ。総当たりリーグ作成、予選リーグ、順位表、スイス式</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/ja-JP/">Ligona について</a></div></aside><h2 id="s">よくある質問</h2>
+<h3 id="8">8チームのダブルイリミネーションでは何試合ありますか？</h3>
+<p>14試合、グランドファイナル再戦がある場合は15試合です。内訳は勝者側7試合、敗者側6試合、グランドファイナル1試合または2試合です。</p>
+<h3 id="2">敗者側の優勝チームはグランドファイナルで2回勝つ必要がありますか？</h3>
+<p>本来のダブルイリミネーションでは、はい。勝者側の優勝チームは無敗なので、敗者側の優勝チームはグランドファイナルと再戦の2回勝つ必要があります。</p>
+<h3 id="1">1試合負けても優勝できますか？</h3>
+<p>できます。1敗したチームは敗者側に回り、そこを勝ち抜いてグランドファイナルでも勝てば優勝です。ただし、勝者側の優勝チームより多くの試合を戦うことになります。</p>
+<h3 id="1">ダブルイリミネーションで1チームが戦う最少試合数は？</h3>
+<p>2試合です。不戦勝は試合に数えず、敗退には2敗が必要なので、勝者側の初戦と敗者側の初戦で続けて負けたチームは2試合で敗退します。</p>
+<h3 id="s">ダブルイリミネーションはトーナメントより公平ですか？</h3>
+<p>1度の負けを挽回できる方式だといえます。1回の番狂わせや1試合の不調で、実力のあるチームの大会が終わってしまうことはありません。その代わり、試合数はおよそ2倍になり、日程は長く、読みにくくなります。</p>
+<h2 id="s">出典</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Double-elimination_tournament" rel="noopener">Double-elimination tournament</a>、Wikipedia：構成、試合数、グランドファイナル再戦について。</li><li><a href="https://www.ncaa.com/news/baseball/article/2024-06-11/how-mens-college-world-series-works" rel="noopener">How the Men's College World Series works</a>、NCAA.com：主要大会でのダブルイリミネーションの例。</li></ul></article><section class="related"><h2>関連</h2><div class="list"><a class="item" href="/tools/tournament-bracket-generator/"><strong>Tournament bracket generator</strong><span>Make a single or double elimination bracket with proper seeding and byes for top seeds. Tap names to advance winners, then print or share it.</span></a><a class="item" href="/tools/tournament-games-calculator/"><strong>Tournament games and rounds calculator</strong><span>How many games and rounds for knockout, double elimination, round robin, groups and Swiss with N teams, plus how long it takes on your courts.</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/ja/"><strong>大会の試合数は何試合になる？</strong><span>トーナメントはN-1試合、ダブルイリミネーションは2N-2または2N-1試合、総当たりのリーグ戦はN(N-1)/2試合、スイス式はラウンド数 × N/2試合。4〜32チームの早見表付き。</span></a><a class="item" href="/guides/how-to-organize-a-round-robin-tournament/ja/"><strong>総当たり戦（リーグ戦）の組み方</strong><span>N チームの総当たり戦では全チームが互いに対戦し、試合数は N(N-1)/2、ラウンド数は N-1（奇数なら N）。日程表の作り方、休みのチームの扱い、同率時の順位の決め方を解説します。</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/ja/"><strong>トーナメント表のシードの決め方</strong><span>チームに順位を付け、1対16、8対9、4対13…と組めば上位シード同士は終盤まで当たりません。不戦勝の数はチーム数以上で最小の2の累乗からチーム数を引いた数で、上位シードに割り当てます。</span></a><a class="item" href="/guides/swiss-system-tournament-explained/ja/"><strong>スイス式トーナメントのしくみ</strong><span>スイス式トーナメントでは、毎ラウンド同じ得点の人どうしが対戦し、同じ相手とは二度当たらず、途中で敗退する人もいません。ラウンド数はおよそlog2 N、同点はBuchholzで順位を決めます。</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">ガイド</a><a href="/tools/">ツール</a><a href="/">すべてのアプリ</a><a href="mailto:hello@maumiuworks.com">お問い合わせ</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>
