@@ -15,6 +15,7 @@ Each app page has the full description, screenshots, a Questions and answers sec
 ## Games
 
 - [Oddly Satisfying Restoration](https://maumiuworks.com/oddly-satisfying/): Cleaning games with ASMR: restore & repair old things. No timers, play offline. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.oddlysatisfying
+- [PlaneFlow](https://maumiuworks.com/planeflow/): Arcade air traffic control game: draw routes to land, service and launch planes. Google Play: https://play.google.com/store/apps/details?id=com.planeflow.game
 
 ## Tools
 
