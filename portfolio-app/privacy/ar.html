@@ -20,6 +20,7 @@ a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
 .crumbs .sep{color:var(--soft)}
 .crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
 .crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
 .crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
 .nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
 .tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
@@ -48,7 +49,8 @@ footer{background:var(--bar);border-top:1px solid var(--bar-line)}
 .legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
 .legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
 @media (max-width:52rem){.nav{display:none}}
-@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
 
 .doc{max-width:46rem;margin:0 auto;padding:2.5rem 1.25rem 3.5rem}
 .doc h1{font:600 clamp(1.4rem,3.4vw,1.9rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:0 0 1.4rem}
@@ -73,7 +75,7 @@ footer{background:var(--bar);border-top:1px solid var(--bar-line)}
 <p class="upd">2026-11-11</p></article></main>
 <footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/portfolio-app/ar/">Pecuo</a><a href="/">كل التطبيقات</a><a href="mailto:hello@maumiuworks.com">تواصل معنا</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
 if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
-var k=p.length?p[0]:"catalog";if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
 k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
 fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
 headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>

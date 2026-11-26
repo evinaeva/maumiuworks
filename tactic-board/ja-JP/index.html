@@ -44,6 +44,7 @@ a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
 .crumbs .sep{color:var(--soft)}
 .crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
 .crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
 .crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
 .nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
 .tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
@@ -72,7 +73,8 @@ footer{background:var(--bar);border-top:1px solid var(--bar-line)}
 .legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
 .legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
 @media (max-width:52rem){.nav{display:none}}
-@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
 
 .hero{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 1.25rem 5.5rem;color:#fff;
 background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url(/tactic-board/img/bg.svg) center/cover no-repeat,#2a2a2a}
@@ -110,25 +112,18 @@ section.band{scroll-margin-top:64px}
 <section class="band" id="screens"><h2 class="label">スクリーンショット</h2><div class="shots"><img src="/tactic-board/img/en-US/1.webp" width="420" height="747" alt="Tacticana: サッカーフォーメーション — 1" loading="lazy"><img src="/tactic-board/img/en-US/2.webp" width="420" height="747" alt="Tacticana: サッカーフォーメーション — 2" loading="lazy"><img src="/tactic-board/img/en-US/3.webp" width="420" height="747" alt="Tacticana: サッカーフォーメーション — 3" loading="lazy"><img src="/tactic-board/img/en-US/4.webp" width="420" height="747" alt="Tacticana: サッカーフォーメーション — 4" loading="lazy"><img src="/tactic-board/img/en-US/5.webp" width="420" height="747" alt="Tacticana: サッカーフォーメーション — 5" loading="lazy"></div></section>
 <section class="band" id="features"><h2 class="label">機能</h2><div class="desc"><p>サッカーの監督・コーチのための作戦ボードです。スタメンを決めて、戦術を描き、選手の動きをステップごとのアニメーションで見せられます。ベンチでもロッカールームでも、自宅での練習メニュー作りでも、ネット接続なしで使えます。広告なし、会員登録やアカウントも不要で、ボードはスマホの中に保存されます。</p>
 <p>あらゆる試合形式に対応したピッチ<br>・11人制、9人制、8人制、7人制、6人制、5人制、4人制、3人制、フットサル、ハーフコート<br>・横向き／縦向き、ピッチのデザインも選べます<br>・タブレットや横画面でも快適</p>
-<p>選手と練習道具</p>
-<h2>・背番号と名前つきの2チーム、GKは色分け</h2>
-<p>・ボール、コーン、マーカー、ポール、ラダー、ミニゴールで練習メニューを作成<br>・指でドラッグして自由に動かせます</p>
+<p>選手と練習道具<br>・背番号と名前つきの2チーム、GKは色分け<br>・ボール、コーン、マーカー、ポール、ラダー、ミニゴールで練習メニューを作成<br>・指でドラッグして自由に動かせます</p>
 <p>戦術を描く<br>・パス（点線）、ラン、ドリブル（波線）の矢印。直線でも曲線でも<br>・ライン、ゾーン、テキスト<br>・フリーハンドの手書き<br>・元に戻す／やり直し</p>
 <p>動く作戦ボード<br>・矢印を描いて「＋ ステップ」を押すと、選手とボールが矢印に沿って動きます<br>・パスならボールが受け手の足元へ、ランなら選手が移動、ドリブルなら選手がボールを持って進みます<br>・曲線の矢印にもそのまま沿うので、実際のプレーに近い動きに<br>・アニメーションで再生、速度も調整できます。セットプレーやオフ・ザ・ボールの動きの説明に最適<br>・すぐ使えるサンプル：後方からのビルドアップ、サイドのオーバーラップ、コーナーキック、ロンド 4対2</p>
-<p>フォーメーションとメンバー<br>・定番フォーメーション：4-4-2、4-3-3、4-2-3-1、3-5-2、3-4-3、5-3-2 ほか<br>・7人制、5人制、フットサル用のテンプレート<br>・ボードごとのメンバー表：背番号と名前をすばやく入力でき、名前は選手の下に表示されて一緒に動きます</p>
-<h2>・チームの背番号と名前をメンバーとして保存（例：U12）し、どのボードにも呼び出せます。背番号で割り当て、残りは順番に</h2>
-<p>保存と共有<br>・ボードは無制限に保存、フォルダ分けと検索<br>・ボードを複製して別パターンを試せます</p>
-<h2>・プレー全体はMP4動画やGIFアニメ、1ステップはPNG画像で書き出して、チームのグループに送信</h2>
-<p>・動画や画像をスマホのギャラリーに直接保存</p>
-<h2>・印刷やPDFで共有：1ページに1ステップ、選手へのメモつき</h2>
-<p>・ボードファイルを他のコーチに送れば、相手のアプリで開けます<br>・すべてのボードと保存メンバーをファイルにバックアップし、新しいスマホで復元</p>
+<p>フォーメーションとメンバー<br>・定番フォーメーション：4-4-2、4-3-3、4-2-3-1、3-5-2、3-4-3、5-3-2 ほか<br>・7人制、5人制、フットサル用のテンプレート<br>・ボードごとのメンバー表：背番号と名前をすばやく入力でき、名前は選手の下に表示されて一緒に動きます<br>・チームの背番号と名前をメンバーとして保存（例：U12）し、どのボードにも呼び出せます。背番号で割り当て、残りは順番に</p>
+<p>保存と共有<br>・ボードは無制限に保存、フォルダ分けと検索<br>・ボードを複製して別パターンを試せます<br>・プレー全体はMP4動画やGIFアニメ、1ステップはPNG画像で書き出して、チームのグループに送信<br>・動画や画像をスマホのギャラリーに直接保存<br>・印刷やPDFで共有：1ページに1ステップ、選手へのメモつき<br>・ボードファイルを他のコーチに送れば、相手のアプリで開けます<br>・すべてのボードと保存メンバーをファイルにバックアップし、新しいスマホで復元</p>
 <p>データはすべて端末内に保存。匿名の統計は設定でオフにできます。ライト／ダークテーマ。アクセシビリティ：色覚の多様性向けモード、高コントラスト、大きなボタン、文字の大きさの調整。</p>
 <p>少年サッカーの指導者、部活動の顧問、社会人チーム、体育の先生、選手、そして戦術談義が好きなすべての人に。</p></div></section>
 <section class="band" id="faq"><h2 class="label">よくある質問</h2><div class="desc faq"><div class="qa"><h3>スマホでサッカーのスタメンとフォーメーションを作るには？</h3><p>ボードを作ってピッチを選び、4-4-2、4-3-3、4-2-3-1、3-5-2などのフォーメーションをタップすると、選手がそれぞれの位置に並びます。メンバー一覧に背番号と名前を入力すると選手の下に表示され、ドラッグしても一緒に動きます。背番号と名前を「U-12」などのメンバー表として保存しておけば、新しいボードにも数秒で入れられます。</p></div><div class="qa"><h3>戦術をアニメーションで動かせる作戦ボードアプリは？</h3><p>Tacticanaはそのための作戦ボードです。パス、動き出し、ドリブルの矢印を描いて「+ ステップ」をタップすると、選手とボールが矢印に沿って動きます。曲がった矢印にもそのまま沿います。パスはボールが味方の足元へ、ドリブルは選手がボールと一緒に前へ進みます。「再生」で戦術全体を確認でき、速さも変えられます。コーナーキックや4対2のロンドなどのサンプルで使い方がわかります。</p></div><div class="qa"><h3>8人制やフットサルにも使えますか？</h3><p>使えます。ボードごとに11人制、9人制、8人制、7人制、6人制、5人制、4人制、3人制、フットサル、ハーフコートから選べます。人数ごとにフォーメーションが用意されていて、少人数のゲームはキーパーあり・なしを選べます。ピッチは横向きにも縦向きにもでき、見た目も変えられます。タブレットや横画面でも使えます。</p></div><div class="qa"><h3>戦術を動画にしてチームに送るには？</h3><p>ボードを開いて「共有」をタップします。戦術全体をMP4動画やアニメーションGIFで、ひとつのステップをPNG画像で書き出し、共有メニューからチームのグループ、メール、ほかのアプリへ送れます。Android 10以降なら、動画や画像を端末のギャラリーにも保存できます。ファイルはスマホの中で作られるので、ネット接続は必要ありません。</p></div><div class="qa"><h3>スタメンを選手や保護者に共有するには？</h3><p>ボードをPNG画像で書き出すと、背番号と名前がピッチ上に表示された画像になり、そのままチームのグループに送れます。印刷用には、1ページに1ステップずつ、選手へのメモ付きでPDFを作れます。ほかのコーチもTacticanaを使っていれば、ボードファイルを送るだけで同じボードを開いて編集できます。</p></div><div class="qa"><h3>オフラインやアカウントなしでも使えますか？</h3><p>使えます。すべての機能がインターネット接続なしで動き、登録もアカウントも広告もありません。ボード、フォルダ、メンバー表はスマホに保存され、ひとつのファイルにまとめてバックアップし、新しいスマホで復元できます。どの画面が開かれたかなどの匿名の利用統計を集計していますが、設定でオフにできます。</p></div></div></section>
 </main>
 <footer><div class="foot"><h2 class="label">その他のアプリ</h2><div class="net"><div><a href="/electric-toolkit/ja-JP/">Wirekit</a><p>分電盤の回路一覧表、配線練習、電線サイズと電圧降下の電気計算、電線管の曲げ。</p></div><div><a href="/morse-trainer/ja-JP/">Morsenta</a><p>広告なし。モールス信号と和文モールスを耳で覚える。コッホ法のCW練習、翻訳、電鍵。オフライン</p></div><div><a href="/portfolio-app/">Pecuo</a><p>No ads. Herd management for cattle, goats &amp; sheep: track every dose and birth</p></div><div><a href="/tournament-bracket/ja-JP/">Ligona</a><p>広告なしのトーナメント表・対戦表作成アプリ。リーグ作成、予選リーグ、スイス式も。オフライン対応</p></div></div><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/tactic-board/privacy/ja-JP.html">プライバシーポリシー</a><a href="/">すべてのアプリ</a><a href="mailto:hello@maumiuworks.com">お問い合わせ</a><a href="https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard&hl=ja-JP" rel="noopener">Google Play</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
 if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
-var k=p.length?p[0]:"catalog";if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
 k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
 fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
 headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
