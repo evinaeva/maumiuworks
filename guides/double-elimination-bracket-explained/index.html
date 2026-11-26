@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Double Elimination Bracket Explained (with 8-Team Example) — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="In double elimination a team is out after two losses. N teams play 2N-2 games, or 2N-1 if the grand final is reset. How the losers bracket works.">
+<link rel="canonical" href="https://maumiuworks.com/guides/double-elimination-bracket-explained/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="Double Elimination Bracket Explained (with 8-Team Example)"><meta property="og:description" content="In double elimination a team is out after two losses. N teams play 2N-2 games, or 2N-1 if the grand final is reset. How the losers bracket works."><meta property="og:url" content="https://maumiuworks.com/guides/double-elimination-bracket-explained/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Double elimination bracket explained", "description": "In double elimination a team is out after two losses. N teams play 2N-2 games, or 2N-1 if the grand final is reset. How the losers bracket works.", "inLanguage": "en", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "mainEntityOfPage": "https://maumiuworks.com/guides/double-elimination-bracket-explained/", "about": {"@type": "SoftwareApplication", "name": "Ligona", "operatingSystem": "Android", "url": "https://maumiuworks.com/tournament-bracket/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://maumiuworks.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "Double elimination bracket explained", "item": "https://maumiuworks.com/guides/double-elimination-bracket-explained/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many games are in a double elimination tournament with 8 teams?", "acceptedAnswer": {"@type": "Answer", "text": "14 games, or 15 if the grand final is reset. That is 7 in the winners bracket, 6 in the losers bracket and 1 or 2 in the grand final."}}, {"@type": "Question", "name": "Does the winner of the losers bracket have to win twice in the grand final?", "acceptedAnswer": {"@type": "Answer", "text": "In a true double elimination, yes. The winners bracket champion has no losses, so the losers bracket champion must beat them twice: once in the grand final and again in the reset game."}}, {"@type": "Question", "name": "Can a team win a double elimination tournament after losing a game?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A team that loses once drops to the losers bracket and can still win it and then the grand final. It just has to play more games than the winners bracket champion."}}, {"@type": "Question", "name": "What is the minimum number of games a team plays in double elimination?", "acceptedAnswer": {"@type": "Answer", "text": "Two. A bye is not a game, and a team needs two losses to be out, so a team that loses its first winners bracket game and its first losers bracket game is out after two games."}}, {"@type": "Question", "name": "Is double elimination fairer than single elimination?", "acceptedAnswer": {"@type": "Answer", "text": "It is more forgiving: one upset or one bad game does not end a strong team's event. The trade-off is about twice as many games and a longer, less predictable schedule."}}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="All apps" aria-label="Maumiu Works — All apps">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/guides/" aria-label="Guides"><span>Guides</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Double elimination bracket explained</span></nav><div class="tools"></div></header>
+<main><div class="wrap"><article class="art"><h1>Double elimination bracket explained</h1><p class="byline">Maumiu Works · Updated <time datetime="2026-11-26">November 26, 2026</time></p><nav class="toc" aria-label="On this page"><p>On this page</p><ol><li><a href="#how-does-a-double-elimination-bracket-work">How does a double elimination bracket work?</a></li><li><a href="#why-does-double-elimination-have-2n-2-or-2n-1-games">Why does double elimination have 2N-2 or 2N-1 games?</a></li><li><a href="#what-is-a-bracket-reset-in-the-grand-final">What is a bracket reset in the grand final?</a></li><li><a href="#how-does-an-8-team-double-elimination-bracket-play-out">How does an 8-team double elimination bracket play out?</a></li><li><a href="#how-many-rounds-does-a-double-elimination-bracket-have">How many rounds does a double elimination bracket have?</a></li><li><a href="#how-are-byes-handled-in-double-elimination">How are byes handled in double elimination?</a></li><li><a href="#what-are-the-pros-and-cons-of-double-elimination-vs-single-e">What are the pros and cons of double elimination vs single elimination?</a></li><li><a href="#when-should-you-use-double-elimination">When should you use double elimination?</a></li><li><a href="#how-do-you-run-double-elimination-without-getting-lost">How do you run double elimination without getting lost?</a></li><li><a href="#questions-and-answers">Questions and answers</a></li><li><a href="#sources">Sources</a></li></ol></nav><p>A double elimination bracket knocks a team out only after its <strong>second loss</strong>. Everyone starts in the winners bracket; a first loss drops a team into the losers bracket, and a loss there ends its tournament. The winners bracket champion and the losers bracket champion meet in the grand final, and the whole event takes <strong>2N-2 games</strong> for N teams, or <strong>2N-1</strong> if a second, "reset" final is needed: 14 or 15 games for 8 teams, 30 or 31 for 16.</p>
+<p>Try it: the <a href="/tools/tournament-bracket-generator/">tournament bracket generator</a> draws single and double elimination brackets for any number of teams.</p>
+<h2 id="how-does-a-double-elimination-bracket-work">How does a double elimination bracket work?</h2>
+<p>There are two brackets running side by side.</p>
+<ul><li><strong>Winners bracket (upper bracket).</strong> A normal knockout bracket. Every team starts here. Winners move on; losers do not go home, they drop down.</li><li><strong>Losers bracket (lower bracket).</strong> Teams with exactly one loss. A loss here is a team's second, so it is eliminated.</li><li><strong>Grand final.</strong> The last team unbeaten in the winners bracket against the last survivor of the losers bracket.</li></ul>
+<p>The losers bracket alternates between two kinds of rounds: rounds where losers bracket survivors play each other, and "drop-in" rounds where they meet the teams that have just lost in the winners bracket. That is why the losers bracket has about twice as many rounds as the winners bracket.</p>
+<h2 id="why-does-double-elimination-have-2n-2-or-2n-1-games">Why does double elimination have 2N-2 or 2N-1 games?</h2>
+<p>Count losses instead of games, because every game produces exactly one loss.</p>
+<ul><li>To finish with one champion, the other N-1 teams must each lose twice: 2(N-1) = <strong>2N-2 losses</strong>, so 2N-2 games.</li><li>If the losers bracket champion wins the first grand final, the winners bracket champion now has its first loss too. Both teams have one loss, so a second final is played. That extra game makes <strong>2N-1</strong>.</li></ul>
+<p>Byes (when N is not a power of two) are not games and do not change the formula.</p>
+<div class="tbl"><table><thead><tr><th>Teams</th><th>Single elimination</th><th>Double elimination</th><th>Double elimination with reset</th></tr></thead><tbody><tr><td>4</td><td>3</td><td>6</td><td>7</td></tr><tr><td>6</td><td>5</td><td>10</td><td>11</td></tr><tr><td>8</td><td>7</td><td>14</td><td>15</td></tr><tr><td>12</td><td>11</td><td>22</td><td>23</td></tr><tr><td>16</td><td>15</td><td>30</td><td>31</td></tr><tr><td>32</td><td>31</td><td>62</td><td>63</td></tr></tbody></table></div>
+<h2 id="what-is-a-bracket-reset-in-the-grand-final">What is a bracket reset in the grand final?</h2>
+<p>The winners bracket champion arrives at the grand final with no losses; the losers bracket champion has one. If the unbeaten team wins, the tournament is over. If the losers bracket champion wins, both teams now have one loss, and in a true double elimination nobody should be knocked out by their first loss. So the bracket "resets" and a second final decides the title.</p>
+<p>Some organizers skip the reset and play a single grand final to save time. That is fine, but announce it in advance: without the reset the winners bracket champion can be eliminated after one loss, which removes the main advantage of finishing the winners bracket unbeaten. A few esports events use a middle ground, such as starting the winners bracket champion with a one-game lead in a best-of series.</p>
+<h2 id="how-does-an-8-team-double-elimination-bracket-play-out">How does an 8-team double elimination bracket play out?</h2>
+<p>Seeds 1 to 8, standard seeding.</p>
+<p><strong>Winners bracket (7 games)</strong></p>
+<ol><li>Round 1: 1 vs 8, 4 vs 5, 2 vs 7, 3 vs 6. Four winners stay, four losers drop.</li><li>Semifinals: winner of 1/8 vs winner of 4/5, winner of 2/7 vs winner of 3/6. Two losers drop.</li><li>Winners final: one loser drops, the winner goes to the grand final unbeaten.</li></ol>
+<p><strong>Losers bracket (6 games)</strong></p>
+<ol><li>Losers round 1: the four teams that lost in winners round 1 play each other (2 games). Two teams are out.</li><li>Losers round 2 (drop-in): the two survivors play the two losers of the winners semifinals (2 games). Cross the pairings so nobody replays the team that just beat them.</li><li>Losers round 3: the two survivors play each other (1 game).</li><li>Losers final (drop-in): that survivor plays the loser of the winners final (1 game).</li></ol>
+<p><strong>Grand final (1 or 2 games)</strong></p>
+<p>The winners bracket champion plays the losers bracket champion. If the losers bracket champion wins, play the reset game.</p>
+<p>Total: 7 + 6 + 1 = 14 games, plus 1 if the reset is played. Check: 2 × 8 - 2 = 14. A team that loses its very first game and then wins the whole event plays 7 games: 1 in the winners bracket, 4 in the losers bracket and 2 in the grand final.</p>
+<h2 id="how-many-rounds-does-a-double-elimination-bracket-have">How many rounds does a double elimination bracket have?</h2>
+<p>For a bracket of size 2^k (8 = 2^3, 16 = 2^4):</p>
+<ul><li>Winners bracket: k rounds (3 for 8 teams, 4 for 16).</li><li>Losers bracket: 2(k-1) rounds (4 for 8 teams, 6 for 16).</li><li>Grand final: 1 round, or 2 with a reset.</li></ul>
+<p>The losers bracket is the bottleneck. In an 8-team event the winners bracket finishes after 3 rounds, but the losers bracket still needs its final before the grand final can start.</p>
+<h2 id="how-are-byes-handled-in-double-elimination">How are byes handled in double elimination?</h2>
+<p>If the number of teams is not a power of two, fill the winners bracket up to the next power of two with byes and give them to the top seeds: 6 teams use an 8-slot bracket with 2 byes for seeds 1 and 2; 12 teams use 16 slots with 4 byes. A bye is not a loss, so those teams cannot drop into the losers bracket in round 1, and some losers bracket games in the first rounds become byes too. Nothing changes in the 2N-2 formula.</p>
+<h2 id="what-are-the-pros-and-cons-of-double-elimination-vs-single-e">What are the pros and cons of double elimination vs single elimination?</h2>
+<div class="tbl"><table><thead><tr><th></th><th>Single elimination</th><th>Double elimination</th></tr></thead><tbody><tr><td>Games for N teams</td><td>N-1</td><td>2N-2 or 2N-1</td></tr><tr><td>Out after</td><td>1 loss</td><td>2 losses</td></tr><tr><td>Minimum games per team</td><td>1</td><td>2</td></tr><tr><td>One bad game or bad draw</td><td>ends your event</td><td>can be recovered</td></tr><tr><td>Places below the winner</td><td>only the final decides 2nd</td><td>the losers bracket also sorts out 2nd and 3rd</td></tr><tr><td>Schedule</td><td>short and simple</td><td>about twice as long, harder to follow</td></tr></tbody></table></div>
+<p>Advantages of double elimination:</p>
+<ul><li>Every team plays at least twice, which matters when people travel to the event.</li><li>A strong team that has one bad game, or meets the top seed early, still has a path to the title.</li><li>Second and third place are more meaningful, because the losers bracket sorts out the teams behind the champion.</li></ul>
+<p>Disadvantages:</p>
+<ul><li>Roughly twice the games, so roughly twice the court time.</li><li>The grand final may or may not need a second game, which makes the finish time uncertain.</li><li>Teams in the losers bracket play many games in a row near the end, so they get less rest than the winners bracket champion.</li><li>The bracket is harder for players and spectators to read on paper.</li></ul>
+<h2 id="when-should-you-use-double-elimination">When should you use double elimination?</h2>
+<p>Double elimination fits when you have 4 to about 32 teams, enough time for about two games per team, and a format where a single game is decided by small margins: fighting games and other esports, darts, pool, table tennis, cornhole, softball and baseball. The NCAA Men's College World Series, for example, plays two 4-team double elimination brackets before its best-of-three final series.</p>
+<p>Use single elimination when time is tight or the field is large. Use a round robin when you want everyone to play everyone and have a small group. Use Swiss when you have many players and only a few rounds.</p>
+<h2 id="how-do-you-run-double-elimination-without-getting-lost">How do you run double elimination without getting lost?</h2>
+<p>The losers bracket is where paper brackets go wrong: which drop-in slot does each winners bracket loser go to, and who plays next? A few rules help:</p>
+<ul><li>Number every game and write "loser of game 5 goes to game 11" next to the winners bracket games.</li><li>Cross the drop-ins so teams do not immediately replay the opponent that just beat them.</li><li>Decide before the event whether the grand final reset is played.</li></ul>
+<p>If you would rather do this on a phone at the venue, <a href="/tournament-bracket/">Ligona</a> (Android) builds the double elimination bracket with winners and losers brackets, moves teams to the right slot after each score, gives byes to the top seeds automatically, and lets you switch the grand final reset on or off. It works offline with no account and no ads; get it on <a href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament" rel="noopener">Google Play</a>.</p>
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Ligona for Android</strong><span>Bracket maker for any sport: knockout, round robin, groups, Swiss and playoffs</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/">About Ligona</a></div></aside><h2 id="questions-and-answers">Questions and answers</h2>
+<h3 id="how-many-games-are-in-a-double-elimination-tournament-with-8">How many games are in a double elimination tournament with 8 teams?</h3>
+<p>14 games, or 15 if the grand final is reset. That is 7 in the winners bracket, 6 in the losers bracket and 1 or 2 in the grand final.</p>
+<h3 id="does-the-winner-of-the-losers-bracket-have-to-win-twice-in-t">Does the winner of the losers bracket have to win twice in the grand final?</h3>
+<p>In a true double elimination, yes. The winners bracket champion has no losses, so the losers bracket champion must beat them twice: once in the grand final and again in the reset game.</p>
+<h3 id="can-a-team-win-a-double-elimination-tournament-after-losing-">Can a team win a double elimination tournament after losing a game?</h3>
+<p>Yes. A team that loses once drops to the losers bracket and can still win it and then the grand final. It just has to play more games than the winners bracket champion.</p>
+<h3 id="what-is-the-minimum-number-of-games-a-team-plays-in-double-e">What is the minimum number of games a team plays in double elimination?</h3>
+<p>Two. A bye is not a game, and a team needs two losses to be out, so a team that loses its first winners bracket game and its first losers bracket game is out after two games.</p>
+<h3 id="is-double-elimination-fairer-than-single-elimination">Is double elimination fairer than single elimination?</h3>
+<p>It is more forgiving: one upset or one bad game does not end a strong team's event. The trade-off is about twice as many games and a longer, less predictable schedule.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Double-elimination_tournament" rel="noopener">Double-elimination tournament</a>, Wikipedia: structure, game counts and the bracket reset.</li><li><a href="https://www.ncaa.com/news/baseball/article/2024-06-11/how-mens-college-world-series-works" rel="noopener">How the Men's College World Series works</a>, NCAA.com: an example of double elimination in a major championship.</li></ul></article><section class="related"><h2>Related</h2><div class="list"><a class="item" href="/tools/tournament-bracket-generator/"><strong>Tournament bracket generator</strong><span>Make a single or double elimination bracket with proper seeding and byes for top seeds. Tap names to advance winners, then print or share it.</span></a><a class="item" href="/tools/tournament-games-calculator/"><strong>Tournament games and rounds calculator</strong><span>How many games and rounds for knockout, double elimination, round robin, groups and Swiss with N teams, plus how long it takes on your courts.</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/"><strong>How many games are in a tournament?</strong><span>Single elimination: N-1 games. Double elimination: 2N-2 or 2N-1. Round robin: N(N-1)/2. Swiss: rounds × N/2. Table for 4 to 32 teams.</span></a><a class="item" href="/guides/how-to-organize-a-round-robin-tournament/"><strong>How to organize a round robin tournament</strong><span>In a round robin of N teams everyone plays everyone: N(N-1)/2 games in N-1 rounds (N rounds if odd). How to schedule, handle byes and break ties.</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/"><strong>How to seed a tournament bracket</strong><span>Rank the teams, then pair 1 vs 16, 8 vs 9, 4 vs 13 and so on, so top seeds meet last. Byes = next power of two minus teams, given to top seeds.</span></a><a class="item" href="/guides/swiss-system-tournament-explained/"><strong>Swiss system tournament explained</strong><span>In a Swiss tournament players with equal scores meet each round, nobody plays twice and nobody is eliminated. About log2 N rounds, Buchholz breaks ties.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">Guides</a><a href="/tools/">Tools</a><a href="/">All apps</a><a href="mailto:hello@maumiuworks.com">Contact</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

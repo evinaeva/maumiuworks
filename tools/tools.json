@@ -1,0 +1,23 @@
+[
+ {
+  "slug": "round-robin-generator",
+  "title": "Round Robin Schedule Generator",
+  "h1": "Round robin schedule generator",
+  "description": "Make a round robin schedule from a list of names: every team plays every other once or home and away, byes for odd numbers. Copy, CSV or print.",
+  "app": "tournament-bracket"
+ },
+ {
+  "slug": "tournament-bracket-generator",
+  "title": "Tournament Bracket Generator (Single & Double Elimination)",
+  "h1": "Tournament bracket generator",
+  "description": "Make a single or double elimination bracket with proper seeding and byes for top seeds. Tap names to advance winners, then print or share it.",
+  "app": "tournament-bracket"
+ },
+ {
+  "slug": "tournament-games-calculator",
+  "title": "Tournament Calculator: How Many Games and Rounds",
+  "h1": "Tournament games and rounds calculator",
+  "description": "How many games and rounds for knockout, double elimination, round robin, groups and Swiss with N teams, plus how long it takes on your courts.",
+  "app": "tournament-bracket"
+ }
+]

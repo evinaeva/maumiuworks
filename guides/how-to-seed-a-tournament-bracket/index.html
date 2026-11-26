@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Seed a Tournament Bracket (Order, Byes, Examples) — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="Rank the teams, then pair 1 vs 16, 8 vs 9, 4 vs 13 and so on, so top seeds meet last. Byes = next power of two minus teams, given to top seeds.">
+<link rel="canonical" href="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="How to Seed a Tournament Bracket (Order, Byes, Examples)"><meta property="og:description" content="Rank the teams, then pair 1 vs 16, 8 vs 9, 4 vs 13 and so on, so top seeds meet last. Byes = next power of two minus teams, given to top seeds."><meta property="og:url" content="https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to seed a tournament bracket", "description": "Rank the teams, then pair 1 vs 16, 8 vs 9, 4 vs 13 and so on, so top seeds meet last. Byes = next power of two minus teams, given to top seeds.", "inLanguage": "en", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "mainEntityOfPage": "https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/", "about": {"@type": "SoftwareApplication", "name": "Ligona", "operatingSystem": "Android", "url": "https://maumiuworks.com/tournament-bracket/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://maumiuworks.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to seed a tournament bracket", "item": "https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who does the number 1 seed play in the first round?", "acceptedAnswer": {"@type": "Answer", "text": "The lowest seed: seed 16 in a 16-team bracket, seed 8 in an 8-team bracket. If the bracket has byes, seed 1 gets the first bye and plays the winner of the 8 vs 9 game (16-slot bracket) in round 2."}}, {"@type": "Question", "name": "How many byes are in a 12-team bracket?", "acceptedAnswer": {"@type": "Answer", "text": "4 byes: the next power of two is 16, and 16 - 12 = 4. Seeds 1, 2, 3 and 4 get them."}}, {"@type": "Question", "name": "How many byes are in a 10-team bracket?", "acceptedAnswer": {"@type": "Answer", "text": "6 byes: 16 - 10 = 6. Seeds 1 to 6 go straight to the quarterfinals, and seeds 7 to 10 play two first-round games, 7 vs 10 and 8 vs 9."}}, {"@type": "Question", "name": "Why is 8 vs 9 next to 1 vs 16 in a bracket?", "acceptedAnswer": {"@type": "Answer", "text": "Because the winner plays seed 1 in round 2. The 8-9 game is the closest first-round match, and its winner is the expected quarterfinal opponent of the top seed. Seed 2 gets the 7-10 winner, seed 3 the 6-11 winner and seed 4 the 5-12 winner."}}, {"@type": "Question", "name": "Is random seeding fair?", "acceptedAnswer": {"@type": "Answer", "text": "It is fair in the sense that everyone has the same chances before the draw, but it can put the two strongest teams in the same first-round game. Use it when you have no reliable ranking, or seed only the top few and draw the rest."}}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="All apps" aria-label="Maumiu Works — All apps">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/guides/" aria-label="Guides"><span>Guides</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">How to seed a tournament bracket</span></nav><div class="tools"></div></header>
+<main><div class="wrap"><article class="art"><h1>How to seed a tournament bracket</h1><p class="byline">Maumiu Works · Updated <time datetime="2026-11-26">November 26, 2026</time></p><nav class="toc" aria-label="On this page"><p>On this page</p><ol><li><a href="#what-does-seeding-a-tournament-mean">What does seeding a tournament mean?</a></li><li><a href="#how-do-you-decide-the-seeds">How do you decide the seeds?</a></li><li><a href="#what-is-the-standard-seeding-order-and-why-does-it-work">What is the standard seeding order, and why does it work?</a></li><li><a href="#how-many-byes-does-a-bracket-need">How many byes does a bracket need?</a></li><li><a href="#example-how-do-you-seed-a-12-team-bracket">Example: how do you seed a 12-team bracket?</a></li><li><a href="#example-how-do-you-seed-a-6-team-bracket">Example: how do you seed a 6-team bracket?</a></li><li><a href="#should-you-use-a-random-draw-or-seeding">Should you use a random draw or seeding?</a></li><li><a href="#how-do-you-protect-top-seeds-and-keep-teams-apart">How do you protect top seeds and keep teams apart?</a></li><li><a href="#how-do-you-seed-groups-for-groups-and-playoffs">How do you seed groups for groups and playoffs?</a></li><li><a href="#questions-and-answers">Questions and answers</a></li><li><a href="#sources">Sources</a></li></ol></nav><p>To seed a bracket, rank the teams from strongest (seed 1) to weakest, then place them so that in every first-round game the two seeds add up to the bracket size plus one: in a 16-team bracket that is <strong>1 vs 16, 8 vs 9, 4 vs 13, 5 vs 12, 2 vs 15, 7 vs 10, 3 vs 14 and 6 vs 11</strong>, with seeds 1 and 2 in opposite halves. If the number of teams is not a power of two, the number of byes is <strong>the next power of two minus the number of teams</strong>, and the byes go to the top seeds: 12 teams get 4 byes, for seeds 1 to 4.</p>
+<p>Try it: the <a href="/tools/tournament-bracket-generator/">tournament bracket generator</a> places seeds and byes this way for any number of teams.</p>
+<h2 id="what-does-seeding-a-tournament-mean">What does seeding a tournament mean?</h2>
+<p>Seeding is ranking the teams before the draw and using that ranking to place them in the bracket. The goal is that the strongest teams cannot knock each other out early, so the later rounds are the most competitive and the final is, if results go as expected, between the two best teams. It also rewards past results: a team that earned a high ranking gets an easier path.</p>
+<h2 id="how-do-you-decide-the-seeds">How do you decide the seeds?</h2>
+<p>Use the most objective ranking you have, in roughly this order of preference:</p>
+<ol><li>An official ranking or rating (league standings, federation ranking, chess or Elo rating).</li><li>Results from an earlier stage of the same event, such as group standings.</li><li>Last season's or last edition's results.</li><li>The organizer's judgment, announced before the draw.</li><li>A random draw, if nobody knows who is strong.</li></ol>
+<p>Announce the method before you publish the bracket. Seeding by judgment is the part teams are most likely to argue about.</p>
+<h2 id="what-is-the-standard-seeding-order-and-why-does-it-work">What is the standard seeding order, and why does it work?</h2>
+<p>The standard order is built so the favorites meet as late as possible. In each round, if the higher seed always wins, the seeds in each game add up to a fixed number:</p>
+<div class="tbl"><table><thead><tr><th>Round (16 teams)</th><th>Seeds add up to</th><th>Games if favorites win</th></tr></thead><tbody><tr><td>Round of 16</td><td>17</td><td>1-16, 8-9, 4-13, 5-12, 2-15, 7-10, 3-14, 6-11</td></tr><tr><td>Quarterfinals</td><td>9</td><td>1-8, 4-5, 2-7, 3-6</td></tr><tr><td>Semifinals</td><td>5</td><td>1-4, 2-3</td></tr><tr><td>Final</td><td>3</td><td>1-2</td></tr></tbody></table></div>
+<p>Reading the bracket from top to bottom, the top half holds seeds 1, 16, 8, 9, 4, 13, 5 and 12; the bottom half holds 2, 15, 7, 10, 3, 14, 6 and 11. This guarantees:</p>
+<ul><li>Seeds 1 and 2 can only meet in the final.</li><li>Seeds 1 to 4 can only meet in the semifinals or later.</li><li>Seeds 1 to 8 can only meet in the quarterfinals or later.</li></ul>
+<p>You can build the order for any power of two by doubling. Start with 1 vs 2. To double the bracket, replace each seed s with the pair "s vs (new size + 1 - s)": for 4 teams 1-4, 2-3; for 8 teams 1-8, 4-5, 2-7, 3-6; and so on. Some brackets (for example NCAA basketball) list the same first-round pairs in a different visual order, but the pairs and halves work the same way.</p>
+<h2 id="how-many-byes-does-a-bracket-need">How many byes does a bracket need?</h2>
+<p>A knockout bracket needs a power of two in every round (2, 4, 8, 16, 32, 64). If you have N teams, round the bracket up to the next power of two, and the empty slots are byes:</p>
+<div class="tbl"><table><thead><tr><th>Teams</th><th>Bracket size</th><th>Byes</th><th>First-round games</th></tr></thead><tbody><tr><td>5</td><td>8</td><td>3</td><td>1</td></tr><tr><td>6</td><td>8</td><td>2</td><td>2</td></tr><tr><td>10</td><td>16</td><td>6</td><td>2</td></tr><tr><td>12</td><td>16</td><td>4</td><td>4</td></tr><tr><td>20</td><td>32</td><td>12</td><td>4</td></tr><tr><td>24</td><td>32</td><td>8</td><td>8</td></tr></tbody></table></div>
+<p>A bye means a team goes straight to round 2. Put the byes where the lowest seeds would be (seed 16 in a 16-slot bracket, then 15, 14…), so seed 1 faces the empty slot, then seed 2, and so on. That way byes reward the top seeds, and no two byes meet, which would create an empty game. After round 1 the bracket has exactly a power of two teams left.</p>
+<h2 id="example-how-do-you-seed-a-12-team-bracket">Example: how do you seed a 12-team bracket?</h2>
+<p>12 teams, bracket of 16, 4 byes for seeds 1 to 4. Use the 16-team order and leave out seeds 13 to 16:</p>
+<div class="tbl"><table><thead><tr><th>Round 1</th><th>Round 2</th></tr></thead><tbody><tr><td>1 (bye)</td><td>1 vs winner of 8-9</td></tr><tr><td>8 vs 9</td><td></td></tr><tr><td>4 (bye)</td><td>4 vs winner of 5-12</td></tr><tr><td>5 vs 12</td><td></td></tr><tr><td>2 (bye)</td><td>2 vs winner of 7-10</td></tr><tr><td>7 vs 10</td><td></td></tr><tr><td>3 (bye)</td><td>3 vs winner of 6-11</td></tr><tr><td>6 vs 11</td><td></td></tr></tbody></table></div>
+<p>Round 1 has 4 games; round 2 is a normal 8-team quarterfinal. If the favorites keep winning, the semifinals are 1 vs 4 and 2 vs 3. The tournament has 11 games in total.</p>
+<h2 id="example-how-do-you-seed-a-6-team-bracket">Example: how do you seed a 6-team bracket?</h2>
+<p>6 teams, bracket of 8, 2 byes for seeds 1 and 2.</p>
+<ul><li>Round 1: 4 vs 5 and 3 vs 6. Seeds 1 and 2 have byes.</li><li>Semifinals: 1 vs winner of 4-5, and 2 vs winner of 3-6.</li><li>Final: the two semifinal winners.</li></ul>
+<p>That is 5 games over 3 rounds. If the 2-game first round feels thin, the alternative is two groups of 3 (3 games each) with a final between the group winners, which gives every team at least 2 games.</p>
+<h2 id="should-you-use-a-random-draw-or-seeding">Should you use a random draw or seeding?</h2>
+<div class="tbl"><table><thead><tr><th></th><th>Seeded draw</th><th>Random draw</th></tr></thead><tbody><tr><td>Top teams meet early</td><td>no</td><td>possible</td></tr><tr><td>Rewards past results</td><td>yes</td><td>no</td></tr><tr><td>Needs a ranking</td><td>yes</td><td>no</td></tr><tr><td>Feels fair to newcomers</td><td>less</td><td>more</td></tr><tr><td>Best for</td><td>leagues, clubs, ranked players</td><td>casual events, unknown teams, a draw as part of the fun</td></tr></tbody></table></div>
+<p>A common middle ground is partial seeding: seed only the top 2, 4 or 8 and draw everyone else at random into the remaining slots. Tennis Grand Slams, for example, seed 32 of the 128 players in the singles draw. When you draw seeds 3 and 4 at random into the two remaining quarters (and seeds 5 to 8 into the remaining eighths), the protection still holds while the bracket varies from year to year.</p>
+<h2 id="how-do-you-protect-top-seeds-and-keep-teams-apart">How do you protect top seeds and keep teams apart?</h2>
+<ul><li><strong>Separate the top two.</strong> Seed 1 at the top of the bracket, seed 2 at the bottom.</li><li><strong>Separate teams from the same club, school or group.</strong> Put them in different halves or quarters so they cannot meet in round 1. In groups followed by playoffs, pair a group winner with a runner-up from another group.</li><li><strong>Byes to the top.</strong> Never give byes at random; a lucky bye for a weak team is the most visible unfairness in a bracket.</li><li><strong>Do not reseed silently.</strong> Some events reseed after each round (the highest remaining seed plays the lowest). That is a valid rule, but it must be announced before the first game.</li></ul>
+<h2 id="how-do-you-seed-groups-for-groups-and-playoffs">How do you seed groups for groups and playoffs?</h2>
+<p>Use snake seeding, also called serpentine. With 4 groups: seeds 1, 2, 3 and 4 go to groups A, B, C, D; seeds 5, 6, 7, 8 go to D, C, B, A; seeds 9 to 12 go to A, B, C, D again, and so on. Group A then has seeds 1, 8, 9 and 16, group B has 2, 7, 10 and 15. Each group has a similar total strength.</p>
+<p>If you seed brackets on a phone, <a href="/tournament-bracket/">Ligona</a> (Android) uses the order of your team list as the seeding, fills the bracket to the next power of two and gives the byes to the highest seeds automatically, so 12 teams get a 16-slot bracket with 4 byes. Random draw shuffles the list if you want an unseeded event, and for groups with playoffs it uses snake seeding and keeps group winners apart in the first knockout round. It works offline with no account and no ads; get it on <a href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament" rel="noopener">Google Play</a>.</p>
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Ligona for Android</strong><span>Bracket maker for any sport: knockout, round robin, groups, Swiss and playoffs</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/">About Ligona</a></div></aside><h2 id="questions-and-answers">Questions and answers</h2>
+<h3 id="who-does-the-number-1-seed-play-in-the-first-round">Who does the number 1 seed play in the first round?</h3>
+<p>The lowest seed: seed 16 in a 16-team bracket, seed 8 in an 8-team bracket. If the bracket has byes, seed 1 gets the first bye and plays the winner of the 8 vs 9 game (16-slot bracket) in round 2.</p>
+<h3 id="how-many-byes-are-in-a-12-team-bracket">How many byes are in a 12-team bracket?</h3>
+<p>4 byes: the next power of two is 16, and 16 - 12 = 4. Seeds 1, 2, 3 and 4 get them.</p>
+<h3 id="how-many-byes-are-in-a-10-team-bracket">How many byes are in a 10-team bracket?</h3>
+<p>6 byes: 16 - 10 = 6. Seeds 1 to 6 go straight to the quarterfinals, and seeds 7 to 10 play two first-round games, 7 vs 10 and 8 vs 9.</p>
+<h3 id="why-is-8-vs-9-next-to-1-vs-16-in-a-bracket">Why is 8 vs 9 next to 1 vs 16 in a bracket?</h3>
+<p>Because the winner plays seed 1 in round 2. The 8-9 game is the closest first-round match, and its winner is the expected quarterfinal opponent of the top seed. Seed 2 gets the 7-10 winner, seed 3 the 6-11 winner and seed 4 the 5-12 winner.</p>
+<h3 id="is-random-seeding-fair">Is random seeding fair?</h3>
+<p>It is fair in the sense that everyone has the same chances before the draw, but it can put the two strongest teams in the same first-round game. Use it when you have no reliable ranking, or seed only the top few and draw the rest.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Seed_%28sports%29" rel="noopener">Seed (sports)</a>, Wikipedia: seeding methods, byes and partial seeding.</li><li><a href="https://en.wikipedia.org/wiki/Single-elimination_tournament" rel="noopener">Single-elimination tournament</a>, Wikipedia: bracket structure and byes.</li></ul></article><section class="related"><h2>Related</h2><div class="list"><a class="item" href="/tools/tournament-bracket-generator/"><strong>Tournament bracket generator</strong><span>Make a single or double elimination bracket with proper seeding and byes for top seeds. Tap names to advance winners, then print or share it.</span></a><a class="item" href="/guides/double-elimination-bracket-explained/"><strong>Double elimination bracket explained</strong><span>In double elimination a team is out after two losses. N teams play 2N-2 games, or 2N-1 if the grand final is reset. How the losers bracket works.</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/"><strong>How many games are in a tournament?</strong><span>Single elimination: N-1 games. Double elimination: 2N-2 or 2N-1. Round robin: N(N-1)/2. Swiss: rounds × N/2. Table for 4 to 32 teams.</span></a><a class="item" href="/guides/how-to-organize-a-round-robin-tournament/"><strong>How to organize a round robin tournament</strong><span>In a round robin of N teams everyone plays everyone: N(N-1)/2 games in N-1 rounds (N rounds if odd). How to schedule, handle byes and break ties.</span></a><a class="item" href="/guides/swiss-system-tournament-explained/"><strong>Swiss system tournament explained</strong><span>In a Swiss tournament players with equal scores meet each round, nobody plays twice and nobody is eliminated. About log2 N rounds, Buchholz breaks ties.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">Guides</a><a href="/tools/">Tools</a><a href="/">All apps</a><a href="mailto:hello@maumiuworks.com">Contact</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

@@ -1,0 +1,115 @@
+[
+ {
+  "slug": "air-traffic-control-games-for-android",
+  "title": "Air Traffic Control Games for Android (Arcade, Radar, Tycoon)",
+  "h1": "Air traffic control games for Android: the main types and what to play",
+  "description": "Android ATC games come in three kinds: arcade route drawing, radar approach sims and airport tycoons. Here is how they differ and which games exist.",
+  "app": "planeflow",
+  "updated": "2026-11-26",
+  "tools": []
+ },
+ {
+  "slug": "double-elimination-bracket-explained",
+  "title": "Double Elimination Bracket Explained (with 8-Team Example)",
+  "h1": "Double elimination bracket explained",
+  "description": "In double elimination a team is out after two losses. N teams play 2N-2 games, or 2N-1 if the grand final is reset. How the losers bracket works.",
+  "app": "tournament-bracket",
+  "updated": "2026-11-26",
+  "tools": [
+   "tournament-bracket-generator",
+   "tournament-games-calculator"
+  ]
+ },
+ {
+  "slug": "how-many-games-in-a-tournament",
+  "title": "How Many Games Are in a Tournament? Formulas and Table",
+  "h1": "How many games are in a tournament?",
+  "description": "Single elimination: N-1 games. Double elimination: 2N-2 or 2N-1. Round robin: N(N-1)/2. Swiss: rounds × N/2. Table for 4 to 32 teams.",
+  "app": "tournament-bracket",
+  "updated": "2026-11-26",
+  "tools": [
+   "tournament-games-calculator",
+   "tournament-bracket-generator",
+   "round-robin-generator"
+  ]
+ },
+ {
+  "slug": "how-to-keep-livestock-health-records",
+  "title": "How to Keep Livestock Health Records (What to Record and Why)",
+  "h1": "How to keep livestock health records",
+  "description": "Log each animal's ID and every treatment: product, batch, dose, date, who gave it and withdrawal end date. UK and EU rules: keep 5 years or more.",
+  "app": "portfolio-app",
+  "updated": "2026-11-26",
+  "tools": []
+ },
+ {
+  "slug": "how-to-learn-morse-code-by-ear",
+  "title": "How to Learn Morse Code by Ear (Koch, Farnsworth, Daily Plan)",
+  "h1": "How to learn Morse code by ear",
+  "description": "Learn Morse by sound, not a chart: hear characters at 15 to 20 WPM, start with two (Koch method), add one at 90% accuracy, practice daily.",
+  "app": "morse-trainer",
+  "updated": "2026-11-26",
+  "tools": []
+ },
+ {
+  "slug": "how-to-organize-a-round-robin-tournament",
+  "title": "How to Organize a Round Robin Tournament (Schedule, Byes)",
+  "h1": "How to organize a round robin tournament",
+  "description": "In a round robin of N teams everyone plays everyone: N(N-1)/2 games in N-1 rounds (N rounds if odd). How to schedule, handle byes and break ties.",
+  "app": "tournament-bracket",
+  "updated": "2026-11-26",
+  "tools": [
+   "round-robin-generator",
+   "tournament-games-calculator"
+  ]
+ },
+ {
+  "slug": "how-to-seed-a-tournament-bracket",
+  "title": "How to Seed a Tournament Bracket (Order, Byes, Examples)",
+  "h1": "How to seed a tournament bracket",
+  "description": "Rank the teams, then pair 1 vs 16, 8 vs 9, 4 vs 13 and so on, so top seeds meet last. Byes = next power of two minus teams, given to top seeds.",
+  "app": "tournament-bracket",
+  "updated": "2026-11-26",
+  "tools": [
+   "tournament-bracket-generator"
+  ]
+ },
+ {
+  "slug": "satisfying-cleaning-games-without-timers",
+  "title": "Satisfying Cleaning Games With No Timers (Calm, Offline)",
+  "h1": "Satisfying cleaning games without timers or pressure",
+  "description": "Calm cleaning and restoration games have no timers, lives or energy. What makes them satisfying, how to spot pressure, and games to try on Android.",
+  "app": "oddly-satisfying",
+  "updated": "2026-11-26",
+  "tools": []
+ },
+ {
+  "slug": "soccer-tactics-board-how-to-explain-plays",
+  "title": "How to Explain Soccer Plays With a Tactics Board",
+  "h1": "How to use a soccer tactics board to explain plays",
+  "description": "Show one idea per board, move it step by step, keep the same arrows, then practice it on the field. Formations, pressing, set pieces, a sample plan.",
+  "app": "tactic-board",
+  "updated": "2026-11-26",
+  "tools": []
+ },
+ {
+  "slug": "swiss-system-tournament-explained",
+  "title": "Swiss System Tournament Explained (Pairing, Rounds, Buchholz)",
+  "h1": "Swiss system tournament explained",
+  "description": "In a Swiss tournament players with equal scores meet each round, nobody plays twice and nobody is eliminated. About log2 N rounds, Buchholz breaks ties.",
+  "app": "tournament-bracket",
+  "updated": "2026-11-26",
+  "tools": [
+   "tournament-games-calculator"
+  ]
+ },
+ {
+  "slug": "voltage-drop-calculation-explained",
+  "title": "Voltage Drop Calculation Explained (Formula and Worked Example)",
+  "h1": "How to calculate voltage drop",
+  "description": "Single-phase VD = 2 × K × I × L ÷ CM; three-phase uses 1.732. K is 12.9 for copper, 21.2 for aluminum. Worked examples in AWG and mm².",
+  "app": "electric-toolkit",
+  "updated": "2026-11-26",
+  "tools": []
+ }
+]

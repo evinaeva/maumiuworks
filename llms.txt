@@ -1,0 +1,41 @@
+# Maumiu Works
+
+> Maumiu Works is a small independent developer of Android apps and games by Jevgenia. The apps are focused single-purpose tools; most work offline, need no account and show no ads (each app page says what applies). Contact: hello@maumiuworks.com.
+
+Each app page has the full description, screenshots, a Questions and answers section and a link to Google Play; pages exist in every language of the store listing (hreflang alternates in the sitemap).
+
+## Apps
+
+- [Wirekit](https://maumiuworks.com/electric-toolkit/): Electrical calculator: wire size, voltage drop, breaker panel. No ads. Offline. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.electrician
+- [Morsenta](https://maumiuworks.com/morse-trainer/): No ads: learn Morse code by ear — Morse code translator, CW trainer, Koch, key. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.morse
+- [Pecuo](https://maumiuworks.com/portfolio-app/): No ads. Herd management for cattle, goats & sheep: track every dose and birth. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.livestock
+- [Tacticana](https://maumiuworks.com/tactic-board/): Soccer tactics board, no ads: draw plays, animate every step, share video. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard
+- [Ligona](https://maumiuworks.com/tournament-bracket/): Bracket maker for any sport: knockout, round robin, groups, Swiss and playoffs. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.tournament
+
+## Games
+
+- [Oddly Satisfying Restoration](https://maumiuworks.com/oddly-satisfying/): Cleaning games with ASMR: restore & repair old things. No timers, play offline. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.oddlysatisfying
+
+## Tools
+
+- [Round robin schedule generator](https://maumiuworks.com/tools/round-robin-generator/): Make a round robin schedule from a list of names: every team plays every other once or home and away, byes for odd numbers. Copy, CSV or print.
+- [Tournament bracket generator](https://maumiuworks.com/tools/tournament-bracket-generator/): Make a single or double elimination bracket with proper seeding and byes for top seeds. Tap names to advance winners, then print or share it.
+- [Tournament games and rounds calculator](https://maumiuworks.com/tools/tournament-games-calculator/): How many games and rounds for knockout, double elimination, round robin, groups and Swiss with N teams, plus how long it takes on your courts.
+
+## Guides
+
+- [Air traffic control games for Android: the main types and what to play](https://maumiuworks.com/guides/air-traffic-control-games-for-android/): Android ATC games come in three kinds: arcade route drawing, radar approach sims and airport tycoons. Here is how they differ and which games exist.
+- [Double elimination bracket explained](https://maumiuworks.com/guides/double-elimination-bracket-explained/): In double elimination a team is out after two losses. N teams play 2N-2 games, or 2N-1 if the grand final is reset. How the losers bracket works.
+- [How many games are in a tournament?](https://maumiuworks.com/guides/how-many-games-in-a-tournament/): Single elimination: N-1 games. Double elimination: 2N-2 or 2N-1. Round robin: N(N-1)/2. Swiss: rounds × N/2. Table for 4 to 32 teams.
+- [How to keep livestock health records](https://maumiuworks.com/guides/how-to-keep-livestock-health-records/): Log each animal's ID and every treatment: product, batch, dose, date, who gave it and withdrawal end date. UK and EU rules: keep 5 years or more.
+- [How to learn Morse code by ear](https://maumiuworks.com/guides/how-to-learn-morse-code-by-ear/): Learn Morse by sound, not a chart: hear characters at 15 to 20 WPM, start with two (Koch method), add one at 90% accuracy, practice daily.
+- [How to organize a round robin tournament](https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/): In a round robin of N teams everyone plays everyone: N(N-1)/2 games in N-1 rounds (N rounds if odd). How to schedule, handle byes and break ties.
+- [How to seed a tournament bracket](https://maumiuworks.com/guides/how-to-seed-a-tournament-bracket/): Rank the teams, then pair 1 vs 16, 8 vs 9, 4 vs 13 and so on, so top seeds meet last. Byes = next power of two minus teams, given to top seeds.
+- [Satisfying cleaning games without timers or pressure](https://maumiuworks.com/guides/satisfying-cleaning-games-without-timers/): Calm cleaning and restoration games have no timers, lives or energy. What makes them satisfying, how to spot pressure, and games to try on Android.
+- [How to use a soccer tactics board to explain plays](https://maumiuworks.com/guides/soccer-tactics-board-how-to-explain-plays/): Show one idea per board, move it step by step, keep the same arrows, then practice it on the field. Formations, pressing, set pieces, a sample plan.
+- [Swiss system tournament explained](https://maumiuworks.com/guides/swiss-system-tournament-explained/): In a Swiss tournament players with equal scores meet each round, nobody plays twice and nobody is eliminated. About log2 N rounds, Buchholz breaks ties.
+- [How to calculate voltage drop](https://maumiuworks.com/guides/voltage-drop-calculation-explained/): Single-phase VD = 2 × K × I × L ÷ CM; three-phase uses 1.732. K is 12.9 for copper, 21.2 for aluminum. Worked examples in AWG and mm².
+
+## Optional
+
+- [Sitemap](https://maumiuworks.com/sitemap.xml): every page in every language

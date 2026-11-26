@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voltage Drop Calculation Explained (Formula and Worked Example) — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="Single-phase VD = 2 × K × I × L ÷ CM; three-phase uses 1.732. K is 12.9 for copper, 21.2 for aluminum. Worked examples in AWG and mm².">
+<link rel="canonical" href="https://maumiuworks.com/guides/voltage-drop-calculation-explained/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="Voltage Drop Calculation Explained (Formula and Worked Example)"><meta property="og:description" content="Single-phase VD = 2 × K × I × L ÷ CM; three-phase uses 1.732. K is 12.9 for copper, 21.2 for aluminum. Worked examples in AWG and mm²."><meta property="og:url" content="https://maumiuworks.com/guides/voltage-drop-calculation-explained/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to calculate voltage drop", "description": "Single-phase VD = 2 × K × I × L ÷ CM; three-phase uses 1.732. K is 12.9 for copper, 21.2 for aluminum. Worked examples in AWG and mm².", "inLanguage": "en", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "mainEntityOfPage": "https://maumiuworks.com/guides/voltage-drop-calculation-explained/", "about": {"@type": "SoftwareApplication", "name": "Wirekit", "operatingSystem": "Android", "url": "https://maumiuworks.com/electric-toolkit/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://maumiuworks.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to calculate voltage drop", "item": "https://maumiuworks.com/guides/voltage-drop-calculation-explained/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the formula for voltage drop?", "acceptedAnswer": {"@type": "Answer", "text": "For single-phase or DC circuits, VD = 2 × K × I × L ÷ CM, with K about 12.9 for copper and 21.2 for aluminum, L the one-way length in feet and CM the area in circular mils. For three-phase circuits, use 1.732 instead of 2."}}, {"@type": "Question", "name": "Is 3% voltage drop required by the NEC?", "acceptedAnswer": {"@type": "Answer", "text": "Not for ordinary circuits. The 3% branch and 5% combined figures are in informational notes, which are recommendations. A few articles, such as 647.4(D) and 695.7, do set mandatory limits, and local amendments may add more."}}, {"@type": "Question", "name": "What is the K value for copper and aluminum?", "acceptedAnswer": {"@type": "Answer", "text": "About 12.9 ohms per circular mil-foot for uncoated copper and 21.2 for aluminum, both at 75 °C. They come from NEC Chapter 9, Table 8, by multiplying a conductor's resistance by its area."}}, {"@type": "Question", "name": "Is length in the voltage drop formula one-way or round trip?", "acceptedAnswer": {"@type": "Answer", "text": "One-way. The factor 2 in the single-phase formula already covers the return conductor, and the 1.732 factor in the three-phase formula accounts for the phase relationship."}}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="All apps" aria-label="Maumiu Works — All apps">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/guides/" aria-label="Guides"><span>Guides</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">How to calculate voltage drop</span></nav><div class="tools"></div></header>
+<main><div class="wrap"><article class="art"><h1>How to calculate voltage drop</h1><p class="byline">Maumiu Works · Updated <time datetime="2026-11-26">November 26, 2026</time></p><nav class="toc" aria-label="On this page"><p>On this page</p><ol><li><a href="#what-is-voltage-drop-and-why-does-it-matter">What is voltage drop and why does it matter?</a></li><li><a href="#what-are-the-voltage-drop-formulas">What are the voltage drop formulas?</a></li><li><a href="#where-do-k-12-9-and-k-21-2-come-from">Where do K = 12.9 and K = 21.2 come from?</a></li><li><a href="#worked-example-single-phase-120-v-circuit">Worked example: single-phase 120 V circuit</a></li><li><a href="#worked-example-three-phase-480-v-feeder">Worked example: three-phase 480 V feeder</a></li><li><a href="#what-does-the-nec-actually-require">What does the NEC actually require?</a></li><li><a href="#how-do-i-calculate-voltage-drop-in-mm-iec-method">How do I calculate voltage drop in mm² (IEC method)?</a></li><li><a href="#what-mistakes-make-voltage-drop-results-wrong">What mistakes make voltage drop results wrong?</a></li><li><a href="#can-a-phone-app-do-this-on-site">Can a phone app do this on site?</a></li><li><a href="#sources">Sources</a></li><li><a href="#questions-and-answers">Questions and answers</a></li></ol></nav><p>For a single-phase or DC circuit, voltage drop is <strong>VD = 2 × K × I × L ÷ CM</strong>, where K is the conductor's resistance constant (about <strong>12.9 for copper and 21.2 for aluminum</strong> at 75 °C), I is the current in amps, L is the <strong>one-way</strong> length in feet and CM is the conductor area in circular mils. For a three-phase circuit, replace the 2 with <strong>1.732</strong> (√3). Divide the result by the circuit voltage to get percent: the NEC's informational notes recommend about <strong>3% for a branch circuit and 5% for feeder plus branch combined</strong>, but in most cases these are recommendations, not enforceable requirements.</p>
+<p>Safety note: this guide explains the arithmetic; it is not design advice. Your local code, the authority having jurisdiction and a licensed electrician decide what is acceptable for a real installation.</p>
+<h2 id="what-is-voltage-drop-and-why-does-it-matter">What is voltage drop and why does it matter?</h2>
+<p>Every conductor has resistance, so current loses some voltage along the way: the longer the run, the higher the current and the smaller the wire, the bigger the loss. Too much drop means motors that start hard and run hot, lights that dim and electronics that misbehave, and the lost voltage becomes heat in the wire.</p>
+<p>Voltage drop does not replace ampacity. Size the wire for the current it must carry safely first, then check the drop and upsize if needed.</p>
+<h2 id="what-are-the-voltage-drop-formulas">What are the voltage drop formulas?</h2>
+<div class="tbl"><table><thead><tr><th>Circuit</th><th>Formula with K</th><th>Formula with resistance per 1,000 ft</th></tr></thead><tbody><tr><td>DC or single-phase, 2 wires</td><td>VD = 2 × K × I × L ÷ CM</td><td>VD = 2 × I × L × R ÷ 1,000</td></tr><tr><td>Three-phase, balanced</td><td>VD = 1.732 × K × I × L ÷ CM</td><td>VD = 1.732 × I × L × R ÷ 1,000</td></tr></tbody></table></div>
+<ul><li><strong>VD</strong> is the voltage drop in volts.</li><li><strong>K</strong> is the resistance of a conductor 1 circular mil in area and 1 foot long, in ohms. For uncoated copper at 75 °C it is about 12.9; for aluminum it is about 21.2.</li><li><strong>I</strong> is the load current in amps.</li><li><strong>L</strong> is the one-way length of the circuit in feet. The factor 2 already accounts for the current going out and coming back, so do not double the length yourself.</li><li><strong>CM</strong> is the conductor area in circular mils, from NEC Chapter 9, Table 8.</li><li><strong>R</strong> is the conductor's resistance in ohms per 1,000 feet, also from Chapter 9, Table 8.</li><li><strong>Percent drop</strong> = VD ÷ circuit voltage × 100. For three-phase, use the line-to-line voltage.</li></ul>
+<p>You can rearrange the same formula to find the smallest wire that meets a limit: <strong>CM = 2 × K × I × L ÷ VD allowed</strong> (or 1.732 instead of 2 for three-phase).</p>
+<h2 id="where-do-k-12-9-and-k-21-2-come-from">Where do K = 12.9 and K = 21.2 come from?</h2>
+<p>K is simply Table 8's resistance multiplied by the conductor's area. For example, 1 AWG copper has an area of 83,690 circular mils and a resistance of 0.154 ohms per 1,000 feet at 75 °C, so K = 0.154 ÷ 1,000 × 83,690 ≈ 12.9. Aluminum has higher resistance, so its K is about 21.2.</p>
+<div class="tbl"><table><thead><tr><th>Size</th><th>Area (circular mils)</th><th>Copper resistance, ohms per 1,000 ft (K ÷ CM × 1,000)</th></tr></thead><tbody><tr><td>12 AWG</td><td>6,530</td><td>about 1.98</td></tr><tr><td>10 AWG</td><td>10,380</td><td>about 1.24</td></tr><tr><td>8 AWG</td><td>16,510</td><td>about 0.78</td></tr><tr><td>6 AWG</td><td>26,240</td><td>about 0.49</td></tr><tr><td>4 AWG</td><td>41,740</td><td>about 0.31</td></tr></tbody></table></div>
+<p>These figures are calculated from K and closely match Table 8's values for stranded uncoated copper; for a final design, use the exact value from the code edition your jurisdiction has adopted. The method ignores reactance, which is fine for small conductors; for large conductors on long AC runs, Chapter 9, Table 9 gives more accurate AC impedance values.</p>
+<h2 id="worked-example-single-phase-120-v-circuit">Worked example: single-phase 120 V circuit</h2>
+<p>A 120 V circuit feeds a 16 A load 100 feet away. Will 12 AWG copper stay within 3%?</p>
+<ol><li>VD = 2 × 12.9 × 16 × 100 ÷ 6,530 = 41,280 ÷ 6,530 = <strong>6.32 V</strong>.</li><li>Percent = 6.32 ÷ 120 × 100 = <strong>5.27%</strong>. That is well over 3%.</li><li>Smallest area for 3%: the allowed drop is 3% of 120 V = 3.6 V, so CM = 41,280 ÷ 3.6 = <strong>11,467 circular mils</strong>.</li><li>10 AWG (10,380 circular mils) is too small: 41,280 ÷ 10,380 = 3.98 V, or 3.31%.</li><li>8 AWG (16,510 circular mils) works: 41,280 ÷ 16,510 = 2.50 V, or <strong>2.08%</strong>.</li></ol>
+<p>Check with resistance instead: 2 × 16 × 100 × 1.98 ÷ 1,000 = 6.34 V, practically the same as step 1.</p>
+<p>The same 16 A load at 240 V on 12 AWG drops the same 6.32 V, but that is only 2.63% of 240 V. Higher voltage is one of the most effective ways to reduce percent drop on long runs.</p>
+<p>How far can 12 AWG copper go at 16 A and 120 V within 3%? L = VD × CM ÷ (2 × K × I) = 3.6 × 6,530 ÷ (2 × 12.9 × 16) = <strong>about 57 feet</strong>.</p>
+<h2 id="worked-example-three-phase-480-v-feeder">Worked example: three-phase 480 V feeder</h2>
+<p>A 480 V three-phase feeder carries 50 A over 200 feet in 6 AWG copper.</p>
+<ol><li>VD = 1.732 × 12.9 × 50 × 200 ÷ 26,240 = 223,428 ÷ 26,240 = <strong>8.51 V</strong>.</li><li>Percent = 8.51 ÷ 480 × 100 = <strong>1.77%</strong>.</li></ol>
+<p>In 4 AWG aluminum (41,740 circular mils) the same feeder gives 1.732 × 21.2 × 50 × 200 ÷ 41,740 = 8.80 V, or 1.83%. Ampacity, terminations and the rest of the circuit still have to be checked separately.</p>
+<h2 id="what-does-the-nec-actually-require">What does the NEC actually require?</h2>
+<p>The familiar 3% and 5% figures come from <strong>Informational Notes</strong> in NEC 210.19 (branch circuits) and 215.2 (feeders): about 3% at the farthest outlet of a branch circuit, and no more than 5% for feeder and branch circuit combined, as a level that gives reasonable efficiency of operation. The note numbers have moved between code editions. Informational notes are explanatory material, not mandatory requirements, so the NEC does not make 3% or 5% enforceable for ordinary circuits.</p>
+<p>There are exceptions. A few articles make voltage drop mandatory, for example 647.4(D) for sensitive electronic equipment and 695.7 for fire pumps. Equipment installation instructions, which 110.3(B) requires you to follow, can set minimum voltages too. Some jurisdictions also amend the code to turn the recommendation into a rule, so check your local adoption.</p>
+<h2 id="how-do-i-calculate-voltage-drop-in-mm-iec-method">How do I calculate voltage drop in mm² (IEC method)?</h2>
+<p>Outside North America, wire is sized in mm² and the reference is IEC 60364-5-52. Its informative Annex G gives:</p>
+<p><strong>u = b × (ρ1 × L ÷ S × cos φ + λ × L × sin φ) × IB</strong></p>
+<ul><li><strong>u</strong> is the voltage drop in volts, <strong>IB</strong> the design current in amps, <strong>L</strong> the length in meters and <strong>S</strong> the cross-section in mm².</li><li><strong>b</strong> is 2 for single-phase circuits and 1 for balanced three-phase circuits. With b = 1, u is the drop per phase, so the percent is taken against the line-to-neutral voltage U0.</li><li><strong>ρ1</strong> is the resistivity in normal service, taken as 1.25 times the resistivity at 20 °C: <strong>0.0225 Ω·mm²/m for copper</strong> and <strong>0.036 Ω·mm²/m for aluminum</strong>.</li><li><strong>λ</strong> is the reactance per unit length. The reactance term is small for small cables and is often left out for final circuits; for large cables use the manufacturer's data.</li></ul>
+<p>Example: a 230 V single-phase circuit, 16 A resistive load (cos φ = 1), 30 m of 2.5 mm² copper:</p>
+<ol><li>u = 2 × 0.0225 × 30 ÷ 2.5 × 16 = <strong>8.64 V</strong>.</li><li>Percent = 8.64 ÷ 230 × 100 = <strong>3.76%</strong>.</li><li>With 4 mm²: u = 2 × 0.0225 × 30 ÷ 4 × 16 = 5.40 V, or <strong>2.35%</strong>.</li></ol>
+<p>The UK's BS 7671 tables express the same idea in millivolts per amp per meter: 2.5 mm² twin-and-earth is listed at 18 mV/A/m, and 18 × 16 × 30 ÷ 1,000 = 8.64 V, the same result.</p>
+<p>Three-phase example: 400 V, 32 A, cos φ = 0.85, 50 m of 6 mm² copper, reactance ignored: u = 1 × 0.0225 × 50 ÷ 6 × 0.85 × 32 = 5.10 V per phase, which is 2.21% of the phase voltage U0 = 400/√3 ≈ 231 V (and equals 8.83 V, or 2.21%, line to line).</p>
+<p>Annex G's Table G.52.1 suggests limits of <strong>3% for lighting and 5% for other uses</strong> in installations supplied directly from a public low-voltage network, and 6% and 8% for installations with their own private supply. Like the NEC notes, this annex is informative; national wiring rules decide what is required.</p>
+<h2 id="what-mistakes-make-voltage-drop-results-wrong">What mistakes make voltage drop results wrong?</h2>
+<ul><li><strong>Doubling the length twice.</strong> Use one-way length with the factor 2 (or 1.732), never round-trip length with it.</li><li><strong>Using the wrong current.</strong> Use the actual load current, not the breaker rating, unless you want a worst-case check.</li><li><strong>Taking percent of the wrong voltage.</strong> For three-phase VD with 1.732, divide by the line-to-line voltage.</li><li><strong>Ignoring reactance on big conductors.</strong> Long AC runs with large wire read slightly low with K or Table 8; use Table 9 impedance for those.</li><li><strong>Forgetting it is a check, not a size.</strong> Ampacity, terminal ratings and overcurrent protection come first.</li></ul>
+<p>To reduce drop on a long run, use a larger conductor, a higher circuit voltage if the load allows it, a shorter route, or split the load across circuits.</p>
+<h2 id="can-a-phone-app-do-this-on-site">Can a phone app do this on site?</h2>
+<p>Yes. Wirekit, our electrician calculator for Android, has a Voltage drop screen for DC, single-phase and three-phase circuits. You enter the voltage, current, one-way length and conductor size; it shows the drop in volts and percent, the voltage at the load and the smallest wire that stays within your limit, 3% for a branch circuit or 5% for feeder plus branch. In NEC mode it uses Chapter 9 Table 8 resistance and ignores reactance, so, as explained above, long runs with large conductors read slightly low. The app switches between NEC and IEC and between imperial and metric units, and it works offline with no account and no ads. Always check results against your local code and have the work done or inspected by a licensed electrician.</p>
+<aside class="cta" aria-label="Wirekit"><img src="/electric-toolkit/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Wirekit for Android</strong><span>Electrical calculator: wire size, voltage drop, breaker panel. No ads. Offline.</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.electrician" rel="noopener">Google Play</a><a class="more" href="/electric-toolkit/">About Wirekit</a></div></aside><h2 id="sources">Sources</h2>
+<ul><li><a href="https://iaeimagazine.org/electrical-fundamentals/voltage-drop-formulas/" rel="noopener">IAEI Magazine: Voltage drop formulas</a>: K values from Chapter 9 Table 8, single-phase and three-phase formulas, informational notes versus mandatory sections.</li><li><a href="https://www.nfpa.org/codes-and-standards/nfpa-70-standard-development/70" rel="noopener">NFPA 70, National Electrical Code</a>: the code text, including 210.19, 215.2 and Chapter 9 Tables 8 and 9.</li><li><a href="https://webstore.iec.ch/en/publication/1878" rel="noopener">IEC 60364-5-52: Low-voltage electrical installations, Part 5-52: Wiring systems</a>: clause 525 and informative Annex G on voltage drop.</li></ul>
+<h2 id="questions-and-answers">Questions and answers</h2>
+<h3 id="what-is-the-formula-for-voltage-drop">What is the formula for voltage drop?</h3>
+<p>For single-phase or DC circuits, VD = 2 × K × I × L ÷ CM, with K about 12.9 for copper and 21.2 for aluminum, L the one-way length in feet and CM the area in circular mils. For three-phase circuits, use 1.732 instead of 2.</p>
+<h3 id="is-3-voltage-drop-required-by-the-nec">Is 3% voltage drop required by the NEC?</h3>
+<p>Not for ordinary circuits. The 3% branch and 5% combined figures are in informational notes, which are recommendations. A few articles, such as 647.4(D) and 695.7, do set mandatory limits, and local amendments may add more.</p>
+<h3 id="what-is-the-k-value-for-copper-and-aluminum">What is the K value for copper and aluminum?</h3>
+<p>About 12.9 ohms per circular mil-foot for uncoated copper and 21.2 for aluminum, both at 75 °C. They come from NEC Chapter 9, Table 8, by multiplying a conductor's resistance by its area.</p>
+<h3 id="is-length-in-the-voltage-drop-formula-one-way-or-round-trip">Is length in the voltage drop formula one-way or round trip?</h3>
+<p>One-way. The factor 2 in the single-phase formula already covers the return conductor, and the 1.732 factor in the three-phase formula accounts for the phase relationship.</p></article></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">Guides</a><a href="/tools/">Tools</a><a href="/">All apps</a><a href="mailto:hello@maumiuworks.com">Contact</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

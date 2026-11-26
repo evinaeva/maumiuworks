@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Organize a Round Robin Tournament (Schedule, Byes) — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="In a round robin of N teams everyone plays everyone: N(N-1)/2 games in N-1 rounds (N rounds if odd). How to schedule, handle byes and break ties.">
+<link rel="canonical" href="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="How to Organize a Round Robin Tournament (Schedule, Byes)"><meta property="og:description" content="In a round robin of N teams everyone plays everyone: N(N-1)/2 games in N-1 rounds (N rounds if odd). How to schedule, handle byes and break ties."><meta property="og:url" content="https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to organize a round robin tournament", "description": "In a round robin of N teams everyone plays everyone: N(N-1)/2 games in N-1 rounds (N rounds if odd). How to schedule, handle byes and break ties.", "inLanguage": "en", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "mainEntityOfPage": "https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/", "about": {"@type": "SoftwareApplication", "name": "Ligona", "operatingSystem": "Android", "url": "https://maumiuworks.com/tournament-bracket/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://maumiuworks.com/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to organize a round robin tournament", "item": "https://maumiuworks.com/guides/how-to-organize-a-round-robin-tournament/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many games are in a round robin with 8 teams?", "acceptedAnswer": {"@type": "Answer", "text": "28 games: 8 × 7 ÷ 2. They fit in 7 rounds of 4 games, and every team plays 7 games. Home and away doubles that to 56 games over 14 rounds."}}, {"@type": "Question", "name": "How many rounds does a round robin with 5 teams need?", "acceptedAnswer": {"@type": "Answer", "text": "5 rounds. With an odd number of teams you add a bye, so each round has 2 games and one team rests. The total is still 10 games, and every team rests exactly once."}}, {"@type": "Question", "name": "Does a bye count as a win in a round robin?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not. Every team gets the same number of byes, so most organizers give 0 points for the rest round. Whatever you choose, announce it before the event."}}, {"@type": "Question", "name": "What is the difference between a round robin and a league?", "acceptedAnswer": {"@type": "Answer", "text": "A league season is usually a double round robin: every team plays every other team twice, home and away. A tournament round robin is often single, with each pair meeting once."}}, {"@type": "Question", "name": "What is the best tiebreaker for a round robin?", "acceptedAnswer": {"@type": "Answer", "text": "There is no universal one. Head-to-head first rewards beating your direct rival; score difference first rewards consistent results against everyone. Both are widely used, so the important part is publishing the order in advance."}}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="All apps" aria-label="Maumiu Works — All apps">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/guides/" aria-label="Guides"><span>Guides</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">How to organize a round robin tournament</span></nav><div class="tools"></div></header>
+<main><div class="wrap"><article class="art"><h1>How to organize a round robin tournament</h1><p class="byline">Maumiu Works · Updated <time datetime="2026-11-26">November 26, 2026</time></p><nav class="toc" aria-label="On this page"><p>On this page</p><ol><li><a href="#how-many-games-and-rounds-does-a-round-robin-have">How many games and rounds does a round robin have?</a></li><li><a href="#how-do-you-make-a-round-robin-schedule-with-the-circle-metho">How do you make a round robin schedule with the circle method?</a></li><li><a href="#what-does-a-6-team-round-robin-schedule-look-like">What does a 6-team round robin schedule look like?</a></li><li><a href="#how-do-you-handle-an-odd-number-of-teams">How do you handle an odd number of teams?</a></li><li><a href="#what-is-a-double-round-robin">What is a double round robin?</a></li><li><a href="#how-do-you-schedule-a-round-robin-across-several-courts">How do you schedule a round robin across several courts?</a></li><li><a href="#how-do-points-work-in-a-round-robin">How do points work in a round robin?</a></li><li><a href="#how-are-ties-broken-in-a-round-robin">How are ties broken in a round robin?</a></li><li><a href="#what-are-common-mistakes-when-running-a-round-robin">What are common mistakes when running a round robin?</a></li><li><a href="#questions-and-answers">Questions and answers</a></li><li><a href="#sources">Sources</a></li></ol></nav><p>In a round robin tournament every team plays every other team once, so N teams play <strong>N(N-1)/2 games</strong>: 6 teams play 15 games, 8 teams play 28 and 10 teams play 45. With an even number of teams the schedule takes <strong>N-1 rounds</strong>; with an odd number it takes <strong>N rounds</strong>, and one team sits out (has a bye) in each round. The standard way to build the schedule is the circle method, explained below with a full 6-team example.</p>
+<p>Try it: the <a href="/tools/round-robin-generator/">round robin schedule generator</a> builds the full schedule for any number of teams.</p>
+<h2 id="how-many-games-and-rounds-does-a-round-robin-have">How many games and rounds does a round robin have?</h2>
+<p>Each of the N teams plays N-1 opponents, and every game involves two teams, so the total is N(N-1)/2. A double round robin (home and away) doubles everything.</p>
+<div class="tbl"><table><thead><tr><th>Teams</th><th>Games (single)</th><th>Rounds (single)</th><th>Games per round</th><th>Games (home and away)</th><th>Rounds (home and away)</th></tr></thead><tbody><tr><td>4</td><td>6</td><td>3</td><td>2</td><td>12</td><td>6</td></tr><tr><td>5</td><td>10</td><td>5</td><td>2</td><td>20</td><td>10</td></tr><tr><td>6</td><td>15</td><td>5</td><td>3</td><td>30</td><td>10</td></tr><tr><td>8</td><td>28</td><td>7</td><td>4</td><td>56</td><td>14</td></tr><tr><td>10</td><td>45</td><td>9</td><td>5</td><td>90</td><td>18</td></tr><tr><td>12</td><td>66</td><td>11</td><td>6</td><td>132</td><td>22</td></tr><tr><td>16</td><td>120</td><td>15</td><td>8</td><td>240</td><td>30</td></tr></tbody></table></div>
+<p>The number of games grows roughly with the square of the field. That is why round robins work best for groups of about 4 to 10 teams, and why larger events split teams into groups first. The <a href="/tools/tournament-games-calculator/">tournament games calculator</a> compares this with knockout and Swiss formats.</p>
+<h2 id="how-do-you-make-a-round-robin-schedule-with-the-circle-metho">How do you make a round robin schedule with the circle method?</h2>
+<p>The circle method (a version of it is published by FIDE as the Berger tables) guarantees that everyone meets everyone exactly once and that each team plays once per round.</p>
+<ol><li>Number the teams 1 to N. If N is odd, add a placeholder called "bye".</li><li>Write the first half of the numbers in a top row and the second half, reversed, in a bottom row. Teams standing above each other play each other in round 1.</li><li>Keep team 1 fixed. Move every other team one place clockwise: along the top row to the right, down to the bottom row at the end, along the bottom row to the left and back up.</li><li>Read off the new pairs for the next round. Repeat until you have N-1 rounds (counting the bye as a team).</li></ol>
+<h2 id="what-does-a-6-team-round-robin-schedule-look-like">What does a 6-team round robin schedule look like?</h2>
+<p>For 6 teams the starting position is top row 1, 2, 3 and bottom row 6, 5, 4. Rotating everyone except team 1 gives this schedule:</p>
+<div class="tbl"><table><thead><tr><th>Round</th><th>Game A</th><th>Game B</th><th>Game C</th></tr></thead><tbody><tr><td>1</td><td>1 vs 6</td><td>2 vs 5</td><td>3 vs 4</td></tr><tr><td>2</td><td>1 vs 5</td><td>6 vs 4</td><td>2 vs 3</td></tr><tr><td>3</td><td>1 vs 4</td><td>5 vs 3</td><td>6 vs 2</td></tr><tr><td>4</td><td>1 vs 3</td><td>4 vs 2</td><td>5 vs 6</td></tr><tr><td>5</td><td>1 vs 2</td><td>3 vs 6</td><td>4 vs 5</td></tr></tbody></table></div>
+<p>Check it the way an organizer should: 5 rounds, 3 games per round, 15 games in total, every team appears exactly once in each round, and every one of the 15 possible pairs appears exactly once.</p>
+<h2 id="how-do-you-handle-an-odd-number-of-teams">How do you handle an odd number of teams?</h2>
+<p>Add a "bye" as an extra team and build the schedule for N+1. Whoever is drawn against the bye sits out that round. With 5 teams you get 5 rounds of 2 games, 10 games in total, and each team rests exactly once. Using the table above with team 6 as the bye:</p>
+<ul><li>Round 1: team 1 rests; 2 vs 5, 3 vs 4.</li><li>Round 2: team 4 rests; 1 vs 5, 2 vs 3.</li><li>Round 3: team 2 rests; 1 vs 4, 5 vs 3.</li><li>Round 4: team 5 rests; 1 vs 3, 4 vs 2.</li><li>Round 5: team 3 rests; 1 vs 2, 4 vs 5.</li></ul>
+<p>In a round robin a bye normally earns no points, because everyone gets exactly one and the totals stay comparable. Announce this before the first game so nobody expects points for the rest round. If a team withdraws mid-event, its remaining games become extra byes for its opponents; decide in advance whether its results so far stay in the table or are removed for everyone.</p>
+<h2 id="what-is-a-double-round-robin">What is a double round robin?</h2>
+<p>In a double round robin (home and away) every pair meets twice, usually once at each team's venue or once with each side "home" (first serve, white pieces, home jersey). Games and rounds double: 8 teams play 56 games over 14 rounds. The usual way to build it is to play the single schedule once and then repeat it with home and away swapped. Most national football leagues use this format.</p>
+<p>A single round robin with an even number of teams cannot give everyone an equal number of home games, because each team plays an odd number of games (N-1). The best you can do is a difference of one, and a good schedule avoids long runs of home or away games.</p>
+<h2 id="how-do-you-schedule-a-round-robin-across-several-courts">How do you schedule a round robin across several courts?</h2>
+<p>Each round has N/2 games (or (N-1)/2 with an odd number). If you have at least that many courts or tables, each round fits in one time slot. If you have fewer, each round needs several slots:</p>
+<ul><li>Slots per round = games per round ÷ courts, rounded up.</li><li>Total time = slots per round × number of rounds × length of one slot (game plus changeover).</li></ul>
+<p>Example: 8 teams, 4 games per round, games of 20 minutes including changeover.</p>
+<div class="tbl"><table><thead><tr><th>Courts</th><th>Slots per round</th><th>Total slots</th><th>Total time</th></tr></thead><tbody><tr><td>1</td><td>4</td><td>28</td><td>9 h 20 min</td></tr><tr><td>2</td><td>2</td><td>14</td><td>4 h 40 min</td></tr><tr><td>4</td><td>1</td><td>7</td><td>2 h 20 min</td></tr></tbody></table></div>
+<p>Two practical tips. First, keep the rounds in order even when a court opens up early: if round 3 starts before round 2 finishes, some teams play twice in a row while others wait an hour. Second, when slots per round is more than one, rotate which games go first, so the same team is not always in the late slot.</p>
+<h2 id="how-do-points-work-in-a-round-robin">How do points work in a round robin?</h2>
+<p>Decide the points system before the event and write it down. The common ones:</p>
+<ul><li><strong>3-1-0</strong>: 3 points for a win, 1 for a draw, 0 for a loss. Standard in football (soccer) and used for many amateur leagues because it rewards going for the win.</li><li><strong>2-1-0</strong>: 2 for a win, 1 for a draw. Gives the same order as counting a draw as half a win.</li><li><strong>1-½-0</strong>: chess style, a win is 1 point and a draw is half.</li><li><strong>Wins only</strong>: for sports without draws (volleyball, tennis, basketball), rank by number of wins or win percentage.</li></ul>
+<h2 id="how-are-ties-broken-in-a-round-robin">How are ties broken in a round robin?</h2>
+<p>Ties on points are very common in small round robins, so publish the tiebreak order in advance. Typical criteria, in some order:</p>
+<ol><li><strong>Head-to-head</strong>: the result of the games between the tied teams. For three or more tied teams, build a mini-table from only their games against each other.</li><li><strong>Score difference</strong>: goals, points or sets won minus lost, across all games.</li><li><strong>Score for</strong>: total goals or points scored.</li><li><strong>Number of wins.</strong></li><li><strong>Sonneborn-Berger</strong> (chess): the sum of the scores of the opponents you beat, plus half the scores of those you drew with.</li><li>A play-off game or, as a last resort, a coin toss or drawing lots.</li></ol>
+<p>There is no single correct order. Many leagues put overall score difference first; others, including UEFA's European Championship and the 2026 FIFA World Cup group stage, put head-to-head results first. Pick one, write it under the standings table, and do not change it during the event.</p>
+<h2 id="what-are-common-mistakes-when-running-a-round-robin">What are common mistakes when running a round robin?</h2>
+<ul><li><strong>Too many teams in one group.</strong> 12 teams means 66 games. Split into two groups of 6 (30 games) and add a short playoff instead.</li><li><strong>Making up the pairings by hand.</strong> Hand-made schedules often miss a pair or give one team two games in a round. Use the circle method or a generator and check that each pair appears once.</li><li><strong>No published tiebreak rule.</strong> Deciding how to break a tie after the tie happens always looks unfair to someone.</li><li><strong>Ignoring rest.</strong> With several slots per round, avoid giving a team the last slot of one round and the first slot of the next.</li><li><strong>Recalculating the table by hand.</strong> One corrected score changes several rows of the standings. A spreadsheet or an app that recalculates after every result avoids errors.</li></ul>
+<p>If you run the event at a field or gym with a phone, <a href="/tournament-bracket/">Ligona</a> (Android) builds the round robin schedule round by round, once or home and away, and updates the table after every score. It works offline with no account and no ads, lets you set the points for a win, draw and loss, and lets you choose whether score difference or head-to-head comes first; the tiebreak rule is written under the table. It is on <a href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament" rel="noopener">Google Play</a>.</p>
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Ligona for Android</strong><span>Bracket maker for any sport: knockout, round robin, groups, Swiss and playoffs</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/">About Ligona</a></div></aside><h2 id="questions-and-answers">Questions and answers</h2>
+<h3 id="how-many-games-are-in-a-round-robin-with-8-teams">How many games are in a round robin with 8 teams?</h3>
+<p>28 games: 8 × 7 ÷ 2. They fit in 7 rounds of 4 games, and every team plays 7 games. Home and away doubles that to 56 games over 14 rounds.</p>
+<h3 id="how-many-rounds-does-a-round-robin-with-5-teams-need">How many rounds does a round robin with 5 teams need?</h3>
+<p>5 rounds. With an odd number of teams you add a bye, so each round has 2 games and one team rests. The total is still 10 games, and every team rests exactly once.</p>
+<h3 id="does-a-bye-count-as-a-win-in-a-round-robin">Does a bye count as a win in a round robin?</h3>
+<p>Usually not. Every team gets the same number of byes, so most organizers give 0 points for the rest round. Whatever you choose, announce it before the event.</p>
+<h3 id="what-is-the-difference-between-a-round-robin-and-a-league">What is the difference between a round robin and a league?</h3>
+<p>A league season is usually a double round robin: every team plays every other team twice, home and away. A tournament round robin is often single, with each pair meeting once.</p>
+<h3 id="what-is-the-best-tiebreaker-for-a-round-robin">What is the best tiebreaker for a round robin?</h3>
+<p>There is no universal one. Head-to-head first rewards beating your direct rival; score difference first rewards consistent results against everyone. Both are widely used, so the important part is publishing the order in advance.</p>
+<h2 id="sources">Sources</h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Round-robin_tournament" rel="noopener">Round-robin tournament</a>, Wikipedia: game counts and the circle method.</li><li><a href="https://handbook.fide.com/chapter/C05Annex1" rel="noopener">Berger tables</a>, FIDE Handbook: the official round robin pairing tables used in chess.</li></ul></article><section class="related"><h2>Related</h2><div class="list"><a class="item" href="/tools/round-robin-generator/"><strong>Round robin schedule generator</strong><span>Make a round robin schedule from a list of names: every team plays every other once or home and away, byes for odd numbers. Copy, CSV or print.</span></a><a class="item" href="/tools/tournament-games-calculator/"><strong>Tournament games and rounds calculator</strong><span>How many games and rounds for knockout, double elimination, round robin, groups and Swiss with N teams, plus how long it takes on your courts.</span></a><a class="item" href="/guides/double-elimination-bracket-explained/"><strong>Double elimination bracket explained</strong><span>In double elimination a team is out after two losses. N teams play 2N-2 games, or 2N-1 if the grand final is reset. How the losers bracket works.</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/"><strong>How many games are in a tournament?</strong><span>Single elimination: N-1 games. Double elimination: 2N-2 or 2N-1. Round robin: N(N-1)/2. Swiss: rounds × N/2. Table for 4 to 32 teams.</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/"><strong>How to seed a tournament bracket</strong><span>Rank the teams, then pair 1 vs 16, 8 vs 9, 4 vs 13 and so on, so top seeds meet last. Byes = next power of two minus teams, given to top seeds.</span></a><a class="item" href="/guides/swiss-system-tournament-explained/"><strong>Swiss system tournament explained</strong><span>In a Swiss tournament players with equal scores meet each round, nobody plays twice and nobody is eliminated. About log2 N rounds, Buchholz breaks ties.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">Guides</a><a href="/tools/">Tools</a><a href="/">All apps</a><a href="mailto:hello@maumiuworks.com">Contact</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

@@ -1,0 +1,23 @@
+.tl-calc .calc-more{margin-top:1rem}
+.tl-calc .calc-more summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600;color:var(--cyan)}
+.tl-calc .calc-table td,.tl-calc .calc-table th{vertical-align:top}
+.tl-calc .calc-table tbody th{font-weight:600;color:var(--fg)}
+.tl-calc .calc-table td.num{font-size:1.05rem}
+.tl-calc .calc-slots{color:var(--soft);font-size:.85rem}
+.tl-calc .calc-fit{font-weight:600;font-size:.9rem}
+.tl-calc .calc-fit.is-fit{color:var(--cyan-hi)}
+.tl-calc .calc-fit.is-long{color:var(--fg);text-decoration:underline;text-decoration-style:wavy;text-underline-offset:.2em}
+.tl-calc .calc-work h3{margin-top:1.3rem}
+.tl-calc .calc-formulas{font-size:.92rem}
+.tl-calc .calc-formulas tbody th{font-weight:600;color:var(--fg)}
+/* phones and large text: each format becomes a small card */
+@media (max-width:40rem){
+  .tl-calc .calc-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .tl-calc .calc-table,.tl-calc .calc-table tbody,.tl-calc .calc-table tr,.tl-calc .calc-table th,.tl-calc .calc-table td{display:block;width:100%}
+  .tl-calc .calc-table tr{border:1px solid var(--line);background:var(--card);margin:0 0 .75rem;padding:.4rem .2rem}
+  .tl-calc .calc-table th,.tl-calc .calc-table td{border:0;padding:.3rem .7rem}
+  .tl-calc .calc-table tbody th{font-size:1.05rem}
+  .tl-calc .calc-table td{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:.5rem;text-align:start}
+  .tl-calc .calc-table td::before{content:attr(data-label);color:var(--soft);font-size:.85rem}
+  .tl-calc .calc-table td.num{text-align:start}
+}
