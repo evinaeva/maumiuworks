@@ -13,7 +13,8 @@
   var index = null, loading = null, opts = [], act = -1, blocks = null, timer = 0;
 
   function norm(s) {
-    return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ё/g, "е");
+    // accents off (é → e), then NFC again: kana with dakuten stay one character, so positions match the original text
+    return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").normalize("NFC").replace(/ё/g, "е");
   }
   function terms(q) { return norm(q).split(/\s+/).filter(Boolean); }
 
