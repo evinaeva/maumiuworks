@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ko" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>토너먼트 대진표 생성기 (토너먼트·더블 엘리미네이션) — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="시드 배정과 상위 시드 부전승을 반영해 토너먼트나 더블 엘리미네이션 대진표를 만듭니다. 이름을 눌러 승자를 올리고, 인쇄하거나 공유하세요.">
+<link rel="canonical" href="https://maumiuworks.com/tools/tournament-bracket-generator/ko/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/tools/tournament-bracket-generator/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/tools/tournament-bracket-generator/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/tools/tournament-bracket-generator/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/tools/tournament-bracket-generator/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/tools/tournament-bracket-generator/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/tools/tournament-bracket-generator/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/tools/tournament-bracket-generator/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/tools/tournament-bracket-generator/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/tools/tournament-bracket-generator/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/tools/tournament-bracket-generator/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/tools/tournament-bracket-generator/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/tools/tournament-bracket-generator/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="토너먼트 대진표 생성기 (토너먼트·더블 엘리미네이션)"><meta property="og:description" content="시드 배정과 상위 시드 부전승을 반영해 토너먼트나 더블 엘리미네이션 대진표를 만듭니다. 이름을 눌러 승자를 올리고, 인쇄하거나 공유하세요."><meta property="og:url" content="https://maumiuworks.com/tools/tournament-bracket-generator/ko/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "토너먼트 대진표 생성기", "description": "시드 배정과 상위 시드 부전승을 반영해 토너먼트나 더블 엘리미네이션 대진표를 만듭니다. 이름을 눌러 승자를 올리고, 인쇄하거나 공유하세요.", "url": "https://maumiuworks.com/tools/tournament-bracket-generator/ko/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "inLanguage": "ko"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "도구", "item": "https://maumiuworks.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "토너먼트 대진표 생성기", "item": "https://maumiuworks.com/tools/tournament-bracket-generator/ko/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "대진표에서 시드는 어떻게 정하나요?", "acceptedAnswer": {"@type": "Answer", "text": "입력한 목록 순서가 곧 시드 순서이고, 대진표는 상위 시드끼리 최대한 늦게 만나도록 표준 배치를 따릅니다. 8팀이면 1회전은 1 대 8, 4 대 5, 2 대 7, 3 대 6이므로 1번 시드와 2번 시드는 결승에서만 만날 수 있습니다. 시드 대신 추첨으로 정하고 싶다면 무작위 추첨으로 목록을 섞으세요."}}, {"@type": "Question", "name": "부전승은 몇 개가 필요한가요?", "acceptedAnswer": {"@type": "Answer", "text": "대진표의 자리 수는 4, 8, 16, 32처럼 2의 거듭제곱입니다. 부전승 수 = 다음 2의 거듭제곱 − 팀 수. 12팀은 16강 대진표에 부전승 4개, 20팀은 32강 대진표에 부전승 12개가 됩니다. 부전승은 상위 시드에게 돌아가며, 이 팀들은 2회전부터 경기를 시작합니다."}}, {"@type": "Question", "name": "토너먼트는 총 몇 경기인가요?", "acceptedAnswer": {"@type": "Answer", "text": "항상 팀 수보다 하나 적은 N − 1경기입니다. 한 경기마다 정확히 한 팀이 탈락하고, 우승 팀을 뺀 모든 팀이 탈락하기 때문입니다. 16팀이면 4라운드에 걸쳐 15경기를 치릅니다. 3·4위전을 하면 1경기가 늘어납니다."}}, {"@type": "Question", "name": "더블 엘리미네이션은 총 몇 경기인가요?", "acceptedAnswer": {"@type": "Answer", "text": "승자조 우승 팀이 그랜드 파이널에서 이기면 2N − 2경기, 패자조 우승 팀이 이겨서 리셋 결승을 치르면 2N − 1경기입니다. 8팀이면 14경기 또는 15경기, 16팀이면 30경기 또는 31경기입니다."}}, {"@type": "Question", "name": "그랜드 파이널 리셋이란 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "더블 엘리미네이션에서 승자조 우승 팀은 무패로 그랜드 파이널에 오르지만, 패자조 우승 팀은 이미 1패를 안고 있습니다. 패자조 우승 팀이 그랜드 파이널에서 이기면 두 팀 모두 1패가 되므로, 결승을 한 번 더 치러 우승을 가립니다. 결승을 한 번만 치를 시간밖에 없다면 리셋을 끌 수 있습니다."}}, {"@type": "Question", "name": "대진표를 공유하거나 저장할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 링크 복사를 누르면 이름, 옵션, 모든 경기 결과가 링크 안에 담기므로 링크를 연 사람은 같은 대진표를 보게 됩니다. 대진표를 텍스트로 복사하거나 CSV 파일로 내려받거나 인쇄할 수도 있습니다. 어떤 데이터도 업로드되지 않으며 계정도 필요 없습니다."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "토너먼트 대진표 생성기", "step": [{"@type": "HowToStep", "position": 1, "text": "토너먼트와 더블 엘리미네이션 중 하나를 고릅니다."}, {"@type": "HowToStep", "position": 2, "text": "이름을 시드 순서대로 한 줄에 하나씩 입력하거나 붙여 넣습니다. 무작위 추첨을 누르면 순서를 섞을 수 있습니다."}, {"@type": "HowToStep", "position": 3, "text": "대진표 만들기를 누릅니다. 부전승은 자동으로 상위 시드에게 배정됩니다."}, {"@type": "HowToStep", "position": 4, "text": "각 경기의 승자를 눌러 다음 라운드로 올리고, 우승 팀이 정해질 때까지 반복합니다."}, {"@type": "HowToStep", "position": 5, "text": "링크를 복사하거나, 대진표를 텍스트로 복사하거나, CSV로 내려받거나, 인쇄합니다."}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+.srch{position:relative;display:flex;align-items:center}
+.srch-in{width:12.5rem;height:40px;padding:0 .8rem 0 2.2rem;border:1px solid var(--line);border-radius:20px;background:var(--bg);color:var(--fg);font:400 14px "Open Sans",sans-serif}
+.srch-in::placeholder{color:var(--soft);opacity:1}.srch-in:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:transparent}
+.srch-in::-webkit-search-cancel-button{cursor:pointer}
+.srch-ic{position:absolute;inset-inline-start:.75rem;top:50%;transform:translateY(-50%);color:var(--soft);display:flex;pointer-events:none}
+.srch-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--fg);cursor:pointer;border-radius:50%}
+.srch-btn:hover{color:var(--cyan-hi)}.srch-btn:focus-visible{outline:2px solid var(--cyan)}
+.srch-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:min(27rem,calc(100vw - 1.5rem));max-height:min(70vh,32rem);overflow:auto;background:var(--bar);border:1px solid var(--bar-line);box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:10;padding:.3rem 0}
+.srch-g{font:600 11px "Open Sans",sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--label);padding:.7rem .95rem .3rem}
+.srch-o{display:block;padding:.55rem .95rem;min-height:44px;color:var(--fg);text-decoration:none}
+.srch-o strong{display:block;font-weight:600;font-size:14.5px;line-height:1.4}.srch-o span{display:block;font-size:13px;line-height:1.45;color:var(--soft);margin-top:.15rem}
+.srch-o:hover,.srch-o[aria-selected=true]{background:rgba(127,127,127,.14);color:var(--fg)}
+.srch-o mark{background:rgba(20,170,206,.28);color:inherit;border-radius:2px}
+.srch-none{padding:.7rem .95rem;color:var(--soft);font-size:14px}
+.srch-hit{outline:3px solid var(--cyan);outline-offset:6px;border-radius:2px}
+[id]{scroll-margin-top:76px}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:52rem){.srch-btn{display:inline-flex}.srch-in,.srch-ic{display:none}
+.srch.open .srch-in{display:block;position:absolute;inset-inline-end:0;top:50%;transform:translateY(-50%);width:min(24rem,calc(100vw - 1.5rem));z-index:11;padding-inline-start:.9rem;background:var(--bar)}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.crumbs .app:not(.txt),.crumbs .sep:has(+ .app:not(.txt)){display:none}.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+<link rel="stylesheet" href="/tools/_shared/tools.css?v=20261126"><link rel="stylesheet" href="/tools/tournament-bracket-generator/tool.css?v=20261126"></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="모든 앱" aria-label="Maumiu Works — 모든 앱">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/tools/" aria-label="도구"><span>도구</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">토너먼트 대진표 생성기</span></nav><div class="tools"><div class="srch" data-page="이 페이지에서" data-site="사이트 전체" data-none="검색 결과가 없습니다"><button type="button" class="srch-btn" aria-label="검색" aria-expanded="false" aria-controls="srch-in"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="srch-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="srch-in" class="srch-in" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="srch-list" aria-label="검색" placeholder="사이트 검색" autocomplete="off" spellcheck="false" enterkeyhint="search"><div id="srch-list" class="srch-list" role="listbox" aria-label="검색" hidden></div></div><details class="langs"><summary aria-label="언어: 한국어" title="한국어"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"></summary><ul><li><a href="/tools/tournament-bracket-generator/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/tools/tournament-bracket-generator/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/tools/tournament-bracket-generator/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/tools/tournament-bracket-generator/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/tools/tournament-bracket-generator/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/tools/tournament-bracket-generator/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/tools/tournament-bracket-generator/ja/" hreflang="ja" lang="ja"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/tools/tournament-bracket-generator/ko/" hreflang="ko" lang="ko" aria-current="true"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/tools/tournament-bracket-generator/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/tools/tournament-bracket-generator/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/tools/tournament-bracket-generator/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap wide"><article class="art"><h1>토너먼트 대진표 생성기</h1><div class="tl tl-br" id="tl-br">
+<p class="tl-lead">팀이나 선수를 시드 순서대로 입력하면 시드 배정이 제대로 된 토너먼트 또는 더블 엘리미네이션 대진표가 만들어집니다. 1번 시드는 가장 낮은 시드와 맞붙고, 부전승은 상위 시드에게 돌아갑니다. 이름을 누르면 다음 라운드로 올라갑니다. 회원가입이 필요 없고, 브라우저 안에서 작동하며 아무것도 업로드되지 않습니다.</p>
+
+<form class="tl-card tl-noprint" id="br-form" novalidate>
+  <fieldset class="tl-field">
+    <legend class="tl-legend">방식</legend>
+    <div class="tl-seg">
+      <label><input type="radio" name="br-format" value="single" checked> 토너먼트</label>
+      <label><input type="radio" name="br-format" value="double"> 더블 엘리미네이션</label>
+    </div>
+  </fieldset>
+  <div class="tl-field" style="margin-top:1rem">
+    <label for="br-names">시드 순서대로 팀 또는 선수를 한 줄에 하나씩 입력하세요</label>
+    <textarea id="br-names" rows="9" spellcheck="false" autocomplete="off" aria-describedby="br-names-hint">Lions
+Tigers
+Bears
+Wolves
+Eagles
+Sharks
+Falcons
+Panthers</textarea>
+    <p class="tl-hint" id="br-names-hint">첫 줄이 1번 시드입니다. 2~128개 이름을 입력할 수 있습니다(더블 엘리미네이션은 3개 이상). <span id="br-count" aria-live="polite"></span></p>
+  </div>
+  <div class="tl-row tl-actions">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-shuffle">무작위 추첨</button>
+  </div>
+  <div class="tl-row tl-actions tl-fill">
+    <label for="br-fill-n">아직 이름이 없나요? 팀 수</label>
+    <input type="number" id="br-fill-n" min="2" max="128" value="16" inputmode="numeric">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-fill"><span>팀 1…<span id="br-fill-label">16</span> 자동 입력</span></button>
+  </div>
+  <div class="tl-sep"></div>
+  <label class="tl-check" id="br-opt-third"><input type="checkbox" id="br-third"> 3·4위전 (준결승에서 진 두 팀이 3위를 놓고 경기)</label>
+  <label class="tl-check" id="br-opt-reset" hidden><input type="checkbox" id="br-reset" checked> 그랜드 파이널 리셋 (패자조 우승 팀이 첫 결승에서 이기면 결승을 한 번 더 치름)</label>
+  <div class="tl-row tl-actions">
+    <button type="submit" class="btn" id="br-go">대진표 만들기</button>
+  </div>
+  <div id="br-error" role="alert"></div>
+</form>
+
+<section class="tl-result" id="br-result" hidden aria-labelledby="br-title">
+  <h2 id="br-title" tabindex="-1">내 대진표</h2>
+  <p id="br-summary"></p>
+  <p class="tl-hint tl-noprint" id="br-help">이름을 탭하거나 클릭하면(또는 Tab 키로 이동해 Enter를 누르면) 그 경기의 승자로 정해지고, 승자는 자동으로 다음 라운드에 올라갑니다. 승자를 다시 누르면 결과가 지워집니다. 결과를 바꾸면 더 이상 맞지 않는 이후 결과는 지워지며, 실행 취소로 되돌릴 수 있습니다.</p>
+  <div class="tl-toolbar tl-noprint">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-undo" disabled>실행 취소</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-copy">텍스트로 복사</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-csv">CSV 다운로드</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-link">링크 복사</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-print">인쇄</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-clear">결과 지우기</button>
+  </div>
+  <p class="tl-status tl-noprint" id="br-status" role="status" aria-live="polite"></p>
+  <div class="br-podium" id="br-podium" aria-live="polite"></div>
+  <div id="br-sections"></div>
+</section>
+
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>휴대폰에서 하려면: Ligona</strong><span>토너먼트 대진표 만들기: 리그 대진표, 풀리그, 조별 리그, 스위스 방식, 순위표 자동 계산</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ko-KR" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/ko-KR/">Ligona 자세히 보기</a></div></aside>
+
+<section class="tl-how" aria-labelledby="br-how">
+  <h2 id="br-how">대진표는 이렇게 만들어집니다</h2>
+  <h3>시드 배정</h3>
+  <p>목록 순서가 곧 시드입니다. 첫 번째 이름이 1번 시드입니다. 대진표는 표준 시드 배치 순서를 따르기 때문에 강한 시드끼리는 늦게야 만날 수 있습니다. 8팀 대진표라면 1라운드는 <strong>1 대 8, 4 대 5, 2 대 7, 3 대 6</strong>이고, 1번과 2번 시드는 서로 반대편에 있어 결승에서만 만날 수 있으며, 1~4번 시드는 각각 다른 4분의 1 구역에 들어갑니다. 16팀 대진표의 1라운드는 1 대 16, 8 대 9, 4 대 13, 5 대 12, 2 대 15, 7 대 10, 3 대 14, 6 대 11입니다. 시드 대신 추첨으로 정하고 싶다면 '무작위 추첨'을 누르면 목록이 섞입니다.</p>
+  <h3>부전승</h3>
+  <p>대진표에는 2의 거듭제곱(2, 4, 8, 16, 32…)만큼의 자리가 필요합니다. 팀 수가 그보다 적으면 다음 2의 거듭제곱까지 자리를 채우고, 빈자리는 부전승이 됩니다. 부전승은 상위 시드에게 돌아가며, 이 팀들은 바로 2라운드로 올라갑니다.</p>
+  <p class="tl-formula">부전승 수 = 다음 2의 거듭제곱 − N</p>
+  <p>예: 12팀이면 16자리 대진표를 쓰므로 16 − 12 = <strong>부전승 4개</strong>가 1~4번 시드에게 주어지고, 5~12번 시드끼리 1라운드 4경기를 치릅니다.</p>
+  <h3>토너먼트</h3>
+  <p>한 번 지면 탈락입니다. 한 경기마다 한 팀이 탈락하고 우승 팀을 뺀 모든 팀이 탈락해야 하므로 경기 수는 <strong>N − 1경기</strong>, 라운드 수는 <strong>⌈log₂ N⌉라운드</strong>입니다. 16팀이면 4라운드에 걸쳐 15경기를 치릅니다. 3·4위전을 넣으면 1경기가 늘어납니다.</p>
+  <h3>더블 엘리미네이션</h3>
+  <p>두 번 져야 탈락합니다. 모든 팀은 승자조에서 시작하고, 처음 지면 패자조로 내려가 한 번 더 질 때까지 경기를 이어 갑니다. 승자조에서 내려오는 팀은 방금 맞붙은 두 팀이 곧바로 다시 만나지 않도록 배치됩니다(3팀일 때만 이를 피할 수 없습니다). 승자조 우승 팀과 패자조 우승 팀이 그랜드 파이널에서 맞붙습니다.</p>
+  <ul>
+    <li>승자조 우승 팀이 그랜드 파이널에서 이기면 대회가 끝납니다: <strong>2N − 2경기</strong>.</li>
+    <li>패자조 우승 팀이 이기면 두 팀 모두 1패가 됩니다. 그랜드 파이널 리셋을 켜 두었다면 승부를 가리는 결승을 한 번 더 치릅니다: <strong>2N − 1경기</strong>.</li>
+  </ul>
+  <p>예: 8팀이면 14경기, 리셋이 필요하면 15경기를 치릅니다.</p>
+</section>
+</div>
+</article><section class="art"><h2 id="questions-and-answers">자주 묻는 질문</h2><h3>대진표에서 시드는 어떻게 정하나요?</h3><p>입력한 목록 순서가 곧 시드 순서이고, 대진표는 상위 시드끼리 최대한 늦게 만나도록 표준 배치를 따릅니다. 8팀이면 1회전은 1 대 8, 4 대 5, 2 대 7, 3 대 6이므로 1번 시드와 2번 시드는 결승에서만 만날 수 있습니다. 시드 대신 추첨으로 정하고 싶다면 무작위 추첨으로 목록을 섞으세요.</p><h3>부전승은 몇 개가 필요한가요?</h3><p>대진표의 자리 수는 4, 8, 16, 32처럼 2의 거듭제곱입니다. 부전승 수 = 다음 2의 거듭제곱 − 팀 수. 12팀은 16강 대진표에 부전승 4개, 20팀은 32강 대진표에 부전승 12개가 됩니다. 부전승은 상위 시드에게 돌아가며, 이 팀들은 2회전부터 경기를 시작합니다.</p><h3>토너먼트는 총 몇 경기인가요?</h3><p>항상 팀 수보다 하나 적은 N − 1경기입니다. 한 경기마다 정확히 한 팀이 탈락하고, 우승 팀을 뺀 모든 팀이 탈락하기 때문입니다. 16팀이면 4라운드에 걸쳐 15경기를 치릅니다. 3·4위전을 하면 1경기가 늘어납니다.</p><h3>더블 엘리미네이션은 총 몇 경기인가요?</h3><p>승자조 우승 팀이 그랜드 파이널에서 이기면 2N − 2경기, 패자조 우승 팀이 이겨서 리셋 결승을 치르면 2N − 1경기입니다. 8팀이면 14경기 또는 15경기, 16팀이면 30경기 또는 31경기입니다.</p><h3>그랜드 파이널 리셋이란 무엇인가요?</h3><p>더블 엘리미네이션에서 승자조 우승 팀은 무패로 그랜드 파이널에 오르지만, 패자조 우승 팀은 이미 1패를 안고 있습니다. 패자조 우승 팀이 그랜드 파이널에서 이기면 두 팀 모두 1패가 되므로, 결승을 한 번 더 치러 우승을 가립니다. 결승을 한 번만 치를 시간밖에 없다면 리셋을 끌 수 있습니다.</p><h3>대진표를 공유하거나 저장할 수 있나요?</h3><p>네. 링크 복사를 누르면 이름, 옵션, 모든 경기 결과가 링크 안에 담기므로 링크를 연 사람은 같은 대진표를 보게 됩니다. 대진표를 텍스트로 복사하거나 CSV 파일로 내려받거나 인쇄할 수도 있습니다. 어떤 데이터도 업로드되지 않으며 계정도 필요 없습니다.</p></section><section class="related"><h2>가이드</h2><div class="list"><a class="item" href="/guides/double-elimination-bracket-explained/ko/"><strong>더블 엘리미네이션 대진표 알아보기</strong><span>더블 엘리미네이션에서는 두 번 지면 탈락합니다. N팀이면 2N-2경기, 그랜드 파이널 리셋이 있으면 2N-1경기를 치릅니다. 패자조가 돌아가는 방식을 설명합니다.</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/ko/"><strong>대회 경기 수는 몇 경기일까?</strong><span>토너먼트: N-1경기. 더블 엘리미네이션: 2N-2 또는 2N-1경기. 풀리그: N(N-1)/2경기. 스위스 방식: 라운드 수 × N/2경기. 4~32팀 경기 수 표 포함.</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/ko/"><strong>토너먼트 대진표 시드 배정하는 법</strong><span>팀 순위를 정한 뒤 1 vs 16, 8 vs 9, 4 vs 13 순으로 짝지으면 상위 시드끼리는 마지막에 만납니다. 부전승 수는 다음 2의 거듭제곱에서 팀 수를 뺀 값이며 상위 시드에게 줍니다.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">가이드</a><a href="/tools/">도구</a><a href="/">모든 앱</a><a href="mailto:hello@maumiuworks.com">문의</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script><script defer src="/search.js?v=ca84f471"></script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script><script>window.MW_I18N={"list_sep": ", ", "list_and": "{a} 및 {b}", "sentence_sep": " ", "versus": "vs", "copied": "클립보드에 복사했습니다.", "copy_failed": "이 브라우저에서는 복사가 되지 않았습니다. 텍스트를 선택해서 직접 복사해 주세요.", "saved": "저장했습니다: {file}", "dur_min": "{m}분", "dur_h": "{h}시간", "dur_h_min": "{h}시간 {m}분", "round_n": "{n}라운드", "round_final": "결승", "round_semis": "준결승", "round_quarters": "8강", "round_of": "{n}강", "round_winners_n": "승자조 {n}라운드", "round_winners_final": "승자조 결승", "round_losers_n": "패자조 {n}라운드", "round_losers_final": "패자조 결승", "round_grand_final": "그랜드 파이널", "round_grand_final_reset": "그랜드 파이널 리셋", "round_third": "3·4위전", "names_found_one": "이름 {n}개를 찾았습니다.", "names_found_other": "이름 {n}개를 찾았습니다.", "listed_twice": "중복된 이름: {names}.", "err_too_few": "이름을 한 줄에 하나씩 {min}개 이상 입력해 주세요.", "err_too_few_first": "먼저 이름을 {min}개 이상 입력해 주세요.", "err_fill_range": "{min}~{max} 사이의 숫자를 선택해 주세요.", "team_n": "팀 {n}", "err_too_few_double": "이름을 한 줄에 하나씩 {min}개 이상 입력하세요(더블 엘리미네이션은 3개 이상 필요합니다).", "err_too_many": "이 페이지에서는 이름 {max}개까지 대진표를 만들 수 있습니다. 지금 {n}개입니다.", "match_no": "M{n}", "match_no_conditional": "{m} · 필요한 경우에만", "winner_of": "{m} 승자", "loser_of": "{m} 패자", "tbd": "미정", "who": "{name} ({seed})", "slot_aria": "{name}, {seed}번 시드", "slot_aria_win": "{name}, {seed}번 시드, 승리", "slot_aria_lost": "{name}, {seed}번 시드, 패배", "match_aria": "{m}, {round}: {home} 대 {away}", "match_aria_ready": "{m}, {round}: {home} 대 {away}. 경기 예정", "match_aria_done": "{m}, {round}: {home} 대 {away}. 승자 {winner}", "match_aria_skipped": "{m}, {round}: 필요 없음", "reset_not_needed": "필요 없음: 승자조 우승자가 그랜드 파이널에서 이겼습니다.", "scrolls_sideways": "{title}, 좌우로 스크롤됩니다", "seeds_single": "{a}번 시드", "seeds_two": "{a}번, {b}번 시드", "seeds_range": "{a}–{b}번 시드", "seeds_list": "{list}번 시드", "sum_teams_one": "{n}팀", "sum_teams_other": "{n}팀", "sum_games_one": "{n}경기", "sum_games_other": "{n}경기", "sum_in_rounds_one": "{n}라운드에 걸쳐", "sum_in_rounds_other": "{n}라운드에 걸쳐", "sum_single": "{teams}, {size}강 토너먼트 대진표: {body}", "sum_single_an": "{teams}, {size}강 토너먼트 대진표: {body}", "sum_double": "{teams}, {size}강 더블 엘리미네이션 대진표: {body}", "sum_double_an": "{teams}, {size}강 더블 엘리미네이션 대진표: {body}", "sum_body_single": "{in_rounds} {games}.", "sum_body_games_one": "{n}경기.", "sum_body_games_other": "{n}경기.", "sum_body_reset_one": "{n}경기, 그랜드 파이널 리셋이 필요하면 {b}경기.", "sum_body_reset_other": "{n}경기, 그랜드 파이널 리셋이 필요하면 {b}경기.", "sum_byes_one": "부전승 {n}개: {seeds}는 2라운드로 바로 진출합니다.", "sum_byes_other": "부전승 {n}개: {seeds}는 2라운드로 바로 진출합니다.", "sum_byes_double_one": "부전승 {n}개: {seeds}는 승자조 2라운드로 바로 진출합니다.", "sum_byes_double_other": "부전승 {n}개: {seeds}는 승자조 2라운드로 바로 진출합니다.", "sum_no_byes": "부전승 없음.", "sec_main": "대진표", "sec_third": "3·4위전", "sec_winners": "승자조", "sec_losers": "패자조", "sec_final": "그랜드 파이널", "final_places": "최종 순위", "place_1": "우승", "place_2": "준우승", "place_3": "3위", "msg_cleared": "{m} 결과를 지웠습니다.", "msg_wins": "{m}: {name} 승리.", "msg_reset_decides": "이제 두 팀 모두 1패입니다. 그랜드 파이널 리셋에서 승부가 갈립니다.", "msg_next": "다음: {round}.", "msg_cleared_later_one": "다른 팀이 올라가게 되어 이후 결과 {n}개({list})를 지웠습니다. 되돌리기로 다시 살릴 수 있습니다.", "msg_cleared_later_other": "다른 팀이 올라가게 되어 이후 결과 {n}개({list})를 지웠습니다. 되돌리기로 다시 살릴 수 있습니다.", "msg_champion": "우승은 {name}입니다.", "msg_undone": "마지막 변경을 되돌렸습니다.", "msg_all_cleared": "모든 결과를 지웠습니다. 되돌리기로 다시 살릴 수 있습니다.", "drawn_one": "무작위 추첨 완료: 이 순서가 새 시드가 됩니다. 이름 {n}개.", "drawn_other": "무작위 추첨 완료: 이 순서가 새 시드가 됩니다. 이름 {n}개.", "text_head_single": "토너먼트 대진표, {teams}", "text_head_double": "더블 엘리미네이션 대진표, {teams}", "text_seeds": "시드: {list}", "text_seed_item": "{seed} {name}", "text_byes": "부전승(2라운드 직행): {list}", "text_line": "{m}  {home} 대 {away}", "text_line_won": "{m}  {home} 대 {away}  -> {winner} 승", "text_line_skipped": "{m}  {home} 대 {away}  (필요 없음)", "text_line_cond": "{m}  {home} 대 {away}  (필요한 경우에만)", "text_place": "{place}: {names}", "csv_match": "경기", "csv_stage": "단계", "csv_round": "라운드", "csv_home_seed": "홈 시드", "csv_home": "홈", "csv_away_seed": "원정 시드", "csv_away": "원정", "csv_winner": "승자", "csv_not_needed": "필요 없음", "csv_file": "토너먼트-대진표.csv"};window.MW_LANG="ko";</script><script defer src="/tools/_shared/tools.js?v=20261126"></script><script defer src="/tools/tournament-bracket-generator/tool.js?v=20261126"></script>
+</body></html>

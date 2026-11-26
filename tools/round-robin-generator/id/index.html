@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="id" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pembuat Jadwal Round Robin (Sistem Liga) — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="Buat jadwal round robin dari daftar nama: tiap tim bertemu semua lawan sekali atau kandang-tandang, bye untuk jumlah ganjil. Salin, CSV, atau cetak.">
+<link rel="canonical" href="https://maumiuworks.com/tools/round-robin-generator/id/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/tools/round-robin-generator/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/tools/round-robin-generator/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/tools/round-robin-generator/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/tools/round-robin-generator/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/tools/round-robin-generator/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/tools/round-robin-generator/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/tools/round-robin-generator/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/tools/round-robin-generator/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/tools/round-robin-generator/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/tools/round-robin-generator/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/tools/round-robin-generator/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/tools/round-robin-generator/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="Pembuat Jadwal Round Robin (Sistem Liga)"><meta property="og:description" content="Buat jadwal round robin dari daftar nama: tiap tim bertemu semua lawan sekali atau kandang-tandang, bye untuk jumlah ganjil. Salin, CSV, atau cetak."><meta property="og:url" content="https://maumiuworks.com/tools/round-robin-generator/id/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Pembuat jadwal round robin", "description": "Buat jadwal round robin dari daftar nama: tiap tim bertemu semua lawan sekali atau kandang-tandang, bye untuk jumlah ganjil. Salin, CSV, atau cetak.", "url": "https://maumiuworks.com/tools/round-robin-generator/id/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "inLanguage": "id"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Alat", "item": "https://maumiuworks.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Pembuat jadwal round robin", "item": "https://maumiuworks.com/tools/round-robin-generator/id/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Berapa jumlah pertandingan dalam round robin?", "acceptedAnswer": {"@type": "Answer", "text": "Round robin dengan N tim memiliki N × (N − 1) ÷ 2 pertandingan. 4 tim memainkan 6 pertandingan, 6 tim 15, 8 tim 28, dan 10 tim 45. Dengan sistem kandang-tandang (round robin ganda), setiap pasangan bertemu dua kali sehingga jumlahnya menjadi dua kali lipat: 8 tim memainkan 56 pertandingan."}}, {"@type": "Question", "name": "Berapa putaran yang dibutuhkan round robin?", "acceptedAnswer": {"@type": "Answer", "text": "Jika jumlah tim genap, dibutuhkan N − 1 putaran dan tidak ada tim yang libur: 8 tim butuh 7 putaran berisi 4 pertandingan. Jika jumlahnya ganjil, dibutuhkan N putaran dan di setiap putaran satu tim mendapat bye: 7 tim butuh 7 putaran berisi 3 pertandingan. Dengan kandang-tandang, jumlah putaran menjadi dua kali lipat."}}, {"@type": "Question", "name": "Bagaimana jika jumlah timnya ganjil?", "acceptedAnswer": {"@type": "Answer", "text": "Satu posisi kosong ditambahkan ke dalam lingkaran. Tim yang dipasangkan dengan posisi kosong itu mendapat bye dan tidak bertanding di putaran tersebut. Dalam round robin tunggal, setiap tim mendapat tepat satu bye, sehingga semua tim memainkan jumlah pertandingan yang sama (N − 1)."}}, {"@type": "Question", "name": "Apa itu metode lingkaran?", "acceptedAnswer": {"@type": "Answer", "text": "Ini adalah cara standar menyusun jadwal round robin, disebut juga metode Berger. Satu tim tetap di tempatnya dan tim lainnya bergeser satu posisi setiap putaran, sehingga setiap pasangan bertemu tepat satu kali dan tidak ada tim yang bermain dua kali dalam putaran yang sama."}}, {"@type": "Question", "name": "Apakah mengacak urutan mengubah jumlah pertandingan?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Acak urutan hanya mengubah tim mana bertemu siapa di putaran ke berapa. Jumlah pertandingan dan putaran hanya bergantung pada banyaknya tim dan apakah Anda memakai sistem kandang-tandang."}}, {"@type": "Question", "name": "Bisakah jadwalnya disimpan atau dibagikan?", "acceptedAnswer": {"@type": "Answer", "text": "Bisa. Salin sebagai teks untuk grup chat, unduh sebagai file CSV untuk spreadsheet, cetak, atau salin tautannya: nama dan pilihan tersimpan di dalam tautan itu sendiri, jadi saat dibuka jadwal yang sama akan muncul lagi. Tidak ada data yang diunggah."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Pembuat jadwal round robin", "step": [{"@type": "HowToStep", "position": 1, "text": "Ketik atau tempel nama tim atau pemain, satu nama per baris."}, {"@type": "HowToStep", "position": 2, "text": "Centang Kandang-tandang jika setiap pasangan harus bertanding dua kali."}, {"@type": "HowToStep", "position": 3, "text": "Tekan Buat jadwal untuk melihat setiap putaran beserta pertandingan dan bye-nya."}, {"@type": "HowToStep", "position": 4, "text": "Salin jadwal sebagai teks, unduh sebagai CSV, cetak, atau salin tautannya untuk dibagikan."}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+.srch{position:relative;display:flex;align-items:center}
+.srch-in{width:12.5rem;height:40px;padding:0 .8rem 0 2.2rem;border:1px solid var(--line);border-radius:20px;background:var(--bg);color:var(--fg);font:400 14px "Open Sans",sans-serif}
+.srch-in::placeholder{color:var(--soft);opacity:1}.srch-in:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:transparent}
+.srch-in::-webkit-search-cancel-button{cursor:pointer}
+.srch-ic{position:absolute;inset-inline-start:.75rem;top:50%;transform:translateY(-50%);color:var(--soft);display:flex;pointer-events:none}
+.srch-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--fg);cursor:pointer;border-radius:50%}
+.srch-btn:hover{color:var(--cyan-hi)}.srch-btn:focus-visible{outline:2px solid var(--cyan)}
+.srch-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:min(27rem,calc(100vw - 1.5rem));max-height:min(70vh,32rem);overflow:auto;background:var(--bar);border:1px solid var(--bar-line);box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:10;padding:.3rem 0}
+.srch-g{font:600 11px "Open Sans",sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--label);padding:.7rem .95rem .3rem}
+.srch-o{display:block;padding:.55rem .95rem;min-height:44px;color:var(--fg);text-decoration:none}
+.srch-o strong{display:block;font-weight:600;font-size:14.5px;line-height:1.4}.srch-o span{display:block;font-size:13px;line-height:1.45;color:var(--soft);margin-top:.15rem}
+.srch-o:hover,.srch-o[aria-selected=true]{background:rgba(127,127,127,.14);color:var(--fg)}
+.srch-o mark{background:rgba(20,170,206,.28);color:inherit;border-radius:2px}
+.srch-none{padding:.7rem .95rem;color:var(--soft);font-size:14px}
+.srch-hit{outline:3px solid var(--cyan);outline-offset:6px;border-radius:2px}
+[id]{scroll-margin-top:76px}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:52rem){.srch-btn{display:inline-flex}.srch-in,.srch-ic{display:none}
+.srch.open .srch-in{display:block;position:absolute;inset-inline-end:0;top:50%;transform:translateY(-50%);width:min(24rem,calc(100vw - 1.5rem));z-index:11;padding-inline-start:.9rem;background:var(--bar)}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.crumbs .app:not(.txt),.crumbs .sep:has(+ .app:not(.txt)){display:none}.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+<link rel="stylesheet" href="/tools/_shared/tools.css?v=20261126"><link rel="stylesheet" href="/tools/round-robin-generator/tool.css?v=20261126"></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="Semua aplikasi" aria-label="Maumiu Works — Semua aplikasi">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/tools/" aria-label="Alat"><span>Alat</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Pembuat jadwal round robin</span></nav><div class="tools"><div class="srch" data-page="Di halaman ini" data-site="Di situs" data-none="Tidak ada hasil"><button type="button" class="srch-btn" aria-label="Cari" aria-expanded="false" aria-controls="srch-in"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="srch-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="srch-in" class="srch-in" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="srch-list" aria-label="Cari" placeholder="Cari di situs" autocomplete="off" spellcheck="false" enterkeyhint="search"><div id="srch-list" class="srch-list" role="listbox" aria-label="Cari" hidden></div></div><details class="langs"><summary aria-label="Bahasa: Bahasa Indonesia" title="Bahasa Indonesia"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"></summary><ul><li><a href="/tools/round-robin-generator/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/tools/round-robin-generator/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/tools/round-robin-generator/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/tools/round-robin-generator/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/tools/round-robin-generator/id/" hreflang="id" lang="id" aria-current="true"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/tools/round-robin-generator/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/tools/round-robin-generator/ja/" hreflang="ja" lang="ja"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/tools/round-robin-generator/ko/" hreflang="ko" lang="ko"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/tools/round-robin-generator/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/tools/round-robin-generator/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/tools/round-robin-generator/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap wide"><article class="art"><h1>Pembuat jadwal round robin</h1><div class="tl tl-rr" id="tl-rr">
+<p class="tl-lead">Tempel nama tim atau pemain, lalu dapatkan jadwal liga (round robin) yang lengkap. Semua peserta bertemu satu kali, atau dua kali dengan sistem kandang-tandang, disusun per putaran. Jika jumlah peserta ganjil, ada satu bye di setiap putaran. Tidak perlu mendaftar. Alat ini berjalan di peramban Anda dan tidak ada data yang diunggah.</p>
+
+<form class="tl-card tl-noprint" id="rr-form" novalidate>
+  <div class="tl-field">
+    <label for="rr-names">Tim atau pemain, satu nama per baris</label>
+    <textarea id="rr-names" rows="9" spellcheck="false" autocomplete="off" aria-describedby="rr-names-hint">Lions
+Tigers
+Bears
+Wolves
+Eagles
+Sharks</textarea>
+    <p class="tl-hint" id="rr-names-hint">2 sampai 200 nama. Daftar yang dipisahkan koma juga bisa dipakai. <span id="rr-count" aria-live="polite"></span></p>
+  </div>
+  <div class="tl-row tl-actions">
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-shuffle">Acak urutan</button>
+  </div>
+  <div class="tl-row tl-actions tl-fill">
+    <label for="rr-fill-n">Belum punya daftar nama? Jumlah tim</label>
+    <input type="number" id="rr-fill-n" min="2" max="200" value="8" inputmode="numeric">
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-fill"><span>Isi dengan Tim 1…<span id="rr-fill-label">8</span></span></button>
+  </div>
+  <div class="tl-sep"></div>
+  <label class="tl-check"><input type="checkbox" id="rr-double"> Kandang-tandang (kompetisi penuh: setiap pasangan bertemu dua kali)</label>
+  <div class="tl-row tl-actions">
+    <button type="submit" class="btn" id="rr-go">Buat jadwal</button>
+  </div>
+  <div id="rr-error" role="alert"></div>
+</form>
+
+<section class="tl-result" id="rr-result" hidden aria-labelledby="rr-title">
+  <h2 id="rr-title" tabindex="-1">Jadwal Anda</h2>
+  <p id="rr-summary" aria-live="polite"></p>
+  <ul class="tl-stats" id="rr-stats"></ul>
+  <div class="tl-toolbar tl-noprint">
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-copy">Salin sebagai teks</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-csv">Unduh CSV</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-link">Salin tautan</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-print">Cetak</button>
+  </div>
+  <p class="tl-status tl-noprint" id="rr-status" role="status"></p>
+  <div class="tl-field tl-noprint rr-team">
+    <label for="rr-team">Tampilkan pertandingan satu tim</label>
+    <select id="rr-team"><option value="">Semua tim</option></select>
+  </div>
+  <div id="rr-team-list" aria-live="polite"></div>
+  <div class="rr-rounds" id="rr-rounds"></div>
+  <details class="rr-grid-box tl-noprint" id="rr-grid-box">
+    <summary>Siapa melawan siapa: nomor putaran untuk setiap pasangan</summary>
+    <div class="tl-table-wrap" id="rr-grid" tabindex="0" role="region" aria-label="Tabel pasangan pertandingan, dapat digeser ke samping"></div>
+  </details>
+</section>
+
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Lakukan di ponsel: Ligona</strong><span>Buat bagan turnamen: sistem gugur, liga dengan klasemen, fase grup, sistem Swiss</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=id" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/id/">Tentang Ligona</a></div></aside>
+
+<section class="tl-how" aria-labelledby="rr-how">
+  <h2 id="rr-how">Cara jadwal round robin disusun</h2>
+  <p>Jadwal ini memakai <strong>metode lingkaran</strong> (disebut juga metode Berger). Tulis nama tim dalam dua baris yang saling berhadapan: baris atas melawan baris bawah. Tim pertama tetap di tempatnya, sedangkan tim lainnya bergeser satu posisi mengelilingi lingkaran di setiap putaran. Dengan begitu, setelah putaran terakhir setiap pasangan sudah bertemu tepat satu kali.</p>
+  <p class="tl-formula">Pertandingan = N × (N − 1) ÷ 2</p>
+  <ul>
+    <li><strong>Jumlah tim genap:</strong> N − 1 putaran, N ÷ 2 pertandingan di setiap putaran, tidak ada tim yang libur.</li>
+    <li><strong>Jumlah tim ganjil:</strong> ditambahkan satu posisi kosong (bye), sehingga ada N putaran dan satu tim libur di setiap putaran. Setiap tim libur tepat satu kali.</li>
+    <li><strong>Kandang-tandang:</strong> seluruh jadwal dimainkan sekali lagi dengan posisi kandang dan tandang ditukar, sehingga jumlah pertandingan dan putaran menjadi dua kali lipat. Jika jumlah tim genap, paruh kedua dimulai dari putaran 2 paruh pertama, sehingga tidak ada tim yang bertemu lawan yang sama dalam dua putaran berturut-turut.</li>
+  </ul>
+  <h3>Contoh: 6 tim</h3>
+  <p>6 × 5 ÷ 2 = <strong>15 pertandingan</strong> dalam <strong>5 putaran</strong>, masing-masing 3 pertandingan. Dengan 7 tim, hasilnya 7 × 6 ÷ 2 = 21 pertandingan dalam 7 putaran berisi 3 pertandingan, dan satu tim mendapat bye di setiap putaran. Dengan sistem kandang-tandang, 6 tim memainkan 30 pertandingan dalam 10 putaran.</p>
+  <p>Pada jadwal satu kali bertemu (single round robin), laga kandang dan tandang disebar agar sebuah tim tidak bermain kandang atau tandang terlalu banyak secara beruntun. Nama pertama di setiap pertandingan adalah tuan rumah. Tombol "Acak urutan" mengubah siapa bertemu siapa di putaran mana; jumlah pertandingan tetap sama.</p>
+</section>
+</div>
+</article><section class="art"><h2 id="questions-and-answers">Tanya jawab</h2><h3>Berapa jumlah pertandingan dalam round robin?</h3><p>Round robin dengan N tim memiliki N × (N − 1) ÷ 2 pertandingan. 4 tim memainkan 6 pertandingan, 6 tim 15, 8 tim 28, dan 10 tim 45. Dengan sistem kandang-tandang (round robin ganda), setiap pasangan bertemu dua kali sehingga jumlahnya menjadi dua kali lipat: 8 tim memainkan 56 pertandingan.</p><h3>Berapa putaran yang dibutuhkan round robin?</h3><p>Jika jumlah tim genap, dibutuhkan N − 1 putaran dan tidak ada tim yang libur: 8 tim butuh 7 putaran berisi 4 pertandingan. Jika jumlahnya ganjil, dibutuhkan N putaran dan di setiap putaran satu tim mendapat bye: 7 tim butuh 7 putaran berisi 3 pertandingan. Dengan kandang-tandang, jumlah putaran menjadi dua kali lipat.</p><h3>Bagaimana jika jumlah timnya ganjil?</h3><p>Satu posisi kosong ditambahkan ke dalam lingkaran. Tim yang dipasangkan dengan posisi kosong itu mendapat bye dan tidak bertanding di putaran tersebut. Dalam round robin tunggal, setiap tim mendapat tepat satu bye, sehingga semua tim memainkan jumlah pertandingan yang sama (N − 1).</p><h3>Apa itu metode lingkaran?</h3><p>Ini adalah cara standar menyusun jadwal round robin, disebut juga metode Berger. Satu tim tetap di tempatnya dan tim lainnya bergeser satu posisi setiap putaran, sehingga setiap pasangan bertemu tepat satu kali dan tidak ada tim yang bermain dua kali dalam putaran yang sama.</p><h3>Apakah mengacak urutan mengubah jumlah pertandingan?</h3><p>Tidak. Acak urutan hanya mengubah tim mana bertemu siapa di putaran ke berapa. Jumlah pertandingan dan putaran hanya bergantung pada banyaknya tim dan apakah Anda memakai sistem kandang-tandang.</p><h3>Bisakah jadwalnya disimpan atau dibagikan?</h3><p>Bisa. Salin sebagai teks untuk grup chat, unduh sebagai file CSV untuk spreadsheet, cetak, atau salin tautannya: nama dan pilihan tersimpan di dalam tautan itu sendiri, jadi saat dibuka jadwal yang sama akan muncul lagi. Tidak ada data yang diunggah.</p></section><section class="related"><h2>Panduan</h2><div class="list"><a class="item" href="/guides/how-many-games-in-a-tournament/id/"><strong>Berapa jumlah pertandingan dalam sebuah turnamen?</strong><span>Sistem gugur: N-1 laga. Gugur ganda: 2N-2 atau 2N-1. Round robin: N(N-1)/2. Sistem Swiss: babak × N/2. Tabel untuk 4 hingga 32 tim.</span></a><a class="item" href="/guides/how-to-organize-a-round-robin-tournament/id/"><strong>Cara menyelenggarakan turnamen round robin</strong><span>Dalam round robin N tim, semua saling bertemu: N(N-1)/2 laga dalam N-1 babak (N jika ganjil). Cara menyusun jadwal, mengatur bye, dan tiebreak.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">Panduan</a><a href="/tools/">Alat</a><a href="/">Semua aplikasi</a><a href="mailto:hello@maumiuworks.com">Kontak</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script><script defer src="/search.js?v=ca84f471"></script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script><script>window.MW_I18N={"list_sep": ", ", "list_and": "{a} dan {b}", "sentence_sep": " ", "versus": "vs", "copied": "Sudah disalin ke papan klip.", "copy_failed": "Penyalinan tidak berhasil di browser ini. Pilih teksnya lalu salin secara manual.", "saved": "{file} sudah disimpan.", "dur_min": "{m} menit", "dur_h": "{h} jam", "dur_h_min": "{h} jam {m} menit", "round_n": "Babak {n}", "round_final": "Final", "round_semis": "Semifinal", "round_quarters": "Perempat final", "round_of": "Babak {n} besar", "round_winners_n": "Babak {n} bagan pemenang", "round_winners_final": "Final bagan pemenang", "round_losers_n": "Babak {n} bagan peserta kalah", "round_losers_final": "Final bagan peserta kalah", "round_grand_final": "Grand final", "round_grand_final_reset": "Final ulang (reset)", "round_third": "Perebutan juara 3", "names_found_one": "{n} nama ditemukan.", "names_found_other": "{n} nama ditemukan.", "listed_twice": "Tertulis dua kali: {names}.", "err_too_few": "Masukkan minimal {min} nama, satu nama per baris.", "err_too_few_first": "Masukkan minimal {min} nama terlebih dahulu.", "err_fill_range": "Pilih angka dari {min} sampai {max}.", "team_n": "Tim {n}", "err_too_many": "Halaman ini membuat jadwal untuk maksimal {max} nama. Anda memasukkan {n}.", "sum_teams_one": "{n} tim", "sum_teams_other": "{n} tim", "sum_games_one": "{n} pertandingan", "sum_games_other": "{n} pertandingan", "sum_in_rounds_one": "dalam {n} ronde", "sum_in_rounds_other": "dalam {n} ronde", "sum_per_round_one": "{n} pertandingan per ronde", "sum_per_round_other": "{n} pertandingan per ronde", "summary": "{teams}: {games} {in_rounds}, {per_round}.", "summary_odd": "{teams}: {games} {in_rounds}, {per_round}, satu tim mendapat bye di setiap ronde.", "summary_home_first": "Nama pertama di setiap pertandingan adalah tim tuan rumah.", "stat_games_one": "pertandingan", "stat_games_other": "pertandingan", "stat_rounds_one": "babak", "stat_rounds_other": "babak", "stat_per_round_one": "pertandingan per babak", "stat_per_round_other": "pertandingan per babak", "stat_per_team_one": "pertandingan per tim", "stat_per_team_other": "pertandingan per tim", "all_teams": "Semua tim", "first_leg": "leg pertama", "second_leg": "leg kedua", "game_line": "{home} {v} {away}", "bye_list": "Bye: {names}", "team_home": "vs {name} {tag}", "team_away": "vs {name} {tag}", "tag_home": "(kandang)", "tag_away": "(tandang)", "team_bye": "bye", "grid_team": "Tim", "grid_same_team": "tim yang sama", "grid_caption": "Ronde saat setiap pasangan tim bertemu", "text_head": "Jadwal liga (round robin): {teams}, {games}, {rounds}. Tim tuan rumah disebut lebih dulu.", "text_head_double": "Jadwal liga (round robin) kandang-tandang: {teams}, {games}, {rounds}. Tim tuan rumah disebut lebih dulu.", "text_rounds_one": "{n} ronde", "text_rounds_other": "{n} ronde", "csv_round": "Ronde", "csv_game": "Pertandingan", "csv_home": "Kandang", "csv_away": "Tandang", "csv_note": "Catatan", "csv_bye": "Bye", "csv_file": "jadwal-round-robin.csv", "shuffled": "Urutan sudah diacak.", "shuffled_names_one": "Urutan sudah diacak. {n} nama.", "shuffled_names_other": "Urutan sudah diacak. {n} nama."};window.MW_LANG="id";</script><script defer src="/tools/_shared/tools.js?v=20261126"></script><script defer src="/tools/round-robin-generator/tool.js?v=20261126"></script>
+</body></html>

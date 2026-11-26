@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="de" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Turnierrechner: Wie viele Spiele und Runden — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="Wie viele Spiele und Runden bei K.-o.-System, Doppel-K.-o., Liga, Gruppen und Schweizer System mit N Teams und wie lange es auf Ihren Plätzen dauert.">
+<link rel="canonical" href="https://maumiuworks.com/tools/tournament-games-calculator/de/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/tools/tournament-games-calculator/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/tools/tournament-games-calculator/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/tools/tournament-games-calculator/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/tools/tournament-games-calculator/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/tools/tournament-games-calculator/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/tools/tournament-games-calculator/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/tools/tournament-games-calculator/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/tools/tournament-games-calculator/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/tools/tournament-games-calculator/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/tools/tournament-games-calculator/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/tools/tournament-games-calculator/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/tools/tournament-games-calculator/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="Turnierrechner: Wie viele Spiele und Runden"><meta property="og:description" content="Wie viele Spiele und Runden bei K.-o.-System, Doppel-K.-o., Liga, Gruppen und Schweizer System mit N Teams und wie lange es auf Ihren Plätzen dauert."><meta property="og:url" content="https://maumiuworks.com/tools/tournament-games-calculator/de/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Rechner für Spiele und Runden im Turnier", "description": "Wie viele Spiele und Runden bei K.-o.-System, Doppel-K.-o., Liga, Gruppen und Schweizer System mit N Teams und wie lange es auf Ihren Plätzen dauert.", "url": "https://maumiuworks.com/tools/tournament-games-calculator/de/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "inLanguage": "de"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://maumiuworks.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Rechner für Spiele und Runden im Turnier", "item": "https://maumiuworks.com/tools/tournament-games-calculator/de/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie viele Spiele hat ein Turnier mit 16 Teams?", "acceptedAnswer": {"@type": "Answer", "text": "K.-o.-System: 15 Spiele in 4 Runden. Doppel-K.-o.: 30 Spiele, mit zweitem Finale (Reset) 31. Jeder gegen jeden: 120 Spiele in 15 Runden (240 mit Hin- und Rückspiel). 4 Gruppen à 4 Teams, die besten 2 jeder Gruppe kommen in die K.-o.-Runde: 24 Gruppenspiele plus 7 K.-o.-Spiele, insgesamt 31. Schweizer System: 4 Runden mit je 8 Spielen, also 32 Spiele."}}, {"@type": "Question", "name": "Wie viele Runden hat ein Turnier im K.-o.-System?", "acceptedAnswer": {"@type": "Answer", "text": "⌈log₂ N⌉, also so oft, wie man das Teilnehmerfeld halbieren kann: 8 Teams brauchen 3 Runden, 16 brauchen 4, 32 brauchen 5. Ist N keine Zweierpotenz, wird aufgerundet: Auch 12 oder 13 Teams brauchen 4 Runden, und die bestgesetzten Teams bekommen in Runde 1 ein Freilos."}}, {"@type": "Question", "name": "Welcher Modus hat die wenigsten Spiele?", "acceptedAnswer": {"@type": "Answer", "text": "Das K.-o.-System mit N − 1 Spielen, allerdings spielt die Hälfte der Teams nur einmal. Beim Schweizer System bestreiten alle gleich viele Spiele (etwa log₂ N), bei deutlich weniger Spielen als im Modus jeder gegen jeden. Doppel-K.-o. garantiert jedem mindestens 2 Spiele, bei etwa doppelt so vielen Spielen wie im einfachen K.-o.-System. Jeder gegen jeden ist am gerechtesten und dauert am längsten: N(N − 1) ÷ 2 Spiele."}}, {"@type": "Question", "name": "Wie viele Runden spielt man im Schweizer System?", "acceptedAnswer": {"@type": "Answer", "text": "Üblich sind ⌈log₂ N⌉ Runden: 3 Runden bei 8 Spielern, 4 bei 16, 5 bei 32, 7 bei 100. Das reicht, um die Besten voneinander zu trennen. Bei weniger Runden sind mehr Spieler punktgleich, mit mehr Runden nähert sich das Turnier dem Modus jeder gegen jeden an. Mehr als N − 1 Runden können es nie sein."}}, {"@type": "Question", "name": "Wie lange dauert mein Turnier?", "acceptedAnswer": {"@type": "Answer", "text": "Zählen Sie die Zeitfenster: Die Spiele einer Runde verteilen sich auf Ihre Plätze, eine Runde mit 8 Spielen auf 3 Plätzen braucht also ⌈8 ÷ 3⌉ = 3 Zeitfenster, danach beginnt die nächste Runde. Gesamtdauer = Zeitfenster × Minuten pro Spiel. Pausen und Wechselzeiten kommen noch dazu; der Rechner berücksichtigt sie nicht."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Rechner für Spiele und Runden im Turnier", "step": [{"@type": "HowToStep", "position": 1, "text": "Geben Sie die Anzahl der Teams oder Spieler ein."}, {"@type": "HowToStep", "position": 2, "text": "Geben Sie ein, wie viele Plätze, Felder oder Tische Sie gleichzeitig nutzen können und wie lange ein Spiel dauert."}, {"@type": "HowToStep", "position": 3, "text": "Geben Sie optional die verfügbaren Stunden ein, um zu sehen, welche Modi hineinpassen."}, {"@type": "HowToStep", "position": 4, "text": "Vergleichen Sie in der Tabelle Spiele, Runden, Spiele pro Team und Dauer für jeden Modus."}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+.srch{position:relative;display:flex;align-items:center}
+.srch-in{width:12.5rem;height:40px;padding:0 .8rem 0 2.2rem;border:1px solid var(--line);border-radius:20px;background:var(--bg);color:var(--fg);font:400 14px "Open Sans",sans-serif}
+.srch-in::placeholder{color:var(--soft);opacity:1}.srch-in:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:transparent}
+.srch-in::-webkit-search-cancel-button{cursor:pointer}
+.srch-ic{position:absolute;inset-inline-start:.75rem;top:50%;transform:translateY(-50%);color:var(--soft);display:flex;pointer-events:none}
+.srch-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--fg);cursor:pointer;border-radius:50%}
+.srch-btn:hover{color:var(--cyan-hi)}.srch-btn:focus-visible{outline:2px solid var(--cyan)}
+.srch-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:min(27rem,calc(100vw - 1.5rem));max-height:min(70vh,32rem);overflow:auto;background:var(--bar);border:1px solid var(--bar-line);box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:10;padding:.3rem 0}
+.srch-g{font:600 11px "Open Sans",sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--label);padding:.7rem .95rem .3rem}
+.srch-o{display:block;padding:.55rem .95rem;min-height:44px;color:var(--fg);text-decoration:none}
+.srch-o strong{display:block;font-weight:600;font-size:14.5px;line-height:1.4}.srch-o span{display:block;font-size:13px;line-height:1.45;color:var(--soft);margin-top:.15rem}
+.srch-o:hover,.srch-o[aria-selected=true]{background:rgba(127,127,127,.14);color:var(--fg)}
+.srch-o mark{background:rgba(20,170,206,.28);color:inherit;border-radius:2px}
+.srch-none{padding:.7rem .95rem;color:var(--soft);font-size:14px}
+.srch-hit{outline:3px solid var(--cyan);outline-offset:6px;border-radius:2px}
+[id]{scroll-margin-top:76px}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:52rem){.srch-btn{display:inline-flex}.srch-in,.srch-ic{display:none}
+.srch.open .srch-in{display:block;position:absolute;inset-inline-end:0;top:50%;transform:translateY(-50%);width:min(24rem,calc(100vw - 1.5rem));z-index:11;padding-inline-start:.9rem;background:var(--bar)}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.crumbs .app:not(.txt),.crumbs .sep:has(+ .app:not(.txt)){display:none}.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+<link rel="stylesheet" href="/tools/_shared/tools.css?v=20261126"><link rel="stylesheet" href="/tools/tournament-games-calculator/tool.css?v=20261126"></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="Alle Apps" aria-label="Maumiu Works — Alle Apps">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/tools/" aria-label="Tools"><span>Tools</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Rechner für Spiele und Runden im Turnier</span></nav><div class="tools"><div class="srch" data-page="Auf dieser Seite" data-site="Auf der Website" data-none="Nichts gefunden"><button type="button" class="srch-btn" aria-label="Suche" aria-expanded="false" aria-controls="srch-in"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="srch-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="srch-in" class="srch-in" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="srch-list" aria-label="Suche" placeholder="Website durchsuchen" autocomplete="off" spellcheck="false" enterkeyhint="search"><div id="srch-list" class="srch-list" role="listbox" aria-label="Suche" hidden></div></div><details class="langs"><summary aria-label="Sprache: Deutsch" title="Deutsch"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"></summary><ul><li><a href="/tools/tournament-games-calculator/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/tools/tournament-games-calculator/de/" hreflang="de" lang="de" aria-current="true"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/tools/tournament-games-calculator/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/tools/tournament-games-calculator/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/tools/tournament-games-calculator/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/tools/tournament-games-calculator/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/tools/tournament-games-calculator/ja/" hreflang="ja" lang="ja"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/tools/tournament-games-calculator/ko/" hreflang="ko" lang="ko"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/tools/tournament-games-calculator/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/tools/tournament-games-calculator/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/tools/tournament-games-calculator/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap wide"><article class="art"><h1>Rechner für Spiele und Runden im Turnier</h1><div class="tl tl-calc" id="tl-calc">
+<p class="tl-lead">Geben Sie die Anzahl der Teams oder Spieler ein, um zu sehen, wie viele Spiele und Runden jeder Turniermodus braucht: K.-o.-System, Doppel-K.-o., Jeder gegen jeden, Gruppen mit K.-o.-Runde und Schweizer System. Ergänzen Sie Ihre Plätze und die Spieldauer, um ungefähr zu sehen, wie lange das ganze Turnier dauert.</p>
+
+<form class="tl-card tl-noprint" id="calc-form" novalidate>
+  <div class="tl-grid">
+    <div class="tl-field">
+      <label for="calc-n">Teams oder Spieler</label>
+      <input type="number" id="calc-n" min="2" max="1024" value="16" inputmode="numeric" aria-describedby="calc-n-hint">
+      <p class="tl-hint" id="calc-n-hint">2 bis 1024.</p>
+    </div>
+    <div class="tl-field">
+      <label for="calc-courts">Plätze, Felder oder Tische gleichzeitig</label>
+      <input type="number" id="calc-courts" min="1" max="200" value="2" inputmode="numeric">
+    </div>
+    <div class="tl-field">
+      <label for="calc-min">Minuten pro Spiel</label>
+      <input type="number" id="calc-min" min="0" max="600" value="20" inputmode="numeric" aria-describedby="calc-min-hint">
+      <p class="tl-hint" id="calc-min-hint">Inklusive Wechselzeit.</p>
+    </div>
+    <div class="tl-field">
+      <label for="calc-hours">Verfügbare Stunden (optional)</label>
+      <input type="number" id="calc-hours" min="0" max="500" step="0.5" value="" inputmode="decimal" placeholder="z. B. 4">
+    </div>
+  </div>
+  <details class="calc-more" id="calc-more">
+    <summary>Weitere Optionen: Gruppen, Hin- und Rückspiel, Runden im Schweizer System</summary>
+    <div class="tl-grid" style="margin-top:.75rem">
+      <div class="tl-field">
+        <label for="calc-groups">Gruppen (Gruppen + K.-o.-Runde)</label>
+        <input type="number" id="calc-groups" min="1" max="512" value="4" inputmode="numeric">
+      </div>
+      <div class="tl-field">
+        <label for="calc-adv">Weiterkommende pro Gruppe</label>
+        <input type="number" id="calc-adv" min="1" max="512" value="2" inputmode="numeric">
+      </div>
+      <div class="tl-field">
+        <label for="calc-swiss">Runden im Schweizer System</label>
+        <input type="number" id="calc-swiss" min="0" max="1023" value="" inputmode="numeric" placeholder="automatisch" aria-describedby="calc-swiss-hint">
+        <p class="tl-hint" id="calc-swiss-hint">Leer = übliche Anzahl, ⌈log₂ N⌉.</p>
+      </div>
+    </div>
+    <label class="tl-check"><input type="checkbox" id="calc-double"> Hin- und Rückspiel bei Jeder gegen jeden und in Gruppen (jede Paarung spielt zweimal)</label>
+    <label class="tl-check"><input type="checkbox" id="calc-third"> Spiel um Platz 3 im K.-o.-System</label>
+  </details>
+  <div id="calc-error" role="alert"></div>
+</form>
+
+<section class="tl-result" id="calc-result" aria-labelledby="calc-title">
+  <h2 id="calc-title">Spiele und Runden für <span id="calc-title-n">16</span> Teams</h2>
+  <p id="calc-summary" aria-live="polite"></p>
+  <div class="tl-table-wrap">
+    <table class="calc-table" id="calc-table">
+      <caption class="tl-sr">Spiele, Runden und Zeit je Turniermodus</caption>
+      <thead><tr><th scope="col">Modus</th><th scope="col" class="num">Spiele</th><th scope="col" class="num">Runden</th><th scope="col">Spiele pro Team</th><th scope="col">Zeit</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <p class="tl-hint" id="calc-time-note"></p>
+  <div class="tl-toolbar tl-noprint">
+    <button type="button" class="btn btn-ghost btn-sm" id="calc-copy">Als Text kopieren</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="calc-csv">CSV herunterladen</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="calc-print">Drucken</button>
+  </div>
+  <p class="tl-status tl-noprint" id="calc-status" role="status"></p>
+  <h2>Für Ihre Zahlen durchgerechnet</h2>
+  <div class="calc-work" id="calc-work"></div>
+</section>
+
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Auf dem Handy: Ligona</strong><span>Turnierplaner: Turnier erstellen mit Turnierbaum, Spielplan, Tabelle, Gruppen</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=de-DE" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/de-DE/">Mehr über Ligona</a></div></aside>
+
+<section class="tl-how" aria-labelledby="calc-how">
+  <h2 id="calc-how">Die Formeln</h2>
+  <p>N ist die Anzahl der Teams oder Spieler. ⌈ ⌉ bedeutet „aufrunden“.</p>
+  <div class="tl-table-wrap">
+  <table class="calc-formulas">
+    <caption class="tl-sr">Formeln für jeden Turniermodus</caption>
+    <thead><tr><th scope="col">Modus</th><th scope="col">Spiele</th><th scope="col">Runden</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">K.-o.-System</th><td>N − 1 (+1 mit Spiel um Platz 3)</td><td>⌈log₂ N⌉</td></tr>
+      <tr><th scope="row">Doppel-K.-o.</th><td>2N − 2, bzw. 2N − 1 mit zweitem Finale (Reset)</td><td>Gewinnerseite ⌈log₂ N⌉, Verliererseite bis zu 2(⌈log₂ N⌉ − 1), danach das Große Finale</td></tr>
+      <tr><th scope="row">Jeder gegen jeden</th><td>N(N − 1) ÷ 2, ×2 bei Hin- und Rückspiel</td><td>N − 1 bei geradem N, N bei ungeradem; ×2 bei Hin- und Rückspiel</td></tr>
+      <tr><th scope="row">Gruppen + K.-o.-Runde</th><td>Summe von k(k − 1) ÷ 2 über alle Gruppen, plus G × q − 1 K.-o.-Spiele</td><td>Jeder gegen jeden der größten Gruppe, danach ⌈log₂(G × q)⌉ K.-o.-Runden</td></tr>
+      <tr><th scope="row">Schweizer System</th><td>Runden × ⌊N ÷ 2⌋</td><td>meist ⌈log₂ N⌉</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>Warum ein K.-o.-Turnier N − 1 Spiele hat</h3>
+  <p>In jedem Spiel scheidet genau ein Team aus, und jedes Team außer dem Sieger muss einmal ausscheiden. Deshalb spielen 16 Teams 15 Spiele und 100 Teams 99, egal wie die Freilose verteilt sind. Ist N keine Zweierpotenz, wird der Turnierbaum bis zur nächsten Zweierpotenz mit Freilosen für die bestgesetzten Teams aufgefüllt: Freilose = nächste Zweierpotenz − N, 12 Teams bekommen also 4 Freilose.</p>
+  <h3>Warum Doppel-K.-o. 2N − 2 oder 2N − 1 Spiele hat</h3>
+  <p>Alle außer dem Turniersieger scheiden nach genau zwei Niederlagen aus: 2(N − 1) Niederlagen, eine pro Spiel. Der Turniersieger kann zusätzlich einmal verloren haben: Gewinnt der Sieger der Verliererseite das Große Finale, wird ein zweites Finale gespielt, das macht 2N − 1.</p>
+  <h3>Warum Jeder gegen jeden N(N − 1) ÷ 2 Spiele hat</h3>
+  <p>Jedes der N Teams trifft auf die anderen N − 1, und an jedem Spiel sind zwei Teams beteiligt, daher wird die Zahl halbiert: 8 Teams spielen 8 × 7 ÷ 2 = 28 Spiele. Bei gerader Anzahl passen N ÷ 2 Spiele in jede Runde, es braucht also N − 1 Runden. Bei ungerader Anzahl setzt in jeder Runde ein Team aus, es braucht also N Runden.</p>
+  <h3>Gruppen + K.-o.-Runde</h3>
+  <p>Die Teams werden im Schlangensystem auf G Gruppen verteilt (1, 2, 3, 4 in die Gruppen A, B, C, D, dann 5, 6, 7, 8 in D, C, B, A und so weiter), in jeder Gruppe spielt jeder gegen jeden, und die besten q jeder Gruppe kommen in die K.-o.-Runde. Beispiel: 16 Teams in 4 Vierergruppen, die besten 2 kommen weiter: 4 × 6 = 24 Gruppenspiele plus 8 − 1 = 7 K.-o.-Spiele, insgesamt 31.</p>
+  <h3>Schweizer System</h3>
+  <p>In jeder Runde spielen alle gegen jemanden mit gleicher oder ähnlicher Punktzahl, ohne dass sich Paarungen wiederholen. ⌈log₂ N⌉ Runden reichen meist aus, damit nur noch ein Spieler alle Partien gewonnen hat, 16 Spieler spielen also 4 Runden mit je 8 Spielen. Bei ungeradem N erhält in jeder Runde ein Spieler ein Freilos, das als Sieg zählt.</p>
+  <h3>Wie die Zeit geschätzt wird</h3>
+  <p>Die Spiele einer Runde teilen sich die Plätze, und die nächste Runde beginnt erst, wenn diese Runde vorbei ist: Im K.-o.-System und im Schweizer System hängen die Paarungen von den Ergebnissen ab, und in einer Liga bleiben so alle auf demselben Stand. Eine Runde mit 8 Spielen auf 3 Plätzen braucht ⌈8 ÷ 3⌉ = 3 Zeitfenster. Gesamtzeit = Zeitfenster × Minuten pro Spiel. Beim Doppel-K.-o. werden die Runden der Gewinner- und der Verliererseite nacheinander gezählt. Pausen sind nicht eingerechnet, planen Sie also etwas Puffer ein.</p>
+</section>
+</div>
+</article><section class="art"><h2 id="questions-and-answers">Fragen und Antworten</h2><h3>Wie viele Spiele hat ein Turnier mit 16 Teams?</h3><p>K.-o.-System: 15 Spiele in 4 Runden. Doppel-K.-o.: 30 Spiele, mit zweitem Finale (Reset) 31. Jeder gegen jeden: 120 Spiele in 15 Runden (240 mit Hin- und Rückspiel). 4 Gruppen à 4 Teams, die besten 2 jeder Gruppe kommen in die K.-o.-Runde: 24 Gruppenspiele plus 7 K.-o.-Spiele, insgesamt 31. Schweizer System: 4 Runden mit je 8 Spielen, also 32 Spiele.</p><h3>Wie viele Runden hat ein Turnier im K.-o.-System?</h3><p>⌈log₂ N⌉, also so oft, wie man das Teilnehmerfeld halbieren kann: 8 Teams brauchen 3 Runden, 16 brauchen 4, 32 brauchen 5. Ist N keine Zweierpotenz, wird aufgerundet: Auch 12 oder 13 Teams brauchen 4 Runden, und die bestgesetzten Teams bekommen in Runde 1 ein Freilos.</p><h3>Welcher Modus hat die wenigsten Spiele?</h3><p>Das K.-o.-System mit N − 1 Spielen, allerdings spielt die Hälfte der Teams nur einmal. Beim Schweizer System bestreiten alle gleich viele Spiele (etwa log₂ N), bei deutlich weniger Spielen als im Modus jeder gegen jeden. Doppel-K.-o. garantiert jedem mindestens 2 Spiele, bei etwa doppelt so vielen Spielen wie im einfachen K.-o.-System. Jeder gegen jeden ist am gerechtesten und dauert am längsten: N(N − 1) ÷ 2 Spiele.</p><h3>Wie viele Runden spielt man im Schweizer System?</h3><p>Üblich sind ⌈log₂ N⌉ Runden: 3 Runden bei 8 Spielern, 4 bei 16, 5 bei 32, 7 bei 100. Das reicht, um die Besten voneinander zu trennen. Bei weniger Runden sind mehr Spieler punktgleich, mit mehr Runden nähert sich das Turnier dem Modus jeder gegen jeden an. Mehr als N − 1 Runden können es nie sein.</p><h3>Wie lange dauert mein Turnier?</h3><p>Zählen Sie die Zeitfenster: Die Spiele einer Runde verteilen sich auf Ihre Plätze, eine Runde mit 8 Spielen auf 3 Plätzen braucht also ⌈8 ÷ 3⌉ = 3 Zeitfenster, danach beginnt die nächste Runde. Gesamtdauer = Zeitfenster × Minuten pro Spiel. Pausen und Wechselzeiten kommen noch dazu; der Rechner berücksichtigt sie nicht.</p></section><section class="related"><h2>Ratgeber</h2><div class="list"><a class="item" href="/guides/double-elimination-bracket-explained/de/"><strong>Doppel-K.-o.-System erklärt</strong><span>Im Doppel-K.-o. scheidet ein Team erst nach zwei Niederlagen aus. N Teams spielen 2N-2 Spiele, mit zweitem Finale 2N-1. So läuft die Verliererseite.</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/de/"><strong>Wie viele Spiele hat ein Turnier?</strong><span>K.-o.-System: N-1 Spiele. Doppel-K.-o.: 2N-2 oder 2N-1. Jeder gegen jeden: N(N-1)/2. Schweizer System: Runden × N/2. Tabelle für 4 bis 32 Teams.</span></a><a class="item" href="/guides/how-to-organize-a-round-robin-tournament/de/"><strong>Wie man ein Turnier jeder gegen jeden organisiert</strong><span>Jeder gegen jeden mit N Teams: N(N-1)/2 Spiele in N-1 Runden (bei ungerader Zahl N Runden). Dazu: Spielplan, Freilose, Wertung bei Punktgleichheit.</span></a><a class="item" href="/guides/swiss-system-tournament-explained/de/"><strong>Das Schweizer System einfach erklärt</strong><span>Im Schweizer System spielen Punktgleiche gegeneinander, keine Paarung doppelt, niemand scheidet aus. Etwa log2 N Runden, Buchholz als Feinwertung.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">Ratgeber</a><a href="/tools/">Tools</a><a href="/">Alle Apps</a><a href="mailto:hello@maumiuworks.com">Kontakt</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script><script defer src="/search.js?v=ca84f471"></script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script><script>window.MW_I18N={"list_sep": ", ", "list_and": "{a} und {b}", "sentence_sep": " ", "versus": "–", "copied": "In die Zwischenablage kopiert.", "copy_failed": "Das Kopieren hat in diesem Browser nicht funktioniert: Markiere den Text und kopiere ihn von Hand.", "saved": "{file} gespeichert.", "dur_min": "{m} Min.", "dur_h": "{h} Std.", "dur_h_min": "{h} Std. {m} Min.", "round_n": "Runde {n}", "round_final": "Finale", "round_semis": "Halbfinale", "round_quarters": "Viertelfinale", "round_of": "Runde der letzten {n}", "round_winners_n": "Gewinnerseite, Runde {n}", "round_winners_final": "Finale der Gewinnerseite", "round_losers_n": "Verliererseite, Runde {n}", "round_losers_final": "Finale der Verliererseite", "round_grand_final": "Großes Finale", "round_grand_final_reset": "Zweites Finale (Reset)", "round_third": "Spiel um Platz 3", "names_found_one": "{n} Name gefunden.", "names_found_other": "{n} Namen gefunden.", "listed_twice": "Doppelt aufgeführt: {names}.", "err_too_few": "Gib mindestens {min} Namen ein, einen pro Zeile.", "err_too_few_first": "Gib zuerst mindestens {min} Namen ein.", "err_fill_range": "Wähle eine Zahl von {min} bis {max}.", "team_n": "Team {n}", "err_n": "Teams oder Spieler: eine ganze Zahl von 2 bis 1024.", "err_courts": "Spielfelder: eine ganze Zahl von 1 bis 200.", "err_minutes": "Minuten pro Spiel: von 0 bis 600.", "err_hours": "Stunden: von 0 bis 500.", "err_groups": "Gruppen: eine ganze Zahl, mindestens 1.", "err_advance": "Weiterkommende pro Gruppe: eine ganze Zahl, mindestens 1.", "err_swiss": "Runden im Schweizer System: eine ganze Zahl oder das Feld leer lassen.", "title_one": "Spiele und Runden für {n} Team", "title_other": "Spiele und Runden für {n} Teams", "slots_one": "{n} Zeitfenster", "slots_other": "{n} Zeitfenster", "if_reset": "+{x}, falls das zweite Finale gespielt wird", "fit_long": "✗ zu lang", "fit_ok": "✓ passt", "fit_not_with_reset": "✓ passt, ✗ nicht mit zweitem Finale", "fmt_single": "K.-o.-System", "fmt_double": "Doppel-K.-o.", "fmt_rr": "Liga (jeder gegen jeden)", "fmt_rr_double": "Liga (jeder gegen jeden), Hin- und Rückspiel", "fmt_groups": "Gruppen + K.-o.-Runde", "fmt_groups_detail": "Gruppen + K.-o.-Runde: {g} × die besten {q}", "fmt_swiss": "Schweizer System", "x_or_y": "{a} oder {b}", "range_1_to": "1 bis {n}", "at_least": "mindestens {n}", "needs_more": "erst ab {n}", "swiss_with_bye": "{n} ({m} mit Freilos)", "col_games": "Spiele", "col_rounds": "Runden", "col_per_team": "Spiele pro Team", "col_time": "Zeit", "w_teams_one": "{n} Team", "w_teams_other": "{n} Teams", "w_games_one": "{n} Spiel", "w_games_other": "{n} Spiele", "w_of_games_one": "zu je {n} Spiel", "w_of_games_other": "zu je {n} Spielen", "w_rounds_one": "{n} Runde", "w_rounds_other": "{n} Runden", "w_in_rounds_one": "in {n} Runde", "w_in_rounds_other": "in {n} Runden", "w_byes_one": "{n} Freilos", "w_byes_other": "{n} Freilose", "w_on_courts_one": "Auf {n} Spielfeld", "w_on_courts_other": "Auf {n} Spielfeldern", "w_slots_one": "{n} Zeitfenster", "w_slots_other": "{n} Zeitfenster", "w_slots_line": "{on_courts}: {expr} = {slots}.", "w_slots_line_time": "{on_courts}: {expr} = {slots} × {mins} = {time}.", "w_slots_short": "{on_courts}: {slots}.", "w_slots_short_time": "{on_courts}: {slots} × {mins} = {time}.", "w_se_bracket_no_byes": "{teams} brauchen einen Turnierbaum mit {size} Plätzen, also gibt es 0 Freilose.", "w_se_bracket_one": "{teams} brauchen einen Turnierbaum mit {size} Plätzen, also gibt es {n} Freilos für das an Nummer 1 gesetzte Team.", "w_se_bracket_other": "{teams} brauchen einen Turnierbaum mit {size} Plätzen, also gibt es {n} Freilose für die {n} bestgesetzten Teams.", "w_se_games": "Spiele: {n} − 1 = {total}, {in_rounds} ({per} Spiele pro Runde).", "w_se_games_third": "Spiele: {n} − 1 = {total} + 1 Spiel um Platz 3 = {games}, {in_rounds} ({per} Spiele pro Runde, das Spiel um Platz 3 zusammen mit dem Finale).", "w_de_games": "Spiele: 2 × {n} − 2 = {g}, oder 2 × {n} − 1 = {gr}, wenn das Zweite Finale (Reset) gespielt wird.", "w_de_rounds": "Runden: {wb} auf der Gewinnerseite, {lb} auf der Verliererseite, dann das Große Finale (und bei Bedarf das zweite Finale).", "w_de_min": "Jedes Team bestreitet mindestens 2 Spiele.", "w_de_slots_time": "{on_courts}: {slots} × {mins} = {time}, plus {extra}, falls das zweite Finale gespielt wird.", "w_h_rr_double": "Liga (jeder gegen jeden), Hin- und Rückspiel", "w_rr_games": "Spiele: {n} × {n1} ÷ 2 = {g}.", "w_rr_games_double": "Spiele: {n} × {n1} ÷ 2 × 2 = {g}.", "w_rr_odd": "{n} ist ungerade, also hat in jeder Runde ein Team spielfrei: {rounds} {of_games}.", "w_rr_even": "{n} ist gerade, also hat niemand spielfrei: {rounds} {of_games}.", "w_rr_per_team_one": "Jedes Team bestreitet {n} Spiel.", "w_rr_per_team_other": "Jedes Team bestreitet {n} Spiele.", "w_groups_of_one": "{n} zu je {size}", "w_groups_of_other": "{n} zu je {size}", "w_gr_groups_one": "{n} Gruppe: {sizes}.", "w_gr_groups_other": "{n} Gruppen: {sizes}.", "w_gr_groups_adjusted_one": "{n} Gruppe (angepasst an das, was {teams} zulassen): {sizes}.", "w_gr_groups_adjusted_other": "{n} Gruppen (angepasst an das, was {teams} zulassen): {sizes}.", "w_gr_games": "Gruppenspiele: {sum} = {gg} {in_rounds}.", "w_gr_playoff": "{g} × {q} = {e} kommen weiter in eine K.-o.-Runde mit {size} Plätzen: {expr} = {games} {in_rounds}.", "w_gr_playoff_an": "{g} × {q} = {e} kommen weiter in eine K.-o.-Runde mit {size} Plätzen: {expr} = {games} {in_rounds}.", "w_gr_playoff_byes": "{g} × {q} = {e} kommen weiter in eine K.-o.-Runde mit {size} Plätzen und {byes}: {expr} = {games} {in_rounds}.", "w_gr_playoff_byes_an": "{g} × {q} = {e} kommen weiter in eine K.-o.-Runde mit {size} Plätzen und {byes}: {expr} = {games} {in_rounds}.", "w_gr_total_one": "Insgesamt: {n} Spiel.", "w_gr_total_other": "Insgesamt: {n} Spiele.", "w_sw_chosen": "Gewählt: {rounds} (üblich bei {n}: {rec}) zu je ⌊{n} ÷ 2⌋ = {per} Spielen: {games}.", "w_sw_chosen_bye": "Gewählt: {rounds} (üblich bei {n}: {rec}) zu je ⌊{n} ÷ 2⌋ = {per} Spielen: {games}; in jeder Runde hat ein Spieler ein Freilos, das als Sieg zählt.", "w_sw_auto": "⌈log₂ {n}⌉ = {rounds} zu je ⌊{n} ÷ 2⌋ = {per} Spielen: {games}.", "w_sw_auto_bye": "⌈log₂ {n}⌉ = {rounds} zu je ⌊{n} ÷ 2⌋ = {per} Spielen: {games}; in jeder Runde hat ein Spieler ein Freilos, das als Sieg zählt.", "time_note_one": "Zeit: Die Spiele einer Runde werden auf {n} Spielfeld verteilt, die Runden laufen nacheinander; Pausen sind nicht eingerechnet.", "time_note_other": "Zeit: Die Spiele einer Runde werden auf {n} Spielfelder verteilt, die Runden laufen nacheinander; Pausen sind nicht eingerechnet.", "time_note_empty": "Minuten pro Spiel eingeben, um die Zeitfenster in Stunden und Minuten umzurechnen.", "summary_full_one": "{n} Team: K.-o.-System {se} Spiele, Doppel-K.-o. {de} oder {der}, Liga {rr}, Gruppen + K.-o.-Runde {gp}, Schweizer System {sw}.", "summary_full_other": "{n} Teams: K.-o.-System {se} Spiele, Doppel-K.-o. {de} oder {der}, Liga {rr}, Gruppen + K.-o.-Runde {gp}, Schweizer System {sw}.", "summary_no_groups_one": "{n} Team: K.-o.-System {se} Spiele, Doppel-K.-o. {de} oder {der}, Liga {rr}, Schweizer System {sw}.", "summary_no_groups_other": "{n} Teams: K.-o.-System {se} Spiele, Doppel-K.-o. {de} oder {der}, Liga {rr}, Schweizer System {sw}.", "summary_min_one": "{n} Team: K.-o.-System {se} Spiele, Liga {rr}, Schweizer System {sw}.", "summary_min_other": "{n} Teams: K.-o.-System {se} Spiele, Liga {rr}, Schweizer System {sw}.", "text_head_one": "Spiele und Runden für {n} Team", "text_head_other": "Spiele und Runden für {n} Teams", "text_head_time_one": "Spiele und Runden für {n} Team, {courts}, {mins} Min. pro Spiel", "text_head_time_other": "Spiele und Runden für {n} Teams, {courts}, {mins} Min. pro Spiel", "text_courts_one": "{n} Spielfeld", "text_courts_other": "{n} Spielfelder", "text_row": "{format}: {games} Spiele, {rounds} Runden, Spiele pro Team {per}", "text_row_time": "{format}: {games} Spiele, {rounds} Runden, Spiele pro Team {per}, Zeit {time}", "csv_format": "Modus", "csv_games": "Spiele", "csv_rounds": "Runden", "csv_per_team": "Spiele pro Team", "csv_minutes": "Minuten", "csv_file": "turnier-spiele.csv"};window.MW_LANG="de";</script><script defer src="/tools/_shared/tools.js?v=20261126"></script><script defer src="/tools/tournament-games-calculator/tool.js?v=20261126"></script>
+</body></html>

@@ -8,7 +8,7 @@
     var root = document.getElementById('tl-rr');
     if (!root || !window.MW) return;
     var E = window.MW.engine, U = window.MW.ui, I = window.MW.i18n, $ = function (id) { return document.getElementById(id); };
-    var t = I.t, tn = I.tn, th = I.th, num = I.num;
+    var t = I.t, tn = I.tn, th = I.th, thn = I.thn, num = I.num;
     var form = $('rr-form'), names = $('rr-names'), dbl = $('rr-double'), err = $('rr-error'), count = $('rr-count');
     var result = $('rr-result'), statusEl = $('rr-status'), teamSel = $('rr-team');
     var state = null; // {names, double, rounds}
@@ -60,7 +60,7 @@
         per_round: tn('sum_per_round', per) };
       $('rr-summary').textContent = I.sentences([t(n % 2 ? 'summary_odd' : 'summary', parts), t('summary_home_first')]);
       var stats = [[games, 'stat_games'], [rounds, 'stat_rounds'], [per, 'stat_per_round'], [(n - 1) * legs, 'stat_per_team']];
-      $('rr-stats').innerHTML = stats.map(function (s) { return '<li><b>' + num(s[0]) + '</b><span>' + th(s[1]) + '</span></li>'; }).join('');
+      $('rr-stats').innerHTML = stats.map(function (s) { return '<li><b>' + num(s[0]) + '</b><span>' + thn(s[1], s[0]) + '</span></li>'; }).join('');
 
       var sel = teamSel.value;
       teamSel.innerHTML = '<option value="">' + th('all_teams') + '</option>' + state.names.map(function (nm, i) {

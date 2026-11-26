@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ja" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>トーナメント表作成ツール（シングル／ダブルイリミネーション） — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="トーナメントやダブルイリミネーションの表を、正しいシード順と上位シードへの不戦勝つきで作成します。名前をタップして勝者を勝ち上がらせ、印刷や共有もできます。">
+<link rel="canonical" href="https://maumiuworks.com/tools/tournament-bracket-generator/ja/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/tools/tournament-bracket-generator/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/tools/tournament-bracket-generator/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/tools/tournament-bracket-generator/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/tools/tournament-bracket-generator/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/tools/tournament-bracket-generator/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/tools/tournament-bracket-generator/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/tools/tournament-bracket-generator/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/tools/tournament-bracket-generator/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/tools/tournament-bracket-generator/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/tools/tournament-bracket-generator/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/tools/tournament-bracket-generator/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/tools/tournament-bracket-generator/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="トーナメント表作成ツール（シングル／ダブルイリミネーション）"><meta property="og:description" content="トーナメントやダブルイリミネーションの表を、正しいシード順と上位シードへの不戦勝つきで作成します。名前をタップして勝者を勝ち上がらせ、印刷や共有もできます。"><meta property="og:url" content="https://maumiuworks.com/tools/tournament-bracket-generator/ja/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "トーナメント表作成ツール", "description": "トーナメントやダブルイリミネーションの表を、正しいシード順と上位シードへの不戦勝つきで作成します。名前をタップして勝者を勝ち上がらせ、印刷や共有もできます。", "url": "https://maumiuworks.com/tools/tournament-bracket-generator/ja/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "inLanguage": "ja"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "ツール", "item": "https://maumiuworks.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "トーナメント表作成ツール", "item": "https://maumiuworks.com/tools/tournament-bracket-generator/ja/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "トーナメント表のシードはどう決まりますか？", "acceptedAnswer": {"@type": "Answer", "text": "入力したリストの順番がそのままシード順になり、上位シード同士がなるべく遅い回戦で当たる標準的な配置で組み合わせます。8チームなら1回戦は1対8、4対5、2対7、3対6となり、第1シードと第2シードが当たるのは決勝だけです。抽選で組み合わせたい場合は、「抽選」でリストをシャッフルしてください。"}}, {"@type": "Question", "name": "不戦勝はいくつ必要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "トーナメント表の枠数は2の累乗（4、8、16、32…）です。不戦勝の数 = 次の2の累乗 − チーム数。12チームなら16枠で不戦勝が4つ、20チームなら32枠で不戦勝が12になります。不戦勝は上位シードに割り当てられ、そのチームは2回戦から登場します。"}}, {"@type": "Question", "name": "トーナメントの試合数はいくつですか？", "acceptedAnswer": {"@type": "Answer", "text": "常にチーム数より1少ない N − 1 試合です。1試合ごとにちょうど1チームが敗退し、優勝チーム以外はすべて敗退するためです。16チームなら全4回戦・計15試合です。3位決定戦を行う場合は1試合増えます。"}}, {"@type": "Question", "name": "ダブルイリミネーションの試合数はいくつですか？", "acceptedAnswer": {"@type": "Answer", "text": "勝者側の優勝チームがグランドファイナルに勝てば 2N − 2 試合、敗者側の優勝チームが勝って再戦が行われれば 2N − 1 試合です。8チームなら14または15試合、16チームなら30または31試合になります。"}}, {"@type": "Question", "name": "グランドファイナル再戦とは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "ダブルイリミネーションでは、勝者側の優勝チームは無敗でグランドファイナルに進みますが、敗者側の優勝チームはすでに1敗しています。敗者側のチームがグランドファイナルに勝つと両者とも1敗になるため、もう1試合行って優勝を決めます。決勝を1試合しか行う時間がない場合は、再戦をオフにできます。"}}, {"@type": "Question", "name": "トーナメント表を共有・保存できますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。「リンクをコピー」を使うと、名前・設定・すべての結果がリンク自体に含まれるので、リンクを開いた人は同じトーナメント表を見られます。テキストとしてコピーしたり、CSVファイルをダウンロードしたり、印刷したりすることもできます。データはどこにもアップロードされず、アカウントも不要です。"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "トーナメント表作成ツール", "step": [{"@type": "HowToStep", "position": 1, "text": "トーナメントかダブルイリミネーションを選びます。"}, {"@type": "HowToStep", "position": 2, "text": "名前をシード順に1行に1つずつ入力または貼り付けます。「抽選」を押してシャッフルすることもできます。"}, {"@type": "HowToStep", "position": 3, "text": "「トーナメント表を作成」を押します。不戦勝は自動的に上位シードに割り当てられます。"}, {"@type": "HowToStep", "position": 4, "text": "各試合の勝者をタップして勝ち上がらせ、優勝が決まるまで続けます。"}, {"@type": "HowToStep", "position": 5, "text": "リンクやテキストとしてコピーしたり、CSVをダウンロードしたり、印刷したりします。"}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+.srch{position:relative;display:flex;align-items:center}
+.srch-in{width:12.5rem;height:40px;padding:0 .8rem 0 2.2rem;border:1px solid var(--line);border-radius:20px;background:var(--bg);color:var(--fg);font:400 14px "Open Sans",sans-serif}
+.srch-in::placeholder{color:var(--soft);opacity:1}.srch-in:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:transparent}
+.srch-in::-webkit-search-cancel-button{cursor:pointer}
+.srch-ic{position:absolute;inset-inline-start:.75rem;top:50%;transform:translateY(-50%);color:var(--soft);display:flex;pointer-events:none}
+.srch-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--fg);cursor:pointer;border-radius:50%}
+.srch-btn:hover{color:var(--cyan-hi)}.srch-btn:focus-visible{outline:2px solid var(--cyan)}
+.srch-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:min(27rem,calc(100vw - 1.5rem));max-height:min(70vh,32rem);overflow:auto;background:var(--bar);border:1px solid var(--bar-line);box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:10;padding:.3rem 0}
+.srch-g{font:600 11px "Open Sans",sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--label);padding:.7rem .95rem .3rem}
+.srch-o{display:block;padding:.55rem .95rem;min-height:44px;color:var(--fg);text-decoration:none}
+.srch-o strong{display:block;font-weight:600;font-size:14.5px;line-height:1.4}.srch-o span{display:block;font-size:13px;line-height:1.45;color:var(--soft);margin-top:.15rem}
+.srch-o:hover,.srch-o[aria-selected=true]{background:rgba(127,127,127,.14);color:var(--fg)}
+.srch-o mark{background:rgba(20,170,206,.28);color:inherit;border-radius:2px}
+.srch-none{padding:.7rem .95rem;color:var(--soft);font-size:14px}
+.srch-hit{outline:3px solid var(--cyan);outline-offset:6px;border-radius:2px}
+[id]{scroll-margin-top:76px}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:52rem){.srch-btn{display:inline-flex}.srch-in,.srch-ic{display:none}
+.srch.open .srch-in{display:block;position:absolute;inset-inline-end:0;top:50%;transform:translateY(-50%);width:min(24rem,calc(100vw - 1.5rem));z-index:11;padding-inline-start:.9rem;background:var(--bar)}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.crumbs .app:not(.txt),.crumbs .sep:has(+ .app:not(.txt)){display:none}.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+<link rel="stylesheet" href="/tools/_shared/tools.css?v=20261126"><link rel="stylesheet" href="/tools/tournament-bracket-generator/tool.css?v=20261126"></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="すべてのアプリ" aria-label="Maumiu Works — すべてのアプリ">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/tools/" aria-label="ツール"><span>ツール</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">トーナメント表作成ツール</span></nav><div class="tools"><div class="srch" data-page="このページ内" data-site="サイト全体" data-none="見つかりませんでした"><button type="button" class="srch-btn" aria-label="検索" aria-expanded="false" aria-controls="srch-in"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="srch-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="srch-in" class="srch-in" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="srch-list" aria-label="検索" placeholder="サイト内を検索" autocomplete="off" spellcheck="false" enterkeyhint="search"><div id="srch-list" class="srch-list" role="listbox" aria-label="検索" hidden></div></div><details class="langs"><summary aria-label="言語: 日本語" title="日本語"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"></summary><ul><li><a href="/tools/tournament-bracket-generator/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/tools/tournament-bracket-generator/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/tools/tournament-bracket-generator/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/tools/tournament-bracket-generator/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/tools/tournament-bracket-generator/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/tools/tournament-bracket-generator/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/tools/tournament-bracket-generator/ja/" hreflang="ja" lang="ja" aria-current="true"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/tools/tournament-bracket-generator/ko/" hreflang="ko" lang="ko"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/tools/tournament-bracket-generator/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/tools/tournament-bracket-generator/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/tools/tournament-bracket-generator/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap wide"><article class="art"><h1>トーナメント表作成ツール</h1><div class="tl tl-br" id="tl-br">
+<p class="tl-lead">チーム名や選手名をシード順に入力すると、正しいシード配置のトーナメント表（トーナメントまたはダブルイリミネーション）を作成します。第1シードは最下位シードと対戦し、不戦勝は上位シードに割り当てられます。名前をタップすると次の回戦に進みます。登録不要で、ブラウザ上で動作し、データはどこにもアップロードされません。</p>
+
+<form class="tl-card tl-noprint" id="br-form" novalidate>
+  <fieldset class="tl-field">
+    <legend class="tl-legend">形式</legend>
+    <div class="tl-seg">
+      <label><input type="radio" name="br-format" value="single" checked> トーナメント</label>
+      <label><input type="radio" name="br-format" value="double"> ダブルイリミネーション</label>
+    </div>
+  </fieldset>
+  <div class="tl-field" style="margin-top:1rem">
+    <label for="br-names">チーム名または選手名をシード順に、1行に1つずつ</label>
+    <textarea id="br-names" rows="9" spellcheck="false" autocomplete="off" aria-describedby="br-names-hint">Lions
+Tigers
+Bears
+Wolves
+Eagles
+Sharks
+Falcons
+Panthers</textarea>
+    <p class="tl-hint" id="br-names-hint">1行目が第1シードです。2〜128件まで入力できます（ダブルイリミネーションは3件以上）。<span id="br-count" aria-live="polite"></span></p>
+  </div>
+  <div class="tl-row tl-actions">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-shuffle">抽選</button>
+  </div>
+  <div class="tl-row tl-actions tl-fill">
+    <label for="br-fill-n">名前がまだ決まっていない場合のチーム数</label>
+    <input type="number" id="br-fill-n" min="2" max="128" value="16" inputmode="numeric">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-fill"><span>チーム1…<span id="br-fill-label">16</span>で入力</span></button>
+  </div>
+  <div class="tl-sep"></div>
+  <label class="tl-check" id="br-opt-third"><input type="checkbox" id="br-third"> 3位決定戦（準決勝の敗者同士で3位を争う）</label>
+  <label class="tl-check" id="br-opt-reset" hidden><input type="checkbox" id="br-reset" checked> グランドファイナル再戦（敗者側の勝者が1回目の決勝に勝った場合、もう一度決勝を行う）</label>
+  <div class="tl-row tl-actions">
+    <button type="submit" class="btn" id="br-go">トーナメント表を作成</button>
+  </div>
+  <div id="br-error" role="alert"></div>
+</form>
+
+<section class="tl-result" id="br-result" hidden aria-labelledby="br-title">
+  <h2 id="br-title" tabindex="-1">作成したトーナメント表</h2>
+  <p id="br-summary"></p>
+  <p class="tl-hint tl-noprint" id="br-help">名前をタップまたはクリックすると（Tabキーで移動してEnterキーを押しても可）、その試合の勝者になり、自動的に次の試合へ進みます。勝者をもう一度タップすると結果を取り消せます。結果を変更すると、整合しなくなったそれ以降の結果は消去されますが、「元に戻す」で復元できます。</p>
+  <div class="tl-toolbar tl-noprint">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-undo" disabled>元に戻す</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-copy">テキストでコピー</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-csv">CSVをダウンロード</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-link">リンクをコピー</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-print">印刷</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-clear">結果を消去</button>
+  </div>
+  <p class="tl-status tl-noprint" id="br-status" role="status" aria-live="polite"></p>
+  <div class="br-podium" id="br-podium" aria-live="polite"></div>
+  <div id="br-sections"></div>
+</section>
+
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>スマホでするなら：Ligona</strong><span>トーナメント表作成・対戦表作成アプリ。総当たりリーグ作成、予選リーグ、順位表、スイス式</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=ja-JP" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/ja-JP/">Ligona について</a></div></aside>
+
+<section class="tl-how" aria-labelledby="br-how">
+  <h2 id="br-how">トーナメント表の組み方</h2>
+  <h3>シード</h3>
+  <p>リストの順番がそのままシード順になり、最初の名前が第1シードです。標準的なシード配置を使うため、上位シード同士は終盤まで当たりません。8チームのトーナメント表では1回戦が<strong>1対8、4対5、2対7、3対6</strong>となり、第1シードと第2シードは別のブロックに入るので、当たるとしても決勝です。また、第1〜第4シードはそれぞれ別の4分の1ブロックに入ります。16チームの場合、1回戦は1対16、8対9、4対13、5対12、2対15、7対10、3対14、6対11です。シード順ではなく抽選で組み合わせを決めたい場合は「抽選」でリストをシャッフルできます。</p>
+  <h3>不戦勝</h3>
+  <p>トーナメント表の枠数は2のべき乗（2、4、8、16、32…）である必要があります。チーム数がそれより少ない場合は次の2のべき乗まで枠を広げ、空いた枠が不戦勝になります。不戦勝は上位シードに割り当てられ、そのチームは2回戦から登場します。</p>
+  <p class="tl-formula">不戦勝の数 = 次の2のべき乗 − N</p>
+  <p>例：12チームなら16枠のトーナメント表を使うので、16 − 12 = <strong>4つの不戦勝</strong>が第1〜第4シードに入り、1回戦は第5〜第12シードによる4試合になります。</p>
+  <h3>トーナメント</h3>
+  <p>1回負けたら敗退です。1試合ごとに1チームが敗退し、優勝チーム以外はすべて敗退するので、試合数は<strong>N − 1試合</strong>、回戦数は<strong>⌈log₂ N⌉回戦</strong>です。16チームなら4回戦で15試合になります。3位決定戦を行う場合は1試合増えます。</p>
+  <h3>ダブルイリミネーション</h3>
+  <p>2回負けた時点で敗退となる方式です。全チームが勝者側からスタートし、1回負けると敗者側に回り、そこでもう一度負けるまで試合を続けます。勝者側から回ってきたチームは、直前に対戦したばかりの相手とすぐに再戦しないように配置されます（3チームの場合のみ避けられません）。勝者側の勝者と敗者側の勝者がグランドファイナルで対戦します。</p>
+  <ul>
+    <li>勝者側の勝者がグランドファイナルに勝てば大会終了で、<strong>2N − 2試合</strong>になります。</li>
+    <li>敗者側の勝者が勝った場合は両チームとも1敗となります。グランドファイナル再戦をオンにしていれば、優勝を決める2回目の決勝を行い、<strong>2N − 1試合</strong>になります。</li>
+  </ul>
+  <p>例：8チームなら14試合、再戦が必要になった場合は15試合です。</p>
+</section>
+</div>
+</article><section class="art"><h2 id="questions-and-answers">よくある質問</h2><h3>トーナメント表のシードはどう決まりますか？</h3><p>入力したリストの順番がそのままシード順になり、上位シード同士がなるべく遅い回戦で当たる標準的な配置で組み合わせます。8チームなら1回戦は1対8、4対5、2対7、3対6となり、第1シードと第2シードが当たるのは決勝だけです。抽選で組み合わせたい場合は、「抽選」でリストをシャッフルしてください。</p><h3>不戦勝はいくつ必要ですか？</h3><p>トーナメント表の枠数は2の累乗（4、8、16、32…）です。不戦勝の数 = 次の2の累乗 − チーム数。12チームなら16枠で不戦勝が4つ、20チームなら32枠で不戦勝が12になります。不戦勝は上位シードに割り当てられ、そのチームは2回戦から登場します。</p><h3>トーナメントの試合数はいくつですか？</h3><p>常にチーム数より1少ない N − 1 試合です。1試合ごとにちょうど1チームが敗退し、優勝チーム以外はすべて敗退するためです。16チームなら全4回戦・計15試合です。3位決定戦を行う場合は1試合増えます。</p><h3>ダブルイリミネーションの試合数はいくつですか？</h3><p>勝者側の優勝チームがグランドファイナルに勝てば 2N − 2 試合、敗者側の優勝チームが勝って再戦が行われれば 2N − 1 試合です。8チームなら14または15試合、16チームなら30または31試合になります。</p><h3>グランドファイナル再戦とは何ですか？</h3><p>ダブルイリミネーションでは、勝者側の優勝チームは無敗でグランドファイナルに進みますが、敗者側の優勝チームはすでに1敗しています。敗者側のチームがグランドファイナルに勝つと両者とも1敗になるため、もう1試合行って優勝を決めます。決勝を1試合しか行う時間がない場合は、再戦をオフにできます。</p><h3>トーナメント表を共有・保存できますか？</h3><p>はい。「リンクをコピー」を使うと、名前・設定・すべての結果がリンク自体に含まれるので、リンクを開いた人は同じトーナメント表を見られます。テキストとしてコピーしたり、CSVファイルをダウンロードしたり、印刷したりすることもできます。データはどこにもアップロードされず、アカウントも不要です。</p></section><section class="related"><h2>ガイド</h2><div class="list"><a class="item" href="/guides/double-elimination-bracket-explained/ja/"><strong>ダブルイリミネーションのトーナメント表をわかりやすく解説</strong><span>ダブルイリミネーションでは2敗した時点で敗退です。Nチームの試合数は2N-2、グランドファイナル再戦があれば2N-1。敗者側の進み方も解説します。</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/ja/"><strong>大会の試合数は何試合になる？</strong><span>トーナメントはN-1試合、ダブルイリミネーションは2N-2または2N-1試合、総当たりのリーグ戦はN(N-1)/2試合、スイス式はラウンド数 × N/2試合。4〜32チームの早見表付き。</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/ja/"><strong>トーナメント表のシードの決め方</strong><span>チームに順位を付け、1対16、8対9、4対13…と組めば上位シード同士は終盤まで当たりません。不戦勝の数はチーム数以上で最小の2の累乗からチーム数を引いた数で、上位シードに割り当てます。</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">ガイド</a><a href="/tools/">ツール</a><a href="/">すべてのアプリ</a><a href="mailto:hello@maumiuworks.com">お問い合わせ</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script><script defer src="/search.js?v=ca84f471"></script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script><script>window.MW_I18N={"list_sep": "、", "list_and": "{a}と{b}", "sentence_sep": "", "versus": "対", "copied": "クリップボードにコピーしました。", "copy_failed": "このブラウザではコピーできませんでした。テキストを選択して手動でコピーしてください。", "saved": "{file}を保存しました。", "dur_min": "{m}分", "dur_h": "{h}時間", "dur_h_min": "{h}時間{m}分", "round_n": "{n}回戦", "round_final": "決勝", "round_semis": "準決勝", "round_quarters": "準々決勝", "round_of": "ベスト{n}", "round_winners_n": "勝者側 {n}回戦", "round_winners_final": "勝者側決勝", "round_losers_n": "敗者側 {n}回戦", "round_losers_final": "敗者側決勝", "round_grand_final": "グランドファイナル", "round_grand_final_reset": "グランドファイナル再戦", "round_third": "3位決定戦", "names_found_one": "名前が{n}件見つかりました。", "names_found_other": "名前が{n}件見つかりました。", "listed_twice": "重複している名前：{names}。", "err_too_few": "名前を{min}件以上、1行に1つずつ入力してください。", "err_too_few_first": "先に名前を{min}件以上入力してください。", "err_fill_range": "{min}から{max}までの数を選んでください。", "team_n": "チーム{n}", "err_too_few_double": "名前を{min}件以上、1行に1つずつ入力してください（ダブルイリミネーションには3件以上必要です）。", "err_too_many": "このページでトーナメント表を作れるのは名前{max}件までです。現在{n}件です。", "match_no": "M{n}", "match_no_conditional": "{m} · 必要な場合のみ", "winner_of": "{m}の勝者", "loser_of": "{m}の敗者", "tbd": "未定", "who": "{name}（{seed}）", "slot_aria": "{name}、第{seed}シード", "slot_aria_win": "{name}、第{seed}シード、勝ち", "slot_aria_lost": "{name}、第{seed}シード、負け", "match_aria": "{m}、{round}：{home} 対 {away}", "match_aria_ready": "{m}、{round}：{home} 対 {away}。試合前", "match_aria_done": "{m}、{round}：{home} 対 {away}。勝者 {winner}", "match_aria_skipped": "{m}、{round}：不要", "reset_not_needed": "不要：勝者側を勝ち上がったチームがグランドファイナルで勝ちました。", "scrolls_sideways": "{title}（横にスクロールできます）", "seeds_single": "第{a}シード", "seeds_two": "第{a}・第{b}シード", "seeds_range": "第{a}〜{b}シード", "seeds_list": "第{list}シード", "sum_teams_one": "{n}チーム", "sum_teams_other": "{n}チーム", "sum_games_one": "{n}試合", "sum_games_other": "{n}試合", "sum_in_rounds_one": "全{n}回戦で", "sum_in_rounds_other": "全{n}回戦で", "sum_single": "{teams}、{size}枠のトーナメント：{body}", "sum_single_an": "{teams}、{size}枠のトーナメント：{body}", "sum_double": "{teams}、{size}枠のダブルイリミネーション：{body}", "sum_double_an": "{teams}、{size}枠のダブルイリミネーション：{body}", "sum_body_single": "{in_rounds}{games}。", "sum_body_games_one": "{n}試合。", "sum_body_games_other": "{n}試合。", "sum_body_reset_one": "{n}試合（グランドファイナル再戦が必要な場合は{b}試合）。", "sum_body_reset_other": "{n}試合（グランドファイナル再戦が必要な場合は{b}試合）。", "sum_byes_one": "不戦勝{n}件：{seeds}は2回戦から登場します。", "sum_byes_other": "不戦勝{n}件：{seeds}は2回戦から登場します。", "sum_byes_double_one": "不戦勝{n}件：{seeds}は勝者側2回戦から登場します。", "sum_byes_double_other": "不戦勝{n}件：{seeds}は勝者側2回戦から登場します。", "sum_no_byes": "不戦勝なし。", "sec_main": "トーナメント表", "sec_third": "3位決定戦", "sec_winners": "勝者側", "sec_losers": "敗者側", "sec_final": "グランドファイナル", "final_places": "最終順位", "place_1": "優勝", "place_2": "準優勝", "place_3": "3位", "msg_cleared": "{m}の結果を消去しました。", "msg_wins": "{name}が{m}に勝ちました。", "msg_reset_decides": "両チームとも1敗になりました。グランドファイナル再戦で決着します。", "msg_next": "次は{round}です。", "msg_cleared_later_one": "勝ち上がるチームが変わったため、その先の結果{n}件（{list}）を消去しました。「元に戻す」で復元できます。", "msg_cleared_later_other": "勝ち上がるチームが変わったため、その先の結果{n}件（{list}）を消去しました。「元に戻す」で復元できます。", "msg_champion": "{name}が優勝です。", "msg_undone": "直前の変更を元に戻しました。", "msg_all_cleared": "すべての結果を消去しました。「元に戻す」で復元できます。", "drawn_one": "抽選が完了しました。この並び順が新しいシード順です。{n}件。", "drawn_other": "抽選が完了しました。この並び順が新しいシード順です。{n}件。", "text_head_single": "トーナメント表（{teams}）", "text_head_double": "ダブルイリミネーションのトーナメント表（{teams}）", "text_seeds": "シード順：{list}", "text_seed_item": "{seed} {name}", "text_byes": "不戦勝（2回戦から登場）：{list}", "text_line": "{m}  {home} 対 {away}", "text_line_won": "{m}  {home} 対 {away}  -> {winner}の勝ち", "text_line_skipped": "{m}  {home} 対 {away}  （不要）", "text_line_cond": "{m}  {home} 対 {away}  （必要な場合のみ）", "text_place": "{place}：{names}", "csv_match": "試合", "csv_stage": "ステージ", "csv_round": "ラウンド", "csv_home_seed": "ホーム側シード", "csv_home": "ホーム", "csv_away_seed": "アウェー側シード", "csv_away": "アウェー", "csv_winner": "勝者", "csv_not_needed": "不要", "csv_file": "トーナメント表.csv"};window.MW_LANG="ja";</script><script defer src="/tools/_shared/tools.js?v=20261126"></script><script defer src="/tools/tournament-bracket-generator/tool.js?v=20261126"></script>
+</body></html>

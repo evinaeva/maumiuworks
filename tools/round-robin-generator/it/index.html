@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="it" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Generatore di calendario per girone all&#x27;italiana — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="Crea il calendario del girone all&#x27;italiana da un elenco di nomi: tutti contro tutti, sola andata o andata e ritorno, riposi se dispari. Copia, CSV, stampa.">
+<link rel="canonical" href="https://maumiuworks.com/tools/round-robin-generator/it/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/tools/round-robin-generator/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/tools/round-robin-generator/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/tools/round-robin-generator/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/tools/round-robin-generator/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/tools/round-robin-generator/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/tools/round-robin-generator/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/tools/round-robin-generator/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/tools/round-robin-generator/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/tools/round-robin-generator/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/tools/round-robin-generator/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/tools/round-robin-generator/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/tools/round-robin-generator/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="Generatore di calendario per girone all&#x27;italiana"><meta property="og:description" content="Crea il calendario del girone all&#x27;italiana da un elenco di nomi: tutti contro tutti, sola andata o andata e ritorno, riposi se dispari. Copia, CSV, stampa."><meta property="og:url" content="https://maumiuworks.com/tools/round-robin-generator/it/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Generatore di calendario per girone all'italiana", "description": "Crea il calendario del girone all'italiana da un elenco di nomi: tutti contro tutti, sola andata o andata e ritorno, riposi se dispari. Copia, CSV, stampa.", "url": "https://maumiuworks.com/tools/round-robin-generator/it/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "inLanguage": "it"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Strumenti", "item": "https://maumiuworks.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Generatore di calendario per girone all'italiana", "item": "https://maumiuworks.com/tools/round-robin-generator/it/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quante partite ci sono in un girone all'italiana?", "acceptedAnswer": {"@type": "Answer", "text": "Un girone all'italiana con N squadre ha N × (N − 1) ÷ 2 partite. Con 4 squadre si giocano 6 partite, con 6 squadre 15, con 8 squadre 28 e con 10 squadre 45. Con andata e ritorno (girone doppio) ogni coppia si affronta due volte, quindi il numero raddoppia: 8 squadre giocano 56 partite."}}, {"@type": "Question", "name": "Quante giornate servono per un girone all'italiana?", "acceptedAnswer": {"@type": "Answer", "text": "Con un numero pari di squadre servono N − 1 giornate e nessuno riposa: 8 squadre hanno bisogno di 7 giornate da 4 partite. Con un numero dispari servono N giornate e in ognuna una squadra riposa: 7 squadre hanno bisogno di 7 giornate da 3 partite. Con andata e ritorno le giornate raddoppiano."}}, {"@type": "Question", "name": "Cosa succede con un numero dispari di squadre?", "acceptedAnswer": {"@type": "Answer", "text": "Si aggiunge un posto vuoto al cerchio. Chi viene abbinato al posto vuoto riposa e salta quella giornata. In un girone di sola andata ogni squadra riposa esattamente una volta, così tutte giocano lo stesso numero di partite (N − 1)."}}, {"@type": "Question", "name": "Cos'è il metodo del cerchio?", "acceptedAnswer": {"@type": "Answer", "text": "È il metodo standard per compilare il calendario di un girone all'italiana, noto anche come metodo di Berger (tabelle di Berger). Una squadra resta ferma e le altre ruotano di un posto a ogni giornata, così ogni coppia si incontra esattamente una volta e nessuna squadra gioca due volte nella stessa giornata."}}, {"@type": "Question", "name": "Mescolare l'ordine cambia il numero di partite?", "acceptedAnswer": {"@type": "Answer", "text": "No. Mescolare l'ordine cambia solo quali squadre si affrontano in quale giornata. Il numero di partite e di giornate dipende solo da quante sono le squadre e dal fatto che si giochi o no con andata e ritorno."}}, {"@type": "Question", "name": "Posso salvare o condividere il calendario?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. Puoi copiarlo come testo per una chat, scaricarlo come file CSV per un foglio di calcolo, stamparlo oppure copiare il link: i nomi e le opzioni sono salvati nel link stesso, quindi aprendolo si rivede lo stesso calendario. Non viene caricato nulla online."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Generatore di calendario per girone all'italiana", "step": [{"@type": "HowToStep", "position": 1, "text": "Scrivi o incolla i nomi delle squadre o dei giocatori, uno per riga."}, {"@type": "HowToStep", "position": 2, "text": "Spunta Andata e ritorno se ogni coppia deve giocare due volte."}, {"@type": "HowToStep", "position": 3, "text": "Premi Genera calendario per vedere tutte le giornate con le partite e i riposi."}, {"@type": "HowToStep", "position": 4, "text": "Copia il calendario come testo, scaricalo in CSV, stampalo oppure copia il link per condividerlo."}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+.srch{position:relative;display:flex;align-items:center}
+.srch-in{width:12.5rem;height:40px;padding:0 .8rem 0 2.2rem;border:1px solid var(--line);border-radius:20px;background:var(--bg);color:var(--fg);font:400 14px "Open Sans",sans-serif}
+.srch-in::placeholder{color:var(--soft);opacity:1}.srch-in:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:transparent}
+.srch-in::-webkit-search-cancel-button{cursor:pointer}
+.srch-ic{position:absolute;inset-inline-start:.75rem;top:50%;transform:translateY(-50%);color:var(--soft);display:flex;pointer-events:none}
+.srch-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--fg);cursor:pointer;border-radius:50%}
+.srch-btn:hover{color:var(--cyan-hi)}.srch-btn:focus-visible{outline:2px solid var(--cyan)}
+.srch-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:min(27rem,calc(100vw - 1.5rem));max-height:min(70vh,32rem);overflow:auto;background:var(--bar);border:1px solid var(--bar-line);box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:10;padding:.3rem 0}
+.srch-g{font:600 11px "Open Sans",sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--label);padding:.7rem .95rem .3rem}
+.srch-o{display:block;padding:.55rem .95rem;min-height:44px;color:var(--fg);text-decoration:none}
+.srch-o strong{display:block;font-weight:600;font-size:14.5px;line-height:1.4}.srch-o span{display:block;font-size:13px;line-height:1.45;color:var(--soft);margin-top:.15rem}
+.srch-o:hover,.srch-o[aria-selected=true]{background:rgba(127,127,127,.14);color:var(--fg)}
+.srch-o mark{background:rgba(20,170,206,.28);color:inherit;border-radius:2px}
+.srch-none{padding:.7rem .95rem;color:var(--soft);font-size:14px}
+.srch-hit{outline:3px solid var(--cyan);outline-offset:6px;border-radius:2px}
+[id]{scroll-margin-top:76px}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:52rem){.srch-btn{display:inline-flex}.srch-in,.srch-ic{display:none}
+.srch.open .srch-in{display:block;position:absolute;inset-inline-end:0;top:50%;transform:translateY(-50%);width:min(24rem,calc(100vw - 1.5rem));z-index:11;padding-inline-start:.9rem;background:var(--bar)}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.crumbs .app:not(.txt),.crumbs .sep:has(+ .app:not(.txt)){display:none}.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+<link rel="stylesheet" href="/tools/_shared/tools.css?v=20261126"><link rel="stylesheet" href="/tools/round-robin-generator/tool.css?v=20261126"></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="Tutte le app" aria-label="Maumiu Works — Tutte le app">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/tools/" aria-label="Strumenti"><span>Strumenti</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Generatore di calendario per girone all&#x27;italiana</span></nav><div class="tools"><div class="srch" data-page="In questa pagina" data-site="Nel sito" data-none="Nessun risultato"><button type="button" class="srch-btn" aria-label="Cerca" aria-expanded="false" aria-controls="srch-in"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="srch-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="srch-in" class="srch-in" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="srch-list" aria-label="Cerca" placeholder="Cerca nel sito" autocomplete="off" spellcheck="false" enterkeyhint="search"><div id="srch-list" class="srch-list" role="listbox" aria-label="Cerca" hidden></div></div><details class="langs"><summary aria-label="Lingua: Italiano" title="Italiano"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"></summary><ul><li><a href="/tools/round-robin-generator/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/tools/round-robin-generator/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/tools/round-robin-generator/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/tools/round-robin-generator/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/tools/round-robin-generator/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/tools/round-robin-generator/it/" hreflang="it" lang="it" aria-current="true"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/tools/round-robin-generator/ja/" hreflang="ja" lang="ja"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/tools/round-robin-generator/ko/" hreflang="ko" lang="ko"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/tools/round-robin-generator/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/tools/round-robin-generator/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/tools/round-robin-generator/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap wide"><article class="art"><h1>Generatore di calendario per girone all&#x27;italiana</h1><div class="tl tl-rr" id="tl-rr">
+<p class="tl-lead">Incolla i nomi delle squadre o dei giocatori e ottieni il calendario completo di un girone all'italiana: tutti contro tutti una volta, oppure due volte con andata e ritorno, giornata per giornata, con un turno di riposo (bye) a ogni giornata se il numero è dispari. Non serve registrarsi: funziona nel browser e non viene caricato nulla.</p>
+
+<form class="tl-card tl-noprint" id="rr-form" novalidate>
+  <div class="tl-field">
+    <label for="rr-names">Squadre o giocatori, uno per riga</label>
+    <textarea id="rr-names" rows="9" spellcheck="false" autocomplete="off" aria-describedby="rr-names-hint">Lions
+Tigers
+Bears
+Wolves
+Eagles
+Sharks</textarea>
+    <p class="tl-hint" id="rr-names-hint">Da 2 a 200 nomi. Va bene anche un elenco separato da virgole. <span id="rr-count" aria-live="polite"></span></p>
+  </div>
+  <div class="tl-row tl-actions">
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-shuffle">Mescola l'ordine</button>
+  </div>
+  <div class="tl-row tl-actions tl-fill">
+    <label for="rr-fill-n">Non hai ancora i nomi? Numero di squadre</label>
+    <input type="number" id="rr-fill-n" min="2" max="200" value="8" inputmode="numeric">
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-fill"><span>Compila con Squadra 1…<span id="rr-fill-label">8</span></span></button>
+  </div>
+  <div class="tl-sep"></div>
+  <label class="tl-check"><input type="checkbox" id="rr-double"> Andata e ritorno (doppio girone: ogni coppia si affronta due volte)</label>
+  <div class="tl-row tl-actions">
+    <button type="submit" class="btn" id="rr-go">Crea il calendario</button>
+  </div>
+  <div id="rr-error" role="alert"></div>
+</form>
+
+<section class="tl-result" id="rr-result" hidden aria-labelledby="rr-title">
+  <h2 id="rr-title" tabindex="-1">Il tuo calendario</h2>
+  <p id="rr-summary" aria-live="polite"></p>
+  <ul class="tl-stats" id="rr-stats"></ul>
+  <div class="tl-toolbar tl-noprint">
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-copy">Copia come testo</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-csv">Scarica CSV</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-link">Copia link</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="rr-print">Stampa</button>
+  </div>
+  <p class="tl-status tl-noprint" id="rr-status" role="status"></p>
+  <div class="tl-field tl-noprint rr-team">
+    <label for="rr-team">Mostra le partite di una sola squadra</label>
+    <select id="rr-team"><option value="">Tutte le squadre</option></select>
+  </div>
+  <div id="rr-team-list" aria-live="polite"></div>
+  <div class="rr-rounds" id="rr-rounds"></div>
+  <details class="rr-grid-box tl-noprint" id="rr-grid-box">
+    <summary>Chi gioca contro chi: la giornata di ogni accoppiamento</summary>
+    <div class="tl-table-wrap" id="rr-grid" tabindex="0" role="region" aria-label="Griglia degli accoppiamenti, scorre in orizzontale"></div>
+  </details>
+</section>
+
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Fallo dal telefono: Ligona</strong><span>Crea tornei di calcio e altro: eliminazione diretta, gironi, campionato</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=it-IT" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/it-IT/">Scopri Ligona</a></div></aside>
+
+<section class="tl-how" aria-labelledby="rr-how">
+  <h2 id="rr-how">Come si costruisce il calendario del girone all'italiana</h2>
+  <p>Il calendario usa il <strong>metodo del cerchio</strong> (noto anche come metodo di Berger). Si scrivono le squadre su due righe, una di fronte all'altra: la riga in alto gioca contro quella in basso. La prima squadra resta ferma e tutte le altre ruotano di un posto lungo il cerchio a ogni giornata, così dopo l'ultima giornata ogni coppia si è affrontata esattamente una volta.</p>
+  <p class="tl-formula">Partite = N × (N − 1) ÷ 2</p>
+  <ul>
+    <li><strong>Numero pari di squadre:</strong> N − 1 giornate, N ÷ 2 partite per giornata, nessuno riposa.</li>
+    <li><strong>Numero dispari di squadre:</strong> si aggiunge un posto vuoto (il bye), quindi le giornate sono N e a ogni giornata una squadra riposa. Ogni squadra riposa esattamente una volta.</li>
+    <li><strong>Andata e ritorno:</strong> l'intero calendario si gioca una seconda volta invertendo casa e trasferta, quindi partite e giornate raddoppiano. Con un numero pari di squadre il girone di ritorno parte dalla 2ª giornata dell'andata, così nessuno incontra lo stesso avversario in due giornate consecutive.</li>
+  </ul>
+  <h3>Esempio: 6 squadre</h3>
+  <p>6 × 5 ÷ 2 = <strong>15 partite</strong> in <strong>5 giornate</strong> da 3 partite. Con 7 squadre sono 7 × 6 ÷ 2 = 21 partite in 7 giornate da 3 partite, e a ogni giornata una squadra riposa. Con andata e ritorno, 6 squadre giocano 30 partite in 10 giornate.</p>
+  <p>Anche in un girone di sola andata, le partite in casa e in trasferta sono distribuite in modo che una squadra non giochi troppe volte di fila in casa o in trasferta. Il primo nome di ogni partita è la squadra di casa. "Mescola l'ordine" cambia chi incontra chi e in quale giornata; il numero di partite resta lo stesso.</p>
+</section>
+</div>
+</article><section class="art"><h2 id="questions-and-answers">Domande frequenti</h2><h3>Quante partite ci sono in un girone all&#x27;italiana?</h3><p>Un girone all&#x27;italiana con N squadre ha N × (N − 1) ÷ 2 partite. Con 4 squadre si giocano 6 partite, con 6 squadre 15, con 8 squadre 28 e con 10 squadre 45. Con andata e ritorno (girone doppio) ogni coppia si affronta due volte, quindi il numero raddoppia: 8 squadre giocano 56 partite.</p><h3>Quante giornate servono per un girone all&#x27;italiana?</h3><p>Con un numero pari di squadre servono N − 1 giornate e nessuno riposa: 8 squadre hanno bisogno di 7 giornate da 4 partite. Con un numero dispari servono N giornate e in ognuna una squadra riposa: 7 squadre hanno bisogno di 7 giornate da 3 partite. Con andata e ritorno le giornate raddoppiano.</p><h3>Cosa succede con un numero dispari di squadre?</h3><p>Si aggiunge un posto vuoto al cerchio. Chi viene abbinato al posto vuoto riposa e salta quella giornata. In un girone di sola andata ogni squadra riposa esattamente una volta, così tutte giocano lo stesso numero di partite (N − 1).</p><h3>Cos&#x27;è il metodo del cerchio?</h3><p>È il metodo standard per compilare il calendario di un girone all&#x27;italiana, noto anche come metodo di Berger (tabelle di Berger). Una squadra resta ferma e le altre ruotano di un posto a ogni giornata, così ogni coppia si incontra esattamente una volta e nessuna squadra gioca due volte nella stessa giornata.</p><h3>Mescolare l&#x27;ordine cambia il numero di partite?</h3><p>No. Mescolare l&#x27;ordine cambia solo quali squadre si affrontano in quale giornata. Il numero di partite e di giornate dipende solo da quante sono le squadre e dal fatto che si giochi o no con andata e ritorno.</p><h3>Posso salvare o condividere il calendario?</h3><p>Sì. Puoi copiarlo come testo per una chat, scaricarlo come file CSV per un foglio di calcolo, stamparlo oppure copiare il link: i nomi e le opzioni sono salvati nel link stesso, quindi aprendolo si rivede lo stesso calendario. Non viene caricato nulla online.</p></section><section class="related"><h2>Guide</h2><div class="list"><a class="item" href="/guides/how-many-games-in-a-tournament/it/"><strong>Quante partite ci sono in un torneo?</strong><span>Eliminazione diretta: N-1 partite. Doppia eliminazione: 2N-2 o 2N-1. Girone all&#x27;italiana: N(N-1)/2. Svizzero: turni × N/2. Tabella da 4 a 32 squadre.</span></a><a class="item" href="/guides/how-to-organize-a-round-robin-tournament/it/"><strong>Come organizzare un torneo con girone all&#x27;italiana</strong><span>In un girone all&#x27;italiana a N squadre tutti affrontano tutti: N(N-1)/2 partite in N-1 turni (N se dispari). Calendario, bye e criteri di spareggio.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">Guide</a><a href="/tools/">Strumenti</a><a href="/">Tutte le app</a><a href="mailto:hello@maumiuworks.com">Contatti</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script><script defer src="/search.js?v=ca84f471"></script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script><script>window.MW_I18N={"list_sep": ", ", "list_and": "{a} e {b}", "sentence_sep": " ", "versus": "vs", "copied": "Copiato negli appunti.", "copy_failed": "La copia non ha funzionato in questo browser: seleziona il testo e copialo a mano.", "saved": "File salvato: {file}.", "dur_min": "{m} min", "dur_h": "{h} h", "dur_h_min": "{h} h {m} min", "round_n": "Turno {n}", "round_final": "Finale", "round_semis": "Semifinali", "round_quarters": "Quarti di finale", "round_of": "Turno a {n}", "round_winners_n": "Tabellone vincenti, turno {n}", "round_winners_final": "Finale tabellone vincenti", "round_losers_n": "Tabellone perdenti, turno {n}", "round_losers_final": "Finale tabellone perdenti", "round_grand_final": "Finalissima", "round_grand_final_reset": "Seconda finalissima", "round_third": "Finale 3º posto", "names_found_one": "{n} nome trovato.", "names_found_other": "{n} nomi trovati.", "listed_twice": "Inseriti due volte: {names}.", "err_too_few": "Aggiungi almeno {min} nomi, uno per riga.", "err_too_few_first": "Aggiungi prima almeno {min} nomi.", "err_fill_range": "Scegli un numero da {min} a {max}.", "team_n": "Squadra {n}", "err_too_many": "Questa pagina crea calendari fino a {max} nomi. Ne hai inseriti {n}.", "sum_teams_one": "{n} squadra", "sum_teams_other": "{n} squadre", "sum_games_one": "{n} partita", "sum_games_other": "{n} partite", "sum_in_rounds_one": "in {n} giornata", "sum_in_rounds_other": "in {n} giornate", "sum_per_round_one": "{n} partita per giornata", "sum_per_round_other": "{n} partite per giornata", "summary": "{teams}: {games} {in_rounds}, {per_round}.", "summary_odd": "{teams}: {games} {in_rounds}, {per_round}, a ogni giornata una squadra riposa.", "summary_home_first": "In ogni partita la prima squadra indicata gioca in casa.", "stat_games_one": "partita", "stat_games_other": "partite", "stat_rounds_one": "turno", "stat_rounds_other": "turni", "stat_per_round_one": "partita per turno", "stat_per_round_other": "partite per turno", "stat_per_team_one": "partita per squadra", "stat_per_team_other": "partite per squadra", "all_teams": "Tutte le squadre", "first_leg": "andata", "second_leg": "ritorno", "game_line": "{home} {v} {away}", "bye_list": "Riposo: {names}", "team_home": "contro {name} {tag}", "team_away": "contro {name} {tag}", "tag_home": "(in casa)", "tag_away": "(fuori casa)", "team_bye": "riposo", "grid_team": "Squadra", "grid_same_team": "stessa squadra", "grid_caption": "Giornata in cui si incontrano le squadre di ogni coppia", "text_head": "Calendario del girone all'italiana: {teams}, {games}, {rounds}. Prima la squadra di casa.", "text_head_double": "Calendario del girone all'italiana (andata e ritorno): {teams}, {games}, {rounds}. Prima la squadra di casa.", "text_rounds_one": "{n} giornata", "text_rounds_other": "{n} giornate", "csv_round": "Giornata", "csv_game": "Partita", "csv_home": "Casa", "csv_away": "Trasferta", "csv_note": "Nota", "csv_bye": "Riposo", "csv_file": "calendario-girone-all-italiana.csv", "shuffled": "Ordine mescolato.", "shuffled_names_one": "Ordine mescolato. {n} nome.", "shuffled_names_other": "Ordine mescolato. {n} nomi.", "sum_teams_many": "{n} squadre", "sum_games_many": "{n} partite", "sum_in_rounds_many": "in {n} giornate", "sum_per_round_many": "{n} partite per giornata", "text_rounds_many": "{n} giornate", "shuffled_names_many": "Ordine mescolato. {n} nomi.", "stat_games_many": "partite", "stat_rounds_many": "turni", "stat_per_round_many": "partite per turno", "stat_per_team_many": "partite per squadra"};window.MW_LANG="it";</script><script defer src="/tools/_shared/tools.js?v=20261126"></script><script defer src="/tools/round-robin-generator/tool.js?v=20261126"></script>
+</body></html>

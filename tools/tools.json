@@ -5,7 +5,58 @@
   "h1": "Round robin schedule generator",
   "description": "Make a round robin schedule from a list of names: every team plays every other once or home and away, byes for odd numbers. Copy, CSV or print.",
   "app": "tournament-bracket",
-  "langs": {}
+  "langs": {
+   "de": {
+    "title": "Spielplan-Generator: jeder gegen jeden",
+    "h1": "Spielplan-Generator „Jeder gegen jeden“",
+    "description": "Spielplan jeder gegen jeden aus einer Namensliste: einfach oder mit Hin- und Rückspiel, Freilos bei ungerader Zahl. Kopieren, CSV, Drucken."
+   },
+   "es": {
+    "title": "Generador de calendario todos contra todos",
+    "h1": "Generador de calendario todos contra todos",
+    "description": "Crea un calendario todos contra todos desde una lista de nombres: a una vuelta o ida y vuelta, con descanso si son impares. Copia, CSV o imprime."
+   },
+   "fr": {
+    "title": "Générateur de calendrier toutes rondes (round robin)",
+    "h1": "Générateur de calendrier toutes rondes",
+    "description": "Créez un calendrier toutes rondes depuis une liste de noms : chacun contre chacun, simple ou aller-retour, exempt si nombre impair. Copie, CSV, impression."
+   },
+   "id": {
+    "title": "Pembuat Jadwal Round Robin (Sistem Liga)",
+    "h1": "Pembuat jadwal round robin",
+    "description": "Buat jadwal round robin dari daftar nama: tiap tim bertemu semua lawan sekali atau kandang-tandang, bye untuk jumlah ganjil. Salin, CSV, atau cetak."
+   },
+   "it": {
+    "title": "Generatore di calendario per girone all'italiana",
+    "h1": "Generatore di calendario per girone all'italiana",
+    "description": "Crea il calendario del girone all'italiana da un elenco di nomi: tutti contro tutti, sola andata o andata e ritorno, riposi se dispari. Copia, CSV, stampa."
+   },
+   "ja": {
+    "title": "リーグ戦（総当たり）対戦表メーカー",
+    "h1": "リーグ戦（総当たり）の対戦表を作る",
+    "description": "名前を並べるだけで総当たりの対戦表を作成。全チームがほかのすべてのチームと1回ずつ、またはホーム＆アウェーで対戦し、奇数のときは休み（不戦勝）も入ります。コピー、CSV、印刷に対応。"
+   },
+   "ko": {
+    "title": "풀리그 대진표 생성기",
+    "h1": "풀리그 대진표 생성기",
+    "description": "이름 목록으로 풀리그 대진표를 만듭니다. 모든 팀이 서로 한 번씩 또는 홈 앤 어웨이로 맞붙고, 팀 수가 홀수면 부전승이 들어갑니다. 복사, CSV, 인쇄 지원."
+   },
+   "pt-BR": {
+    "title": "Gerador de tabela de pontos corridos (todos contra todos)",
+    "h1": "Gerador de tabela de pontos corridos",
+    "description": "Monte a tabela de todos contra todos com uma lista de nomes, em turno único ou ida e volta, com folga para número ímpar. Copie, baixe em CSV ou imprima."
+   },
+   "ru": {
+    "title": "Генератор расписания по круговой системе",
+    "h1": "Генератор расписания по круговой системе",
+    "description": "Расписание кругового турнира по списку имён: каждый играет с каждым в один или два круга, при нечётном числе команд — пропуск тура. Текст, CSV, печать."
+   },
+   "tr": {
+    "title": "Lig Usulü Fikstür Oluşturucu",
+    "h1": "Lig usulü fikstür oluşturucu",
+    "description": "İsim listesinden lig usulü fikstür: herkes herkesle bir kez ya da rövanşlı oynar, tek sayıda takımda BAY geçer. Kopyalayın, CSV indirin, yazdırın."
+   }
+  }
  },
  {
   "slug": "tournament-bracket-generator",
@@ -13,7 +64,58 @@
   "h1": "Tournament bracket generator",
   "description": "Make a single or double elimination bracket with proper seeding and byes for top seeds. Tap names to advance winners, then print or share it.",
   "app": "tournament-bracket",
-  "langs": {}
+  "langs": {
+   "de": {
+    "title": "Turnierbaum-Generator (K.-o.-System & Doppel-K.-o.)",
+    "h1": "Turnierbaum-Generator",
+    "description": "Erstelle einen Turnierbaum im K.-o.-System oder Doppel-K.-o. mit Setzliste und Freilosen für die Topgesetzten. Sieger antippen, drucken oder teilen."
+   },
+   "es": {
+    "title": "Generador de llaves de torneo (eliminación directa y doble)",
+    "h1": "Generador de llaves de torneo",
+    "description": "Crea llaves de eliminación directa o doble, con cabezas de serie y pases directos para los mejores. Toca al ganador para que avance e imprime o comparte."
+   },
+   "fr": {
+    "title": "Générateur de tableau de tournoi (élimination directe et double)",
+    "h1": "Générateur de tableau de tournoi",
+    "description": "Créez un tableau à élimination directe ou double, avec têtes de série et exempts. Touchez les vainqueurs, puis imprimez ou partagez."
+   },
+   "id": {
+    "title": "Pembuat Bagan Turnamen (Sistem Gugur & Gugur Ganda)",
+    "h1": "Pembuat bagan turnamen",
+    "description": "Buat bagan sistem gugur atau gugur ganda dengan unggulan dan bye untuk unggulan teratas. Ketuk nama pemenang agar lolos, lalu cetak atau bagikan."
+   },
+   "it": {
+    "title": "Generatore di tabelloni (eliminazione diretta e doppia)",
+    "h1": "Generatore di tabelloni per tornei",
+    "description": "Crea un tabellone a eliminazione diretta o doppia, con i bye alle teste di serie. Tocca i nomi per far avanzare i vincenti, poi stampa o condividi."
+   },
+   "ja": {
+    "title": "トーナメント表作成ツール（シングル／ダブルイリミネーション）",
+    "h1": "トーナメント表作成ツール",
+    "description": "トーナメントやダブルイリミネーションの表を、正しいシード順と上位シードへの不戦勝つきで作成します。名前をタップして勝者を勝ち上がらせ、印刷や共有もできます。"
+   },
+   "ko": {
+    "title": "토너먼트 대진표 생성기 (토너먼트·더블 엘리미네이션)",
+    "h1": "토너먼트 대진표 생성기",
+    "description": "시드 배정과 상위 시드 부전승을 반영해 토너먼트나 더블 엘리미네이션 대진표를 만듭니다. 이름을 눌러 승자를 올리고, 인쇄하거나 공유하세요."
+   },
+   "pt-BR": {
+    "title": "Gerador de chaveamento de torneio (mata-mata e dupla eliminação)",
+    "h1": "Gerador de chaveamento de torneio",
+    "description": "Monte um chaveamento de mata-mata ou dupla eliminação com cabeças de chave e folgas. Toque no vencedor para avançar, depois imprima ou compartilhe."
+   },
+   "ru": {
+    "title": "Генератор турнирной сетки: олимпийская система, двойное выбывание",
+    "h1": "Генератор турнирной сетки",
+    "description": "Сетка по олимпийской системе или с двойным выбыванием: правильный посев и пропуск первого тура для сеяных. Отмечайте победителей, печатайте и делитесь."
+   },
+   "tr": {
+    "title": "Turnuva Eleme Ağacı Oluşturucu (Tek ve Çift Eleme)",
+    "h1": "Turnuva eleme ağacı oluşturucu",
+    "description": "Seri başlarına göre tek veya çift eleme ağacı kurun, BAY'lar üst sıralara gider. İsme dokunarak kazananı ilerletin, yazdırın ya da paylaşın."
+   }
+  }
  },
  {
   "slug": "tournament-games-calculator",
@@ -21,6 +123,57 @@
   "h1": "Tournament games and rounds calculator",
   "description": "How many games and rounds for knockout, double elimination, round robin, groups and Swiss with N teams, plus how long it takes on your courts.",
   "app": "tournament-bracket",
-  "langs": {}
+  "langs": {
+   "de": {
+    "title": "Turnierrechner: Wie viele Spiele und Runden",
+    "h1": "Rechner für Spiele und Runden im Turnier",
+    "description": "Wie viele Spiele und Runden bei K.-o.-System, Doppel-K.-o., Liga, Gruppen und Schweizer System mit N Teams und wie lange es auf Ihren Plätzen dauert."
+   },
+   "es": {
+    "title": "Calculadora de torneos: cuántos partidos y rondas",
+    "h1": "Calculadora de partidos y rondas de un torneo",
+    "description": "Cuántos partidos y rondas tiene un torneo de eliminación directa, doble eliminación, liga, grupos o suizo con N equipos, y cuánto dura en tus canchas."
+   },
+   "fr": {
+    "title": "Calculateur de tournoi : combien de matchs et de tours",
+    "h1": "Calculateur de matchs et de tours d'un tournoi",
+    "description": "Matchs et tours en élimination directe, double élimination, championnat, poules ou système suisse pour N équipes, et durée selon vos terrains."
+   },
+   "id": {
+    "title": "Kalkulator Turnamen: Berapa Pertandingan dan Babak",
+    "h1": "Kalkulator jumlah pertandingan dan babak turnamen",
+    "description": "Berapa pertandingan dan babak untuk sistem gugur, gugur ganda, liga, fase grup, dan sistem Swiss dengan N tim, serta durasinya di lapangan Anda."
+   },
+   "it": {
+    "title": "Calcolatore tornei: quante partite e quanti turni",
+    "h1": "Calcolatore di partite e turni per tornei",
+    "description": "Partite e turni per eliminazione diretta, doppia eliminazione, girone all'italiana, gironi e sistema svizzero con N squadre, e il tempo sui tuoi campi."
+   },
+   "ja": {
+    "title": "大会の試合数・ラウンド数計算：トーナメント、リーグ戦、スイス式",
+    "h1": "大会の試合数・ラウンド数計算ツール",
+    "description": "Nチームでのトーナメント、ダブルイリミネーション、総当たりのリーグ戦、予選リーグ、スイス式の試合数とラウンド数、さらに使えるコート数での所要時間を計算します。"
+   },
+   "ko": {
+    "title": "대회 계산기: 경기 수와 라운드 수 구하기",
+    "h1": "대회 경기 수·라운드 수 계산기",
+    "description": "N개 팀으로 토너먼트, 더블 엘리미네이션, 풀리그, 조별리그, 스위스 방식을 치를 때의 경기 수와 라운드 수, 코트 수에 따른 소요 시간까지 계산합니다."
+   },
+   "pt-BR": {
+    "title": "Calculadora de torneio: quantos jogos e rodadas",
+    "h1": "Calculadora de jogos e rodadas de torneio",
+    "description": "Quantos jogos e rodadas em mata-mata, dupla eliminação, pontos corridos, grupos ou sistema suíço com N times, e quanto tempo leva nas suas quadras."
+   },
+   "ru": {
+    "title": "Калькулятор турнира: сколько игр и туров",
+    "h1": "Калькулятор количества игр и туров в турнире",
+    "description": "Число игр и туров для N команд: олимпийская система, двойное выбывание, круговая, группы, швейцарка, и сколько времени займёт турнир на ваших площадках."
+   },
+   "tr": {
+    "title": "Turnuva Hesaplayıcı: Kaç Maç ve Kaç Tur Oynanır",
+    "h1": "Turnuva maç ve tur sayısı hesaplayıcı",
+    "description": "N takımla tek eleme, çift eleme, lig usulü, gruplar ve İsviçre sisteminde kaç maç ve kaç tur oynanır, sahalarınızda ne kadar sürer."
+   }
+  }
  }
 ]

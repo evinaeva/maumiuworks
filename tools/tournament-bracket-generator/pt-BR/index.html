@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gerador de chaveamento de torneio (mata-mata e dupla eliminação) — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="Monte um chaveamento de mata-mata ou dupla eliminação com cabeças de chave e folgas. Toque no vencedor para avançar, depois imprima ou compartilhe.">
+<link rel="canonical" href="https://maumiuworks.com/tools/tournament-bracket-generator/pt-BR/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/tools/tournament-bracket-generator/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/tools/tournament-bracket-generator/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/tools/tournament-bracket-generator/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/tools/tournament-bracket-generator/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/tools/tournament-bracket-generator/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/tools/tournament-bracket-generator/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/tools/tournament-bracket-generator/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/tools/tournament-bracket-generator/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/tools/tournament-bracket-generator/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/tools/tournament-bracket-generator/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/tools/tournament-bracket-generator/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/tools/tournament-bracket-generator/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="Gerador de chaveamento de torneio (mata-mata e dupla eliminação)"><meta property="og:description" content="Monte um chaveamento de mata-mata ou dupla eliminação com cabeças de chave e folgas. Toque no vencedor para avançar, depois imprima ou compartilhe."><meta property="og:url" content="https://maumiuworks.com/tools/tournament-bracket-generator/pt-BR/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Gerador de chaveamento de torneio", "description": "Monte um chaveamento de mata-mata ou dupla eliminação com cabeças de chave e folgas. Toque no vencedor para avançar, depois imprima ou compartilhe.", "url": "https://maumiuworks.com/tools/tournament-bracket-generator/pt-BR/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "inLanguage": "pt-BR"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Ferramentas", "item": "https://maumiuworks.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Gerador de chaveamento de torneio", "item": "https://maumiuworks.com/tools/tournament-bracket-generator/pt-BR/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Como são definidos os cabeças de chave?", "acceptedAnswer": {"@type": "Answer", "text": "A ordem da sua lista define os cabeças de chave, e o chaveamento usa a ordem padrão para que os melhores colocados se enfrentem o mais tarde possível. Com 8 equipes, a primeira rodada é 1 x 8, 4 x 5, 2 x 7 e 3 x 6, então os cabeças de chave 1 e 2 só podem se encontrar na final. Se preferir um sorteio, use Sorteio para embaralhar a lista."}}, {"@type": "Question", "name": "De quantas folgas um chaveamento precisa?", "acceptedAnswer": {"@type": "Answer", "text": "Um chaveamento tem um número de vagas que é potência de dois: 4, 8, 16, 32 e assim por diante. Folgas = próxima potência de dois − número de equipes. 12 equipes usam um chaveamento de 16 vagas com 4 folgas; 20 equipes, um de 32 vagas com 12 folgas. As folgas ficam com os cabeças de chave mais bem colocados, que começam na 2ª rodada."}}, {"@type": "Question", "name": "Quantos jogos tem um torneio mata-mata?", "acceptedAnswer": {"@type": "Answer", "text": "Sempre um a menos que o número de equipes, N − 1, porque cada jogo elimina exatamente uma equipe e todas são eliminadas, menos a campeã. 16 equipes disputam 15 jogos em 4 rodadas. A disputa de 3º lugar acrescenta um jogo."}}, {"@type": "Question", "name": "Quantos jogos tem um torneio de dupla eliminação?", "acceptedAnswer": {"@type": "Answer", "text": "2N − 2 jogos se o campeão da chave dos vencedores ganhar a grande final, e 2N − 1 se o campeão da chave dos perdedores ganhar e houver uma segunda grande final. 8 equipes disputam 14 ou 15 jogos; 16 equipes, 30 ou 31."}}, {"@type": "Question", "name": "O que é a segunda grande final?", "acceptedAnswer": {"@type": "Answer", "text": "Na dupla eliminação, o campeão da chave dos vencedores chega à grande final invicto, enquanto o campeão da chave dos perdedores já tem uma derrota. Se o campeão da chave dos perdedores vencer a grande final, os dois ficam com uma derrota cada, e uma segunda final decide o título. Você pode desativar a segunda grande final se só houver tempo para uma final."}}, {"@type": "Question", "name": "Posso compartilhar ou salvar o chaveamento?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Copiar link coloca os nomes, as opções e todos os resultados no próprio link, então quem abrir vê o mesmo chaveamento. Você também pode copiar o chaveamento como texto, baixar um arquivo CSV ou imprimir. Nada é enviado para nenhum servidor e não é preciso criar conta."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Gerador de chaveamento de torneio", "step": [{"@type": "HowToStep", "position": 1, "text": "Escolha mata-mata ou dupla eliminação."}, {"@type": "HowToStep", "position": 2, "text": "Digite ou cole os nomes na ordem dos cabeças de chave, um por linha, ou toque em Sorteio para embaralhá-los."}, {"@type": "HowToStep", "position": 3, "text": "Toque em Gerar chaveamento. As folgas vão automaticamente para os principais cabeças de chave."}, {"@type": "HowToStep", "position": 4, "text": "Toque no vencedor de cada partida para avançá-lo, até definir o campeão."}, {"@type": "HowToStep", "position": 5, "text": "Copie o link, copie o chaveamento como texto, baixe o CSV ou imprima."}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+.srch{position:relative;display:flex;align-items:center}
+.srch-in{width:12.5rem;height:40px;padding:0 .8rem 0 2.2rem;border:1px solid var(--line);border-radius:20px;background:var(--bg);color:var(--fg);font:400 14px "Open Sans",sans-serif}
+.srch-in::placeholder{color:var(--soft);opacity:1}.srch-in:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:transparent}
+.srch-in::-webkit-search-cancel-button{cursor:pointer}
+.srch-ic{position:absolute;inset-inline-start:.75rem;top:50%;transform:translateY(-50%);color:var(--soft);display:flex;pointer-events:none}
+.srch-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--fg);cursor:pointer;border-radius:50%}
+.srch-btn:hover{color:var(--cyan-hi)}.srch-btn:focus-visible{outline:2px solid var(--cyan)}
+.srch-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:min(27rem,calc(100vw - 1.5rem));max-height:min(70vh,32rem);overflow:auto;background:var(--bar);border:1px solid var(--bar-line);box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:10;padding:.3rem 0}
+.srch-g{font:600 11px "Open Sans",sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--label);padding:.7rem .95rem .3rem}
+.srch-o{display:block;padding:.55rem .95rem;min-height:44px;color:var(--fg);text-decoration:none}
+.srch-o strong{display:block;font-weight:600;font-size:14.5px;line-height:1.4}.srch-o span{display:block;font-size:13px;line-height:1.45;color:var(--soft);margin-top:.15rem}
+.srch-o:hover,.srch-o[aria-selected=true]{background:rgba(127,127,127,.14);color:var(--fg)}
+.srch-o mark{background:rgba(20,170,206,.28);color:inherit;border-radius:2px}
+.srch-none{padding:.7rem .95rem;color:var(--soft);font-size:14px}
+.srch-hit{outline:3px solid var(--cyan);outline-offset:6px;border-radius:2px}
+[id]{scroll-margin-top:76px}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:52rem){.srch-btn{display:inline-flex}.srch-in,.srch-ic{display:none}
+.srch.open .srch-in{display:block;position:absolute;inset-inline-end:0;top:50%;transform:translateY(-50%);width:min(24rem,calc(100vw - 1.5rem));z-index:11;padding-inline-start:.9rem;background:var(--bar)}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.crumbs .app:not(.txt),.crumbs .sep:has(+ .app:not(.txt)){display:none}.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+<link rel="stylesheet" href="/tools/_shared/tools.css?v=20261126"><link rel="stylesheet" href="/tools/tournament-bracket-generator/tool.css?v=20261126"></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="Todos os apps" aria-label="Maumiu Works — Todos os apps">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/tools/" aria-label="Ferramentas"><span>Ferramentas</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Gerador de chaveamento de torneio</span></nav><div class="tools"><div class="srch" data-page="Nesta página" data-site="No site" data-none="Nenhum resultado encontrado"><button type="button" class="srch-btn" aria-label="Pesquisar" aria-expanded="false" aria-controls="srch-in"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="srch-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="srch-in" class="srch-in" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="srch-list" aria-label="Pesquisar" placeholder="Pesquisar no site" autocomplete="off" spellcheck="false" enterkeyhint="search"><div id="srch-list" class="srch-list" role="listbox" aria-label="Pesquisar" hidden></div></div><details class="langs"><summary aria-label="Idioma: Português (Brasil)" title="Português (Brasil)"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"></summary><ul><li><a href="/tools/tournament-bracket-generator/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/tools/tournament-bracket-generator/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/tools/tournament-bracket-generator/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/tools/tournament-bracket-generator/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/tools/tournament-bracket-generator/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/tools/tournament-bracket-generator/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/tools/tournament-bracket-generator/ja/" hreflang="ja" lang="ja"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/tools/tournament-bracket-generator/ko/" hreflang="ko" lang="ko"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/tools/tournament-bracket-generator/pt-BR/" hreflang="pt-BR" lang="pt-BR" aria-current="true"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/tools/tournament-bracket-generator/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/tools/tournament-bracket-generator/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap wide"><article class="art"><h1>Gerador de chaveamento de torneio</h1><div class="tl tl-br" id="tl-br">
+<p class="tl-lead">Digite os times ou jogadores na ordem dos cabeças de chave e receba um chaveamento de mata-mata ou de dupla eliminação com cabeças de chave bem distribuídos: o 1 enfrenta o pior cabeça de chave, e as folgas ficam com os primeiros cabeças de chave. Toque em um nome para levá-lo à próxima fase. Não precisa de cadastro, funciona no seu navegador e nada é enviado.</p>
+
+<form class="tl-card tl-noprint" id="br-form" novalidate>
+  <fieldset class="tl-field">
+    <legend class="tl-legend">Formato</legend>
+    <div class="tl-seg">
+      <label><input type="radio" name="br-format" value="single" checked> Mata-mata</label>
+      <label><input type="radio" name="br-format" value="double"> Dupla eliminação</label>
+    </div>
+  </fieldset>
+  <div class="tl-field" style="margin-top:1rem">
+    <label for="br-names">Times ou jogadores na ordem dos cabeças de chave, um por linha</label>
+    <textarea id="br-names" rows="9" spellcheck="false" autocomplete="off" aria-describedby="br-names-hint">Lions
+Tigers
+Bears
+Wolves
+Eagles
+Sharks
+Falcons
+Panthers</textarea>
+    <p class="tl-hint" id="br-names-hint">A primeira linha é o cabeça de chave 1. De 2 a 128 nomes (3 ou mais na dupla eliminação). <span id="br-count" aria-live="polite"></span></p>
+  </div>
+  <div class="tl-row tl-actions">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-shuffle">Sorteio</button>
+  </div>
+  <div class="tl-row tl-actions tl-fill">
+    <label for="br-fill-n">Ainda sem nomes? Número de times</label>
+    <input type="number" id="br-fill-n" min="2" max="128" value="16" inputmode="numeric">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-fill"><span>Preencher com Time 1…<span id="br-fill-label">16</span></span></button>
+  </div>
+  <div class="tl-sep"></div>
+  <label class="tl-check" id="br-opt-third"><input type="checkbox" id="br-third"> Disputa de 3º lugar (os perdedores das semifinais jogam pelo terceiro lugar)</label>
+  <label class="tl-check" id="br-opt-reset" hidden><input type="checkbox" id="br-reset" checked> Segunda grande final (uma nova final se o campeão da chave dos perdedores vencer a primeira)</label>
+  <div class="tl-row tl-actions">
+    <button type="submit" class="btn" id="br-go">Montar chaveamento</button>
+  </div>
+  <div id="br-error" role="alert"></div>
+</form>
+
+<section class="tl-result" id="br-result" hidden aria-labelledby="br-title">
+  <h2 id="br-title" tabindex="-1">Seu chaveamento</h2>
+  <p id="br-summary"></p>
+  <p class="tl-hint tl-noprint" id="br-help">Toque ou clique em um nome (ou chegue até ele com Tab e aperte Enter) para defini-lo como vencedor da partida; o vencedor avança sozinho. Toque de novo no vencedor para apagar o resultado. Se você mudar um resultado, os resultados seguintes que deixarem de fazer sentido são apagados, e Desfazer os traz de volta.</p>
+  <div class="tl-toolbar tl-noprint">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-undo" disabled>Desfazer</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-copy">Copiar como texto</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-csv">Baixar CSV</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-link">Copiar link</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-print">Imprimir</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-clear">Apagar resultados</button>
+  </div>
+  <p class="tl-status tl-noprint" id="br-status" role="status" aria-live="polite"></p>
+  <div class="br-podium" id="br-podium" aria-live="polite"></div>
+  <div id="br-sections"></div>
+</section>
+
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Faça no celular: Ligona</strong><span>Crie campeonatos e torneios: chaveamento, mata-mata, pontos corridos e grupos</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=pt-BR" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/pt-BR/">Sobre o Ligona</a></div></aside>
+
+<section class="tl-how" aria-labelledby="br-how">
+  <h2 id="br-how">Como o chaveamento é montado</h2>
+  <h3>Cabeças de chave</h3>
+  <p>A ordem da lista define os cabeças de chave: o primeiro nome é o cabeça de chave 1. O chaveamento segue a distribuição padrão, para que os mais fortes só possam se enfrentar no fim: num chaveamento de 8 times, a primeira fase é <strong>1 x 8, 4 x 5, 2 x 7, 3 x 6</strong>; os cabeças de chave 1 e 2 ficam em metades opostas e só podem se cruzar na final, e os cabeças de chave de 1 a 4 ficam em quartos diferentes da chave. Num chaveamento de 16 times, a primeira fase é 1 x 16, 8 x 9, 4 x 13, 5 x 12, 2 x 15, 7 x 10, 3 x 14, 6 x 11. "Sorteio" embaralha a lista, se você preferir sortear em vez de usar cabeças de chave.</p>
+  <h3>Folgas</h3>
+  <p>Um chaveamento precisa ter um número de vagas que seja potência de dois (2, 4, 8, 16, 32…). Se houver menos times, o chaveamento é completado até a próxima potência de dois, e as vagas vazias viram folgas. As folgas ficam com os melhores cabeças de chave, que passam direto para a segunda fase.</p>
+  <p class="tl-formula">Folgas = próxima potência de dois − N</p>
+  <p>Exemplo: 12 times usam um chaveamento de 16 vagas, então há 16 − 12 = <strong>4 folgas</strong> para os cabeças de chave de 1 a 4, e 4 jogos na primeira fase entre os cabeças de chave de 5 a 12.</p>
+  <h3>Mata-mata</h3>
+  <p>Perdeu uma vez, está fora. Cada jogo elimina um time e todos, menos o campeão, precisam ser eliminados, então são <strong>N − 1 jogos</strong> em <strong>⌈log₂ N⌉ fases</strong>: 16 times fazem 15 jogos em 4 fases. A disputa de 3º lugar acrescenta um jogo.</p>
+  <h3>Dupla eliminação</h3>
+  <p>Um time só é eliminado na segunda derrota. Todos começam na chave dos vencedores; com a primeira derrota, o time cai para a chave dos perdedores, onde continua jogando até perder de novo. Os times que caem da chave dos vencedores são posicionados de forma que dois times que acabaram de se enfrentar não voltem a se cruzar logo em seguida (só com 3 times isso é impossível de evitar). O campeão da chave dos vencedores enfrenta o campeão da chave dos perdedores na grande final.</p>
+  <ul>
+    <li>Se o campeão da chave dos vencedores ganhar a grande final, o torneio acaba: <strong>2N − 2 jogos</strong>.</li>
+    <li>Se o campeão da chave dos perdedores ganhar, os dois times passam a ter uma derrota cada. Com a segunda grande final ativada, joga-se uma nova final, decisiva: <strong>2N − 1 jogos</strong>.</li>
+  </ul>
+  <p>Exemplo: 8 times fazem 14 jogos, ou 15 quando a segunda grande final é necessária.</p>
+</section>
+</div>
+</article><section class="art"><h2 id="questions-and-answers">Perguntas frequentes</h2><h3>Como são definidos os cabeças de chave?</h3><p>A ordem da sua lista define os cabeças de chave, e o chaveamento usa a ordem padrão para que os melhores colocados se enfrentem o mais tarde possível. Com 8 equipes, a primeira rodada é 1 x 8, 4 x 5, 2 x 7 e 3 x 6, então os cabeças de chave 1 e 2 só podem se encontrar na final. Se preferir um sorteio, use Sorteio para embaralhar a lista.</p><h3>De quantas folgas um chaveamento precisa?</h3><p>Um chaveamento tem um número de vagas que é potência de dois: 4, 8, 16, 32 e assim por diante. Folgas = próxima potência de dois − número de equipes. 12 equipes usam um chaveamento de 16 vagas com 4 folgas; 20 equipes, um de 32 vagas com 12 folgas. As folgas ficam com os cabeças de chave mais bem colocados, que começam na 2ª rodada.</p><h3>Quantos jogos tem um torneio mata-mata?</h3><p>Sempre um a menos que o número de equipes, N − 1, porque cada jogo elimina exatamente uma equipe e todas são eliminadas, menos a campeã. 16 equipes disputam 15 jogos em 4 rodadas. A disputa de 3º lugar acrescenta um jogo.</p><h3>Quantos jogos tem um torneio de dupla eliminação?</h3><p>2N − 2 jogos se o campeão da chave dos vencedores ganhar a grande final, e 2N − 1 se o campeão da chave dos perdedores ganhar e houver uma segunda grande final. 8 equipes disputam 14 ou 15 jogos; 16 equipes, 30 ou 31.</p><h3>O que é a segunda grande final?</h3><p>Na dupla eliminação, o campeão da chave dos vencedores chega à grande final invicto, enquanto o campeão da chave dos perdedores já tem uma derrota. Se o campeão da chave dos perdedores vencer a grande final, os dois ficam com uma derrota cada, e uma segunda final decide o título. Você pode desativar a segunda grande final se só houver tempo para uma final.</p><h3>Posso compartilhar ou salvar o chaveamento?</h3><p>Sim. Copiar link coloca os nomes, as opções e todos os resultados no próprio link, então quem abrir vê o mesmo chaveamento. Você também pode copiar o chaveamento como texto, baixar um arquivo CSV ou imprimir. Nada é enviado para nenhum servidor e não é preciso criar conta.</p></section><section class="related"><h2>Guias</h2><div class="list"><a class="item" href="/guides/double-elimination-bracket-explained/pt-BR/"><strong>Como funciona o chaveamento de dupla eliminação</strong><span>&quot;Na dupla eliminação, o time sai após duas derrotas. N times jogam 2N-2 partidas, ou 2N-1 com segunda grande final. Como funciona a chave dos perdedores.&quot;</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/pt-BR/"><strong>Quantos jogos tem um torneio?</strong><span>Mata-mata: N-1 jogos. Dupla eliminação: 2N-2 ou 2N-1. Pontos corridos: N(N-1)/2. Suíço: rodadas × N/2. Tabela de 4 a 32 times.</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/pt-BR/"><strong>Como definir os cabeças de chave de um chaveamento</strong><span>Ordene as equipes e monte 1 x 16, 8 x 9, 4 x 13 etc., para os favoritos se cruzarem no fim. Folgas = próxima potência de dois menos equipes.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">Guias</a><a href="/tools/">Ferramentas</a><a href="/">Todos os apps</a><a href="mailto:hello@maumiuworks.com">Contato</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script><script defer src="/search.js?v=ca84f471"></script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script><script>window.MW_I18N={"list_sep": ", ", "list_and": "{a} e {b}", "sentence_sep": " ", "versus": "x", "copied": "Copiado para a área de transferência.", "copy_failed": "A cópia não funcionou neste navegador: selecione o texto e copie manualmente.", "saved": "{file} salvo.", "dur_min": "{m} min", "dur_h": "{h} h", "dur_h_min": "{h} h {m} min", "round_n": "Rodada {n}", "round_final": "Final", "round_semis": "Semifinais", "round_quarters": "Quartas de final", "round_of": "Fase de {n}", "round_winners_n": "Chave dos vencedores – rodada {n}", "round_winners_final": "Final da chave dos vencedores", "round_losers_n": "Chave dos perdedores – rodada {n}", "round_losers_final": "Final da chave dos perdedores", "round_grand_final": "Grande final", "round_grand_final_reset": "Segunda grande final", "round_third": "Disputa de 3º lugar", "names_found_one": "{n} nome encontrado.", "names_found_other": "{n} nomes encontrados.", "listed_twice": "Nomes repetidos: {names}.", "err_too_few": "Adicione pelo menos {min} nomes, um por linha.", "err_too_few_first": "Primeiro adicione pelo menos {min} nomes.", "err_fill_range": "Escolha um número de {min} a {max}.", "team_n": "Time {n}", "err_too_few_double": "Adicione pelo menos {min} nomes, um por linha (a dupla eliminação precisa de 3 ou mais).", "err_too_many": "Esta página monta chaveamentos de até {max} nomes. Você tem {n}.", "match_no": "J{n}", "match_no_conditional": "{m} · só se necessário", "winner_of": "Vencedor do {m}", "loser_of": "Perdedor do {m}", "tbd": "A definir", "who": "{name} ({seed})", "slot_aria": "{name}, cabeça de chave {seed}", "slot_aria_win": "{name}, cabeça de chave {seed}, venceu", "slot_aria_lost": "{name}, cabeça de chave {seed}, perdeu", "match_aria": "{m}, {round}: {home} x {away}", "match_aria_ready": "{m}, {round}: {home} x {away}. A jogar", "match_aria_done": "{m}, {round}: {home} x {away}. Vencedor: {winner}", "match_aria_skipped": "{m}, {round}: não foi necessário", "reset_not_needed": "Não foi necessária: o campeão da chave dos vencedores venceu a grande final.", "scrolls_sideways": "{title}, rola na horizontal", "seeds_single": "cabeça de chave {a}", "seeds_two": "cabeças de chave {a} e {b}", "seeds_range": "cabeças de chave {a}–{b}", "seeds_list": "cabeças de chave {list}", "sum_teams_one": "{n} time", "sum_teams_other": "{n} times", "sum_games_one": "{n} jogo", "sum_games_other": "{n} jogos", "sum_in_rounds_one": "em {n} rodada", "sum_in_rounds_other": "em {n} rodadas", "sum_single": "{teams}, mata-mata em um chaveamento de {size} vagas: {body}", "sum_single_an": "{teams}, mata-mata em um chaveamento de {size} vagas: {body}", "sum_double": "{teams}, dupla eliminação em um chaveamento de {size} vagas: {body}", "sum_double_an": "{teams}, dupla eliminação em um chaveamento de {size} vagas: {body}", "sum_body_single": "{games} {in_rounds}.", "sum_body_games_one": "{n} jogo.", "sum_body_games_other": "{n} jogos.", "sum_body_reset_one": "{n} jogo, ou {b} se a segunda grande final for necessária.", "sum_body_reset_other": "{n} jogos, ou {b} se a segunda grande final for necessária.", "sum_byes_one": "{n} folga: {seeds} vai direto para a 2ª rodada.", "sum_byes_other": "{n} folgas: {seeds} vão direto para a 2ª rodada.", "sum_byes_double_one": "{n} folga: {seeds} vai direto para a 2ª rodada da chave dos vencedores.", "sum_byes_double_other": "{n} folgas: {seeds} vão direto para a 2ª rodada da chave dos vencedores.", "sum_no_byes": "Sem folgas.", "sec_main": "Chaveamento", "sec_third": "Disputa de 3º lugar", "sec_winners": "Chave dos vencedores", "sec_losers": "Chave dos perdedores", "sec_final": "Grande final", "final_places": "Classificação final", "place_1": "Campeão", "place_2": "Segundo lugar", "place_3": "Terceiro lugar", "msg_cleared": "Resultado do {m} apagado.", "msg_wins": "{name} vence o {m}.", "msg_reset_decides": "Os dois times agora têm uma derrota: a segunda grande final decide.", "msg_next": "A seguir: {round}.", "msg_cleared_later_one": "{n} resultado seguinte foi apagado ({list}) porque agora quem avança é outro time. Use Desfazer para recuperá-lo.", "msg_cleared_later_other": "{n} resultados seguintes foram apagados ({list}) porque agora quem avança é outro time. Use Desfazer para recuperá-los.", "msg_champion": "{name} é o campeão.", "msg_undone": "Última alteração desfeita.", "msg_all_cleared": "Todos os resultados foram apagados. Use Desfazer para recuperá-los.", "drawn_one": "Sorteio feito: a nova ordem define os cabeças de chave. {n} nome.", "drawn_other": "Sorteio feito: a nova ordem define os cabeças de chave. {n} nomes.", "text_head_single": "Chaveamento mata-mata, {teams}", "text_head_double": "Chaveamento de dupla eliminação, {teams}", "text_seeds": "Cabeças de chave: {list}", "text_seed_item": "{seed} {name}", "text_byes": "Folgas (direto para a 2ª rodada): {list}", "text_line": "{m}  {home} x {away}", "text_line_won": "{m}  {home} x {away}  -> {winner} venceu", "text_line_skipped": "{m}  {home} x {away}  (não foi necessário)", "text_line_cond": "{m}  {home} x {away}  (só se necessário)", "text_place": "{place}: {names}", "csv_match": "Jogo", "csv_stage": "Fase", "csv_round": "Rodada", "csv_home_seed": "Cabeça de chave (mandante)", "csv_home": "Mandante", "csv_away_seed": "Cabeça de chave (visitante)", "csv_away": "Visitante", "csv_winner": "Vencedor", "csv_not_needed": "Não foi necessário", "csv_file": "chaveamento-torneio.csv", "names_found_many": "{n} nomes encontrados.", "sum_teams_many": "{n} times", "sum_games_many": "{n} jogos", "sum_in_rounds_many": "em {n} rodadas", "sum_body_games_many": "{n} jogos.", "sum_body_reset_many": "{n} jogos, ou {b} se a segunda grande final for necessária.", "sum_byes_many": "{n} folgas: {seeds} vão direto para a 2ª rodada.", "sum_byes_double_many": "{n} folgas: {seeds} vão direto para a 2ª rodada da chave dos vencedores.", "msg_cleared_later_many": "{n} resultados seguintes foram apagados ({list}) porque agora quem avança é outro time. Use Desfazer para recuperá-los.", "drawn_many": "Sorteio feito: a nova ordem define os cabeças de chave. {n} nomes."};window.MW_LANG="pt-BR";</script><script defer src="/tools/_shared/tools.js?v=20261126"></script><script defer src="/tools/tournament-bracket-generator/tool.js?v=20261126"></script>
+</body></html>

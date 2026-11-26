@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="id" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pembuat Bagan Turnamen (Sistem Gugur &amp; Gugur Ganda) — Maumiu Works</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="Buat bagan sistem gugur atau gugur ganda dengan unggulan dan bye untuk unggulan teratas. Ketuk nama pemenang agar lolos, lalu cetak atau bagikan.">
+<link rel="canonical" href="https://maumiuworks.com/tools/tournament-bracket-generator/id/">
+<link rel="alternate" hreflang="en" href="https://maumiuworks.com/tools/tournament-bracket-generator/"><link rel="alternate" hreflang="de" href="https://maumiuworks.com/tools/tournament-bracket-generator/de/"><link rel="alternate" hreflang="es" href="https://maumiuworks.com/tools/tournament-bracket-generator/es/"><link rel="alternate" hreflang="fr" href="https://maumiuworks.com/tools/tournament-bracket-generator/fr/"><link rel="alternate" hreflang="id" href="https://maumiuworks.com/tools/tournament-bracket-generator/id/"><link rel="alternate" hreflang="it" href="https://maumiuworks.com/tools/tournament-bracket-generator/it/"><link rel="alternate" hreflang="ja" href="https://maumiuworks.com/tools/tournament-bracket-generator/ja/"><link rel="alternate" hreflang="ko" href="https://maumiuworks.com/tools/tournament-bracket-generator/ko/"><link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/tools/tournament-bracket-generator/pt-BR/"><link rel="alternate" hreflang="ru" href="https://maumiuworks.com/tools/tournament-bracket-generator/ru/"><link rel="alternate" hreflang="tr" href="https://maumiuworks.com/tools/tournament-bracket-generator/tr/"><link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/tools/tournament-bracket-generator/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Maumiu Works"><meta property="og:title" content="Pembuat Bagan Turnamen (Sistem Gugur &amp; Gugur Ganda)"><meta property="og:description" content="Buat bagan sistem gugur atau gugur ganda dengan unggulan dan bye untuk unggulan teratas. Ketuk nama pemenang agar lolos, lalu cetak atau bagikan."><meta property="og:url" content="https://maumiuworks.com/tools/tournament-bracket-generator/id/"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Pembuat bagan turnamen", "description": "Buat bagan sistem gugur atau gugur ganda dengan unggulan dan bye untuk unggulan teratas. Ketuk nama pemenang agar lolos, lalu cetak atau bagikan.", "url": "https://maumiuworks.com/tools/tournament-bracket-generator/id/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "inLanguage": "id"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Maumiu Works", "item": "https://maumiuworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Alat", "item": "https://maumiuworks.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Pembuat bagan turnamen", "item": "https://maumiuworks.com/tools/tournament-bracket-generator/id/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Bagaimana cara menentukan unggulan dalam bagan?", "acceptedAnswer": {"@type": "Answer", "text": "Urutan daftar Anda adalah urutan unggulan. Bagan memakai susunan standar sehingga tim unggulan teratas bertemu selambat mungkin. Dengan 8 tim, babak pertama adalah 1 vs 8, 4 vs 5, 2 vs 7 dan 3 vs 6, jadi unggulan 1 dan 2 hanya bisa bertemu di final. Gunakan Undi acak untuk mengacak daftar jika Anda lebih suka diundi."}}, {"@type": "Question", "name": "Berapa bye yang dibutuhkan sebuah bagan?", "acceptedAnswer": {"@type": "Answer", "text": "Jumlah tempat dalam bagan selalu pangkat dua: 4, 8, 16, 32 dan seterusnya. Jumlah bye = pangkat dua berikutnya − jumlah tim. 12 tim memakai bagan 16 tempat dengan 4 bye, 20 tim memakai bagan 32 tempat dengan 12 bye. Bye diberikan kepada unggulan teratas, yang langsung mulai di babak 2."}}, {"@type": "Question", "name": "Berapa jumlah pertandingan dalam turnamen sistem gugur?", "acceptedAnswer": {"@type": "Answer", "text": "Selalu satu lebih sedikit dari jumlah tim, N − 1, karena setiap pertandingan menyingkirkan tepat satu tim dan semua tim kecuali juara akan tersingkir. 16 tim memainkan 15 pertandingan dalam 4 babak. Perebutan juara 3 menambah satu pertandingan."}}, {"@type": "Question", "name": "Berapa jumlah pertandingan dalam turnamen gugur ganda?", "acceptedAnswer": {"@type": "Answer", "text": "2N − 2 pertandingan jika juara bagan pemenang memenangi grand final, dan 2N − 1 jika juara bagan peserta kalah yang menang sehingga final ulang dimainkan. 8 tim memainkan 14 atau 15 pertandingan, 16 tim 30 atau 31."}}, {"@type": "Question", "name": "Apa itu final ulang (reset)?", "acceptedAnswer": {"@type": "Answer", "text": "Dalam gugur ganda, juara bagan pemenang masuk grand final tanpa pernah kalah, sedangkan juara bagan peserta kalah sudah punya satu kekalahan. Jika juara bagan peserta kalah memenangi grand final, keduanya sama-sama punya satu kekalahan, jadi final kedua yang menentukan juara. Anda bisa mematikan final ulang jika waktunya hanya cukup untuk satu final."}}, {"@type": "Question", "name": "Bisakah saya membagikan atau menyimpan bagan?", "acceptedAnswer": {"@type": "Answer", "text": "Bisa. Salin tautan menyimpan nama, pengaturan, dan semua hasil di dalam tautan itu sendiri, sehingga siapa pun yang membukanya melihat bagan yang sama. Anda juga bisa menyalin bagan sebagai teks, mengunduh file CSV, atau mencetaknya. Tidak ada yang diunggah dan tidak perlu akun."}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Pembuat bagan turnamen", "step": [{"@type": "HowToStep", "position": 1, "text": "Pilih sistem gugur atau gugur ganda."}, {"@type": "HowToStep", "position": 2, "text": "Ketik atau tempel nama sesuai urutan unggulan, satu per baris, atau tekan Undi acak untuk mengacaknya."}, {"@type": "HowToStep", "position": 3, "text": "Tekan Buat bagan. Bye otomatis diberikan kepada unggulan teratas."}, {"@type": "HowToStep", "position": 4, "text": "Ketuk pemenang setiap pertandingan untuk meloloskannya ke babak berikutnya, sampai juara ditentukan."}, {"@type": "HowToStep", "position": 5, "text": "Salin tautan, salin bagan sebagai teks, unduh CSV, atau cetak."}]}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+.srch{position:relative;display:flex;align-items:center}
+.srch-in{width:12.5rem;height:40px;padding:0 .8rem 0 2.2rem;border:1px solid var(--line);border-radius:20px;background:var(--bg);color:var(--fg);font:400 14px "Open Sans",sans-serif}
+.srch-in::placeholder{color:var(--soft);opacity:1}.srch-in:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:transparent}
+.srch-in::-webkit-search-cancel-button{cursor:pointer}
+.srch-ic{position:absolute;inset-inline-start:.75rem;top:50%;transform:translateY(-50%);color:var(--soft);display:flex;pointer-events:none}
+.srch-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--fg);cursor:pointer;border-radius:50%}
+.srch-btn:hover{color:var(--cyan-hi)}.srch-btn:focus-visible{outline:2px solid var(--cyan)}
+.srch-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:min(27rem,calc(100vw - 1.5rem));max-height:min(70vh,32rem);overflow:auto;background:var(--bar);border:1px solid var(--bar-line);box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:10;padding:.3rem 0}
+.srch-g{font:600 11px "Open Sans",sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--label);padding:.7rem .95rem .3rem}
+.srch-o{display:block;padding:.55rem .95rem;min-height:44px;color:var(--fg);text-decoration:none}
+.srch-o strong{display:block;font-weight:600;font-size:14.5px;line-height:1.4}.srch-o span{display:block;font-size:13px;line-height:1.45;color:var(--soft);margin-top:.15rem}
+.srch-o:hover,.srch-o[aria-selected=true]{background:rgba(127,127,127,.14);color:var(--fg)}
+.srch-o mark{background:rgba(20,170,206,.28);color:inherit;border-radius:2px}
+.srch-none{padding:.7rem .95rem;color:var(--soft);font-size:14px}
+.srch-hit{outline:3px solid var(--cyan);outline-offset:6px;border-radius:2px}
+[id]{scroll-margin-top:76px}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:52rem){.srch-btn{display:inline-flex}.srch-in,.srch-ic{display:none}
+.srch.open .srch-in{display:block;position:absolute;inset-inline-end:0;top:50%;transform:translateY(-50%);width:min(24rem,calc(100vw - 1.5rem));z-index:11;padding-inline-start:.9rem;background:var(--bar)}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.crumbs .app:not(.txt),.crumbs .sep:has(+ .app:not(.txt)){display:none}.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.wrap{max-width:46rem;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+.wide{max-width:62rem}
+.art h1{font:700 clamp(1.6rem,4.2vw,2.3rem)/1.2 Montserrat,"Open Sans",sans-serif;margin:0 0 .8rem}
+.art .byline{color:var(--soft);font-size:14px;margin:0 0 1.6rem}
+.art h2{font:600 clamp(1.15rem,2.6vw,1.4rem)/1.3 Montserrat,"Open Sans",sans-serif;margin:2.4rem 0 .8rem;scroll-margin-top:76px}
+.art h3{font:600 17px/1.4 Montserrat,"Open Sans",sans-serif;margin:1.6rem 0 .5rem}
+.art p{margin:0 0 1rem}.art strong{font-weight:600}
+.art ul,.art ol{margin:0 0 1rem;padding-inline-start:1.4rem}.art li{margin:.4rem 0}
+.art code{font:14px/1.4 ui-monospace,Consolas,monospace;background:rgba(127,127,127,.16);padding:.1em .35em;border-radius:3px}
+.art a{text-decoration:underline;text-underline-offset:2px}
+.tbl{overflow-x:auto;margin:0 0 1.2rem;border:1px solid var(--line)}
+.tbl table{border-collapse:collapse;width:100%;font-size:15px}
+.tbl th,.tbl td{padding:.55rem .75rem;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.tbl th{font-weight:600;background:var(--card)}
+.tbl tr:last-child td{border-bottom:0}
+.toc{border:1px solid var(--line);background:var(--card);padding:1rem 1.2rem;margin:0 0 2rem}
+.toc p{margin:0 0 .4rem;font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label)}
+.toc ol{margin:0;padding-inline-start:1.2rem}.toc li{margin:.3rem 0}.toc a{text-decoration:none}
+.cta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;margin:2.2rem 0}
+.cta img{width:64px;height:64px;border-radius:22%;flex:none}
+.cta .t{flex:1;min-width:14rem}.cta .t strong{display:block;font:600 17px Montserrat,"Open Sans",sans-serif}
+.cta .t span{color:var(--soft);font-size:15px}
+.cta .b{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.cta .b a.more{text-decoration:none;padding:.6rem 0}
+.cta a.btn{text-decoration:none}
+.list{display:grid;gap:1rem;margin:1.4rem 0 0}
+.list a.item{display:block;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.2rem;color:var(--fg);text-decoration:none}
+.list a.item:hover{border-color:var(--cyan)}
+.list a.item strong{display:block;font:600 17px/1.35 Montserrat,"Open Sans",sans-serif;color:var(--cyan)}
+.list a.item span{display:block;color:var(--soft);font-size:15px;margin-top:.3rem}
+.related{margin-top:2.6rem}
+.related h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 .4rem}
+@media print{.top,footer,.toc,.cta,.related{display:none!important}body{background:#fff;color:#000}}
+.top .crumbs{flex:1 1 auto;overflow:hidden}.top .crumbs .here{min-width:0;flex:0 1 auto}
+@media (max-width:26rem){.top .crumbs .here{display:none}.top .crumbs .app.txt+.sep{display:none}}
+</style>
+<link rel="stylesheet" href="/tools/_shared/tools.css?v=20261126"><link rel="stylesheet" href="/tools/tournament-bracket-generator/tool.css?v=20261126"></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="Semua aplikasi" aria-label="Maumiu Works — Semua aplikasi">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app txt" href="/tools/" aria-label="Alat"><span>Alat</span></a><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Pembuat bagan turnamen</span></nav><div class="tools"><div class="srch" data-page="Di halaman ini" data-site="Di situs" data-none="Tidak ada hasil"><button type="button" class="srch-btn" aria-label="Cari" aria-expanded="false" aria-controls="srch-in"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="srch-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="srch-in" class="srch-in" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="srch-list" aria-label="Cari" placeholder="Cari di situs" autocomplete="off" spellcheck="false" enterkeyhint="search"><div id="srch-list" class="srch-list" role="listbox" aria-label="Cari" hidden></div></div><details class="langs"><summary aria-label="Bahasa: Bahasa Indonesia" title="Bahasa Indonesia"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"></summary><ul><li><a href="/tools/tournament-bracket-generator/" hreflang="en" lang="en"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/tools/tournament-bracket-generator/de/" hreflang="de" lang="de"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/tools/tournament-bracket-generator/es/" hreflang="es" lang="es"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español</span></a></li><li><a href="/tools/tournament-bracket-generator/fr/" hreflang="fr" lang="fr"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/tools/tournament-bracket-generator/id/" hreflang="id" lang="id" aria-current="true"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/tools/tournament-bracket-generator/it/" hreflang="it" lang="it"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/tools/tournament-bracket-generator/ja/" hreflang="ja" lang="ja"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/tools/tournament-bracket-generator/ko/" hreflang="ko" lang="ko"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/tools/tournament-bracket-generator/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/tools/tournament-bracket-generator/ru/" hreflang="ru" lang="ru"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/tools/tournament-bracket-generator/tr/" hreflang="tr" lang="tr"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li></ul></details></div></header>
+<main><div class="wrap wide"><article class="art"><h1>Pembuat bagan turnamen</h1><div class="tl tl-br" id="tl-br">
+<p class="tl-lead">Masukkan tim atau pemain sesuai urutan unggulan, lalu dapatkan bagan sistem gugur atau gugur ganda dengan penempatan unggulan yang benar: unggulan 1 bertemu unggulan terendah, dan bye diberikan kepada unggulan teratas. Ketuk sebuah nama untuk meloloskannya ke babak berikutnya. Tanpa perlu daftar, berjalan di browser Anda, dan tidak ada data yang diunggah.</p>
+
+<form class="tl-card tl-noprint" id="br-form" novalidate>
+  <fieldset class="tl-field">
+    <legend class="tl-legend">Format</legend>
+    <div class="tl-seg">
+      <label><input type="radio" name="br-format" value="single" checked> Sistem gugur</label>
+      <label><input type="radio" name="br-format" value="double"> Gugur ganda</label>
+    </div>
+  </fieldset>
+  <div class="tl-field" style="margin-top:1rem">
+    <label for="br-names">Tim atau pemain sesuai urutan unggulan, satu per baris</label>
+    <textarea id="br-names" rows="9" spellcheck="false" autocomplete="off" aria-describedby="br-names-hint">Lions
+Tigers
+Bears
+Wolves
+Eagles
+Sharks
+Falcons
+Panthers</textarea>
+    <p class="tl-hint" id="br-names-hint">Baris pertama adalah unggulan 1. 2 sampai 128 nama (minimal 3 untuk gugur ganda). <span id="br-count" aria-live="polite"></span></p>
+  </div>
+  <div class="tl-row tl-actions">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-shuffle">Undi acak</button>
+  </div>
+  <div class="tl-row tl-actions tl-fill">
+    <label for="br-fill-n">Belum punya nama? Jumlah tim</label>
+    <input type="number" id="br-fill-n" min="2" max="128" value="16" inputmode="numeric">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-fill"><span>Isi dengan Tim 1…<span id="br-fill-label">16</span></span></button>
+  </div>
+  <div class="tl-sep"></div>
+  <label class="tl-check" id="br-opt-third"><input type="checkbox" id="br-third"> Perebutan juara 3 (tim yang kalah di semifinal bertanding memperebutkan posisi ketiga)</label>
+  <label class="tl-check" id="br-opt-reset" hidden><input type="checkbox" id="br-reset" checked> Final ulang (reset) — final kedua dimainkan jika juara bagan peserta kalah memenangi final pertama</label>
+  <div class="tl-row tl-actions">
+    <button type="submit" class="btn" id="br-go">Buat bagan</button>
+  </div>
+  <div id="br-error" role="alert"></div>
+</form>
+
+<section class="tl-result" id="br-result" hidden aria-labelledby="br-title">
+  <h2 id="br-title" tabindex="-1">Bagan Anda</h2>
+  <p id="br-summary"></p>
+  <p class="tl-hint tl-noprint" id="br-help">Ketuk atau klik sebuah nama (atau pilih dengan Tab lalu tekan Enter) untuk menjadikannya pemenang pertandingan itu; pemenang otomatis lolos ke babak berikutnya. Ketuk pemenang sekali lagi untuk menghapus hasilnya. Jika Anda mengubah suatu hasil, hasil berikutnya yang sudah tidak cocok akan dihapus, dan tombol Urungkan akan mengembalikannya.</p>
+  <div class="tl-toolbar tl-noprint">
+    <button type="button" class="btn btn-ghost btn-sm" id="br-undo" disabled>Urungkan</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-copy">Salin sebagai teks</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-csv">Unduh CSV</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-link">Salin tautan</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-print">Cetak</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="br-clear">Hapus hasil</button>
+  </div>
+  <p class="tl-status tl-noprint" id="br-status" role="status" aria-live="polite"></p>
+  <div class="br-podium" id="br-podium" aria-live="polite"></div>
+  <div id="br-sections"></div>
+</section>
+
+<aside class="cta" aria-label="Ligona"><img src="/tournament-bracket/img/icon.webp" alt="" width="64" height="64" loading="lazy"><div class="t"><strong>Lakukan di ponsel: Ligona</strong><span>Buat bagan turnamen: sistem gugur, liga dengan klasemen, fase grup, sistem Swiss</span></div><div class="b"><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tournament&amp;hl=id" rel="noopener">Google Play</a><a class="more" href="/tournament-bracket/id/">Tentang Ligona</a></div></aside>
+
+<section class="tl-how" aria-labelledby="br-how">
+  <h2 id="br-how">Cara bagan disusun</h2>
+  <h3>Unggulan</h3>
+  <p>Urutan daftar menentukan unggulan: nama pertama adalah unggulan 1. Bagan memakai urutan unggulan standar, sehingga unggulan terkuat baru bisa bertemu di babak akhir: pada bagan 8 tim, babak pertama adalah <strong>1 vs 8, 4 vs 5, 2 vs 7, 3 vs 6</strong>; unggulan 1 dan 2 berada di paruh bagan yang berbeda dan hanya bisa bertemu di final, sedangkan unggulan 1 sampai 4 berada di seperempat bagan yang berbeda. Pada bagan 16 tim, babak pertama adalah 1 vs 16, 8 vs 9, 4 vs 13, 5 vs 12, 2 vs 15, 7 vs 10, 3 vs 14, 6 vs 11. "Undi acak" mengacak daftar jika Anda ingin memakai undian, bukan unggulan.</p>
+  <h3>Bye</h3>
+  <p>Sebuah bagan membutuhkan jumlah tempat berupa pangkat dua (2, 4, 8, 16, 32…). Jika jumlah tim kurang dari itu, bagan diisi sampai pangkat dua berikutnya dan tempat yang kosong menjadi bye. Bye diberikan kepada unggulan tertinggi, yang langsung lolos ke babak 2.</p>
+  <p class="tl-formula">Bye = pangkat dua berikutnya − N</p>
+  <p>Contoh: 12 tim memakai bagan 16 tempat, jadi ada 16 − 12 = <strong>4 bye</strong> untuk unggulan 1 sampai 4, dan 4 pertandingan babak pertama antara unggulan 5 sampai 12.</p>
+  <h3>Sistem gugur</h3>
+  <p>Kalah sekali langsung tersingkir. Setiap pertandingan menyingkirkan satu tim, dan semua tim kecuali juara harus tersingkir, sehingga ada <strong>N − 1 pertandingan</strong> dalam <strong>⌈log₂ N⌉ babak</strong>: 16 tim memainkan 15 pertandingan dalam 4 babak. Perebutan juara 3 menambah satu pertandingan.</p>
+  <h3>Gugur ganda</h3>
+  <p>Sebuah tim baru tersingkir setelah kalah untuk kedua kalinya. Semua tim mulai di bagan pemenang; kekalahan pertama membuat tim turun ke bagan peserta kalah, dan tim itu terus bermain di sana sampai kalah lagi. Tim yang turun dari bagan pemenang ditempatkan sedemikian rupa sehingga dua tim yang baru saja bertanding tidak langsung bertemu lagi (hanya dengan 3 tim hal itu tidak bisa dihindari). Juara bagan pemenang bertemu juara bagan peserta kalah di grand final.</p>
+  <ul>
+    <li>Jika juara bagan pemenang memenangi grand final, turnamen selesai: <strong>2N − 2 pertandingan</strong>.</li>
+    <li>Jika juara bagan peserta kalah yang menang, kedua tim kini sama-sama punya satu kekalahan. Jika final ulang (reset) diaktifkan, final kedua sebagai penentu dimainkan: <strong>2N − 1 pertandingan</strong>.</li>
+  </ul>
+  <p>Contoh: 8 tim memainkan 14 pertandingan, atau 15 jika final ulang diperlukan.</p>
+</section>
+</div>
+</article><section class="art"><h2 id="questions-and-answers">Tanya jawab</h2><h3>Bagaimana cara menentukan unggulan dalam bagan?</h3><p>Urutan daftar Anda adalah urutan unggulan. Bagan memakai susunan standar sehingga tim unggulan teratas bertemu selambat mungkin. Dengan 8 tim, babak pertama adalah 1 vs 8, 4 vs 5, 2 vs 7 dan 3 vs 6, jadi unggulan 1 dan 2 hanya bisa bertemu di final. Gunakan Undi acak untuk mengacak daftar jika Anda lebih suka diundi.</p><h3>Berapa bye yang dibutuhkan sebuah bagan?</h3><p>Jumlah tempat dalam bagan selalu pangkat dua: 4, 8, 16, 32 dan seterusnya. Jumlah bye = pangkat dua berikutnya − jumlah tim. 12 tim memakai bagan 16 tempat dengan 4 bye, 20 tim memakai bagan 32 tempat dengan 12 bye. Bye diberikan kepada unggulan teratas, yang langsung mulai di babak 2.</p><h3>Berapa jumlah pertandingan dalam turnamen sistem gugur?</h3><p>Selalu satu lebih sedikit dari jumlah tim, N − 1, karena setiap pertandingan menyingkirkan tepat satu tim dan semua tim kecuali juara akan tersingkir. 16 tim memainkan 15 pertandingan dalam 4 babak. Perebutan juara 3 menambah satu pertandingan.</p><h3>Berapa jumlah pertandingan dalam turnamen gugur ganda?</h3><p>2N − 2 pertandingan jika juara bagan pemenang memenangi grand final, dan 2N − 1 jika juara bagan peserta kalah yang menang sehingga final ulang dimainkan. 8 tim memainkan 14 atau 15 pertandingan, 16 tim 30 atau 31.</p><h3>Apa itu final ulang (reset)?</h3><p>Dalam gugur ganda, juara bagan pemenang masuk grand final tanpa pernah kalah, sedangkan juara bagan peserta kalah sudah punya satu kekalahan. Jika juara bagan peserta kalah memenangi grand final, keduanya sama-sama punya satu kekalahan, jadi final kedua yang menentukan juara. Anda bisa mematikan final ulang jika waktunya hanya cukup untuk satu final.</p><h3>Bisakah saya membagikan atau menyimpan bagan?</h3><p>Bisa. Salin tautan menyimpan nama, pengaturan, dan semua hasil di dalam tautan itu sendiri, sehingga siapa pun yang membukanya melihat bagan yang sama. Anda juga bisa menyalin bagan sebagai teks, mengunduh file CSV, atau mencetaknya. Tidak ada yang diunggah dan tidak perlu akun.</p></section><section class="related"><h2>Panduan</h2><div class="list"><a class="item" href="/guides/double-elimination-bracket-explained/id/"><strong>Penjelasan bagan gugur ganda</strong><span>Di sistem gugur ganda, tim tersingkir setelah dua kali kalah. N tim memainkan 2N-2 laga, atau 2N-1 jika ada final ulang. Cara kerja bagan peserta kalah.</span></a><a class="item" href="/guides/how-many-games-in-a-tournament/id/"><strong>Berapa jumlah pertandingan dalam sebuah turnamen?</strong><span>Sistem gugur: N-1 laga. Gugur ganda: 2N-2 atau 2N-1. Round robin: N(N-1)/2. Sistem Swiss: babak × N/2. Tabel untuk 4 hingga 32 tim.</span></a><a class="item" href="/guides/how-to-seed-a-tournament-bracket/id/"><strong>Cara menentukan unggulan di bagan turnamen</strong><span>Urutkan tim, pasangkan 1 vs 16, 8 vs 9, 4 vs 13 dst. agar unggulan atas bertemu terakhir. Bye = pangkat dua berikutnya minus jumlah tim, ke unggulan atas.</span></a></div></section></div></main>
+<footer><div class="foot"><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/guides/">Panduan</a><a href="/tools/">Alat</a><a href="/">Semua aplikasi</a><a href="mailto:hello@maumiuworks.com">Kontak</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script><script defer src="/search.js?v=ca84f471"></script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script><script>window.MW_I18N={"list_sep": ", ", "list_and": "{a} dan {b}", "sentence_sep": " ", "versus": "vs", "copied": "Sudah disalin ke papan klip.", "copy_failed": "Penyalinan tidak berhasil di browser ini. Pilih teksnya lalu salin secara manual.", "saved": "{file} sudah disimpan.", "dur_min": "{m} menit", "dur_h": "{h} jam", "dur_h_min": "{h} jam {m} menit", "round_n": "Babak {n}", "round_final": "Final", "round_semis": "Semifinal", "round_quarters": "Perempat final", "round_of": "Babak {n} besar", "round_winners_n": "Babak {n} bagan pemenang", "round_winners_final": "Final bagan pemenang", "round_losers_n": "Babak {n} bagan peserta kalah", "round_losers_final": "Final bagan peserta kalah", "round_grand_final": "Grand final", "round_grand_final_reset": "Final ulang (reset)", "round_third": "Perebutan juara 3", "names_found_one": "{n} nama ditemukan.", "names_found_other": "{n} nama ditemukan.", "listed_twice": "Tertulis dua kali: {names}.", "err_too_few": "Masukkan minimal {min} nama, satu nama per baris.", "err_too_few_first": "Masukkan minimal {min} nama terlebih dahulu.", "err_fill_range": "Pilih angka dari {min} sampai {max}.", "team_n": "Tim {n}", "err_too_few_double": "Tambahkan minimal {min} nama, satu per baris (gugur ganda butuh 3 nama atau lebih).", "err_too_many": "Halaman ini membuat bagan untuk paling banyak {max} nama. Anda memasukkan {n}.", "match_no": "P{n}", "match_no_conditional": "{m} · hanya jika diperlukan", "winner_of": "Pemenang {m}", "loser_of": "Yang kalah di {m}", "tbd": "Belum ditentukan", "who": "{name} ({seed})", "slot_aria": "{name}, unggulan {seed}", "slot_aria_win": "{name}, unggulan {seed}, menang", "slot_aria_lost": "{name}, unggulan {seed}, kalah", "match_aria": "{m}, {round}: {home} vs {away}", "match_aria_ready": "{m}, {round}: {home} vs {away}. Siap dimainkan", "match_aria_done": "{m}, {round}: {home} vs {away}. Pemenang {winner}", "match_aria_skipped": "{m}, {round}: tidak diperlukan", "reset_not_needed": "Tidak diperlukan: juara bagan pemenang memenangi grand final.", "scrolls_sideways": "{title}, dapat digeser ke samping", "seeds_single": "unggulan {a}", "seeds_two": "unggulan {a} dan {b}", "seeds_range": "unggulan {a}–{b}", "seeds_list": "unggulan {list}", "sum_teams_one": "{n} tim", "sum_teams_other": "{n} tim", "sum_games_one": "{n} pertandingan", "sum_games_other": "{n} pertandingan", "sum_in_rounds_one": "dalam {n} babak", "sum_in_rounds_other": "dalam {n} babak", "sum_single": "{teams}, sistem gugur dalam bagan {size} slot: {body}", "sum_single_an": "{teams}, sistem gugur dalam bagan {size} slot: {body}", "sum_double": "{teams}, gugur ganda dalam bagan {size} slot: {body}", "sum_double_an": "{teams}, gugur ganda dalam bagan {size} slot: {body}", "sum_body_single": "{games} {in_rounds}.", "sum_body_games_one": "{n} pertandingan.", "sum_body_games_other": "{n} pertandingan.", "sum_body_reset_one": "{n} pertandingan, atau {b} jika final ulang (reset) diperlukan.", "sum_body_reset_other": "{n} pertandingan, atau {b} jika final ulang (reset) diperlukan.", "sum_byes_one": "{n} bye: {seeds} langsung lolos ke babak 2.", "sum_byes_other": "{n} bye: {seeds} langsung lolos ke babak 2.", "sum_byes_double_one": "{n} bye: {seeds} langsung lolos ke babak 2 bagan pemenang.", "sum_byes_double_other": "{n} bye: {seeds} langsung lolos ke babak 2 bagan pemenang.", "sum_no_byes": "Tidak ada bye.", "sec_main": "Bagan", "sec_third": "Perebutan juara 3", "sec_winners": "Bagan pemenang", "sec_losers": "Bagan peserta kalah", "sec_final": "Grand final", "final_places": "Peringkat akhir", "place_1": "Juara", "place_2": "Juara 2", "place_3": "Juara 3", "msg_cleared": "Hasil {m} dihapus.", "msg_wins": "{name} memenangi {m}.", "msg_reset_decides": "Kedua tim kini sama-sama sudah sekali kalah: final ulang (reset) yang menentukan.", "msg_next": "Berikutnya: {round}.", "msg_cleared_later_one": "{n} hasil berikutnya ({list}) dihapus karena tim lain yang lolos. Urungkan untuk mengembalikannya.", "msg_cleared_later_other": "{n} hasil berikutnya ({list}) dihapus karena tim lain yang lolos. Urungkan untuk mengembalikannya.", "msg_champion": "{name} menjadi juara.", "msg_undone": "Perubahan terakhir dibatalkan.", "msg_all_cleared": "Semua hasil dihapus. Urungkan untuk mengembalikannya.", "drawn_one": "Undi acak selesai: urutan ini menjadi unggulan baru. {n} nama.", "drawn_other": "Undi acak selesai: urutan ini menjadi unggulan baru. {n} nama.", "text_head_single": "Bagan sistem gugur, {teams}", "text_head_double": "Bagan gugur ganda, {teams}", "text_seeds": "Unggulan: {list}", "text_seed_item": "{seed} {name}", "text_byes": "Bye (langsung ke babak 2): {list}", "text_line": "{m}  {home} vs {away}", "text_line_won": "{m}  {home} vs {away}  -> {winner} menang", "text_line_skipped": "{m}  {home} vs {away}  (tidak diperlukan)", "text_line_cond": "{m}  {home} vs {away}  (hanya jika diperlukan)", "text_place": "{place}: {names}", "csv_match": "Pertandingan", "csv_stage": "Tahap", "csv_round": "Babak", "csv_home_seed": "Unggulan kandang", "csv_home": "Kandang", "csv_away_seed": "Unggulan tandang", "csv_away": "Tandang", "csv_winner": "Pemenang", "csv_not_needed": "Tidak diperlukan", "csv_file": "bagan-turnamen.csv"};window.MW_LANG="id";</script><script defer src="/tools/_shared/tools.js?v=20261126"></script><script defer src="/tools/tournament-bracket-generator/tool.js?v=20261126"></script>
+</body></html>
