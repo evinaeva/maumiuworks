@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-PT" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pecuo: Gado, Ovelhas e Cabras — app para Android</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/portfolio-app/img/icon.webp">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="Registo de gado: bovinos, ovelhas e cabras. Funciona offline; nuvem opcional.">
+<link rel="canonical" href="https://maumiuworks.com/portfolio-app/pt-PT/">
+<link rel="alternate" hreflang="ar" href="https://maumiuworks.com/portfolio-app/ar/">
+<link rel="alternate" hreflang="bn-BD" href="https://maumiuworks.com/portfolio-app/bn-BD/">
+<link rel="alternate" hreflang="de-DE" href="https://maumiuworks.com/portfolio-app/de-DE/">
+<link rel="alternate" hreflang="en-US" href="https://maumiuworks.com/portfolio-app/">
+<link rel="alternate" hreflang="es" href="https://maumiuworks.com/portfolio-app/es-419/">
+<link rel="alternate" hreflang="fr-FR" href="https://maumiuworks.com/portfolio-app/fr-FR/">
+<link rel="alternate" hreflang="hi-IN" href="https://maumiuworks.com/portfolio-app/hi-IN/">
+<link rel="alternate" hreflang="id" href="https://maumiuworks.com/portfolio-app/id/">
+<link rel="alternate" hreflang="it-IT" href="https://maumiuworks.com/portfolio-app/it-IT/">
+<link rel="alternate" hreflang="ja-JP" href="https://maumiuworks.com/portfolio-app/ja-JP/">
+<link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/portfolio-app/pt-BR/">
+<link rel="alternate" hreflang="pt-PT" href="https://maumiuworks.com/portfolio-app/pt-PT/">
+<link rel="alternate" hreflang="ru-RU" href="https://maumiuworks.com/portfolio-app/ru-RU/">
+<link rel="alternate" hreflang="sw" href="https://maumiuworks.com/portfolio-app/sw/">
+<link rel="alternate" hreflang="tr-TR" href="https://maumiuworks.com/portfolio-app/tr-TR/">
+<link rel="alternate" hreflang="ur" href="https://maumiuworks.com/portfolio-app/ur/">
+<link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/portfolio-app/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://maumiuworks.com/portfolio-app/pt-PT/"><meta property="og:title" content="Pecuo: Gado, Ovelhas e Cabras">
+<meta property="og:site_name" content="Maumiu Works"><meta property="og:locale" content="pt_PT">
+<meta property="og:description" content="Registo de gado: bovinos, ovelhas e cabras. Funciona offline; nuvem opcional."><meta property="og:image" content="https://maumiuworks.com/portfolio-app/img/og-pt-PT.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pecuo: Gado, Ovelhas e Cabras", "operatingSystem": "Android", "applicationCategory": "BusinessApplication", "description": "Registo de gado: bovinos, ovelhas e cabras. Funciona offline; nuvem opcional.", "url": "https://maumiuworks.com/portfolio-app/pt-PT/", "image": "https://maumiuworks.com/portfolio-app/img/og-pt-PT.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "author": {"@type": "Person", "name": "Jevgenia", "url": "https://maumiuworks.com/"}, "sameAs": ["https://play.google.com/store/apps/details?id=com.jevgenia.livestock"], "downloadUrl": "https://play.google.com/store/apps/details?id=com.jevgenia.livestock", "inLanguage": "pt-PT", "applicationSubCategory": "Productivity", "screenshot": ["https://maumiuworks.com/portfolio-app/img/en-US/1.webp", "https://maumiuworks.com/portfolio-app/img/en-US/2.webp", "https://maumiuworks.com/portfolio-app/img/en-US/3.webp", "https://maumiuworks.com/portfolio-app/img/en-US/4.webp", "https://maumiuworks.com/portfolio-app/img/en-US/5.webp"], "dateModified": "2026-11-27"}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto;flex-shrink:0}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+.srch{position:relative;display:flex;align-items:center}
+.srch-in{width:12.5rem;height:40px;padding:0 .8rem 0 2.2rem;border:1px solid var(--line);border-radius:20px;background:var(--bg);color:var(--fg);font:400 14px "Open Sans",sans-serif}
+.srch-in::placeholder{color:var(--soft);opacity:1}.srch-in:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:transparent}
+.srch-in::-webkit-search-cancel-button{cursor:pointer}
+.srch-ic{position:absolute;inset-inline-start:.75rem;top:50%;transform:translateY(-50%);color:var(--soft);display:flex;pointer-events:none}
+.srch-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--fg);cursor:pointer;border-radius:50%}
+.srch-btn:hover{color:var(--cyan-hi)}.srch-btn:focus-visible{outline:2px solid var(--cyan)}
+.srch-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:min(27rem,calc(100vw - 1.5rem));max-height:min(70vh,32rem);overflow:auto;background:var(--bar);border:1px solid var(--bar-line);box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:10;padding:.3rem 0}
+.srch-g{font:600 11px "Open Sans",sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--label);padding:.7rem .95rem .3rem}
+.srch-o{display:block;padding:.55rem .95rem;min-height:44px;color:var(--fg);text-decoration:none}
+.srch-o strong{display:block;font-weight:600;font-size:14.5px;line-height:1.4}.srch-o span{display:block;font-size:13px;line-height:1.45;color:var(--soft);margin-top:.15rem}
+.srch-o:hover,.srch-o[aria-selected=true]{background:rgba(127,127,127,.14);color:var(--fg)}
+.srch-o mark{background:rgba(20,170,206,.28);color:inherit;border-radius:2px}
+.srch-none{padding:.7rem .95rem;color:var(--soft);font-size:14px}
+.srch-hit{outline:3px solid var(--cyan);outline-offset:6px;border-radius:2px}
+[id]{scroll-margin-top:76px}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:52rem){.srch-btn{display:inline-flex}.srch-in,.srch-ic{display:none}
+.srch{position:static}
+.srch.open .srch-in{display:block;position:absolute;inset-inline:.75rem;width:auto;top:50%;transform:translateY(-50%);z-index:11;padding-inline-start:.9rem;background:var(--bar)}
+.srch-list{inset-inline:.5rem;width:auto;top:100%}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top .crumbs{overflow:hidden}.crumbs .app:not(.txt),.crumbs .sep:has(+ .app:not(.txt)){display:none}.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.hero{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 1.25rem 5.5rem;color:#fff;
+background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url(/portfolio-app/img/bg.svg) center/cover no-repeat,#2a2a2a}
+.hero-in{max-width:46rem}
+.hero img.logo{width:96px;height:96px;border-radius:22%;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.word{font:300 clamp(1.4rem,4vw,2.1rem)/1.25 "Open Sans",sans-serif;letter-spacing:.38em;text-transform:uppercase;margin:1.6rem 0 .3rem;padding-inline-start:.38em;color:#fff}
+.sub{display:block;font:400 13px/1.5 "Open Sans",sans-serif;letter-spacing:normal;text-transform:none;color:#c9ced5;margin:.3rem 0 0}
+.tag{font-size:18.4px;line-height:1.65;color:#d9dde3;margin:1.4rem auto 2rem;max-width:40rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.facts{display:block;font-size:13px;color:#c9ced5;margin-top:1.3rem}
+section.band{max-width:62rem;margin:0 auto;padding:3rem 1.25rem}
+.shots{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.75rem;scroll-snap-type:x mandatory}
+.shots img{height:460px;width:auto;border-radius:10px;border:1px solid var(--line);scroll-snap-align:start;flex:none;background:var(--bar)}
+.desc{max-width:46rem}.desc p{margin:0 0 1rem}
+.desc h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:2rem 0 .6rem}
+.desc ul{list-style:none;padding:0;margin:0 0 1rem}.desc li{position:relative;padding-inline-start:1.3rem;margin:.45rem 0}
+.desc li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:.45rem;height:1px;background:var(--cyan)}
+@media (max-width:40rem){.hero{min-height:0;padding:3rem 1rem}.shots img{height:380px}}
+.hero.g{min-height:0;background:#2a2a2a;padding:2.5rem 1.25rem 3.5rem}.hero.g .hero-in{max-width:64rem}
+.hero.g img.banner{display:block;width:100%;max-width:1024px;height:auto;margin:0 auto;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.hero.g .word{margin-top:1.8rem}
+section.band{scroll-margin-top:64px}
+.faq .qa{margin:0 0 1.6rem}.faq h3{font:600 17px/1.4 "Open Sans",sans-serif;margin:0 0 .45rem}.faq p{margin:0 0 .6rem}
+</style></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="Todos os apps" aria-label="Maumiu Works — Todos os apps">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app" href="/portfolio-app/pt-PT/" aria-current="page" aria-label="Pecuo"><img src="/portfolio-app/img/icon.webp" alt="" width="26" height="26"><span>Pecuo</span></a></nav><nav class="nav mont" aria-label="Pecuo: Gado, Ovelhas e Cabras"><a href="#features">Recursos</a><a href="#screens">Capturas</a></nav><div class="tools"><div class="srch" data-page="Nesta página" data-site="No site" data-none="Nenhum resultado encontrado"><button type="button" class="srch-btn" aria-label="Pesquisar" aria-expanded="false" aria-controls="srch-in"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="srch-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="srch-in" class="srch-in" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="srch-list" aria-label="Pesquisar" placeholder="Pesquisar no site" autocomplete="off" spellcheck="false" enterkeyhint="search"><div id="srch-list" class="srch-list" role="listbox" aria-label="Pesquisar" hidden></div></div><details class="langs"><summary aria-label="Idioma: Português (Portugal)" title="Português (Portugal)"><img class="flag" src="/flags/pt.svg" alt="" width="24" height="16"></summary><ul><li><a href="/portfolio-app/ar/" hreflang="ar" lang="ar"><img class="flag" src="/flags/sa.svg" alt="" width="24" height="16"><span>العربية</span></a></li><li><a href="/portfolio-app/bn-BD/" hreflang="bn-BD" lang="bn-BD"><img class="flag" src="/flags/bn.svg" alt="" width="24" height="16"><span>bn-BD</span></a></li><li><a href="/portfolio-app/de-DE/" hreflang="de-DE" lang="de-DE"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/portfolio-app/" hreflang="en-US" lang="en-US"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/portfolio-app/es-419/" hreflang="es" lang="es"><img class="flag" src="/flags/mx.svg" alt="" width="24" height="16"><span>Español (Latinoamérica)</span></a></li><li><a href="/portfolio-app/fr-FR/" hreflang="fr-FR" lang="fr-FR"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/portfolio-app/hi-IN/" hreflang="hi-IN" lang="hi-IN"><img class="flag" src="/flags/in.svg" alt="" width="24" height="16"><span>हिन्दी</span></a></li><li><a href="/portfolio-app/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/portfolio-app/it-IT/" hreflang="it-IT" lang="it-IT"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/portfolio-app/ja-JP/" hreflang="ja-JP" lang="ja-JP"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/portfolio-app/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/portfolio-app/pt-PT/" hreflang="pt-PT" lang="pt-PT" aria-current="true"><img class="flag" src="/flags/pt.svg" alt="" width="24" height="16"><span>Português (Portugal)</span></a></li><li><a href="/portfolio-app/ru-RU/" hreflang="ru-RU" lang="ru-RU"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/portfolio-app/sw/" hreflang="sw" lang="sw"><img class="flag" src="/flags/sw.svg" alt="" width="24" height="16"><span>sw</span></a></li><li><a href="/portfolio-app/tr-TR/" hreflang="tr-TR" lang="tr-TR"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li><li><a href="/portfolio-app/ur/" hreflang="ur" lang="ur"><img class="flag" src="/flags/ur.svg" alt="" width="24" height="16"><span>ur</span></a></li></ul></details><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.livestock&amp;hl=pt-PT" rel="noopener">Google Play</a></div></header>
+<main>
+<section class="hero"><div class="hero-in">
+<img class="logo" src="/portfolio-app/img/icon.webp" alt="" width="96" height="96">
+<p class="word" aria-hidden="true">Pecuo</p><h1 class="sub">Pecuo: Gado, Ovelhas e Cabras</h1>
+<p class="tag">Registo de gado: bovinos, ovelhas e cabras. Funciona offline; nuvem opcional.</p>
+<div class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.jevgenia.livestock&amp;hl=pt-PT" rel="noopener">Disponível no Google Play <span class="arrow" aria-hidden="true"></span></a>
+<a class="btn btn-ghost" href="#features">Recursos</a></div><span class="facts">Funciona offline · sem conta</span>
+</div></section>
+<section class="band" id="screens"><h2 class="label">Capturas</h2><div class="shots"><img src="/portfolio-app/img/en-US/1.webp" width="420" height="933" alt="Pecuo: Gado, Ovelhas e Cabras — 1" loading="lazy"><img src="/portfolio-app/img/en-US/2.webp" width="420" height="933" alt="Pecuo: Gado, Ovelhas e Cabras — 2" loading="lazy"><img src="/portfolio-app/img/en-US/3.webp" width="420" height="933" alt="Pecuo: Gado, Ovelhas e Cabras — 3" loading="lazy"><img src="/portfolio-app/img/en-US/4.webp" width="420" height="933" alt="Pecuo: Gado, Ovelhas e Cabras — 4" loading="lazy"><img src="/portfolio-app/img/en-US/5.webp" width="420" height="933" alt="Pecuo: Gado, Ovelhas e Cabras — 5" loading="lazy"></div></section>
+<section class="band" id="features"><h2 class="label">Recursos</h2><div class="desc"><p>Gestão do efetivo de bovinos, cabras e ovelhas que funciona no campo: sem internet e sem iniciar sessão, sem limite de animais. Os registos do seu gado ficam guardados no telemóvel, com cópias na nuvem só se quiser.</p>
+<p>Feito para pequenas explorações, quintas e montes que precisam de um registo simples e fiável do rebanho e da manada — com letra grande e botões grandes, se preferir.</p>
+<h2>ANIMAIS</h2>
+<ul><li>Brinco, número oficial (SNIRA), nome, foto, espécie (bovinos, cabras, ovelhas, búfalos, camelos ou outra à sua escolha), raça e data de nascimento</li><li>Fase de vida mostrada automaticamente: cabrito, vitela, novilha, borrega, touro…</li><li>Mãe e pai do seu efetivo ou de outra exploração, crias e genealogia de 3 gerações</li><li>Lotes e parques, origem (nascido aqui, comprado) e histórico de brincos quando troca o brinco</li><li>Pesquisa por brinco, nome ou brinco antigo; filtros por espécie, lote, sexo e estado; ordenação por peso</li></ul>
+<h2>EVENTOS E LIVRO DO EFETIVO</h2>
+<ul><li>Pesagens com ganho de peso e gramas por dia, registo de leite, cobrição e inseminação, gestação com data prevista de parto que pode ajustar</li><li>Partos de cabras, ovelhas e vacas: cada cria fica com a sua própria ficha, ligada aos pais</li><li>Vacinações, desparasitações e tratamentos com dose, próxima dose e intervalos de segurança separados para carne e leite</li><li>Desmame, secagem, aparo de cascos, vendas, compras, mortes, receitas e despesas</li><li>Eventos em grupo: selecione vários animais e registe uma vacinação de uma só vez, ou pese o lote inteiro numa lista</li><li>Planeie tarefas para mais tarde e marque-as quando estiverem feitas</li></ul>
+<h2>LEITOR DE BRINCOS</h2>
+<ul><li>Aponte a câmara ao brinco: lê o código de barras ou o código QR dos brincos oficiais e o número impresso nos brincos convencionais</li><li>Encontra logo o animal, ou adiciona um novo com esse número de brinco</li><li>Também lê uma foto do brinco; funciona no telemóvel, sem internet</li><li>Leitores de bastão Bluetooth para brincos eletrónicos (EID) que funcionam como teclado: o número vai para a pesquisa e o animal abre</li></ul>
+<h2>DINHEIRO</h2>
+<ul><li>Um separador Dinheiro para as receitas e despesas da exploração: ração, sanidade animal, mão de obra, venda de leite, venda de animais, subsídios e mais</li><li>Lucro ou prejuízo por mês e por categoria</li><li>Associe um movimento a um animal ou a um lote; as vendas e compras de animais também contam</li><li>Exportação para Excel</li></ul>
+<h2>LEMBRETES</h2>
+<ul><li>Agenda: partos previstos, próximas doses, tarefas planeadas e fim dos intervalos de segurança</li><li>Um lembrete diário discreto, que pode desligar</li></ul>
+<h2>RELATÓRIOS E EXPORTAÇÃO</h2>
+<ul><li>Efetivo por espécie, sexo e lote; partos, mortes, vendas, leite, receitas e despesas por período</li><li>Exportação para Excel (xlsx) e CSV, ficha em PDF para imprimir com genealogia</li><li>Importe o seu efetivo de uma folha de cálculo e comece em minutos</li></ul>
+<h2>CALCULADORAS</h2>
+<ul><li>Gestação de cabras, ovelhas, vacas, búfalas e camelas</li><li>Intervalo de segurança para carne e leite</li><li>Ração e feno</li></ul>
+<h2>INÍCIO FÁCIL</h2>
+<ul><li>Um início guiado curto: idioma, os seus animais, unidades e tamanho do texto</li><li>Experimente a app com um efetivo de exemplo e remova-o com um toque</li><li>Ou importe o efetivo de uma folha de cálculo, ou restaure uma cópia</li></ul>
+<h2>FÁCIL DE USAR</h2>
+<ul><li>Tamanho do texto e botões grandes, fáceis de tocar com luvas</li><li>Cores para daltónicos e de alto contraste, tema escuro</li><li>Menu inferior claro: Efetivo, Agenda, Dinheiro, Relatórios, Mais</li></ul>
+<h2>OS SEUS DADOS EM SEGURANÇA</h2>
+<ul><li>Cópia de segurança com fotos num ficheiro, e cópia automática numa pasta, como o Google Drive</li><li>Cópias no seu próprio Google Drive ou Dropbox, se quiser: automáticas ou com um toque, e pode desligar quando quiser</li><li>Exploração partilhada, se quiser: família e trabalhadores nos seus próprios telemóveis, com funções — dono, família, tratador (sem dinheiro nem eliminar), só ver</li><li>Restaure num telemóvel novo em poucos toques</li><li>Os registos ficam no seu telemóvel, sem rastreio; só são enviadas contagens de utilização anónimas, que pode desligar</li></ul>
+<p>Unidades em kg, lb ou arroba, litros ou galões, e a sua moeda.</p></div></section>
+
+</main>
+<footer><div class="foot"><h2 class="label">Mais apps</h2><div class="net"><div><a href="/electric-toolkit/pt-PT/">Wirekit</a><p>Quadro elétrico e etiquetas, simulador de ligações, secção, queda de tensão.</p></div><div><a href="/morse-trainer/pt-PT/">Morsenta</a><p>Código Morse de ouvido: curso CW (método Koch), manipulador e tradutor. Offline</p></div><div><a href="/tactic-board/pt-PT/">Tacticana</a><p>Tática de futebol no quadro do treinador: sistemas, onze, jogadas animadas</p></div><div><a href="/tournament-bracket/pt-PT/">Ligona</a><p>Sem anúncios: crie torneios e tabelas de campeonato, quadro e grupos. Offline</p></div></div><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/portfolio-app/privacy/pt-BR.html">Política de privacidade</a><a href="/">Todos os apps</a><a href="mailto:hello@maumiuworks.com">Contato</a><a href="https://play.google.com/store/apps/details?id=com.jevgenia.livestock&hl=pt-PT" rel="noopener">Google Play</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script><script defer src="/search.js?v=9983535c"></script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>

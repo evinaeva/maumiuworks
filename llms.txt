@@ -6,9 +6,9 @@ Each app page has the full description, screenshots, a Questions and answers sec
 
 ## Apps
 
-- [Wirekit](https://maumiuworks.com/electric-toolkit/): Electrical calculator: wire size, voltage drop, breaker panel. No ads. Offline. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.electrician
+- [Wirekit](https://maumiuworks.com/electric-toolkit/): No ads. Wire size and voltage drop in seconds. Breaker panel. Offline. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.electrician
 - [Morsenta](https://maumiuworks.com/morse-trainer/): No ads: learn Morse code by ear — Morse code translator, CW trainer, Koch, key. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.morse
-- [Pecuo](https://maumiuworks.com/portfolio-app/): No ads. Herd management for cattle, goats & sheep: track every dose and birth. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.livestock
+- [Pecuo](https://maumiuworks.com/portfolio-app/): No ads. Track every dose and birth: herd records for cattle, goats & sheep. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.livestock
 - [Tacticana](https://maumiuworks.com/tactic-board/): Soccer tactics board, no ads: draw plays, animate every step, share video. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard
 - [Ligona](https://maumiuworks.com/tournament-bracket/): Bracket maker for any sport: knockout, round robin, groups, Swiss and playoffs. Google Play: https://play.google.com/store/apps/details?id=com.jevgenia.tournament
 

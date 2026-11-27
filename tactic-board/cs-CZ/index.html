@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="cs-CZ" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tacticana: taktická tabule — aplikace pro Android</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/tactic-board/img/icon.webp">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<meta name="description" content="Taktická tabule pro fotbalové trenéry: sestavy, rozestavení, animované akce">
+<link rel="canonical" href="https://maumiuworks.com/tactic-board/cs-CZ/">
+<link rel="alternate" hreflang="ar" href="https://maumiuworks.com/tactic-board/ar/">
+<link rel="alternate" hreflang="cs-CZ" href="https://maumiuworks.com/tactic-board/cs-CZ/">
+<link rel="alternate" hreflang="da-DK" href="https://maumiuworks.com/tactic-board/da-DK/">
+<link rel="alternate" hreflang="de-DE" href="https://maumiuworks.com/tactic-board/de-DE/">
+<link rel="alternate" hreflang="en-GB" href="https://maumiuworks.com/tactic-board/en-GB/">
+<link rel="alternate" hreflang="en-US" href="https://maumiuworks.com/tactic-board/">
+<link rel="alternate" hreflang="es" href="https://maumiuworks.com/tactic-board/es-419/">
+<link rel="alternate" hreflang="es-ES" href="https://maumiuworks.com/tactic-board/es-ES/">
+<link rel="alternate" hreflang="fr-FR" href="https://maumiuworks.com/tactic-board/fr-FR/">
+<link rel="alternate" hreflang="id" href="https://maumiuworks.com/tactic-board/id/">
+<link rel="alternate" hreflang="it-IT" href="https://maumiuworks.com/tactic-board/it-IT/">
+<link rel="alternate" hreflang="ja-JP" href="https://maumiuworks.com/tactic-board/ja-JP/">
+<link rel="alternate" hreflang="ko-KR" href="https://maumiuworks.com/tactic-board/ko-KR/">
+<link rel="alternate" hreflang="ms" href="https://maumiuworks.com/tactic-board/ms/">
+<link rel="alternate" hreflang="nl-NL" href="https://maumiuworks.com/tactic-board/nl-NL/">
+<link rel="alternate" hreflang="no-NO" href="https://maumiuworks.com/tactic-board/no-NO/">
+<link rel="alternate" hreflang="pl-PL" href="https://maumiuworks.com/tactic-board/pl-PL/">
+<link rel="alternate" hreflang="pt-BR" href="https://maumiuworks.com/tactic-board/pt-BR/">
+<link rel="alternate" hreflang="pt-PT" href="https://maumiuworks.com/tactic-board/pt-PT/">
+<link rel="alternate" hreflang="ru-RU" href="https://maumiuworks.com/tactic-board/ru-RU/">
+<link rel="alternate" hreflang="tr-TR" href="https://maumiuworks.com/tactic-board/tr-TR/">
+<link rel="alternate" hreflang="vi" href="https://maumiuworks.com/tactic-board/vi/">
+<link rel="alternate" hreflang="x-default" href="https://maumiuworks.com/tactic-board/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://maumiuworks.com/tactic-board/cs-CZ/"><meta property="og:title" content="Tacticana: taktická tabule">
+<meta property="og:site_name" content="Maumiu Works"><meta property="og:locale" content="cs_CZ">
+<meta property="og:description" content="Taktická tabule pro fotbalové trenéry: sestavy, rozestavení, animované akce"><meta property="og:image" content="https://maumiuworks.com/tactic-board/img/og-cs-CZ.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Tacticana: taktická tabule", "operatingSystem": "Android", "applicationCategory": "SportsApplication", "description": "Taktická tabule pro fotbalové trenéry: sestavy, rozestavení, animované akce", "url": "https://maumiuworks.com/tactic-board/cs-CZ/", "image": "https://maumiuworks.com/tactic-board/img/og-cs-CZ.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "isAccessibleForFree": true, "publisher": {"@type": "Organization", "name": "Maumiu Works", "url": "https://maumiuworks.com/", "logo": "https://maumiuworks.com/favicon.svg"}, "author": {"@type": "Person", "name": "Jevgenia", "url": "https://maumiuworks.com/"}, "sameAs": ["https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard"], "downloadUrl": "https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard", "inLanguage": "cs-CZ", "applicationSubCategory": "Sports", "screenshot": ["https://maumiuworks.com/tactic-board/img/en-US/1.webp", "https://maumiuworks.com/tactic-board/img/en-US/2.webp", "https://maumiuworks.com/tactic-board/img/en-US/3.webp", "https://maumiuworks.com/tactic-board/img/en-US/4.webp", "https://maumiuworks.com/tactic-board/img/en-US/5.webp"], "dateModified": "2026-11-27"}</script>
+<style>
+:root{--bg:#121212;--bar:#39363a;--fg:#e3e2e6;--soft:#bdbdbd;--label:#c3c3c3;--line:#2e2e2e;--cyan:#14aace;--cyan-hi:#70d5ed;--teal:#14aace;--teal-hover:#1197b8;--btn:#0b7590;--btn-hover:#096478;--cat:#3cbfdd;--card:#1a1a1a;--bar-line:rgba(255,255,255,.08)}
+@media (prefers-color-scheme:light){:root{--bg:#f2f3f4;--bar:#ffffff;--fg:#1a1b1f;--soft:#55595e;--label:#4a4d52;--line:#dfe1e4;--cyan:#0b7590;--cyan-hi:#0b7590;--teal:#0b7590;--cat:#0b7590;--card:#ffffff;--bar-line:#dfe1e4}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:300 16px/1.65 "Open Sans",-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--cyan);text-decoration:none}a:hover{color:var(--cyan-hi)}
+.mont{font-family:Montserrat,"Open Sans",sans-serif;font-weight:600}
+.top{position:sticky;top:0;z-index:5;background:var(--bar);border-bottom:1px solid var(--bar-line);display:flex;align-items:center;gap:1.25rem;padding:0 1.25rem;min-height:59px}
+.top>*{min-width:0}
+.crumbs{display:flex;align-items:center;gap:.55rem;min-width:0;font-size:14px;white-space:nowrap}
+.crumbs a,.crumbs span{color:var(--fg)}.crumbs a:hover{color:var(--cyan-hi)}
+.crumbs .cat{font:600 14px Montserrat,"Open Sans",sans-serif;letter-spacing:.34em;padding:.6rem 0;margin-inline-end:-.34em;color:var(--cat)}
+.crumbs .cat:hover{color:var(--cyan-hi)}
+.crumbs .sep{color:var(--soft)}
+.crumbs .app{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:500 15px Montserrat,"Open Sans",sans-serif;min-height:44px;min-width:44px}
+.crumbs .app img{width:26px;height:26px;border-radius:22%}
+.crumbs .app.txt{flex:none}.crumbs .here{min-width:0}
+.crumbs .here{color:var(--soft);overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:.4rem;margin:0 auto}.nav a{color:var(--fg);font:500 15px Montserrat,"Open Sans",sans-serif;padding:8px 12px}.nav a:hover{color:var(--cyan-hi)}
+.tools{display:flex;align-items:center;gap:.8rem;margin-inline-start:auto;flex-shrink:0}
+.flag{display:inline-block;width:24px;height:16px;flex:none;vertical-align:middle}
+.langs{position:relative}
+.langs summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.35rem;min-height:44px;min-width:44px;justify-content:center;padding:0 .35rem}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:"";width:0;height:0;border:4px solid transparent;border-top-color:var(--soft);margin-top:4px}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);margin:0;padding:.35rem 0;list-style:none;background:var(--bar);border:1px solid var(--bar-line);min-width:15rem;max-height:70vh;overflow:auto;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.langs li a{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;min-height:44px;color:var(--fg);font-size:14px}
+.langs li a:hover,.langs li a[aria-current]{background:rgba(127,127,127,.14);color:var(--cyan-hi)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--btn);color:#fff;border:2px solid transparent;border-radius:0;font:600 16px/1.2 Montserrat,"Open Sans",sans-serif;padding:12px 24px;min-height:44px;white-space:nowrap;transition:background-color .15s ease-in,border-color .15s ease-in}
+.btn:hover{color:#fff;background:var(--btn-hover)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.7)}.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-sm{font-size:14.4px;padding:8px 16px}
+.arrow::after{content:"→"}[dir=rtl] .arrow::after{content:"←"}
+.kicker{font:600 13.6px/1.5 Montserrat,"Open Sans",sans-serif;letter-spacing:1.632px;text-transform:uppercase;color:var(--teal);margin:0 0 .9rem}
+.panel{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.15);padding:28px;color:#fff}
+.label{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:0 0 1.2rem}
+.more{font-weight:600}.more::after{content:" →"}[dir=rtl] .more::after{content:" ←"}
+footer{background:var(--bar);border-top:1px solid var(--bar-line)}
+.foot{max-width:62rem;margin:0 auto;padding:2.2rem 1.25rem 1.6rem}
+.net{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:1.4rem 2rem;padding-bottom:1.8rem;margin-bottom:1.2rem;border-bottom:1px solid var(--bar-line)}
+.net a{font:600 15px Montserrat,"Open Sans",sans-serif}.net a::after{content:" →"}[dir=rtl] .net a::after{content:" ←"}
+.net p{margin:.25rem 0 0;font-size:13px;color:var(--soft);line-height:1.45}
+.legal{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;font-size:14px;color:var(--soft)}
+.legal nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem}.legal nav a{color:var(--fg);display:inline-block;padding:.35rem 0}.legal nav a:hover{color:var(--cyan-hi)}
+.srch{position:relative;display:flex;align-items:center}
+.srch-in{width:12.5rem;height:40px;padding:0 .8rem 0 2.2rem;border:1px solid var(--line);border-radius:20px;background:var(--bg);color:var(--fg);font:400 14px "Open Sans",sans-serif}
+.srch-in::placeholder{color:var(--soft);opacity:1}.srch-in:focus{outline:2px solid var(--cyan);outline-offset:1px;border-color:transparent}
+.srch-in::-webkit-search-cancel-button{cursor:pointer}
+.srch-ic{position:absolute;inset-inline-start:.75rem;top:50%;transform:translateY(-50%);color:var(--soft);display:flex;pointer-events:none}
+.srch-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:0;background:none;color:var(--fg);cursor:pointer;border-radius:50%}
+.srch-btn:hover{color:var(--cyan-hi)}.srch-btn:focus-visible{outline:2px solid var(--cyan)}
+.srch-list{position:absolute;top:calc(100% + 8px);inset-inline-end:0;width:min(27rem,calc(100vw - 1.5rem));max-height:min(70vh,32rem);overflow:auto;background:var(--bar);border:1px solid var(--bar-line);box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:10;padding:.3rem 0}
+.srch-g{font:600 11px "Open Sans",sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--label);padding:.7rem .95rem .3rem}
+.srch-o{display:block;padding:.55rem .95rem;min-height:44px;color:var(--fg);text-decoration:none}
+.srch-o strong{display:block;font-weight:600;font-size:14.5px;line-height:1.4}.srch-o span{display:block;font-size:13px;line-height:1.45;color:var(--soft);margin-top:.15rem}
+.srch-o:hover,.srch-o[aria-selected=true]{background:rgba(127,127,127,.14);color:var(--fg)}
+.srch-o mark{background:rgba(20,170,206,.28);color:inherit;border-radius:2px}
+.srch-none{padding:.7rem .95rem;color:var(--soft);font-size:14px}
+.srch-hit{outline:3px solid var(--cyan);outline-offset:6px;border-radius:2px}
+[id]{scroll-margin-top:76px}
+@media (max-width:52rem){.nav{display:none}}
+@media (max-width:52rem){.srch-btn{display:inline-flex}.srch-in,.srch-ic{display:none}
+.srch{position:static}
+.srch.open .srch-in{display:block;position:absolute;inset-inline:.75rem;width:auto;top:50%;transform:translateY(-50%);z-index:11;padding-inline-start:.9rem;background:var(--bar)}
+.srch-list{inset-inline:.5rem;width:auto;top:100%}}
+@media (max-width:40rem){.top{gap:.7rem;padding:0 1rem}.crumbs .app:not(.txt) span{display:none}.btn{font-size:15px;padding:10px 18px}.btn-sm{font-size:14px;padding:8px 12px}}
+@media (max-width:26rem){.top .crumbs{overflow:hidden}.crumbs .app:not(.txt),.crumbs .sep:has(+ .app:not(.txt)){display:none}.top{gap:.4rem;padding:0 .6rem}.btn-sm{padding:8px 10px}.crumbs{gap:.35rem}.crumbs .cat{letter-spacing:.2em;margin-inline-end:-.2em;font-size:13px}.tools{gap:.4rem}}
+
+.hero{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;text-align:center;padding:5rem 1.25rem 5.5rem;color:#fff;
+background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url(/tactic-board/img/bg.svg) center/cover no-repeat,#2a2a2a}
+.hero-in{max-width:46rem}
+.hero img.logo{width:96px;height:96px;border-radius:22%;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.word{font:300 clamp(1.4rem,4vw,2.1rem)/1.25 "Open Sans",sans-serif;letter-spacing:.38em;text-transform:uppercase;margin:1.6rem 0 .3rem;padding-inline-start:.38em;color:#fff}
+.sub{display:block;font:400 13px/1.5 "Open Sans",sans-serif;letter-spacing:normal;text-transform:none;color:#c9ced5;margin:.3rem 0 0}
+.tag{font-size:18.4px;line-height:1.65;color:#d9dde3;margin:1.4rem auto 2rem;max-width:40rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.facts{display:block;font-size:13px;color:#c9ced5;margin-top:1.3rem}
+section.band{max-width:62rem;margin:0 auto;padding:3rem 1.25rem}
+.shots{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.75rem;scroll-snap-type:x mandatory}
+.shots img{height:460px;width:auto;border-radius:10px;border:1px solid var(--line);scroll-snap-align:start;flex:none;background:var(--bar)}
+.desc{max-width:46rem}.desc p{margin:0 0 1rem}
+.desc h2{font:600 12px "Open Sans",sans-serif;letter-spacing:1.68px;text-transform:uppercase;color:var(--label);margin:2rem 0 .6rem}
+.desc ul{list-style:none;padding:0;margin:0 0 1rem}.desc li{position:relative;padding-inline-start:1.3rem;margin:.45rem 0}
+.desc li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:.45rem;height:1px;background:var(--cyan)}
+@media (max-width:40rem){.hero{min-height:0;padding:3rem 1rem}.shots img{height:380px}}
+.hero.g{min-height:0;background:#2a2a2a;padding:2.5rem 1.25rem 3.5rem}.hero.g .hero-in{max-width:64rem}
+.hero.g img.banner{display:block;width:100%;max-width:1024px;height:auto;margin:0 auto;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.hero.g .word{margin-top:1.8rem}
+section.band{scroll-margin-top:64px}
+.faq .qa{margin:0 0 1.6rem}.faq h3{font:600 17px/1.4 "Open Sans",sans-serif;margin:0 0 .45rem}.faq p{margin:0 0 .6rem}
+</style></head>
+<body>
+<header class="top"><nav class="crumbs" aria-label="breadcrumb"><a class="cat" href="/" title="Všechny aplikace" aria-label="Maumiu Works — Všechny aplikace">MAUMIU WORKS</a><span class="sep" aria-hidden="true">/</span><a class="app" href="/tactic-board/cs-CZ/" aria-current="page" aria-label="Tacticana"><img src="/tactic-board/img/icon.webp" alt="" width="26" height="26"><span>Tacticana</span></a></nav><nav class="nav mont" aria-label="Tacticana: taktická tabule"><a href="#features">Funkce</a><a href="#screens">Snímky obrazovky</a></nav><div class="tools"><div class="srch" data-page="Na této stránce" data-site="Na webu" data-none="Nic nenalezeno"><button type="button" class="srch-btn" aria-label="Hledat" aria-expanded="false" aria-controls="srch-in"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="srch-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><input id="srch-in" class="srch-in" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="srch-list" aria-label="Hledat" placeholder="Hledat na webu" autocomplete="off" spellcheck="false" enterkeyhint="search"><div id="srch-list" class="srch-list" role="listbox" aria-label="Hledat" hidden></div></div><details class="langs"><summary aria-label="Jazyk: Čeština" title="Čeština"><img class="flag" src="/flags/cs.svg" alt="" width="24" height="16"></summary><ul><li><a href="/tactic-board/ar/" hreflang="ar" lang="ar"><img class="flag" src="/flags/sa.svg" alt="" width="24" height="16"><span>العربية</span></a></li><li><a href="/tactic-board/cs-CZ/" hreflang="cs-CZ" lang="cs-CZ" aria-current="true"><img class="flag" src="/flags/cs.svg" alt="" width="24" height="16"><span>Čeština</span></a></li><li><a href="/tactic-board/da-DK/" hreflang="da-DK" lang="da-DK"><img class="flag" src="/flags/da.svg" alt="" width="24" height="16"><span>Dansk</span></a></li><li><a href="/tactic-board/de-DE/" hreflang="de-DE" lang="de-DE"><img class="flag" src="/flags/de.svg" alt="" width="24" height="16"><span>Deutsch</span></a></li><li><a href="/tactic-board/en-GB/" hreflang="en-GB" lang="en-GB"><img class="flag" src="/flags/gb.svg" alt="" width="24" height="16"><span>English (UK)</span></a></li><li><a href="/tactic-board/" hreflang="en-US" lang="en-US"><img class="flag" src="/flags/us.svg" alt="" width="24" height="16"><span>English</span></a></li><li><a href="/tactic-board/es-419/" hreflang="es" lang="es"><img class="flag" src="/flags/mx.svg" alt="" width="24" height="16"><span>Español (Latinoamérica)</span></a></li><li><a href="/tactic-board/es-ES/" hreflang="es-ES" lang="es-ES"><img class="flag" src="/flags/es.svg" alt="" width="24" height="16"><span>Español (España)</span></a></li><li><a href="/tactic-board/fr-FR/" hreflang="fr-FR" lang="fr-FR"><img class="flag" src="/flags/fr.svg" alt="" width="24" height="16"><span>Français</span></a></li><li><a href="/tactic-board/id/" hreflang="id" lang="id"><img class="flag" src="/flags/id.svg" alt="" width="24" height="16"><span>Bahasa Indonesia</span></a></li><li><a href="/tactic-board/it-IT/" hreflang="it-IT" lang="it-IT"><img class="flag" src="/flags/it.svg" alt="" width="24" height="16"><span>Italiano</span></a></li><li><a href="/tactic-board/ja-JP/" hreflang="ja-JP" lang="ja-JP"><img class="flag" src="/flags/jp.svg" alt="" width="24" height="16"><span>日本語</span></a></li><li><a href="/tactic-board/ko-KR/" hreflang="ko-KR" lang="ko-KR"><img class="flag" src="/flags/kr.svg" alt="" width="24" height="16"><span>한국어</span></a></li><li><a href="/tactic-board/ms/" hreflang="ms" lang="ms"><img class="flag" src="/flags/ms.svg" alt="" width="24" height="16"><span>Bahasa Melayu</span></a></li><li><a href="/tactic-board/nl-NL/" hreflang="nl-NL" lang="nl-NL"><img class="flag" src="/flags/nl.svg" alt="" width="24" height="16"><span>Nederlands</span></a></li><li><a href="/tactic-board/no-NO/" hreflang="no-NO" lang="no-NO"><img class="flag" src="/flags/no.svg" alt="" width="24" height="16"><span>no-NO</span></a></li><li><a href="/tactic-board/pl-PL/" hreflang="pl-PL" lang="pl-PL"><img class="flag" src="/flags/pl.svg" alt="" width="24" height="16"><span>Polski</span></a></li><li><a href="/tactic-board/pt-BR/" hreflang="pt-BR" lang="pt-BR"><img class="flag" src="/flags/br.svg" alt="" width="24" height="16"><span>Português (Brasil)</span></a></li><li><a href="/tactic-board/pt-PT/" hreflang="pt-PT" lang="pt-PT"><img class="flag" src="/flags/pt.svg" alt="" width="24" height="16"><span>Português (Portugal)</span></a></li><li><a href="/tactic-board/ru-RU/" hreflang="ru-RU" lang="ru-RU"><img class="flag" src="/flags/ru.svg" alt="" width="24" height="16"><span>Русский</span></a></li><li><a href="/tactic-board/tr-TR/" hreflang="tr-TR" lang="tr-TR"><img class="flag" src="/flags/tr.svg" alt="" width="24" height="16"><span>Türkçe</span></a></li><li><a href="/tactic-board/vi/" hreflang="vi" lang="vi"><img class="flag" src="/flags/vn.svg" alt="" width="24" height="16"><span>Tiếng Việt</span></a></li></ul></details><a class="btn btn-sm" href="https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard&amp;hl=cs-CZ" rel="noopener">Google Play</a></div></header>
+<main>
+<section class="hero"><div class="hero-in">
+<img class="logo" src="/tactic-board/img/icon.webp" alt="" width="96" height="96">
+<p class="word" aria-hidden="true">Tacticana</p><h1 class="sub">Tacticana: taktická tabule</h1>
+<p class="tag">Taktická tabule pro fotbalové trenéry: sestavy, rozestavení, animované akce</p>
+<div class="cta"><a class="btn" href="https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard&amp;hl=cs-CZ" rel="noopener">Nyní na Google Play <span class="arrow" aria-hidden="true"></span></a>
+<a class="btn btn-ghost" href="#features">Funkce</a></div><span class="facts">Funguje offline · bez účtu</span>
+</div></section>
+<section class="band" id="screens"><h2 class="label">Snímky obrazovky</h2><div class="shots"><img src="/tactic-board/img/en-US/1.webp" width="420" height="747" alt="Tacticana: taktická tabule — 1" loading="lazy"><img src="/tactic-board/img/en-US/2.webp" width="420" height="747" alt="Tacticana: taktická tabule — 2" loading="lazy"><img src="/tactic-board/img/en-US/3.webp" width="420" height="747" alt="Tacticana: taktická tabule — 3" loading="lazy"><img src="/tactic-board/img/en-US/4.webp" width="420" height="747" alt="Tacticana: taktická tabule — 4" loading="lazy"><img src="/tactic-board/img/en-US/5.webp" width="420" height="747" alt="Tacticana: taktická tabule — 5" loading="lazy"></div></section>
+<section class="band" id="features"><h2 class="label">Funkce</h2><div class="desc"><p>Taktická tabule a sestava pro fotbalové trenéry, kterou máš vždy u sebe: u postranní čáry, v kabině nebo doma při plánování dalšího tréninku. Postav tým, nakresli akci a rozpohybuj ji krok za krokem. Bez reklam, bez registrace, bez účtu a bez internetu: funguje offline a tvoje tabule zůstávají v telefonu.</p>
+<h2>HŘIŠTĚ PRO KAŽDÝ FORMÁT</h2>
+<ul><li>11 na 11, 9 na 9, 8 na 8, 7 na 7, 6 na 6, 5 na 5, 4 na 4, 3 na 3, futsal, půl hřiště a pokutové území</li><li>Hřiště na šířku i na výšku, několik vzhledů: pruhovaný trávník, tráva, bílá a školní tabule</li><li>Funguje stejně dobře na tabletu i na šířku</li></ul>
+<h2>HRÁČI A VYBAVENÍ</h2>
+<ul><li>Dva týmy s čísly a jmény, brankáři ve vlastní barvě, dresy jednobarevné, s pruhy i půlené</li><li>Míč, kužely, talířky, tyče, koordinační žebřík a kruhy, překážky, minibranky, figuríny a praporky pro tréninková cvičení</li><li>Všechno přetáhneš prstem na své místo</li></ul>
+<h2>NAKRESLI AKCI</h2>
+<ul><li>Šipky pro přihrávky (čárkovaně), náběhy a vedení míče (vlnovka), rovné i zahnuté</li><li>Čáry, zóny, kruhy a textové poznámky</li><li>Kreslení od ruky pro všechno ostatní</li><li>Vrácení a opakování úprav</li></ul>
+<h2>AKCE, KTERÉ OŽIJÍ</h2>
+<ul><li>Nakresli šipky a klepni na „+ Krok“: hráči i míč se po nich pohnou</li><li>Přihrávka pošle míč spoluhráči na nohu, náběh posune hráče, vedení míče ho posune dopředu i s míčem</li><li>Pohyb sleduje zahnuté šipky jako na hřišti</li><li>Přehraj akci jako animaci a uprav rychlost — ideální pro vysvětlení standardních situací a pohybu bez míče</li><li>20 hotových akcí a cvičení podle oblastí: rozehrávka zezadu, obíhání na křídle, roh s prodloužením na bližší tyči, rondo 4 na 2, narážečka a střela, protiútok 3 na 2, vysoký presink a další</li></ul>
+<h2>ROZESTAVENÍ A SESTAVA</h2>
+<ul><li>Hotová rozestavení: 4-4-2, 4-3-3, 4-2-3-1, 3-5-2, 3-4-3, 5-3-2 a další</li><li>Šablony pro malá hřiště a futsal</li><li>Sestava na každé tabuli: čísla a jména zadáš za pár vteřin, jména se zobrazují pod hráči a pohybují se s nimi</li><li>Soupisky: ulož čísla a jména týmu jako soupisku (třeba U12) a doplň z ní jakoukoli tabuli — hráči se spárují podle čísla dresu, ostatní popořadě</li><li>Lavička náhradníků: střídání přetažením náhradníka na hráče</li><li>Karta sestavy na zápas jako obrázek pro týmový chat nebo stories</li></ul>
+<h2>TRÉNINKY</h2>
+<ul><li>Poskládej trénink z uložených tabulí — rozcvička, cvičení, hra</li><li>Na hřišti ho vedeš se stopkami a plánem v PDF</li></ul>
+<h2>ULOŽENÍ A SDÍLENÍ</h2>
+<ul><li>Neomezeně tabulí, složky a hledání</li><li>Duplikuj tabuli a vyzkoušej variantu</li><li>Exportuj celou akci jako video MP4 nebo animovaný GIF, případně krok jako obrázek PNG, a pošli ji do týmového chatu</li><li>Video nebo obrázek uložíš rovnou do galerie telefonu</li><li>Vytiskni nebo pošli PDF: jeden krok na stránku i s poznámkou pro hráče</li><li>Pošli soubor tabule jinému trenérovi, otevře si ho ve své aplikaci</li><li>Zálohuj všechny tabule a soupisky do jednoho souboru a obnov je v novém telefonu</li></ul>
+<p>Tvoje tabule zůstávají v zařízení, bez účtu. Světlý i tmavý motiv. Přístupnost: režim pro barvoslepé, vysoký kontrast, velká tlačítka a nastavitelná velikost textu.</p>
+<p>Pro trenéry mládeže, amatérských týmů i malé kopané, učitele tělocviku, hráče a každého, kdo rád probírá fotbalovou taktiku.</p></div></section>
+
+</main>
+<footer><div class="foot"><h2 class="label">Další aplikace</h2><div class="net"><div><a href="/electric-toolkit/cs-CZ/">Wirekit</a><p>Popis rozvaděče, trenažér zapojení, průřez vodiče, úbytek napětí, ohýbání.</p></div><div><a href="/morse-trainer/cs-CZ/">Morsenta</a><p>Morseovka sluchem: kurz CW Kochovou metodou, telegrafní klíč a překladač</p></div><div><a href="/portfolio-app/">Pecuo</a><p>No ads. Track every dose and birth: herd records for cattle, goats &amp; sheep</p></div><div><a href="/tournament-bracket/cs-CZ/">Ligona</a><p>Tournament maker bez reklam: turnajový pavouk, liga, skupiny. Bez internetu</p></div></div><div class="legal"><span>© 2026 Jevgenia</span><nav><a href="/tactic-board/privacy/">Zásady ochrany osobních údajů</a><a href="/">Všechny aplikace</a><a href="mailto:hello@maumiuworks.com">Kontakt</a><a href="https://play.google.com/store/apps/details?id=com.jevgenia.tacticboard&hl=cs-CZ" rel="noopener">Google Play</a></nav></div></div></footer><script>(function(){try{var p=location.pathname.split("/").filter(Boolean),l=document.documentElement.lang||"und";
+if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l=l.split("-")[0].toLowerCase();if(!/^[a-z]{2,3}(-[A-Z]{2})?$/.test(l))l="und";
+var k=p.length?p[0]:"catalog";if((k==="guides"||k==="tools")&&p[1])k=k.slice(0,-1)+"_"+p[1];if(p.indexOf("privacy")>0)k+="_privacy";if(p.indexOf("delete-account")>0)k+="_delete";
+k=k.replace(/[^a-z0-9]+/gi,"_").toLowerCase().slice(0,40);var s={};s[k]=1;
+fetch("https://stats.jevgenia.com/v1/collect",{method:"POST",mode:"cors",credentials:"omit",keepalive:true,
+headers:{"Content-Type":"application/json"},body:JSON.stringify({v:1,app:"maumiuworks-site",days:[{day:new Date().toISOString().slice(0,10),ver:"web",lang:l,screen:s}]})}).catch(function(){})}catch(e){}})();</script><script defer src="/search.js?v=9983535c"></script>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.langs[open]').forEach(function(d){if(!d.contains(e.target))d.open=false})});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.langs[open]').forEach(function(d){d.open=false;d.querySelector('summary').focus()})})</script>
+</body></html>
